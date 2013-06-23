@@ -1,0 +1,57 @@
+<%= form_for(@trip) do |f| %>
+  <% if @trip.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
+
+      <ul>
+      <% @trip.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :truck_id %><br />
+    <%= f.number_field :truck_id %>
+  </div>
+  <div class="field">
+    <%= f.label :trailer_id %><br />
+    <%= f.number_field :trailer_id %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date %><br />
+    <%= f.date_select :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date %><br />
+    <%= f.date_select :end_date %>
+  </div>
+  <div class="field">
+    <%= f.label :driver_pay %><br />
+    <%= f.text_field :driver_pay %>
+  </div>
+  <div class="field">
+    <%= f.label :load_bar_count %><br />
+    <%= f.number_field :load_bar_count %>
+  </div>
+  <div class="field">
+    <%= f.label :lease %><br />
+    <%= f.text_field :lease %>
+  </div>
+  <div class="field">
+    <%= f.label :insurance %><br />
+    <%= f.text_field :insurance %>
+  </div>
+  <div class="field">
+    <%= f.label :misc_cost %><br />
+    <%= f.text_field :misc_cost %>
+  </div>
+  <div class="field">
+    <%= f.label :kilometres_accumulated %><br />
+    <%= f.text_field :kilometres_accumulated %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

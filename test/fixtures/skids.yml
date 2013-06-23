@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  shipment_id: 1
+  company_id: 1
+  product_desc: MyString
+  weight: 
+  oversized: false
+  pickup_location: MyString
+  delivery_location: MyString
+  pickup_time: 2013-06-23 09:43:42
+  delivery_time: 2013-06-23 09:43:42
+  warehouse_delivery_time: 2013-06-23 09:43:42
+  warehouse_pickup_time: 2013-06-23 09:43:42
+  skid_count: 1
+
+two:
+  shipment_id: 1
+  company_id: 1
+  product_desc: MyString
+  weight: 
+  oversized: false
+  pickup_location: MyString
+  delivery_location: MyString
+  pickup_time: 2013-06-23 09:43:42
+  delivery_time: 2013-06-23 09:43:42
+  warehouse_delivery_time: 2013-06-23 09:43:42
+  warehouse_pickup_time: 2013-06-23 09:43:42
+  skid_count: 1

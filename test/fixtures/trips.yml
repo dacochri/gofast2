@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  truck_id: 1
+  trailer_id: 1
+  start_date: 2013-06-23
+  end_date: 2013-06-23
+  driver_pay: 
+  load_bar_count: 1
+  lease: 
+  insurance: 
+  misc_cost: 
+  kilometres_accumulated: 
+
+two:
+  truck_id: 1
+  trailer_id: 1
+  start_date: 2013-06-23
+  end_date: 2013-06-23
+  driver_pay: 
+  load_bar_count: 1
+  lease: 
+  insurance: 
+  misc_cost: 
+  kilometres_accumulated: 

@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  last_service_id: 1
+  last_safety_id: 1
+  trailer_no: 1
+  type: 
+  license_plate: MyString
+  make: MyString
+  model: MyString
+  manufactured_year: 1
+  vin_number: MyString
+  next_service_date: 2013-06-23
+  next_safety_date: 2013-06-23
+
+two:
+  last_service_id: 1
+  last_safety_id: 1
+  trailer_no: 1
+  type: 
+  license_plate: MyString
+  make: MyString
+  model: MyString
+  manufactured_year: 1
+  vin_number: MyString
+  next_service_date: 2013-06-23
+  next_safety_date: 2013-06-23

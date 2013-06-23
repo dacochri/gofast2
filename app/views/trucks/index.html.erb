@@ -1,0 +1,49 @@
+<h1>Listing trucks</h1>
+
+<table>
+  <tr>
+    <th>Last service</th>
+    <th>Last safety</th>
+    <th>Truck no</th>
+    <th>Type</th>
+    <th>License plate</th>
+    <th>License expires</th>
+    <th>Owned</th>
+    <th>Make</th>
+    <th>Model</th>
+    <th>Manufactured year</th>
+    <th>Vin number</th>
+    <th>Next service kilometres</th>
+    <th>Next safety date</th>
+    <th>Total kilometres</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @trucks.each do |truck| %>
+  <tr>
+    <td><%= truck.last_service_id %></td>
+    <td><%= truck.last_safety_id %></td>
+    <td><%= truck.truck_no %></td>
+    <td><%= truck.type %></td>
+    <td><%= truck.license_plate %></td>
+    <td><%= truck.license_expires %></td>
+    <td><%= truck.owned %></td>
+    <td><%= truck.make %></td>
+    <td><%= truck.model %></td>
+    <td><%= truck.manufactured_year %></td>
+    <td><%= truck.vin_number %></td>
+    <td><%= truck.next_service_kilometres %></td>
+    <td><%= truck.next_safety_date %></td>
+    <td><%= truck.total_kilometres %></td>
+    <td><%= link_to 'Show', truck %></td>
+    <td><%= link_to 'Edit', edit_truck_path(truck) %></td>
+    <td><%= link_to 'Destroy', truck, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Truck', new_truck_path %>

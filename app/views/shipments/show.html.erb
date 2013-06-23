@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Broker:</b>
+  <%= @shipment.broker_id %>
+</p>
+
+<p>
+  <b>Driver:</b>
+  <%= @shipment.driver_id %>
+</p>
+
+<p>
+  <b>Customer:</b>
+  <%= @shipment.customer_id %>
+</p>
+
+<p>
+  <b>Trip:</b>
+  <%= @shipment.trip_id %>
+</p>
+
+<p>
+  <b>Shipment no:</b>
+  <%= @shipment.shipment_no %>
+</p>
+
+<p>
+  <b>Pickup time:</b>
+  <%= @shipment.pickup_time %>
+</p>
+
+<p>
+  <b>Delivery time:</b>
+  <%= @shipment.delivery_time %>
+</p>
+
+<p>
+  <b>Rate:</b>
+  <%= @shipment.rate %>
+</p>
+
+<p>
+  <b>Skid count:</b>
+  <%= @shipment.skid_count %>
+</p>
+
+<p>
+  <b>Partial:</b>
+  <%= @shipment.partial %>
+</p>
+
+<p>
+  <b>Distance:</b>
+  <%= @shipment.distance %>
+</p>
+
+<p>
+  <b>Cartage:</b>
+  <%= @shipment.cartage %>
+</p>
+
+
+<%= link_to 'Edit', edit_shipment_path(@shipment) %> |
+<%= link_to 'Back', shipments_path %>

@@ -1,0 +1,41 @@
+<h1>Listing trips</h1>
+
+<table>
+  <tr>
+    <th>Truck</th>
+    <th>Trailer</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th>Driver pay</th>
+    <th>Load bar count</th>
+    <th>Lease</th>
+    <th>Insurance</th>
+    <th>Misc cost</th>
+    <th>Kilometres accumulated</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @trips.each do |trip| %>
+  <tr>
+    <td><%= trip.truck_id %></td>
+    <td><%= trip.trailer_id %></td>
+    <td><%= trip.start_date %></td>
+    <td><%= trip.end_date %></td>
+    <td><%= trip.driver_pay %></td>
+    <td><%= trip.load_bar_count %></td>
+    <td><%= trip.lease %></td>
+    <td><%= trip.insurance %></td>
+    <td><%= trip.misc_cost %></td>
+    <td><%= trip.kilometres_accumulated %></td>
+    <td><%= link_to 'Show', trip %></td>
+    <td><%= link_to 'Edit', edit_trip_path(trip) %></td>
+    <td><%= link_to 'Destroy', trip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Trip', new_trip_path %>

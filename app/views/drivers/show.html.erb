@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Truck:</b>
+  <%= @driver.truck_id %>
+</p>
+
+<p>
+  <b>Trailer:</b>
+  <%= @driver.trailer_id %>
+</p>
+
+<p>
+  <b>First name:</b>
+  <%= @driver.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @driver.last_name %>
+</p>
+
+<p>
+  <b>Street:</b>
+  <%= @driver.street %>
+</p>
+
+<p>
+  <b>Unit:</b>
+  <%= @driver.unit %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @driver.city %>
+</p>
+
+<p>
+  <b>Postal code:</b>
+  <%= @driver.postal_code %>
+</p>
+
+<p>
+  <b>Home phone:</b>
+  <%= @driver.home_phone %>
+</p>
+
+<p>
+  <b>Cell phone:</b>
+  <%= @driver.cell_phone %>
+</p>
+
+<p>
+  <b>Business name:</b>
+  <%= @driver.business_name %>
+</p>
+
+<p>
+  <b>Hst no:</b>
+  <%= @driver.hst_no %>
+</p>
+
+<p>
+  <b>Comments:</b>
+  <%= @driver.comments %>
+</p>
+
+
+<%= link_to 'Edit', edit_driver_path(@driver) %> |
+<%= link_to 'Back', drivers_path %>

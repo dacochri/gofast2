@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Vehicle:</b>
+  <%= @maintenance.vehicle_id %>
+</p>
+
+<p>
+  <b>Trip:</b>
+  <%= @maintenance.trip_id %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @maintenance.date %>
+</p>
+
+<p>
+  <b>Cost:</b>
+  <%= @maintenance.cost %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @maintenance.type %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @maintenance.description %>
+</p>
+
+<p>
+  <b>Kilometres:</b>
+  <%= @maintenance.kilometres %>
+</p>
+
+
+<%= link_to 'Edit', edit_maintenance_path(@maintenance) %> |
+<%= link_to 'Back', maintenances_path %>

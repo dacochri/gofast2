@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Company:</b>
+  <%= @cartage.company_id %>
+</p>
+
+<p>
+  <b>Trailer:</b>
+  <%= @cartage.trailer_id %>
+</p>
+
+<p>
+  <b>Shipment:</b>
+  <%= @cartage.shipment_id %>
+</p>
+
+<p>
+  <b>Pickup time:</b>
+  <%= @cartage.pickup_time %>
+</p>
+
+<p>
+  <b>Delivery time:</b>
+  <%= @cartage.delivery_time %>
+</p>
+
+<p>
+  <b>Driver name:</b>
+  <%= @cartage.driver_name %>
+</p>
+
+<p>
+  <b>Cost:</b>
+  <%= @cartage.cost %>
+</p>
+
+
+<%= link_to 'Edit', edit_cartage_path(@cartage) %> |
+<%= link_to 'Back', cartages_path %>

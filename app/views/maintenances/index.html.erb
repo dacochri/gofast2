@@ -1,0 +1,35 @@
+<h1>Listing maintenances</h1>
+
+<table>
+  <tr>
+    <th>Vehicle</th>
+    <th>Trip</th>
+    <th>Date</th>
+    <th>Cost</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Kilometres</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @maintenances.each do |maintenance| %>
+  <tr>
+    <td><%= maintenance.vehicle_id %></td>
+    <td><%= maintenance.trip_id %></td>
+    <td><%= maintenance.date %></td>
+    <td><%= maintenance.cost %></td>
+    <td><%= maintenance.type %></td>
+    <td><%= maintenance.description %></td>
+    <td><%= maintenance.kilometres %></td>
+    <td><%= link_to 'Show', maintenance %></td>
+    <td><%= link_to 'Edit', edit_maintenance_path(maintenance) %></td>
+    <td><%= link_to 'Destroy', maintenance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Maintenance', new_maintenance_path %>

@@ -1,0 +1,65 @@
+<%= form_for(@skid) do |f| %>
+  <% if @skid.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@skid.errors.count, "error") %> prohibited this skid from being saved:</h2>
+
+      <ul>
+      <% @skid.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :shipment_id %><br />
+    <%= f.number_field :shipment_id %>
+  </div>
+  <div class="field">
+    <%= f.label :company_id %><br />
+    <%= f.number_field :company_id %>
+  </div>
+  <div class="field">
+    <%= f.label :product_desc %><br />
+    <%= f.text_field :product_desc %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br />
+    <%= f.text_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :oversized %><br />
+    <%= f.check_box :oversized %>
+  </div>
+  <div class="field">
+    <%= f.label :pickup_location %><br />
+    <%= f.text_field :pickup_location %>
+  </div>
+  <div class="field">
+    <%= f.label :delivery_location %><br />
+    <%= f.text_field :delivery_location %>
+  </div>
+  <div class="field">
+    <%= f.label :pickup_time %><br />
+    <%= f.datetime_select :pickup_time %>
+  </div>
+  <div class="field">
+    <%= f.label :delivery_time %><br />
+    <%= f.datetime_select :delivery_time %>
+  </div>
+  <div class="field">
+    <%= f.label :warehouse_delivery_time %><br />
+    <%= f.datetime_select :warehouse_delivery_time %>
+  </div>
+  <div class="field">
+    <%= f.label :warehouse_pickup_time %><br />
+    <%= f.datetime_select :warehouse_pickup_time %>
+  </div>
+  <div class="field">
+    <%= f.label :skid_count %><br />
+    <%= f.number_field :skid_count %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

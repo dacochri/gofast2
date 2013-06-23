@@ -1,0 +1,75 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Last service:</b>
+  <%= @truck.last_service_id %>
+</p>
+
+<p>
+  <b>Last safety:</b>
+  <%= @truck.last_safety_id %>
+</p>
+
+<p>
+  <b>Truck no:</b>
+  <%= @truck.truck_no %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @truck.type %>
+</p>
+
+<p>
+  <b>License plate:</b>
+  <%= @truck.license_plate %>
+</p>
+
+<p>
+  <b>License expires:</b>
+  <%= @truck.license_expires %>
+</p>
+
+<p>
+  <b>Owned:</b>
+  <%= @truck.owned %>
+</p>
+
+<p>
+  <b>Make:</b>
+  <%= @truck.make %>
+</p>
+
+<p>
+  <b>Model:</b>
+  <%= @truck.model %>
+</p>
+
+<p>
+  <b>Manufactured year:</b>
+  <%= @truck.manufactured_year %>
+</p>
+
+<p>
+  <b>Vin number:</b>
+  <%= @truck.vin_number %>
+</p>
+
+<p>
+  <b>Next service kilometres:</b>
+  <%= @truck.next_service_kilometres %>
+</p>
+
+<p>
+  <b>Next safety date:</b>
+  <%= @truck.next_safety_date %>
+</p>
+
+<p>
+  <b>Total kilometres:</b>
+  <%= @truck.total_kilometres %>
+</p>
+
+
+<%= link_to 'Edit', edit_truck_path(@truck) %> |
+<%= link_to 'Back', trucks_path %>

@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  truck_id: 1
+  trailer_id: 1
+  first_name: MyString
+  last_name: MyString
+  street: MyString
+  unit: MyString
+  city: MyString
+  postal_code: MyString
+  home_phone: 1
+  cell_phone: 1
+  business_name: MyString
+  hst_no: MyString
+  comments: MyString
+
+two:
+  truck_id: 1
+  trailer_id: 1
+  first_name: MyString
+  last_name: MyString
+  street: MyString
+  unit: MyString
+  city: MyString
+  postal_code: MyString
+  home_phone: 1
+  cell_phone: 1
+  business_name: MyString
+  hst_no: MyString
+  comments: MyString

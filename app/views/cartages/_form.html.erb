@@ -1,0 +1,45 @@
+<%= form_for(@cartage) do |f| %>
+  <% if @cartage.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cartage.errors.count, "error") %> prohibited this cartage from being saved:</h2>
+
+      <ul>
+      <% @cartage.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :company_id %><br />
+    <%= f.number_field :company_id %>
+  </div>
+  <div class="field">
+    <%= f.label :trailer_id %><br />
+    <%= f.number_field :trailer_id %>
+  </div>
+  <div class="field">
+    <%= f.label :shipment_id %><br />
+    <%= f.number_field :shipment_id %>
+  </div>
+  <div class="field">
+    <%= f.label :pickup_time %><br />
+    <%= f.datetime_select :pickup_time %>
+  </div>
+  <div class="field">
+    <%= f.label :delivery_time %><br />
+    <%= f.datetime_select :delivery_time %>
+  </div>
+  <div class="field">
+    <%= f.label :driver_name %><br />
+    <%= f.text_field :driver_name %>
+  </div>
+  <div class="field">
+    <%= f.label :cost %><br />
+    <%= f.text_field :cost %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

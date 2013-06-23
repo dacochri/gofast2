@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Shipment:</b>
+  <%= @skid.shipment_id %>
+</p>
+
+<p>
+  <b>Company:</b>
+  <%= @skid.company_id %>
+</p>
+
+<p>
+  <b>Product desc:</b>
+  <%= @skid.product_desc %>
+</p>
+
+<p>
+  <b>Weight:</b>
+  <%= @skid.weight %>
+</p>
+
+<p>
+  <b>Oversized:</b>
+  <%= @skid.oversized %>
+</p>
+
+<p>
+  <b>Pickup location:</b>
+  <%= @skid.pickup_location %>
+</p>
+
+<p>
+  <b>Delivery location:</b>
+  <%= @skid.delivery_location %>
+</p>
+
+<p>
+  <b>Pickup time:</b>
+  <%= @skid.pickup_time %>
+</p>
+
+<p>
+  <b>Delivery time:</b>
+  <%= @skid.delivery_time %>
+</p>
+
+<p>
+  <b>Warehouse delivery time:</b>
+  <%= @skid.warehouse_delivery_time %>
+</p>
+
+<p>
+  <b>Warehouse pickup time:</b>
+  <%= @skid.warehouse_pickup_time %>
+</p>
+
+<p>
+  <b>Skid count:</b>
+  <%= @skid.skid_count %>
+</p>
+
+
+<%= link_to 'Edit', edit_skid_path(@skid) %> |
+<%= link_to 'Back', skids_path %>

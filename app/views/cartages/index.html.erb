@@ -1,0 +1,35 @@
+<h1>Listing cartages</h1>
+
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Trailer</th>
+    <th>Shipment</th>
+    <th>Pickup time</th>
+    <th>Delivery time</th>
+    <th>Driver name</th>
+    <th>Cost</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cartages.each do |cartage| %>
+  <tr>
+    <td><%= cartage.company_id %></td>
+    <td><%= cartage.trailer_id %></td>
+    <td><%= cartage.shipment_id %></td>
+    <td><%= cartage.pickup_time %></td>
+    <td><%= cartage.delivery_time %></td>
+    <td><%= cartage.driver_name %></td>
+    <td><%= cartage.cost %></td>
+    <td><%= link_to 'Show', cartage %></td>
+    <td><%= link_to 'Edit', edit_cartage_path(cartage) %></td>
+    <td><%= link_to 'Destroy', cartage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Cartage', new_cartage_path %>

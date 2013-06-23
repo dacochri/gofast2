@@ -1,0 +1,45 @@
+<h1>Listing skids</h1>
+
+<table>
+  <tr>
+    <th>Shipment</th>
+    <th>Company</th>
+    <th>Product desc</th>
+    <th>Weight</th>
+    <th>Oversized</th>
+    <th>Pickup location</th>
+    <th>Delivery location</th>
+    <th>Pickup time</th>
+    <th>Delivery time</th>
+    <th>Warehouse delivery time</th>
+    <th>Warehouse pickup time</th>
+    <th>Skid count</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @skids.each do |skid| %>
+  <tr>
+    <td><%= skid.shipment_id %></td>
+    <td><%= skid.company_id %></td>
+    <td><%= skid.product_desc %></td>
+    <td><%= skid.weight %></td>
+    <td><%= skid.oversized %></td>
+    <td><%= skid.pickup_location %></td>
+    <td><%= skid.delivery_location %></td>
+    <td><%= skid.pickup_time %></td>
+    <td><%= skid.delivery_time %></td>
+    <td><%= skid.warehouse_delivery_time %></td>
+    <td><%= skid.warehouse_pickup_time %></td>
+    <td><%= skid.skid_count %></td>
+    <td><%= link_to 'Show', skid %></td>
+    <td><%= link_to 'Edit', edit_skid_path(skid) %></td>
+    <td><%= link_to 'Destroy', skid, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Skid', new_skid_path %>

@@ -1,0 +1,43 @@
+<h1>Listing trailers</h1>
+
+<table>
+  <tr>
+    <th>Last service</th>
+    <th>Last safety</th>
+    <th>Trailer no</th>
+    <th>Type</th>
+    <th>License plate</th>
+    <th>Make</th>
+    <th>Model</th>
+    <th>Manufactured year</th>
+    <th>Vin number</th>
+    <th>Next service date</th>
+    <th>Next safety date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @trailers.each do |trailer| %>
+  <tr>
+    <td><%= trailer.last_service_id %></td>
+    <td><%= trailer.last_safety_id %></td>
+    <td><%= trailer.trailer_no %></td>
+    <td><%= trailer.type %></td>
+    <td><%= trailer.license_plate %></td>
+    <td><%= trailer.make %></td>
+    <td><%= trailer.model %></td>
+    <td><%= trailer.manufactured_year %></td>
+    <td><%= trailer.vin_number %></td>
+    <td><%= trailer.next_service_date %></td>
+    <td><%= trailer.next_safety_date %></td>
+    <td><%= link_to 'Show', trailer %></td>
+    <td><%= link_to 'Edit', edit_trailer_path(trailer) %></td>
+    <td><%= link_to 'Destroy', trailer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Trailer', new_trailer_path %>

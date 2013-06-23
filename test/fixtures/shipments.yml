@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  broker_id: 1
+  driver_id: 1
+  customer_id: 1
+  trip_id: 1
+  shipment_no: 1
+  pickup_time: 2013-06-23 09:45:08
+  delivery_time: 2013-06-23 09:45:08
+  rate: 
+  skid_count: 1
+  partial: false
+  distance: 
+  cartage: false
+
+two:
+  broker_id: 1
+  driver_id: 1
+  customer_id: 1
+  trip_id: 1
+  shipment_no: 1
+  pickup_time: 2013-06-23 09:45:08
+  delivery_time: 2013-06-23 09:45:08
+  rate: 
+  skid_count: 1
+  partial: false
+  distance: 
+  cartage: false

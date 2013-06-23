@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  vehicle_id: 1
+  trip_id: 1
+  date: 2013-06-23
+  cost: 
+  type: 
+  description: MyString
+  kilometres: 1
+
+two:
+  vehicle_id: 1
+  trip_id: 1
+  date: 2013-06-23
+  cost: 
+  type: 
+  description: MyString
+  kilometres: 1

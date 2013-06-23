@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  company_id: 1
+  trailer_id: 1
+  shipment_id: 1
+  pickup_time: 2013-06-23 09:40:43
+  delivery_time: 2013-06-23 09:40:43
+  driver_name: MyString
+  cost: 
+
+two:
+  company_id: 1
+  trailer_id: 1
+  shipment_id: 1
+  pickup_time: 2013-06-23 09:40:43
+  delivery_time: 2013-06-23 09:40:43
+  driver_name: MyString
+  cost: 

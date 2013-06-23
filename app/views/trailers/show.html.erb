@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Last service:</b>
+  <%= @trailer.last_service_id %>
+</p>
+
+<p>
+  <b>Last safety:</b>
+  <%= @trailer.last_safety_id %>
+</p>
+
+<p>
+  <b>Trailer no:</b>
+  <%= @trailer.trailer_no %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @trailer.type %>
+</p>
+
+<p>
+  <b>License plate:</b>
+  <%= @trailer.license_plate %>
+</p>
+
+<p>
+  <b>Make:</b>
+  <%= @trailer.make %>
+</p>
+
+<p>
+  <b>Model:</b>
+  <%= @trailer.model %>
+</p>
+
+<p>
+  <b>Manufactured year:</b>
+  <%= @trailer.manufactured_year %>
+</p>
+
+<p>
+  <b>Vin number:</b>
+  <%= @trailer.vin_number %>
+</p>
+
+<p>
+  <b>Next service date:</b>
+  <%= @trailer.next_service_date %>
+</p>
+
+<p>
+  <b>Next safety date:</b>
+  <%= @trailer.next_safety_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_trailer_path(@trailer) %> |
+<%= link_to 'Back', trailers_path %>

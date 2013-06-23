@@ -7,8 +7,31 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div>
+    <header>
+      <hgroup>
+        <h1>
+          <%= link_to '/' do %>
+            <%= image_tag 'logo.png', :alt => 'GoFast Express Inc.' %>
+          <% end %>
+        </h1>
+        <h2><em>Your #1 Source for Transportation Services</em></h2>
+      </hgroup>
+    </header>
+  </div>
+  <div>
+    <%= render '/layouts/out_nav' %>
+  </div>
+  <div>
+    <div id="content">
+      <%= yield %>
+    </div>
+  </div>
+  <div>
+    <footer>
+      <%= render '/layouts/out_nav' %>
+      <p>&copy; 2013 GoFast Express Inc. All Rights Reserved.</p>
+    </footer>
+  </div>
 </body>
 </html>
