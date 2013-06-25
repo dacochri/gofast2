@@ -3,9 +3,9 @@ Gofast2::Application.routes.draw do
 
   get "index/index"
 
-  get "index/about"
+  get 'about' => 'index#about', :as => :about
 
-  get "index/contact"
+  get 'contact' => 'index#contact', :as => :contact
 
   resources :drivers
 
