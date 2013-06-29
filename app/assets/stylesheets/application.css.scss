@@ -19,7 +19,7 @@ body{
 }
 
 header{
-  background:none;
+  background: none;
   background: rgb(80, 181, 211); /* Old browsers */
   background: -moz-linear-gradient(-45deg, rgba(80, 181, 211, 1) 0%, rgba(0,115,153,1) 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(80, 181, 211, 1)), color-stop(100%, rgba(0, 115, 153, 1))); /* Chrome,Safari4+ */
@@ -29,37 +29,49 @@ header{
   background: linear-gradient(135deg, rgba(80, 181, 211, 1) 0%, rgba(0, 115, 153, 1) 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#50B5D3', endColorstr='#007399', GradientType=1); /* IE6-9 fallback on horizontal gradient */
   color: #CCC;
-}
-
-header img{
-  background: transparent;
-  color: #FFF;
-  padding: 0.5em;
-  border: none;
-}
-
-header a{
-  text-decoration:none;
-}
-
-header .ym-wbox {
-  padding: 1.5em;
-}
-
-header em{
-  font-family: "Jockey One", "Droid Sans", Arial, Helvetica, sans-serif;
-  font-size: 150%;
-  letter-spacing: 0.03em;
-  color: #EEE;
-}
-
-nav{
-  background: rgba(0, 0, 0, 0.5);
-  border-bottom: 2px solid #F60;
-}
-
-nav a{
-  font-family: "Jockey One", "Droid Sans", Arial, Helvetica, sans-serif;
+  
+  img{
+    background: transparent;
+    color: #FFF;
+    padding: 0.5em;
+    border: none;
+  }
+  
+  a{
+    text-decoration: none;
+  }
+  
+  .ym-wbox{
+    padding: 1.5em;
+  }
+  
+  h1{
+    display: inline;
+    
+    a:hover{
+      background-color: transparent;
+    }
+  }
+  
+  h2{
+    display: inline;
+    font-size: 150%;
+    letter-spacing: 0.03em;
+    color: #EEE;
+    font-family: "Jockey One", "Droid Sans", Arial, Helvetica, sans-serif;
+    line-height: 6.5em;
+    padding: 0 7.5em;
+    float: right;
+  }
+  
+  nav{
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid #F60;
+    
+    a{
+      font-family: "Jockey One", "Droid Sans", Arial, Helvetica, sans-serif;
+    }
+  }
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -91,13 +103,13 @@ p{
 #announcements{
   padding: 1.42857em;
   background: #EEE;
-}
-
-#announcements h3{
-  color: #F60;
-  font-family: "Jockey One", "Droid Sans", Arial, Helvetica, sans-serif;
-  letter-spacing: 0px;
-  font-weight: normal;
+  
+  h3{
+    color: #F60;
+    letter-spacing: 0px;
+    font-weight: normal;
+    font-family: "Jockey One", "Droid Sans", Arial, Helvetica, sans-serif;
+  }
 }
 
 .ym-hlist{
@@ -106,51 +118,54 @@ p{
   overflow: hidden;
   position: relative;
   background: transparent;
+  
+  ul{
+    margin: 0;
+    padding: 0;
+    display: inline;
+    float: left;
+  }
+  
+  ul{
+  
+    li{
+      display: inline;
+      float: left;
+      font-size: 1.0em;
+      list-style-type: none;
+      margin: 0;
+      
+      a, strong{
+        background: transparent;
+        color: #CCC;
+        display: block;
+        font-size: 1em;
+        padding: 0.8em;
+        font-weight: normal;
+        font-size: 120%;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: all 200ms ease-in-out;
+        text-shadow: none;
+        line-height: 1em;
+        
+        &:focus, &:hover, &:active{
+          color: #222;
+          border-radius: 0;
+          text-decoration: none;
+          outline: 0 none;
+          background-color: #EEE;
+        }
+        
+        &.active{
+          color: #F60;
+        }
+      }
+    }
+  }
 }
 
-.ym-hlist ul{
-  margin: 0;
-  padding: 0;
-  display: inline;
-  float: left;
-}
-
-.ym-hlist ul li{
-  display: inline;
-  float: left;
-  font-size: 1.0em;
-  list-style-type: none;
-  margin: 0;
-}
-
-.ym-hlist ul li a, .ym-hlist ul li strong{
-  padding: none;
-  background: transparent;
-  color: #CCC;
-  display: block;
-  font-size: 1em;
-  padding: 0.8em;
-  font-weight: normal;
-  font-size: 120%;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: all 200ms ease-in-out;
-  text-shadow: none;
-  line-height: 1em;
-}
-
-.ym-hlist ul li a:focus, .ym-hlist ul li a:hover, .ym-hlist ul li a:active{
-  color: #222;
-  border-radius: 0;
-  text-decoration: none;
-  outline: 0 none;
-  background: #EEE;
-}
-
-.ym-hlist ul li a.active{
-  color: #F60;
-}
-
+/* do this with a mixin */
 .ym-hlist ul li a.active strong, .ym-hlist ul li a.active:focus, .ym-hlist ul li a.active:hover, .ym-hlist ul li a.active:active{
   background: #F60;
   color: #222;
@@ -160,8 +175,8 @@ p{
 footer {
   background: #EEE;
   color: #444;
-}
-
-footer p {
-  margin: 0;
+  
+  p{
+    margin: 0;
+  }
 }
