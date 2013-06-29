@@ -9,25 +9,27 @@
   <link href='http://fonts.googleapis.com/css?family=Jockey+One' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <header>
-      <hgroup class="ym-wrapper">
-          <%= link_to '/' do %>
-            <%= image_tag 'logo.png', :size => "250x82", :alt => 'GoFast Express Inc.' %>
-          <% end %>
-        <em>Your #1 Source for Transportation Services</em>
-      </hgroup>
-        <nav>
-          <div class="ym-wrapper">
-            <div class="ym-hlist">
-            <%= render '/layouts/out_nav' %>
-            </div>
-          </div>
-        </nav>
-    </header>
+  <header>
+    <hgroup class="ym-wrapper">
+      <h1>
+        <%= link_to '/' do %>
+          <%= image_tag 'logo.png', :size => "250x82", :alt => 'GoFast Express Inc.' %>
+        <% end %>
+      </h1>
+      <h2><em>Your #1 Source for Transportation Services</em></h2>
+    </hgroup>
+    <nav>
+      <div class="ym-wrapper">
+        <div class="ym-hlist">
+          <%= render '/layouts/out_nav' %>
+        </div>
+      </div>
+    </nav>
+  </header>
   <div>
     <div id="content" class="ym-wrapper">
       <div class="ym-wbox">
-      <%= yield %>
+        <%= yield %>
       </div>
     </div>
   </div>
