@@ -1,7 +1,9 @@
-<p class = "info" id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 
-<h2><%= @job_posting.title %></h2>
-
+<p>
+  <b>Title:</b>
+  <%= @job_posting.title %>
+</p>
 
 <p>
   <b>Post date:</b>
