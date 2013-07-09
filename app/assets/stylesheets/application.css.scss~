@@ -39,7 +39,7 @@ body{
   direction: ltr;
   background:rgb(250,250,250);
   a{
-    color:rgb(40, 141, 171);
+    color:rgb(20, 121, 151);
   }
   a:hover{
     background:none;
