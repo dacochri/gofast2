@@ -9,8 +9,6 @@
   <link href='http://fonts.googleapis.com/css?family=Jockey+One' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <div id="wrap">
-  <div id="main">
   <header>
     <hgroup class="ym-wrapper">
       <h1>
@@ -35,8 +33,7 @@
       </div>
     </div>
   </div>
-  </div>
-  </div>
+  <div>
     <footer>
       <div class="ym-wrapper">
         <div class="ym-wbox">

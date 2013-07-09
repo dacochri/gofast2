@@ -13,9 +13,31 @@
  *= require_tree .
  */
 
+html, body {height: 100%;}
+
+#wrap {min-height: 100%;}
+
+#main {overflow:auto;
+	padding-bottom: 90px;}  /* must be same height as the footer */
+
+footer {position: relative;
+	margin-top: -90px; /* negative value of footer height */
+	height: 90px;
+	clear:both;} 
+
+/*Opera Fix*/
+body:before {/* thanks to Maleika (Kohoutec)*/
+content:"";
+height:100%;
+float:left;
+width:0;
+margin-top:-32767px;/* thank you Erik J - negate effect of float*/
+}
+
 body{
   font-family: "Droid Sans", Arial, Helvetica, sans-serif;
   direction: ltr;
+  background:rgb(250,250,250);
 }
 
 header{
@@ -174,10 +196,19 @@ p{
 }
 
 footer {
-  background: #EEE;
-  color: #444;
-  
+
+  color: #ddd;
+  background:#222;
   p{
     margin: 0;
+  }
+  a{
+    color:rgb(80, 181, 211);
+  }
+  a:hover
+  {
+    color:#F60;
+    text-decoration:underline;
+    background:none;
   }
 }
