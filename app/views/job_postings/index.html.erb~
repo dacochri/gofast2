@@ -1,6 +1,6 @@
 <h1>Job Postings</h1>
 
-<table>
+<table class="bordertable">
   <thead>
   <tr>
     <th>Title</th>
