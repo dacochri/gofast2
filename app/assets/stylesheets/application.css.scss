@@ -12,7 +12,7 @@
  *= require_self
  *= require_tree .
  */
-
+/*Below is the stuff for the sticky footer*/
 html, body {height: 100%;}
 
 #wrap {min-height: 100%;}
@@ -34,6 +34,8 @@ width:0;
 margin-top:-32767px;/* thank you Erik J - negate effect of float*/
 }
 
+/*End of sticky footer */
+
 body{
   font-family: "Droid Sans", Arial, Helvetica, sans-serif;
   direction: ltr;
@@ -49,6 +51,7 @@ body{
 }
 
 header{
+  /*css generated gradient for the header*/
   background: none;
   background: rgb(80, 181, 211); /* Old browsers */
   background: -moz-linear-gradient(-45deg, rgba(80, 181, 211, 1) 0%, rgba(0,115,153,1) 100%); /* FF3.6+ */
@@ -115,6 +118,7 @@ p{
   font-size: 1.1em;
 }
 
+/*In case we need to use a 3 column layout, I've made it here so they go in chronological order. */ 
 .ym-col1{
   width: 33%;
   margin: 0;
@@ -131,6 +135,11 @@ p{
   margin-right: 0%;
 } /* right column */
 
+form{
+  border: 1px solid #aaa;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
 #announcements{
   padding: 1.42857em;
   background: #EEE;
@@ -142,7 +151,7 @@ p{
     font-family: "Jockey One", "Droid Sans", Arial, Helvetica, sans-serif;
   }
 }
-
+/*yaml horizontal list (the nav bar)*/
 .ym-hlist{
   /* (en) containing floats in IE */
   width: 100%;
