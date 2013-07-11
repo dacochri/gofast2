@@ -1,4 +1,4 @@
-<%= form_for@job_posting, :class => 'ym-form' do |f| %>
+<%= form_for@job_posting do |f| %>
   <% if @job_posting.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@job_posting.errors.count, "error") %> prohibited this job_posting from being saved:</h2>
@@ -32,6 +32,6 @@
     <%= f.text_field :requirements %>
   </div>
   <div class="actions ym-fbox-footer ">
-    <%= f.submit 'Update', :class => 'ym-button ym-save' %>
+    <%= f.submit %>
   </div>
 <% end %>

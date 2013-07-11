@@ -1,9 +1,9 @@
 <section>
   <h2>View Announcement <%= @announcement.id %></h2>
-  <p id="notice"><%= notice %></p>
+  <p class="highlight" id="notice"><%= notice %></p>
   <p><strong>Posted by:</strong> <%= @announcement.posted_by %></p>
   <p><strong>Title:</strong> <%= @announcement.title %></p>
   <p><strong>Content:</strong> <%= @announcement.content %></p>
   <p><strong>Date posted:</strong> <%= @announcement.date_posted %></p>
-  <p><%= link_to 'Edit', edit_announcement_path(@announcement) %> | <%= link_to 'Back', announcements_path %></p>
+  <p><%= link_to 'Edit', edit_announcement_path(@announcement), :class => 'ym-button ym-edit' %> <%= link_to 'Back', announcements_path, :class => 'ym-button ym-close' %></p>
 </section>
