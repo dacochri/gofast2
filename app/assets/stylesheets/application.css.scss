@@ -140,6 +140,173 @@ form{
     -webkit-box-shadow: none;
     box-shadow: none;
 }
+.ym-button,
+  form button,
+  form input[type="button"],
+  form input[type="reset"],
+  form input[type="submit"]{
+  background:#ecf0f1;
+  border-radius:0.1em;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-shadow:none;
+  transition: all 200ms ease-in-out;
+  border:1px solid rgba(0,0,0,0.3);
+}
+.ym-button:hover,
+  form button:hover,
+  form input[type="button"]:hover,
+  form input[type="reset"]:hover,
+  form input[type="submit"]:hover {
+  background:#bdc3c7;
+}
+  .ym-button:active,
+  form button:active,
+  form input[type="button"]:active,
+  form input[type="reset"]:active,
+  form input[type="submit"]:active {
+    -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
+    background:#bdc3c7;
+    zoom: 1;
+    position: relative;
+    top: 0px;
+  }
+  .ym-button:focus,
+  form button:focus,
+  form input[type="button"]:focus,
+  form input[type="reset"]:focus,
+  form input[type="submit"]:focus {
+    outline: 0;
+    background: #fafafa;
+  }
+form button:before,
+  .ym-button:before {
+  background:none;
+  background:rgba(0,0,0,0.1);
+  border-right:1px solid rgba(0,0,0,0.2);
+  -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+    font-weight:normal;
+ }
+.ym-button.ym-success,
+  form button.ym-success,
+  form input[type="button"].ym-success,
+  form input[type="reset"].ym-success,
+  form input[type="submit"].ym-success {
+  background:#1abc9c;
+  border-radius:0.1em;
+  -webkit-box-shadow: none;
+    box-shadow: none;
+  text-shadow: none;
+  border:1px solid rgba(0,0,0,0.3);
+  transition: all 200ms ease-in-out;
+}
+.ym-button.ym-success:hover,
+  form button.ym-success:hover,
+  form input[type="button"].ym-success:hover,
+  form input[type="reset"].ym-success:hover,
+  form input[type="submit"].ym-success:hover {
+    background: #16a085;
+    zoom: 1;
+  }
+  .ym-button.ym-success:active,
+  form button.ym-success:active,
+  form input[type="button"].ym-success:active,
+  form input[type="reset"].ym-success:active,
+  form input[type="submit"].ym-success:active {
+    -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
+    background:#16a085;
+    zoom: 1;
+  }
+  .ym-button.ym-success:focus,
+  form button.ym-success:focus,
+  form input[type="button"].ym-success:focus,
+  form input[type="reset"].ym-success:focus,
+  form input[type="submit"].ym-success:focus {
+    outline: 0;
+    background: #6c6;
+  }
+  .ym-button.ym-warning,
+  form button.ym-warning,
+  form input[type="button"].ym-warning,
+  form input[type="reset"].ym-warning,
+  form input[type="submit"].ym-warning {
+    background:#e67e22;
+  border-radius:0.1em;
+  -webkit-box-shadow: none;
+    box-shadow: none;
+  text-shadow: none;
+  border:1px solid rgba(0,0,0,0.3);
+  transition: all 200ms ease-in-out;
+  }
+  .ym-button.ym-warning:hover,
+  form button.ym-warning:hover,
+  form input[type="button"].ym-warning:hover,
+  form input[type="reset"].ym-warning:hover,
+  form input[type="submit"].ym-warning:hover {
+    background: #d35400;
+    zoom: 1;
+  }
+  .ym-button.ym-warning:active,
+  form button.ym-warning:active,
+  form input[type="button"].ym-warning:active,
+  form input[type="reset"].ym-warning:active,
+  form input[type="submit"].ym-warning:active {
+    -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
+    background: #d35400;
+    zoom: 1;
+  }
+  .ym-button.ym-warning:focus,
+  form button.ym-warning:focus,
+  form input[type="button"].ym-warning:focus,
+  form input[type="reset"].ym-warning:focus,
+  form input[type="submit"].ym-warning:focus {
+    outline: 0;
+    background: #da4;
+  }
+  .ym-button.ym-danger,
+  form button.ym-danger,
+  form input[type="button"].ym-danger,
+  form input[type="reset"].ym-danger,
+  form input[type="submit"].ym-danger {
+    background:#e74c3c;
+  border-radius:0.1em;
+  -webkit-box-shadow: none;
+    box-shadow: none;
+  text-shadow: none;
+  border:1px solid rgba(0,0,0,0.3);
+  transition: all 200ms ease-in-out;
+  }
+  .ym-button.ym-danger:hover,
+  form button.ym-danger:hover,
+  form input[type="button"].ym-danger:hover,
+  form input[type="reset"].ym-danger:hover,
+  form input[type="submit"].ym-danger:hover {
+    background: #c0392b;
+    zoom: 1;
+  }
+  .ym-button.ym-danger:active,
+  form button.ym-danger:active,
+  form input[type="button"].ym-danger:active,
+  form input[type="reset"].ym-danger:active,
+  form input[type="submit"].ym-danger:active {
+    -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
+    background: #c0392b;
+    zoom: 1;
+  }
+  .ym-button.ym-danger:focus,
+  form button.ym-danger:focus,
+  form input[type="button"].ym-danger:focus,
+  form input[type="reset"].ym-danger:focus,
+  form input[type="submit"].ym-danger:focus {
+    outline: 0;
+    background: #c66;
+  }
 #announcements{
   padding: 1.42857em;
   background: #EEE;
