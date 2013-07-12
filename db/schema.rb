@@ -84,11 +84,11 @@ ActiveRecord::Schema.define(:version => 20130623135402) do
     t.integer  "trip_id"
     t.date     "date"
     t.decimal  "cost"
-    t.string   "type"
+    t.string   "maintenance_type"
     t.string   "description"
     t.integer  "kilometres"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "shipments", :force => true do |t|
@@ -129,7 +129,7 @@ ActiveRecord::Schema.define(:version => 20130623135402) do
     t.integer  "last_service_id"
     t.integer  "last_safety_id"
     t.integer  "trailer_no"
-    t.string   "type"
+    t.string   "trailer_type"
     t.string   "license_plate"
     t.string   "make"
     t.string   "model"
@@ -160,7 +160,7 @@ ActiveRecord::Schema.define(:version => 20130623135402) do
     t.integer  "last_service_id"
     t.integer  "last_safety_id"
     t.integer  "truck_no"
-    t.string   "type"
+    t.string   "truck_type"
     t.string   "license_plate"
     t.date     "license_expires"
     t.boolean  "owned"

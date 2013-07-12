@@ -4,7 +4,7 @@ class CreateTrucks < ActiveRecord::Migration
       t.integer :last_service_id
       t.integer :last_safety_id
       t.integer :truck_no
-      t.string :type
+      t.string :truck_type
       t.string :license_plate
       t.date :license_expires
       t.boolean :owned

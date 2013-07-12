@@ -5,7 +5,7 @@ class CreateMaintenances < ActiveRecord::Migration
       t.integer :trip_id
       t.date :date
       t.decimal :cost
-      t.string :type
+      t.string :maintenance_type
       t.string :description
       t.integer :kilometres
 

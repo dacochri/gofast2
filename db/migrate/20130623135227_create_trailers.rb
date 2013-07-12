@@ -4,7 +4,7 @@ class CreateTrailers < ActiveRecord::Migration
       t.integer :last_service_id
       t.integer :last_safety_id
       t.integer :trailer_no
-      t.string :type
+      t.string :trailer_type
       t.string :license_plate
       t.string :make
       t.string :model
