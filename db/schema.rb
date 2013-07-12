@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(:version => 20130623135402) do
     t.string   "street"
     t.string   "unit"
     t.string   "city"
-    t.string   "privince"
+    t.string   "province"
     t.string   "postal_code"
     t.string   "email"
     t.integer  "primary_phone"
