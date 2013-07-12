@@ -6,7 +6,7 @@ class CreateCompanies < ActiveRecord::Migration
       t.string :street
       t.string :unit
       t.string :city
-      t.string :privince
+      t.string :province
       t.string :postal_code
       t.string :email
       t.integer :primary_phone
