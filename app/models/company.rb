@@ -1,3 +1,3 @@
 class Company < ActiveRecord::Base
-  attr_accessible :city, :contact_name, :email, :fax, :name, :postal_code, :primary_phone, :privince, :secondary_phone, :street, :type, :unit
+  attr_accessible :city, :company_type, :contact_name, :email, :fax, :name, :postal_code, :primary_phone, :province, :secondary_phone, :street, :unit
 end

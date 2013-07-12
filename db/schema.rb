@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20130623135402) do
   end
 
   create_table "companies", :force => true do |t|
-    t.string   "type"
+    t.string   "company_type"
     t.string   "name"
     t.string   "street"
     t.string   "unit"
