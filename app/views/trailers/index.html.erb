@@ -1,6 +1,7 @@
 <h1>Trailers</h1>
 
 <table>
+<thead>
   <tr>
     <th>Last service</th>
     <th>Last safety</th>
@@ -17,7 +18,8 @@
     <th></th>
     <th></th>
   </tr>
-
+</thead>
+<tbody>
 <% @trailers.each do |trailer| %>
   <tr>
     <td><%= trailer.last_service_id %></td>
@@ -31,13 +33,14 @@
     <td><%= trailer.vin_number %></td>
     <td><%= trailer.next_service_date %></td>
     <td><%= trailer.next_safety_date %></td>
-    <td><%= link_to 'Show', trailer %></td>
-    <td><%= link_to 'Edit', edit_trailer_path(trailer) %></td>
-    <td><%= link_to 'Destroy', trailer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', trailer, :class => 'ym-button ym-small ym-play ym-success' %></td>
+    <td><%= link_to 'Edit', edit_trailer_path(trailer), :class => 'ym-button ym-small ym-edit ym-warning' %></td>
+    <td><%= link_to 'Destroy', trailer, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'ym-button ym-small ym-delete ym-danger' %></td>
   </tr>
 <% end %>
+</tbody>
 </table>
 
 <br />
 
-<%= link_to 'New Trailer', new_trailer_path %>
+<%= link_to 'New Trailer', new_trailer_path, :class => 'ym-button ym-add' %>

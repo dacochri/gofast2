@@ -1,6 +1,7 @@
 <h1>Maintenance Records</h1>
 
 <table>
+  <thead>
   <tr>
     <th>Vehicle</th>
     <th>Trip</th>
@@ -13,7 +14,8 @@
     <th></th>
     <th></th>
   </tr>
-
+</thead>
+<tbody>
 <% @maintenances.each do |maintenance| %>
   <tr>
     <td><%= maintenance.vehicle_id %></td>
@@ -23,13 +25,14 @@
     <td><%= maintenance.type %></td>
     <td><%= maintenance.description %></td>
     <td><%= maintenance.kilometres %></td>
-    <td><%= link_to 'Show', maintenance %></td>
-    <td><%= link_to 'Edit', edit_maintenance_path(maintenance) %></td>
-    <td><%= link_to 'Destroy', maintenance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', maintenance, :class => 'ym-button ym-small ym-play ym-success' %></td>
+    <td><%= link_to 'Edit', edit_maintenance_path(maintenance), :class => 'ym-button ym-small ym-edit ym-warning' %></td>
+    <td><%= link_to 'Destroy', maintenance, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'ym-button ym-small ym-delete ym-danger' %></td>
   </tr>
 <% end %>
+</tbody>
 </table>
 
 <br />
 
-<%= link_to 'New Maintenance', new_maintenance_path %>
+<%= link_to 'New Maintenance', new_maintenance_path, :class => 'ym-button ym-add' %>

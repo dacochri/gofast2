@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p class="highlight" id="notice"><%= notice %></p>
 
 <p>
   <b>Company:</b>
@@ -36,5 +36,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_cartage_path(@cartage) %> |
-<%= link_to 'Back', cartages_path %>
+<%= link_to 'Edit', edit_cartage_path(@cartage), :class => 'ym-button ym-edit' %>
+<%= link_to 'Back', cartages_path, :class => 'ym-button ym-close' %>

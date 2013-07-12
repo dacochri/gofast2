@@ -1,6 +1,7 @@
 <h1>Trips</h1>
 
 <table>
+  <thead>
   <tr>
     <th>Truck</th>
     <th>Trailer</th>
@@ -16,7 +17,8 @@
     <th></th>
     <th></th>
   </tr>
-
+  </thead>
+  <tbody>
 <% @trips.each do |trip| %>
   <tr>
     <td><%= trip.truck_id %></td>
@@ -29,13 +31,14 @@
     <td><%= trip.insurance %></td>
     <td><%= trip.misc_cost %></td>
     <td><%= trip.kilometres_accumulated %></td>
-    <td><%= link_to 'Show', trip %></td>
-    <td><%= link_to 'Edit', edit_trip_path(trip) %></td>
-    <td><%= link_to 'Destroy', trip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', trip, :class => 'ym-button ym-small ym-play ym-success' %></td>
+    <td><%= link_to 'Edit', edit_trip_path(trip), :class => 'ym-button ym-small ym-edit ym-warning' %></td>
+    <td><%= link_to 'Destroy', trip, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'ym-button ym-small ym-delete ym-danger' %></td>
   </tr>
 <% end %>
+  </tbody>
 </table>
 
 <br />
 
-<%= link_to 'New Trip', new_trip_path %>
+<%= link_to 'New Trip', new_trip_path, :class => 'ym-button ym-add' %>

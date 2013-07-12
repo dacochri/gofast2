@@ -1,6 +1,7 @@
 <h1>Shipments</h1>
 
 <table>
+  <thead>
   <tr>
     <th>Broker</th>
     <th>Driver</th>
@@ -18,7 +19,8 @@
     <th></th>
     <th></th>
   </tr>
-
+  </thead>
+  <tbody>
 <% @shipments.each do |shipment| %>
   <tr>
     <td><%= shipment.broker_id %></td>
@@ -33,13 +35,14 @@
     <td><%= shipment.partial %></td>
     <td><%= shipment.distance %></td>
     <td><%= shipment.cartage %></td>
-    <td><%= link_to 'Show', shipment %></td>
-    <td><%= link_to 'Edit', edit_shipment_path(shipment) %></td>
-    <td><%= link_to 'Destroy', shipment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', shipment, :class => 'ym-button ym-small ym-play ym-success' %></td>
+    <td><%= link_to 'Edit', edit_shipment_path(shipment), :class => 'ym-button ym-small ym-edit ym-warning' %></td>
+    <td><%= link_to 'Destroy', shipment, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'ym-button ym-small ym-delete ym-danger' %></td>
   </tr>
 <% end %>
+</tbody>
 </table>
 
 <br />
 
-<%= link_to 'New Shipment', new_shipment_path %>
+<%= link_to 'New Shipment', new_shipment_path, :class => 'ym-button ym-add' %>

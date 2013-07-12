@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p class="highlight" id="notice"><%= notice %></p>
 
 <p>
   <b>Last service:</b>
@@ -71,5 +71,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_truck_path(@truck) %> |
-<%= link_to 'Back', trucks_path %>
+<%= link_to 'Edit', edit_truck_path(@truck), :class => 'ym-button ym-edit' %>
+<%= link_to 'Back', trucks_path, :class => 'ym-button ym-close' %>

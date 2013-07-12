@@ -1,6 +1,7 @@
 <h1>Trucks</h1>
 
 <table>
+  <thead>
   <tr>
     <th>Last service</th>
     <th>Last safety</th>
@@ -20,7 +21,8 @@
     <th></th>
     <th></th>
   </tr>
-
+  </thead>
+  <tbody>
 <% @trucks.each do |truck| %>
   <tr>
     <td><%= truck.last_service_id %></td>
@@ -37,13 +39,14 @@
     <td><%= truck.next_service_kilometres %></td>
     <td><%= truck.next_safety_date %></td>
     <td><%= truck.total_kilometres %></td>
-    <td><%= link_to 'Show', truck %></td>
-    <td><%= link_to 'Edit', edit_truck_path(truck) %></td>
-    <td><%= link_to 'Destroy', truck, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', truck, :class => 'ym-button ym-small ym-play ym-success' %></td>
+    <td><%= link_to 'Edit', edit_truck_path(truck), :class => 'ym-button ym-small ym-edit ym-warning' %></td>
+    <td><%= link_to 'Destroy', truck, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'ym-button ym-small ym-delete ym-danger' %></td>
   </tr>
 <% end %>
+  </tbody>
 </table>
 
 <br />
 
-<%= link_to 'New Truck', new_truck_path %>
+<%= link_to 'New Truck', new_truck_path, :class => 'ym-button ym-add' %>

@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p class="highlight" id="notice"><%= notice %></p>
 
 <p>
   <b>Truck:</b>
@@ -66,5 +66,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_driver_path(@driver) %> |
-<%= link_to 'Back', drivers_path %>
+<%= link_to 'Edit', edit_driver_path(@driver), :class => 'ym-button ym-edit' %>
+<%= link_to 'Back', drivers_path, :class => 'ym-button ym-close' %>

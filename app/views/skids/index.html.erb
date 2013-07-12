@@ -1,6 +1,7 @@
 <h1>Skids</h1>
 
 <table>
+  <thead>
   <tr>
     <th>Shipment</th>
     <th>Company</th>
@@ -18,7 +19,8 @@
     <th></th>
     <th></th>
   </tr>
-
+  </thead>
+  <tbody>
 <% @skids.each do |skid| %>
   <tr>
     <td><%= skid.shipment_id %></td>
@@ -33,13 +35,14 @@
     <td><%= skid.warehouse_delivery_time %></td>
     <td><%= skid.warehouse_pickup_time %></td>
     <td><%= skid.skid_count %></td>
-    <td><%= link_to 'Show', skid %></td>
-    <td><%= link_to 'Edit', edit_skid_path(skid) %></td>
-    <td><%= link_to 'Destroy', skid, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', skid, :class => 'ym-button ym-small ym-play ym-success' %></td>
+    <td><%= link_to 'Edit', edit_skid_path(skid), :class => 'ym-button ym-small ym-edit ym-warning' %></td>
+    <td><%= link_to 'Destroy', skid, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'ym-button ym-small ym-delete ym-danger' %></td>
   </tr>
 <% end %>
+  </tbody>
 </table>
 
 <br />
 
-<%= link_to 'New Skid', new_skid_path %>
+<%= link_to 'New Skid', new_skid_path, :class => 'ym-button ym-add' %>

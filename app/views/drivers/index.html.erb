@@ -1,6 +1,7 @@
 <h1>Drivers</h1>
 
 <table>
+  <thead>
   <tr>
     <th>Truck</th>
     <th>Trailer</th>
@@ -19,7 +20,8 @@
     <th></th>
     <th></th>
   </tr>
-
+  </thead>
+  <tbody>
 <% @drivers.each do |driver| %>
   <tr>
     <td><%= driver.truck_id %></td>
@@ -35,13 +37,14 @@
     <td><%= driver.business_name %></td>
     <td><%= driver.hst_no %></td>
     <td><%= driver.comments %></td>
-    <td><%= link_to 'Show', driver %></td>
-    <td><%= link_to 'Edit', edit_driver_path(driver) %></td>
-    <td><%= link_to 'Destroy', driver, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', driver, :class => 'ym-button ym-small ym-play ym-success' %></td>
+    <td><%= link_to 'Edit', edit_driver_path(driver), :class => 'ym-button ym-small ym-edit ym-warning' %></td>
+    <td><%= link_to 'Destroy', driver, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'ym-button ym-small ym-delete ym-danger' %></td>
   </tr>
 <% end %>
+  </tbody>
 </table>
 
 <br />
 
-<%= link_to 'New Driver', new_driver_path %>
+<%= link_to 'New Driver', new_driver_path, :class => 'ym-button ym-add' %>

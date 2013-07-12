@@ -1,13 +1,14 @@
 <h1>Companies</h1>
 
 <table>
+  <thead>
   <tr>
     <th>Type</th>
     <th>Name</th>
     <th>Street</th>
     <th>Unit</th>
     <th>City</th>
-    <th>Privince</th>
+    <th>Province</th>
     <th>Postal code</th>
     <th>Email</th>
     <th>Primary phone</th>
@@ -18,7 +19,8 @@
     <th></th>
     <th></th>
   </tr>
-
+  </thead>
+  <tbody>
 <% @companies.each do |company| %>
   <tr>
     <td><%= company.type %></td>
@@ -33,13 +35,14 @@
     <td><%= company.secondary_phone %></td>
     <td><%= company.fax %></td>
     <td><%= company.contact_name %></td>
-    <td><%= link_to 'Show', company %></td>
-    <td><%= link_to 'Edit', edit_company_path(company) %></td>
-    <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', company, :class => 'ym-button ym-small ym-play ym-success' %></td>
+    <td><%= link_to 'Edit', edit_company_path(company), :class => 'ym-button ym-small ym-edit ym-warning' %></td>
+    <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'ym-button ym-small ym-delete ym-danger' %></td>
   </tr>
 <% end %>
+  </tbody>
 </table>
 
 <br />
 
-<%= link_to 'New Company', new_company_path %>
+<%= link_to 'New Company', new_company_path, :class => 'ym-button ym-add' %>

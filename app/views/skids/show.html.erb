@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p class="highlight" id="notice"><%= notice %></p>
 
 <p>
   <b>Shipment:</b>
@@ -61,5 +61,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_skid_path(@skid) %> |
-<%= link_to 'Back', skids_path %>
+<%= link_to 'Edit', edit_skid_path(@skid), :class => 'ym-button ym-edit' %>
+<%= link_to 'Back', skids_path, :class => 'ym-button ym-close' %>

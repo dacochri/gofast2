@@ -1,6 +1,7 @@
 <h1>Cartages</h1>
 
 <table>
+  <thead>
   <tr>
     <th>Company</th>
     <th>Trailer</th>
@@ -13,7 +14,8 @@
     <th></th>
     <th></th>
   </tr>
-
+  </thead>
+  <tbody>
 <% @cartages.each do |cartage| %>
   <tr>
     <td><%= cartage.company_id %></td>
@@ -23,13 +25,14 @@
     <td><%= cartage.delivery_time %></td>
     <td><%= cartage.driver_name %></td>
     <td><%= cartage.cost %></td>
-    <td><%= link_to 'Show', cartage %></td>
-    <td><%= link_to 'Edit', edit_cartage_path(cartage) %></td>
-    <td><%= link_to 'Destroy', cartage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', cartage, :class => 'ym-button ym-small ym-play ym-success' %></td>
+    <td><%= link_to 'Edit', edit_cartage_path(cartage), :class => 'ym-button ym-small ym-edit ym-warning' %></td>
+    <td><%= link_to 'Destroy', cartage, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'ym-button ym-small ym-delete ym-danger' %></td>
   </tr>
 <% end %>
+  </tbody>
 </table>
 
 <br />
 
-<%= link_to 'New Cartage', new_cartage_path %>
+<%= link_to 'New Cartage', new_cartage_path, :class => 'ym-button ym-add' %>
