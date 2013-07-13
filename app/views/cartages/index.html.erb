@@ -1,35 +1,32 @@
-<h1>Cartages</h1>
-
-<table>
-  <tr>
-    <th>Company</th>
-    <th>Trailer</th>
-    <th>Shipment</th>
-    <th>Pickup time</th>
-    <th>Delivery time</th>
-    <th>Driver name</th>
-    <th>Cost</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @cartages.each do |cartage| %>
-  <tr>
-    <td><%= cartage.company_id %></td>
-    <td><%= cartage.trailer_id %></td>
-    <td><%= cartage.shipment_id %></td>
-    <td><%= cartage.pickup_time %></td>
-    <td><%= cartage.delivery_time %></td>
-    <td><%= cartage.driver_name %></td>
-    <td><%= cartage.cost %></td>
-    <td><%= link_to 'Show', cartage %></td>
-    <td><%= link_to 'Edit', edit_cartage_path(cartage) %></td>
-    <td><%= link_to 'Destroy', cartage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Cartage', new_cartage_path %>
+<section>
+  <h2>Cartages</h2>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Company</th>
+        <th scope="col">Trailer</th>
+        <th scope="col">Shipment</th>
+        <th scope="col">Pickup time</th>
+        <th scope="col">Delivery time</th>
+        <th scope="col">Driver name</th>
+        <th scope="col">Cost</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @cartages.each do |cartage| %>
+      <tr>
+        <td><%= cartage.company_id %></td>
+        <td><%= cartage.trailer_id %></td>
+        <td><%= cartage.shipment_id %></td>
+        <td><%= cartage.pickup_time %></td>
+        <td><%= cartage.delivery_time %></td>
+        <td><%= cartage.driver_name %></td>
+        <td><%= cartage.cost %></td>
+        <td><%= link_to 'Show', cartage %> <%= link_to 'Edit', edit_cartage_path(cartage) %> <%= link_to 'Destroy', cartage, method: :delete, data: { confirm: 'Are you sure you want to delete this cartage?' } %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <p><%= link_to 'New Cartage', new_cartage_path %></p>
+</section>
