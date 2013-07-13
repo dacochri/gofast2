@@ -1,4 +1,6 @@
 Gofast2::Application.routes.draw do
+  get "schedule/index"
+
   get "quotes/index"
 
   get "index/index"
