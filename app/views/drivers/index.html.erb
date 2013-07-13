@@ -1,47 +1,44 @@
-<h1>Drivers</h1>
-
-<table>
-  <tr>
-    <th>Truck</th>
-    <th>Trailer</th>
-    <th>First name</th>
-    <th>Last name</th>
-    <th>Street</th>
-    <th>Unit</th>
-    <th>City</th>
-    <th>Postal code</th>
-    <th>Home phone</th>
-    <th>Cell phone</th>
-    <th>Business name</th>
-    <th>Hst no</th>
-    <th>Comments</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @drivers.each do |driver| %>
-  <tr>
-    <td><%= driver.truck_id %></td>
-    <td><%= driver.trailer_id %></td>
-    <td><%= driver.first_name %></td>
-    <td><%= driver.last_name %></td>
-    <td><%= driver.street %></td>
-    <td><%= driver.unit %></td>
-    <td><%= driver.city %></td>
-    <td><%= driver.postal_code %></td>
-    <td><%= driver.home_phone %></td>
-    <td><%= driver.cell_phone %></td>
-    <td><%= driver.business_name %></td>
-    <td><%= driver.hst_no %></td>
-    <td><%= driver.comments %></td>
-    <td><%= link_to 'Show', driver %></td>
-    <td><%= link_to 'Edit', edit_driver_path(driver) %></td>
-    <td><%= link_to 'Destroy', driver, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Driver', new_driver_path %>
+<section>
+  <h2>Drivers</h2>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Truck</th>
+        <th scope="col">Trailer</th>
+        <th scope="col">First name</th>
+        <th scope="col">Last name</th>
+        <th scope="col">Street</th>
+        <th scope="col">Unit</th>
+        <th scope="col">City</th>
+        <th scope="col">Postal code</th>
+        <th scope="col">Home phone</th>
+        <th scope="col">Cell phone</th>
+        <th scope="col">Business name</th>
+        <th scope="col">Hst no</th>
+        <th scope="col">Comments</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @drivers.each do |driver| %>
+      <tr>
+        <td><%= driver.truck_id %></td>
+        <td><%= driver.trailer_id %></td>
+        <td><%= driver.first_name %></td>
+        <td><%= driver.last_name %></td>
+        <td><%= driver.street %></td>
+        <td><%= driver.unit %></td>
+        <td><%= driver.city %></td>
+        <td><%= driver.postal_code %></td>
+        <td><%= driver.home_phone %></td>
+        <td><%= driver.cell_phone %></td>
+        <td><%= driver.business_name %></td>
+        <td><%= driver.hst_no %></td>
+        <td><%= driver.comments %></td>
+        <td><%= link_to 'Show', driver %> <%= link_to 'Edit', edit_driver_path(driver) %> <%= link_to 'Destroy', driver, method: :delete, data: { confirm: 'Are you sure you want to delete this driver?' } %></td>
+      </tr>
+    <% end %>
+    </thead>
+  </table>
+  <p><%= link_to 'New Driver', new_driver_path %></p>
+</section>
