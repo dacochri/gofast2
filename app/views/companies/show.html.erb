@@ -1,65 +1,17 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Company type:</b>
-  <%= @company.company_type %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%= @company.name %>
-</p>
-
-<p>
-  <b>Street:</b>
-  <%= @company.street %>
-</p>
-
-<p>
-  <b>Unit:</b>
-  <%= @company.unit %>
-</p>
-
-<p>
-  <b>City:</b>
-  <%= @company.city %>
-</p>
-
-<p>
-  <b>Privince:</b>
-  <%= @company.province %>
-</p>
-
-<p>
-  <b>Postal code:</b>
-  <%= @company.postal_code %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @company.email %>
-</p>
-
-<p>
-  <b>Primary phone:</b>
-  <%= @company.primary_phone %>
-</p>
-
-<p>
-  <b>Secondary phone:</b>
-  <%= @company.secondary_phone %>
-</p>
-
-<p>
-  <b>Fax:</b>
-  <%= @company.fax %>
-</p>
-
-<p>
-  <b>Contact name:</b>
-  <%= @company.contact_name %>
-</p>
-
-
-<%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
+<section>
+  <h2>View Company <%= @company.name %></h2>
+  <p id="notice"><%= notice %></p>
+  <p><strong>Company type:</strong> <%= @company.company_type %></p>
+  <p><strong>Name:</strong> <%= @company.name %></p>
+  <p><strong>Street:</strong> <%= @company.street %></p>
+  <p><strong>Unit:</strong> <%= @company.unit %></p>
+  <p><strong>City:</strong> <%= @company.city %></p>
+  <p><strong>Province:</strong> <%= @company.province %></p>
+  <p><strong>Postal code:</strong> <%= @company.postal_code %></p>
+  <p><strong>Email:</strong> <%= @company.email %></p>
+  <p><strong>Primary phone:</strong> <%= @company.primary_phone %></p>
+  <p><strong>Secondary phone:</strong> <%= @company.secondary_phone %></p>
+  <p><strong>Fax:</strong> <%= @company.fax %></p>
+  <p><strong>Contact name:</strong> <%= @company.contact_name %></p>
+  <p><%= link_to 'Edit', edit_company_path(@company) %> | <%= link_to 'Back', companies_path %></p>
+</section>

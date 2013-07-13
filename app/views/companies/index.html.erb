@@ -1,45 +1,42 @@
-<h1>Companies</h1>
-
-<table>
-  <tr>
-    <th>Company type</th>
-    <th>Name</th>
-    <th>Street</th>
-    <th>Unit</th>
-    <th>City</th>
-    <th>Privince</th>
-    <th>Postal code</th>
-    <th>Email</th>
-    <th>Primary phone</th>
-    <th>Secondary phone</th>
-    <th>Fax</th>
-    <th>Contact name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @companies.each do |company| %>
-  <tr>
-    <td><%= company.company_type %></td>
-    <td><%= company.name %></td>
-    <td><%= company.street %></td>
-    <td><%= company.unit %></td>
-    <td><%= company.city %></td>
-    <td><%= company.province %></td>
-    <td><%= company.postal_code %></td>
-    <td><%= company.email %></td>
-    <td><%= company.primary_phone %></td>
-    <td><%= company.secondary_phone %></td>
-    <td><%= company.fax %></td>
-    <td><%= company.contact_name %></td>
-    <td><%= link_to 'Show', company %></td>
-    <td><%= link_to 'Edit', edit_company_path(company) %></td>
-    <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Company', new_company_path %>
+<section>
+  <h2>Companies</h2>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Company type</th>
+        <th scope="col">Name</th>
+        <th scope="col">Street</th>
+        <th scope="col">Unit</th>
+        <th scope="col">City</th>
+        <th scope="col">Privince</th>
+        <th scope="col">Postal code</th>
+        <th scope="col">Email</th>
+        <th scope="col">Primary phone</th>
+        <th scope="col">Secondary phone</th>
+        <th scope="col">Fax</th>
+        <th scope="col">Contact name</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @companies.each do |company| %>
+      <tr>
+        <td><%= company.company_type %></td>
+        <td><%= company.name %></td>
+        <td><%= company.street %></td>
+        <td><%= company.unit %></td>
+        <td><%= company.city %></td>
+        <td><%= company.province %></td>
+        <td><%= company.postal_code %></td>
+        <td><%= company.email %></td>
+        <td><%= company.primary_phone %></td>
+        <td><%= company.secondary_phone %></td>
+        <td><%= company.fax %></td>
+        <td><%= company.contact_name %></td>
+        <td><%= link_to 'Show', company %> <td><%= link_to 'Edit', edit_company_path(company) %> <%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure you want to delete this company?' } %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <p><%= link_to 'New Company', new_company_path %></p>
+</section>
