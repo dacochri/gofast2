@@ -1,40 +1,12 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Vehicle:</b>
-  <%= @maintenance.vehicle_id %>
-</p>
-
-<p>
-  <b>Trip:</b>
-  <%= @maintenance.trip_id %>
-</p>
-
-<p>
-  <b>Date:</b>
-  <%= @maintenance.date %>
-</p>
-
-<p>
-  <b>Cost:</b>
-  <%= @maintenance.cost %>
-</p>
-
-<p>
-  <b>Maintenance type:</b>
-  <%= @maintenance.maintenance_type %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @maintenance.description %>
-</p>
-
-<p>
-  <b>Kilometres:</b>
-  <%= @maintenance.kilometres %>
-</p>
-
-
-<%= link_to 'Edit', edit_maintenance_path(@maintenance) %> |
-<%= link_to 'Back', maintenances_path %>
+<section>
+  <h2>View Maintenance record <%= @maintenance.id %></h2>
+  <p id="notice"><%= notice %></p>
+  <p><strong>Vehicle:</strong> <%= @maintenance.vehicle_id %></p>
+  <p><strong>Trip:</strong> <%= @maintenance.trip_id %></p>
+  <p><strong>Date:</strong> <%= @maintenance.date %></p>
+  <p><strong>Cost:</strong> <%= @maintenance.cost %></p>
+  <p><strong>Maintenance type:</strong> <%= @maintenance.maintenance_type %></p>
+  <p><strong>Description:</strong> <%= @maintenance.description %></p>
+  <p><strong>Kilometres:</strong> <%= @maintenance.kilometres %></p>
+  <p><%= link_to 'Edit', edit_maintenance_path(@maintenance) %> | <%= link_to 'Back', maintenances_path %></p>
+</section>
