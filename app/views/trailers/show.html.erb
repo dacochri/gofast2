@@ -1,60 +1,16 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Last service:</b>
-  <%= @trailer.last_service_id %>
-</p>
-
-<p>
-  <b>Last safety:</b>
-  <%= @trailer.last_safety_id %>
-</p>
-
-<p>
-  <b>Trailer no:</b>
-  <%= @trailer.trailer_no %>
-</p>
-
-<p>
-  <b>Trailer type:</b>
-  <%= @trailer.trailer_type %>
-</p>
-
-<p>
-  <b>License plate:</b>
-  <%= @trailer.license_plate %>
-</p>
-
-<p>
-  <b>Make:</b>
-  <%= @trailer.make %>
-</p>
-
-<p>
-  <b>Model:</b>
-  <%= @trailer.model %>
-</p>
-
-<p>
-  <b>Manufactured year:</b>
-  <%= @trailer.manufactured_year %>
-</p>
-
-<p>
-  <b>Vin number:</b>
-  <%= @trailer.vin_number %>
-</p>
-
-<p>
-  <b>Next service date:</b>
-  <%= @trailer.next_service_date %>
-</p>
-
-<p>
-  <b>Next safety date:</b>
-  <%= @trailer.next_safety_date %>
-</p>
-
-
-<%= link_to 'Edit', edit_trailer_path(@trailer) %> |
-<%= link_to 'Back', trailers_path %>
+<section>
+  <h2>View Trailer <%= @trailer.id %></h2>
+  <p id="notice"><%= notice %></p>
+  <p><strong>Last service:</strong> <%= @trailer.last_service_id %></p>
+  <p><strong>Last safety:</strong> <%= @trailer.last_safety_id %></p>
+  <p><strong>Trailer no:</strong> <%= @trailer.trailer_no %></p>
+  <p><strong>Trailer type:</strong> <%= @trailer.trailer_type %></p>
+  <p><strong>License plate:</strong> <%= @trailer.license_plate %></p>
+  <p><strong>Make:</strong> <%= @trailer.make %></p>
+  <p><strong>Model:</strong> <%= @trailer.model %></p>
+  <p><strong>Manufactured year:</strong> <%= @trailer.manufactured_year %></p>
+  <p><strong>Vin number:</strong> <%= @trailer.vin_number %></p>
+  <p><strong>Next service date:</strong> <%= @trailer.next_service_date %></p>
+  <p><strong>Next safety date:</strong> <%= @trailer.next_safety_date %></p>
+  <p><%= link_to 'Edit', edit_trailer_path(@trailer) %> | <%= link_to 'Back', trailers_path %></p>
+</section>

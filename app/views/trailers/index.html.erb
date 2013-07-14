@@ -1,43 +1,40 @@
-<h1>Trailers</h1>
-
-<table>
-  <tr>
-    <th>Last service</th>
-    <th>Last safety</th>
-    <th>Trailer no</th>
-    <th>Trailer type</th>
-    <th>License plate</th>
-    <th>Make</th>
-    <th>Model</th>
-    <th>Manufactured year</th>
-    <th>Vin number</th>
-    <th>Next service date</th>
-    <th>Next safety date</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @trailers.each do |trailer| %>
-  <tr>
-    <td><%= trailer.last_service_id %></td>
-    <td><%= trailer.last_safety_id %></td>
-    <td><%= trailer.trailer_no %></td>
-    <td><%= trailer.trailer_type %></td>
-    <td><%= trailer.license_plate %></td>
-    <td><%= trailer.make %></td>
-    <td><%= trailer.model %></td>
-    <td><%= trailer.manufactured_year %></td>
-    <td><%= trailer.vin_number %></td>
-    <td><%= trailer.next_service_date %></td>
-    <td><%= trailer.next_safety_date %></td>
-    <td><%= link_to 'Show', trailer %></td>
-    <td><%= link_to 'Edit', edit_trailer_path(trailer) %></td>
-    <td><%= link_to 'Destroy', trailer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Trailer', new_trailer_path %>
+<section>
+  <h2>Trailers</h2>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Last service</th>
+        <th scope="col">Last safety</th>
+        <th scope="col">Trailer no</th>
+        <th scope="col">Trailer type</th>
+        <th scope="col">License plate</th>
+        <th scope="col">Make</th>
+        <th scope="col">Model</th>
+        <th scope="col">Manufactured year</th>
+        <th scope="col">Vin number</th>
+        <th scope="col">Next service date</th>
+        <th scope="col">Next safety date</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @trailers.each do |trailer| %>
+      <tr>
+        <td><%= trailer.last_service_id %></td>
+        <td><%= trailer.last_safety_id %></td>
+        <td><%= trailer.trailer_no %></td>
+        <td><%= trailer.trailer_type %></td>
+        <td><%= trailer.license_plate %></td>
+        <td><%= trailer.make %></td>
+        <td><%= trailer.model %></td>
+        <td><%= trailer.manufactured_year %></td>
+        <td><%= trailer.vin_number %></td>
+        <td><%= trailer.next_service_date %></td>
+        <td><%= trailer.next_safety_date %></td>
+        <td><%= link_to 'Show', trailer %> <%= link_to 'Edit', edit_trailer_path(trailer) %> <%= link_to 'Destroy', trailer, method: :delete, data: { confirm: 'Are you sure you want to delete this trailer?' } %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <p><%= link_to 'New Trailer', new_trailer_path %></p>
+</section>
