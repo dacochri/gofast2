@@ -1,5 +1,5 @@
 <section>
-  <h2>Editing announcement @announcement.id</h2>
+  <h2>Editing announcement <%= @announcement.id %></h2>
   <%= render 'form' %>
   <p><%= link_to 'Show', @announcement %> | <%= link_to 'Back', announcements_path %></p>
 </section>
