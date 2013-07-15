@@ -1,5 +1,5 @@
 <section>
-  <h2>Editing driver</h2>
+  <h2>Editing <%= @driver.first_name @driver.last_name %></h2>
   <%= render 'form' %>
   <p><%= link_to 'Show', @driver %> | <%= link_to 'Back', drivers_path %></p>
 </section>
