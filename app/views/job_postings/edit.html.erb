@@ -1,5 +1,5 @@
 <section>
-  <h2>Editing job posting</h2>
+  <h2>Editing <%= @job_posting.title %></h2>
   <%= render 'form' %>
   <p><%= link_to 'Show', @job_posting %> | <%= link_to 'Back', job_postings_path %></p>
 </section>
