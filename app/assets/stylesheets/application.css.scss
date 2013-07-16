@@ -353,11 +353,29 @@ footer {
 
   a{
     color: #F60;
+
+    &:hover{
+      color: #EEE;
+      text-decoration: underline;
+      background: none;
+    }
   }
 
-  a:hover{
-    color: #EEE;
-    text-decoration: underline;
-    background: none;
+  ul{
+    margin-bottom: 5px;
+
+    li{
+      display: inline;
+      margin-left: 0;
+
+      &:after{
+        content: " |";
+        color: #FFF;
+      }
+
+      &:last-child:after{
+        content: "";
+      }
+    }
   }
 }
