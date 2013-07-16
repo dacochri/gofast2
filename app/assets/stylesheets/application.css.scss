@@ -160,24 +160,24 @@ form{
   text-shadow: none;
   transition: all 200ms ease-in-out;
   border: 1px solid rgba(0, 0, 0, 0.3);
-}
 
-.ym-button:hover, form button:hover, form input[type="button"]:hover, form input[type="reset"]:hover, form input[type="submit"]:hover{
-  background: #BDC3C7;
-}
+  &:hover{
+    background: #BDC3C7;
+  }
 
-.ym-button:active, form button:active, form input[type="button"]:active, form input[type="reset"]:active, form input[type="submit"]:active{
-  -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
-  background: #BDC3C7;
-  zoom: 1;
-  position: relative;
-  top: 0px;
-}
+  &:active{
+    -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
+    background: #BDC3C7;
+    zoom: 1;
+    position: relative;
+    top: 0px;
+  }
 
-.ym-button:focus, form button:focus, form input[type="button"]:focus, form input[type="reset"]:focus, form input[type="submit"]:focus{
- outline: 0;
- background: #FAFAFA;
+  &:focus{
+    outline: 0;
+    background: #FAFAFA;
+  }
 }
 
 form button:before, .ym-button:before{
@@ -198,23 +198,23 @@ form button:before, .ym-button:before{
   text-shadow: none;
   border: 1px solid rgba(0, 0, 0, 0.3);
   transition: all 200ms ease-in-out;
-}
 
-.ym-button.ym-success:hover, form button.ym-success:hover, form input[type="button"].ym-success:hover, form input[type="reset"].ym-success:hover, form input[type="submit"].ym-success:hover{
-  background: #16A085;
-  zoom: 1;
-}
+  &:hover{
+    background: #16A085;
+    zoom: 1;
+  }
 
-.ym-button.ym-success:active, form button.ym-success:active, form input[type="button"].ym-success:active, form input[type="reset"].ym-success:active, form input[type="submit"].ym-success:active{
-  -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
-  background: #16A085;
-  zoom: 1;
-}
+  &:active{
+    -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
+    background: #16A085;
+    zoom: 1;
+  }
 
-.ym-button.ym-success:focus, form button.ym-success:focus, form input[type="button"].ym-success:focus, form input[type="reset"].ym-success:focus, form input[type="submit"].ym-success:focus{
-  outline: 0;
-  background: #6C6;
+  &:focus{
+    outline: 0;
+    background: #6C6;
+  }
 }
 
 .ym-button.ym-warning, form button.ym-warning, form input[type="button"].ym-warning, form input[type="reset"].ym-warning, form input[type="submit"].ym-warning{
@@ -225,23 +225,23 @@ form button:before, .ym-button:before{
   text-shadow: none;
   border: 1px solid rgba(0,0,0,0.3);
   transition: all 200ms ease-in-out;
-}
 
-.ym-button.ym-warning:hover, form button.ym-warning:hover, form input[type="button"].ym-warning:hover, form input[type="reset"].ym-warning:hover, form input[type="submit"].ym-warning:hover{
-  background: #D35400;
-  zoom: 1;
-}
+  &:hover{
+    background: #D35400;
+    zoom: 1;
+  }
 
-.ym-button.ym-warning:active, form button.ym-warning:active, form input[type="button"].ym-warning:active, form input[type="reset"].ym-warning:active, form input[type="submit"].ym-warning:active{
-  -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
-  background: #D35400;
-  zoom: 1;
-}
+  &:active{
+    -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
+    background: #D35400;
+    zoom: 1;
+  }
 
-.ym-button.ym-warning:focus, form button.ym-warning:focus, form input[type="button"].ym-warning:focus, form input[type="reset"].ym-warning:focus, form input[type="submit"].ym-warning:focus{
-  outline: 0;
-  background: #da4;
+  &:focus{
+    outline: 0;
+    background: #da4;
+  }
 }
 
 .ym-button.ym-danger, form button.ym-danger, form input[type="button"].ym-danger, form input[type="reset"].ym-danger, form input[type="submit"].ym-danger {
@@ -252,34 +252,22 @@ form button:before, .ym-button:before{
   text-shadow: none;
   border: 1px solid rgba(0,0,0,0.3);
   transition: all 200ms ease-in-out;
-}
 
-.ym-button.ym-danger:hover, form button.ym-danger:hover, form input[type="button"].ym-danger:hover, form input[type="reset"].ym-danger:hover, form input[type="submit"].ym-danger:hover{
-  background: #c0392b;
-  zoom: 1;
-}
+  &:hover{
+    background: #C0392B;
+    zoom: 1;
+  }
 
-.ym-button.ym-danger:active, form button.ym-danger:active, form input[type="button"].ym-danger:active, form input[type="reset"].ym-danger:active, form input[type="submit"].ym-danger:active{
-  -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
-  box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
-  background: #C0392B;
-  zoom: 1;
-}
+  &:active{
+    -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
+    background: #C0392B;
+    zoom: 1;
+  }
 
-.ym-button.ym-danger:focus, form button.ym-danger:focus, form input[type="button"].ym-danger:focus, form input[type="reset"].ym-danger:focus, form input[type="submit"].ym-danger:focus{
-  outline: 0;
-  background: #C66;
-}
-
-#announcements{
-  padding: 1.42857em;
-  background: #EEE;
-  
-  h3{
-    color: #F60;
-    letter-spacing: 0px;
-    font-weight: normal;
-    font-family: "Jockey One", "Droid Sans", Arial, Helvetica, sans-serif;
+  &:focus{
+    outline: 0;
+    background: #C66;
   }
 }
 
@@ -296,9 +284,6 @@ form button:before, .ym-button:before{
     padding: 0;
     display: inline;
     float: left;
-  }
-  
-  ul{
   
     li{
       display: inline;
@@ -331,17 +316,15 @@ form button:before, .ym-button:before{
         
         &.active{
           color: #F60;
+
+          &:hover, &:active, &:focus, & strong{
+            background: #FC0;
+            text-decoration: none;
+          }
         }
       }
     }
   }
-}
-
-/* do this with a mixin */
-.ym-hlist ul li a.active strong, .ym-hlist ul li a.active:focus, .ym-hlist ul li a.active:hover, .ym-hlist ul li a.active:active{
-  background: #F60;
-  color: #222;
-  text-decoration: none;
 }
 
 footer {
