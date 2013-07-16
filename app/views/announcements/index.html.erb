@@ -16,7 +16,7 @@
     <% @announcements.each do |announcement| %>
       <tr>
         <td><%= announcement.posted_by %></td>
-        <td><%= link_to announcement.title, announcement %></td>
+        <td><%= announcement.title %></td>
         <!--<td><%= announcement.content %></td>-->
         <td><%= announcement.date_posted %></td>
         <td><%= link_to 'Show', announcement, :class => 'ym-button ym-small ym-play ym-success' %></td>
