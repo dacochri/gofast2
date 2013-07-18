@@ -5,5 +5,5 @@
   <p><strong>Closing date:</strong> <%= @job_posting.closing_date %></p>
   <p><strong>Description:</strong> <%= @job_posting.description %></p>
   <p><strong>Requirements:</strong> <%= @job_posting.requirements %></p>
-  <p><%= link_to 'Edit', edit_job_posting_path(@job_posting), :class => 'ym-button ym-edit' %> | <%= link_to 'Back', job_postings_path, :class => 'ym-button ym-close' %></p>
+  <p><%= link_to 'Edit', edit_job_posting_path(@job_posting), :class => 'ym-button ym-edit' %> <%= link_to 'Back', job_postings_path, :class => 'ym-button ym-close' %></p>
 </section>

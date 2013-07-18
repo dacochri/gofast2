@@ -15,5 +15,5 @@
   <p><strong>Next service kilometres:</strong> <%= @truck.next_service_kilometres %></p>
   <p><strong>Next safety date:</strong> <%= @truck.next_safety_date %></p>
   <p><strong>Total kilometres:</strong> <%= @truck.total_kilometres %></p>
-  <p><%= link_to 'Edit', edit_truck_path(@truck), :class => 'ym-button ym-edit' %> | <%= link_to 'Back', trucks_path, :class => 'ym-button ym-close' %></p>
+  <p><%= link_to 'Edit', edit_truck_path(@truck), :class => 'ym-button ym-edit' %> <%= link_to 'Back', trucks_path, :class => 'ym-button ym-close' %></p>
 </section>

@@ -11,5 +11,5 @@
   <p><strong>Insurance:</strong> <%= @trip.insurance %></p>
   <p><strong>Misc cost:</strong> <%= @trip.misc_cost %></p>
   <p><strong>Kilometres accumulated:</strong> <%= @trip.kilometres_accumulated %></p>
-  <p><%= link_to 'Edit', edit_trip_path(@trip), :class => 'ym-button ym-edit' %> | <%= link_to 'Back', trips_path, :class => 'ym-button ym-close' %></p>
+  <p><%= link_to 'Edit', edit_trip_path(@trip), :class => 'ym-button ym-edit' %> <%= link_to 'Back', trips_path, :class => 'ym-button ym-close' %></p>
 </section>

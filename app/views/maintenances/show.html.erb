@@ -8,5 +8,5 @@
   <p><strong>Maintenance type:</strong> <%= @maintenance.maintenance_type %></p>
   <p><strong>Description:</strong> <%= @maintenance.description %></p>
   <p><strong>Kilometres:</strong> <%= @maintenance.kilometres %></p>
-  <p><%= link_to 'Edit', edit_maintenance_path(@maintenance), :class => 'ym-button ym-edit' %> | <%= link_to 'Back', maintenances_path, :class => 'ym-button ym-close' %></p>
+  <p><%= link_to 'Edit', edit_maintenance_path(@maintenance), :class => 'ym-button ym-edit' %> <%= link_to 'Back', maintenances_path, :class => 'ym-button ym-close' %></p>
 </section>

@@ -12,5 +12,5 @@
   <p><strong>Vin number:</strong> <%= @trailer.vin_number %></p>
   <p><strong>Next service date:</strong> <%= @trailer.next_service_date %></p>
   <p><strong>Next safety date:</strong> <%= @trailer.next_safety_date %></p>
-  <p><%= link_to 'Edit', edit_trailer_path(@trailer), :class => 'ym-button ym-edit' %> | <%= link_to 'Back', trailers_path, :class => 'ym-button ym-close' %></p>
+  <p><%= link_to 'Edit', edit_trailer_path(@trailer), :class => 'ym-button ym-edit' %> <%= link_to 'Back', trailers_path, :class => 'ym-button ym-close' %></p>
 </section>

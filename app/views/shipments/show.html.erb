@@ -13,5 +13,5 @@
   <p><strong>Partial:</strong> <%= @shipment.partial %></p>
   <p><strong>Distance:</strong> <%= @shipment.distance %></p>
   <p><strong>Cartage:</strong> <%= @shipment.cartage %></p>
-  <p><%= link_to 'Edit', edit_shipment_path(@shipment), :class => 'ym-button ym-edit' %> | <%= link_to 'Back', shipments_path, :class => 'ym-button ym-close' %></p>
+  <p><%= link_to 'Edit', edit_shipment_path(@shipment), :class => 'ym-button ym-edit' %> <%= link_to 'Back', shipments_path, :class => 'ym-button ym-close' %></p>
 </section>

@@ -8,5 +8,5 @@
   <p><strong>Delivery time:</strong> <%= @cartage.delivery_time %></p>
   <p><strong>Driver name:</strong> <%= @cartage.driver_name %></p>
   <p><strong>Cost:</strong> <%= @cartage.cost %></p>
-  <p><%= link_to 'Edit', edit_cartage_path(@cartage), :class => 'ym-button ym-edit' %> | <%= link_to 'Back', cartages_path, :class => 'ym-button ym-close' %></p>
+  <p><%= link_to 'Edit', edit_cartage_path(@cartage), :class => 'ym-button ym-edit' %> <%= link_to 'Back', cartages_path, :class => 'ym-button ym-close' %></p>
 </section>
