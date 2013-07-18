@@ -1,65 +1,67 @@
 <%= form_for(@shipment) do |f| %>
   <% if @shipment.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@shipment.errors.count, "error") %> prohibited this shipment from being saved:</h2>
-
-      <ul>
-      <% @shipment.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+      <section>
+        <h2><%= pluralize(@shipment.errors.count, "error") %> prohibited this shipment from being saved:</h2>
+        
+        <ul>
+        <% @shipment.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </section>
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="ym-fbox">
     <%= f.label :broker_id %><br />
     <%= f.number_field :broker_id %>
   </div>
-  <div class="field">
+  <div class="ym-fbox">
     <%= f.label :driver_id %><br />
     <%= f.number_field :driver_id %>
   </div>
-  <div class="field">
+  <div class="ym-fbox">
     <%= f.label :customer_id %><br />
     <%= f.number_field :customer_id %>
   </div>
-  <div class="field">
+  <div class="ym-fbox">
     <%= f.label :trip_id %><br />
     <%= f.number_field :trip_id %>
   </div>
-  <div class="field">
+  <div class="ym-fbox">
     <%= f.label :shipment_no %><br />
     <%= f.number_field :shipment_no %>
   </div>
-  <div class="field">
+  <div class="ym-fbox">
     <%= f.label :pickup_time %><br />
     <%= f.datetime_select :pickup_time %>
   </div>
-  <div class="field">
+  <div class="ym-fbox">
     <%= f.label :delivery_time %><br />
     <%= f.datetime_select :delivery_time %>
   </div>
-  <div class="field">
+  <div class="ym-fbox">
     <%= f.label :rate %><br />
     <%= f.text_field :rate %>
   </div>
-  <div class="field">
+  <div class="ym-fbox">
     <%= f.label :skid_count %><br />
     <%= f.number_field :skid_count %>
   </div>
-  <div class="field">
+  <div class="ym-fbox">
     <%= f.label :partial %><br />
     <%= f.check_box :partial %>
   </div>
-  <div class="field">
+  <div class="ym-fbox">
     <%= f.label :distance %><br />
     <%= f.text_field :distance %>
   </div>
-  <div class="field">
+  <div class="ym-fbox">
     <%= f.label :cartage %><br />
     <%= f.check_box :cartage %>
   </div>
-  <div class="actions">
+  <div class="actions ym-fbox-footer">
     <%= f.submit %>
   </div>
 <% end %>

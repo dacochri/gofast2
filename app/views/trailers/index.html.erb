@@ -31,10 +31,10 @@
         <td><%= trailer.vin_number %></td>
         <td><%= trailer.next_service_date %></td>
         <td><%= trailer.next_safety_date %></td>
-        <td><%= link_to 'Show', trailer %> <%= link_to 'Edit', edit_trailer_path(trailer) %> <%= link_to 'Destroy', trailer, method: :delete, data: { confirm: 'Are you sure you want to delete this trailer?' } %></td>
+        <td><%= link_to 'Show', trailer, :class => 'ym-button ym-small ym-play ym-success' %> <%= link_to 'Edit', edit_trailer_path(trailer), :class => 'ym-button ym-small ym-edit ym-warning' %> <%= link_to 'Destroy', trailer, method: :delete, data: { confirm: 'Are you sure you want to delete this trailer?' }, :class => 'ym-button ym-small ym-delete ym-danger' %></td>
       </tr>
     <% end %>
     </tbody>
   </table>
-  <p><%= link_to 'New Trailer', new_trailer_path %></p>
+  <p><%= link_to 'New Trailer', new_trailer_path, :class => 'ym-button ym-add' %></p>
 </section>

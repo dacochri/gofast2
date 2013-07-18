@@ -1,6 +1,6 @@
 <section>
   <h2>Truck #<%= @truck.id %></h2>
-  <p id="notice"><%= notice %></p>
+  <p id="notice" class="highlight"><%= notice %></p>
   <p><strong>Last service:</strong> <%= @truck.last_service_id %></p>
   <p><strong>Last safety:</strong> <%= @truck.last_safety_id %></p>
   <p><strong>Truck no:</strong> <%= @truck.truck_no %></p>
@@ -15,5 +15,5 @@
   <p><strong>Next service kilometres:</strong> <%= @truck.next_service_kilometres %></p>
   <p><strong>Next safety date:</strong> <%= @truck.next_safety_date %></p>
   <p><strong>Total kilometres:</strong> <%= @truck.total_kilometres %></p>
-  <p><%= link_to 'Edit', edit_truck_path(@truck) %> | <%= link_to 'Back', trucks_path %></p>
+  <p><%= link_to 'Edit', edit_truck_path(@truck), :class => 'ym-button ym-edit' %> | <%= link_to 'Back', trucks_path, :class => 'ym-button ym-close' %></p>
 </section>

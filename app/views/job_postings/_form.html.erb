@@ -1,37 +1,39 @@
-<%= form_for(@job_posting) do |f| %>
+<%= form_for@job_posting do |f| %>
   <% if @job_posting.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@job_posting.errors.count, "error") %> prohibited this job_posting from being saved:</h2>
-
-      <ul>
-      <% @job_posting.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+      <section>
+        <h2><%= pluralize(@job_posting.errors.count, "error") %> prohibited this job_posting from being saved:</h2>
+        
+        <ul>
+        <% @job_posting.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </section>
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="ym-fbox">
     <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :size=>"70" %>
   </div>
-  <div class="field">
+  <div class="ym-fbox ">
     <%= f.label :post_date %><br />
-    <%= f.date_select :post_date %>
+    <%= f.date_select :post_date, :class => 'ym-inline' %>
   </div>
-  <div class="field">
+  <div class="ym-fbox">
     <%= f.label :closing_date %><br />
     <%= f.date_select :closing_date %>
   </div>
-  <div class="field">
+  <div class="ym-fbox">
     <%= f.label :description %><br />
-    <%= f.text_field :description %>
+    <%= f.text_area :description, :size => "100x20" %>
   </div>
-  <div class="field">
+  <div class="ym-fbox">
     <%= f.label :requirements %><br />
-    <%= f.text_field :requirements %>
+    <%= f.text_field :requirements, :size=>"70" %>
   </div>
-  <div class="actions">
+  <div class="actions ym-fbox-footer ">
     <%= f.submit %>
   </div>
 <% end %>

@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Gofast2</title>
+  <title>Go Fast Express</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Jockey+One' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <div>
     <header>
-      <hgroup>
+      <hgroup class="ym-wrapper">
         <h1>
           <%= link_to '/' do %>
-            <%= image_tag 'logo.png', :alt => 'GoFast Express Inc.' %>
+            <%= image_tag 'logo.png', :size => "250x82", :alt => 'GoFast Express Inc.' %>
           <% end %>
         </h1>
         <h2><em>Your #1 Source for Transportation Services</em></h2>
       </hgroup>
+      <nav>
+        <div class="ym-wrapper ym-hlist">
+          <%= render '/layouts/out_nav' %>
+        </div>
+      </nav>
     </header>
-  </div>
-  <div>
-    <%= render '/layouts/out_nav' %>
-  </div>
-  <div>
-    <div id="content">
+    <div id="content" class="ym-wrapper ym-wbox">
       <%= yield %>
     </div>
-  </div>
-  <div>
     <footer>
-      <%= render '/layouts/out_nav' %>
-      <p>&copy; 2013 GoFast Express Inc. All Rights Reserved.</p>
+      <div class="ym-wrapper ym-wbox">
+        <%= render '/layouts/out_footer' %>
+        <p>&copy; 2013 GoFast Express Inc. All Rights Reserved.</p>
+      </div>
     </footer>
   </div>
 </body>

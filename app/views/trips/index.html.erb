@@ -29,10 +29,10 @@
         <td><%= trip.insurance %></td>
         <td><%= trip.misc_cost %></td>
         <td><%= trip.kilometres_accumulated %></td>
-        <td><%= link_to 'Show', trip %> <%= link_to 'Edit', edit_trip_path(trip) %></td> <%= link_to 'Destroy', trip, method: :delete, data: { confirm: 'Are you sure you want to delete this trip?' } %></td>
+        <td><%= link_to 'Show', trip, :class => 'ym-button ym-small ym-play ym-success' %> <%= link_to 'Edit', edit_trip_path(trip), :class => 'ym-button ym-small ym-edit ym-warning' %> <%= link_to 'Destroy', trip, method: :delete, data: { confirm: 'Are you sure you want to delete this trip?' }, :class => 'ym-button ym-small ym-delete ym-danger' %></td>
       </tr>
     <% end %>
     </tbody>
   </table>
-  <p><%= link_to 'New Trip', new_trip_path %></p>
+  <p><%= link_to 'New Trip', new_trip_path, :class => 'ym-button ym-add' %></p>
 </section>

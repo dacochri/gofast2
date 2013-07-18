@@ -34,9 +34,10 @@
         <td><%= skid.warehouse_pickup_time %></td>
         <td><%= skid.skid_count %></td>
         <td><%= link_to 'Show', skid %> <%= link_to 'Edit', edit_skid_path(skid) %> <%= link_to 'Destroy', skid, method: :delete, data: { confirm: 'Are you sure you want to delete this skid?' } %></td>
+        <td><%= link_to 'Show', skid, :class => 'ym-button ym-small ym-play ym-success' %> <%= link_to 'Edit', edit_skid_path(skid), :class => 'ym-button ym-small ym-edit ym-warning' %> <%= link_to 'Destroy', skid, method: :delete, data: { confirm: 'Are you sure you want to delete this skid?' }, :class => 'ym-button ym-small ym-delete ym-danger' %></td>
       </tr>
     <% end %>
     </tbody>
   </table>
-  <p><%= link_to 'New Skid', new_skid_path %></p>
+  <p><%= link_to 'New Skid', new_skid_path, :class => 'ym-button ym-add' %></p>
 </section>

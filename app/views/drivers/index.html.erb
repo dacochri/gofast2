@@ -35,10 +35,10 @@
         <td><%= driver.business_name %></td>
         <td><%= driver.hst_no %></td>
         <td><%= driver.comments %></td>
-        <td><%= link_to 'Show', driver %> <%= link_to 'Edit', edit_driver_path(driver) %> <%= link_to 'Destroy', driver, method: :delete, data: { confirm: 'Are you sure you want to delete this driver?' } %></td>
+        <td><%= link_to 'Show', driver, :class => 'ym-button ym-small ym-play ym-success' %> <%= link_to 'Edit', edit_driver_path(driver), :class => 'ym-button ym-small ym-edit ym-warning' %> <%= link_to 'Destroy', driver, method: :delete, data: { confirm: 'Are you sure you want to delete this driver?' }, :class => 'ym-button ym-small ym-delete ym-danger' %></td>
       </tr>
     <% end %>
     </thead>
   </table>
-  <p><%= link_to 'New Driver', new_driver_path %></p>
+  <p><%= link_to 'New Driver', new_driver_path, :class => 'ym-button ym-add' %></p>
 </section>

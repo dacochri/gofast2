@@ -23,10 +23,10 @@
         <td><%= cartage.delivery_time %></td>
         <td><%= cartage.driver_name %></td>
         <td><%= cartage.cost %></td>
-        <td><%= link_to 'Show', cartage %> <%= link_to 'Edit', edit_cartage_path(cartage) %> <%= link_to 'Destroy', cartage, method: :delete, data: { confirm: 'Are you sure you want to delete this cartage?' } %></td>
+        <td><%= link_to 'Show', cartage, :class => 'ym-button ym-small ym-play ym-success' %> <%= link_to 'Edit', edit_cartage_path(cartage), :class => 'ym-button ym-small ym-edit ym-warning' %> <%= link_to 'Destroy', cartage, method: :delete, data: { confirm: 'Are you sure you want to delete this cartage?' }, :class => 'ym-button ym-small ym-delete ym-danger' %></td>
       </tr>
     <% end %>
     </tbody>
   </table>
-  <p><%= link_to 'New Cartage', new_cartage_path %></p>
+  <p><%= link_to 'New Cartage', new_cartage_path, :class => 'ym-button ym-add' %></p>
 </section>

@@ -1,5 +1,5 @@
 <section>
   <h2>Edit Cartage #<%= @cartage.id %></h2>
   <%= render 'form' %>
-  <p><%= link_to 'Show', @cartage %> | <%= link_to 'Back', cartages_path %></p>
+  <p><%= link_to 'Show', @cartage, :class => 'ym-button ym-play' %> | <%= link_to 'Back', cartages_path, :class => 'ym-button ym-close' %></p>
 </section>

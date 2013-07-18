@@ -37,10 +37,10 @@
         <td><%= truck.next_service_kilometres %></td>
         <td><%= truck.next_safety_date %></td>
         <td><%= truck.total_kilometres %></td>
-        <td><%= link_to 'Show', truck %> <%= link_to 'Edit', edit_truck_path(truck) %> <%= link_to 'Destroy', truck, method: :delete, data: { confirm: 'Are you sure you want to delete this truck?' } %></td>
+    	<td><%= link_to 'Show', truck, :class => 'ym-button ym-small ym-play ym-success' %> <%= link_to 'Edit', edit_truck_path(truck), :class => 'ym-button ym-small ym-edit ym-warning' %> <%= link_to 'Destroy', truck, method: :delete, data: { confirm: 'Are you sure you want to delete this truck?' }, :class => 'ym-button ym-small ym-delete ym-danger' %></td>
       </tr>
     <% end %>
     </tbody>
   </table>
-  <p><%= link_to 'New Truck', new_truck_path %></p>
+  <p><%= link_to 'New Truck', new_truck_path, :class => 'ym-button ym-add' %></p>
 </section>

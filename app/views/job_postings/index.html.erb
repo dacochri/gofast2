@@ -19,10 +19,10 @@
         <td><%= job_posting.closing_date %></td>
         <td><%= job_posting.description %></td>
         <td><%= job_posting.requirements %></td>
-        <td><%= link_to 'Show', job_posting %> <%= link_to 'Edit', edit_job_posting_path(job_posting) %> <%= link_to 'Destroy', job_posting, method: :delete, data: { confirm: 'Are you sure you want to delete this job posting?' } %></td>
+        <td><%= link_to 'Show', job_posting, :class => 'ym-button ym-small ym-play ym-success' %> <%= link_to 'Edit', edit_job_posting_path(job_posting), :class => 'ym-button ym-small ym-edit ym-warning' %> <%= link_to 'Destroy', job_posting, method: :delete, data: { confirm: 'Are you sure you want to delete this job posting?' }, :class => 'ym-button ym-small ym-delete ym-danger' %></td>
       </tr>
     <% end %>
     </tbody>
   </table>
-  <p><%= link_to 'New Job posting', new_job_posting_path %></p>
+  <p><%= link_to 'New Job posting', new_job_posting_path, :class => 'ym-button ym-add' %></p>
 </section>

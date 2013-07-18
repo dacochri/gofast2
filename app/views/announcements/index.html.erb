@@ -5,8 +5,10 @@
       <tr>
         <th scope="col">Posted by</th>
         <th scope="col">Title</th>
-        <th scope="col">Content</th>
+        <!--<th scope="col">Content</th>-->
         <th scope="col">Date posted</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
         <th scope="col"></th>
       </tr>
     </thead>
@@ -14,14 +16,15 @@
     <% @announcements.each do |announcement| %>
       <tr>
         <td><%= announcement.posted_by %></td>
-        <td><%= link_to announcement.title, announcement %></td>
-        <td><%= announcement.content %></td>
+        <td><%= announcement.title %></td>
+        <!--<td><%= announcement.content %></td>-->
         <td><%= announcement.date_posted %></td>
-        <td><%= link_to 'Edit', edit_announcement_path(announcement) %>
-        <%= link_to 'Destroy', announcement, method: :delete, data: { confirm: 'Are you sure you want to delete this announcement?' } %></td>
+        <td><%= link_to 'Show', announcement, :class => 'ym-button ym-small ym-play ym-success' %></td>
+        <td><%= link_to 'Edit', edit_announcement_path(announcement), :class => 'ym-button ym-small ym-edit ym-warning' %></td>
+        <td><%= link_to 'Destroy', announcement, method: :delete, data: { confirm: 'Are you sure you want to delete s announcement?' }, :class => 'ym-button ym-small ym-delete ym-danger' %></td>
       </tr>
     <% end %>
     </tbody>
   </table>
-  <p><%= link_to 'New Announcement', new_announcement_path %></p>
+  <p><%= link_to 'New Announcement', new_announcement_path, :class => 'ym-button ym-add' %></p>
 </section>

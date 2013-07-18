@@ -1,61 +1,63 @@
 <%= form_for(@trailer) do |f| %>
   <% if @trailer.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@trailer.errors.count, "error") %> prohibited this trailer from being saved:</h2>
-
-      <ul>
-      <% @trailer.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+      <section>
+        <h2><%= pluralize(@trailer.errors.count, "error") %> prohibited this trailer from being saved:</h2>
+        
+        <ul>
+        <% @trailer.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </section>
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="ym-fbox">
     <%= f.label :last_service_id %><br />
     <%= f.number_field :last_service_id %>
   </div>
-  <div class="field">
+  <div class="ym-fbox">
     <%= f.label :last_safety_id %><br />
     <%= f.number_field :last_safety_id %>
   </div>
-  <div class="field">
+  <div class="ym-fbox">
     <%= f.label :trailer_no %><br />
     <%= f.number_field :trailer_no %>
   </div>
-  <div class="field">
+  <div class="ym-fbox">
     <%= f.label :trailer_type %><br />
     <%= f.text_field :trailer_type %>
   </div>
-  <div class="field">
+  <div class="ym-fbox">
     <%= f.label :license_plate %><br />
     <%= f.text_field :license_plate %>
   </div>
-  <div class="field">
+  <div class="ym-fbox">
     <%= f.label :make %><br />
     <%= f.text_field :make %>
   </div>
-  <div class="field">
+  <div class="ym-fbox">
     <%= f.label :model %><br />
     <%= f.text_field :model %>
   </div>
-  <div class="field">
+  <div class="ym-fbox">
     <%= f.label :manufactured_year %><br />
     <%= f.number_field :manufactured_year %>
   </div>
-  <div class="field">
+  <div class="ym-fbox">
     <%= f.label :vin_number %><br />
     <%= f.text_field :vin_number %>
   </div>
-  <div class="field">
+  <div class="ym-fbox">
     <%= f.label :next_service_date %><br />
     <%= f.date_select :next_service_date %>
   </div>
-  <div class="field">
+  <div class="ym-fbox">
     <%= f.label :next_safety_date %><br />
     <%= f.date_select :next_safety_date %>
   </div>
-  <div class="actions">
+  <div class="actions ym-fbox-footer">
     <%= f.submit %>
   </div>
 <% end %>

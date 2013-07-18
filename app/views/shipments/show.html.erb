@@ -1,6 +1,6 @@
 <section>
   <h2>Shipment #<%= @shipment.id %></h2>
-  <p id="notice"><%= notice %></p>
+  <p id="notice" class="highlight"><%= notice %></p>
   <p><strong>Broker:</strong> <%= @shipment.broker_id %></p>
   <p><strong>Driver:</strong> <%= @shipment.driver_id %></p>
   <p><strong>Customer:</strong> <%= @shipment.customer_id %></p>
@@ -13,5 +13,5 @@
   <p><strong>Partial:</strong> <%= @shipment.partial %></p>
   <p><strong>Distance:</strong> <%= @shipment.distance %></p>
   <p><strong>Cartage:</strong> <%= @shipment.cartage %></p>
-  <p><%= link_to 'Edit', edit_shipment_path(@shipment) %> | <%= link_to 'Back', shipments_path %></p>
+  <p><%= link_to 'Edit', edit_shipment_path(@shipment), :class => 'ym-button ym-edit' %> | <%= link_to 'Back', shipments_path, :class => 'ym-button ym-close' %></p>
 </section>
