@@ -13,38 +13,6 @@
  *= require_tree .
  */
 
-/* Below is the stuff for the sticky footer */
-html, body{
-  height: 100%;
-}
-
-#wrap {
-  min-height: 100%;
-}
-
-#main {
-  overflow: auto;
-  padding-bottom: 90px; /* must be same height as the footer */
-}
-
-footer{
-  position: relative;
-  margin-top: -90px; /* negative value of footer height */
-  height: 90px;
-  clear: both;
-} 
-
-/*Opera Fix*/
-body:before{ /* thanks to Maleika (Kohoutec) */
-  content: "";
-  height: 100%;
-  float: left;
-  width: 0;
-  margin-top: -32767px; /* thank you Erik J - negate effect of float*/
-}
-
-/* End of sticky footer */
-
 body{
   font-family: "Droid Sans", Arial, Helvetica, sans-serif;
   direction: ltr;
