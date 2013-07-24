@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(:version => 20130623135402) do
     t.string   "maintenance_type"
     t.string   "description"
     t.integer  "kilometres"
+    t.string   "vehicle_type"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
@@ -171,6 +172,7 @@ ActiveRecord::Schema.define(:version => 20130623135402) do
     t.integer  "next_service_kilometres"
     t.date     "next_safety_date"
     t.integer  "total_kilometres"
+    t.string   "current_location"
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
   end

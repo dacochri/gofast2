@@ -15,6 +15,7 @@ class CreateTrucks < ActiveRecord::Migration
       t.integer :next_service_kilometres
       t.date :next_safety_date
       t.integer :total_kilometres
+      t.string :current_location
 
       t.timestamps
     end
