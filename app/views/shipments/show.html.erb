@@ -6,12 +6,8 @@
   <p><strong>Customer:</strong> <%= @shipment.customer_id %></p>
   <p><strong>Trip:</strong> <%= @shipment.trip_id %></p>
   <p><strong>Shipment no:</strong> <%= @shipment.shipment_no %></p>
-  <p><strong>Pickup time:</strong> <%= @shipment.pickup_time %></p>
-  <p><strong>Delivery time:</strong> <%= @shipment.delivery_time %></p>
   <p><strong>Rate:</strong> <%= @shipment.rate %></p>
-  <p><strong>Skid count:</strong> <%= @shipment.skid_count %></p>
   <p><strong>Partial:</strong> <%= @shipment.partial %></p>
   <p><strong>Distance:</strong> <%= @shipment.distance %></p>
-  <p><strong>Cartage:</strong> <%= @shipment.cartage %></p>
   <p><%= link_to 'Edit', edit_shipment_path(@shipment), :class => 'ym-button ym-edit' %> <%= link_to 'Back', shipments_path, :class => 'ym-button ym-close' %></p>
 </section>

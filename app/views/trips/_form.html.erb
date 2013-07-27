@@ -22,6 +22,10 @@
     <%= f.number_field :trailer_id %>
   </div>
   <div class="ym-fbox">
+    <%= f.label :expense_id %><br />
+    <%= f.number_field :expense_id %>
+  </div>
+  <div class="ym-fbox">
     <%= f.label :start_date %><br />
     <%= f.date_select :start_date %>
   </div>
@@ -30,24 +34,8 @@
     <%= f.date_select :end_date %>
   </div>
   <div class="ym-fbox">
-    <%= f.label :driver_pay %><br />
-    <%= f.text_field :driver_pay %>
-  </div>
-  <div class="ym-fbox">
     <%= f.label :load_bar_count %><br />
     <%= f.number_field :load_bar_count %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :lease %><br />
-    <%= f.text_field :lease %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :insurance %><br />
-    <%= f.text_field :insurance %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :misc_cost %><br />
-    <%= f.text_field :misc_cost %>
   </div>
   <div class="ym-fbox">
     <%= f.label :kilometres_accumulated %><br />

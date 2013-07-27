@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130623135402) do
+ActiveRecord::Schema.define(:version => 20130727173722) do
 
   create_table "announcements", :force => true do |t|
     t.integer  "posted_by"
@@ -52,8 +52,6 @@ ActiveRecord::Schema.define(:version => 20130623135402) do
   end
 
   create_table "drivers", :force => true do |t|
-    t.integer  "truck_id"
-    t.integer  "trailer_id"
     t.string   "first_name"
     t.string   "last_name"
     t.string   "street"
@@ -67,6 +65,15 @@ ActiveRecord::Schema.define(:version => 20130623135402) do
     t.string   "comments"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+  end
+
+  create_table "expenses", :force => true do |t|
+    t.decimal  "quick_pay"
+    t.decimal  "fuel"
+    t.decimal  "driver_pay"
+    t.decimal  "misc_cost"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "job_postings", :force => true do |t|
@@ -86,7 +93,7 @@ ActiveRecord::Schema.define(:version => 20130623135402) do
     t.decimal  "cost"
     t.string   "maintenance_type"
     t.string   "description"
-    t.integer  "kilometres"
+    t.decimal  "kilometres"
     t.string   "vehicle_type"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
@@ -97,16 +104,12 @@ ActiveRecord::Schema.define(:version => 20130623135402) do
     t.integer  "driver_id"
     t.integer  "customer_id"
     t.integer  "trip_id"
-    t.integer  "shipment_no"
-    t.datetime "pickup_time"
-    t.datetime "delivery_time"
+    t.integer  "cartage_id"
     t.decimal  "rate"
-    t.integer  "skid_count"
     t.boolean  "partial"
     t.decimal  "distance"
-    t.boolean  "cartage"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "skids", :force => true do |t|
@@ -127,8 +130,6 @@ ActiveRecord::Schema.define(:version => 20130623135402) do
   end
 
   create_table "trailers", :force => true do |t|
-    t.integer  "last_service_id"
-    t.integer  "last_safety_id"
     t.integer  "trailer_no"
     t.string   "trailer_type"
     t.string   "license_plate"
@@ -136,8 +137,6 @@ ActiveRecord::Schema.define(:version => 20130623135402) do
     t.string   "model"
     t.integer  "manufactured_year"
     t.string   "vin_number"
-    t.date     "next_service_date"
-    t.date     "next_safety_date"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end
@@ -145,36 +144,29 @@ ActiveRecord::Schema.define(:version => 20130623135402) do
   create_table "trips", :force => true do |t|
     t.integer  "truck_id"
     t.integer  "trailer_id"
+    t.integer  "expense_id"
     t.date     "start_date"
     t.date     "end_date"
-    t.decimal  "driver_pay"
     t.integer  "load_bar_count"
-    t.decimal  "lease"
-    t.decimal  "insurance"
-    t.decimal  "misc_cost"
     t.decimal  "kilometres_accumulated"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
   end
 
   create_table "trucks", :force => true do |t|
-    t.integer  "last_service_id"
-    t.integer  "last_safety_id"
     t.integer  "truck_no"
     t.string   "truck_type"
     t.string   "license_plate"
     t.date     "license_expires"
-    t.boolean  "owned"
+    t.integer  "owner"
     t.string   "make"
     t.string   "model"
     t.integer  "manufactured_year"
     t.string   "vin_number"
-    t.integer  "next_service_kilometres"
-    t.date     "next_safety_date"
     t.integer  "total_kilometres"
     t.string   "current_location"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
   end
 
 end

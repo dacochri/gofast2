@@ -8,13 +8,9 @@
         <th scope="col">Customer</th>
         <th scope="col">Trip</th>
         <th scope="col">Shipment no</th>
-        <th scope="col">Pickup time</th>
-        <th scope="col">Delivery time</th>
         <th scope="col">Rate</th>
-        <th scope="col">Skid count</th>
         <th scope="col">Partial</th>
         <th scope="col">Distance</th>
-        <th scope="col">Cartage</th>
         <th scope="col"></th>
       </tr>
     </thead>
@@ -26,13 +22,9 @@
         <td><%= shipment.customer_id %></td>
         <td><%= shipment.trip_id %></td>
         <td><%= shipment.shipment_no %></td>
-        <td><%= shipment.pickup_time %></td>
-        <td><%= shipment.delivery_time %></td>
         <td><%= shipment.rate %></td>
-        <td><%= shipment.skid_count %></td>
         <td><%= shipment.partial %></td>
         <td><%= shipment.distance %></td>
-        <td><%= shipment.cartage %></td>
         <td><%= link_to 'Show', shipment, :class => 'ym-button ym-small ym-play ym-success' %> <%= link_to 'Edit', edit_shipment_path(shipment), :class => 'ym-button ym-small ym-edit ym-warning' %> <%= link_to 'Destroy', shipment, method: :delete, data: { confirm: 'Are you sure you want to delete this shipment?' }, :class => 'ym-button ym-small ym-delete ym-danger' %></td>
       </tr>
     <% end %>

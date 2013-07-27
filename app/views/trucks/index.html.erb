@@ -3,41 +3,35 @@
   <table>
     <thead>
       <tr>
-        <th scope="col">Last service</th>
-        <th scope="col">Last safety</th>
         <th scope="col">Truck no</th>
         <th scope="col">Truck type</th>
         <th scope="col">License plate</th>
         <th scope="col">License expires</th>
-        <th scope="col">Owned</th>
+        <th scope="col">Owner</th>
         <th scope="col">Make</th>
         <th scope="col">Model</th>
         <th scope="col">Manufactured year</th>
         <th scope="col">Vin number</th>
-        <th scope="col">Next service kilometres</th>
-        <th scope="col">Next safety date</th>
         <th scope="col">Total kilometres</th>
+        <th scope="col">Current location</th>
         <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
     <% @trucks.each do |truck| %>
       <tr>
-        <td><%= truck.last_service_id %></td>
-        <td><%= truck.last_safety_id %></td>
         <td><%= truck.truck_no %></td>
         <td><%= truck.truck_type %></td>
         <td><%= truck.license_plate %></td>
         <td><%= truck.license_expires %></td>
-        <td><%= truck.owned %></td>
+        <td><%= truck.owner %></td>
         <td><%= truck.make %></td>
         <td><%= truck.model %></td>
         <td><%= truck.manufactured_year %></td>
         <td><%= truck.vin_number %></td>
-        <td><%= truck.next_service_kilometres %></td>
-        <td><%= truck.next_safety_date %></td>
         <td><%= truck.total_kilometres %></td>
-    	<td><%= link_to 'Show', truck, :class => 'ym-button ym-small ym-play ym-success' %> <%= link_to 'Edit', edit_truck_path(truck), :class => 'ym-button ym-small ym-edit ym-warning' %> <%= link_to 'Destroy', truck, method: :delete, data: { confirm: 'Are you sure you want to delete this truck?' }, :class => 'ym-button ym-small ym-delete ym-danger' %></td>
+        <td><%= truck.current_location %></td>
+    	  <td><%= link_to 'Show', truck, :class => 'ym-button ym-small ym-play ym-success' %> <%= link_to 'Edit', edit_truck_path(truck), :class => 'ym-button ym-small ym-edit ym-warning' %> <%= link_to 'Destroy', truck, method: :delete, data: { confirm: 'Are you sure you want to delete this truck?' }, :class => 'ym-button ym-small ym-delete ym-danger' %></td>
       </tr>
     <% end %>
     </tbody>

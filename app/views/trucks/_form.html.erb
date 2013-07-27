@@ -14,14 +14,6 @@
   <% end %>
 
   <div class="ym-fbox">
-    <%= f.label :last_service_id %><br />
-    <%= f.number_field :last_service_id %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :last_safety_id %><br />
-    <%= f.number_field :last_safety_id %>
-  </div>
-  <div class="ym-fbox">
     <%= f.label :truck_no %><br />
     <%= f.number_field :truck_no %>
   </div>
@@ -38,8 +30,8 @@
     <%= f.date_select :license_expires %>
   </div>
   <div class="ym-fbox">
-    <%= f.label :owned %><br />
-    <%= f.check_box :owned %>
+    <%= f.label :owner %><br />
+    <%= f.number_field :owner %>
   </div>
   <div class="ym-fbox">
     <%= f.label :make %><br />
@@ -58,16 +50,12 @@
     <%= f.text_field :vin_number %>
   </div>
   <div class="ym-fbox">
-    <%= f.label :next_service_kilometres %><br />
-    <%= f.number_field :next_service_kilometres %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :next_safety_date %><br />
-    <%= f.date_select :next_safety_date %>
-  </div>
-  <div class="ym-fbox">
     <%= f.label :total_kilometres %><br />
     <%= f.number_field :total_kilometres %>
+  </div>
+  <div class="ym-fbox">
+    <%= f.label :current_location %><br />
+    <%= f.text_field :current_location %>
   </div>
   <div class="actions ym-fbox-footer">
     <%= f.submit %>
