@@ -1,25 +1,9 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Quick pay:</b>
-  <%= @expense.quick_pay %>
-</p>
-
-<p>
-  <b>Fuel:</b>
-  <%= @expense.fuel %>
-</p>
-
-<p>
-  <b>Driver pay:</b>
-  <%= @expense.driver_pay %>
-</p>
-
-<p>
-  <b>Misc cost:</b>
-  <%= @expense.misc_cost %>
-</p>
-
-
-<%= link_to 'Edit', edit_expense_path(@expense) %> |
-<%= link_to 'Back', expenses_path %>
+<section>
+  <h2>Expense #<%= @expense.id %></h2>
+  <p id="notice" class="highlight"><%= notice %></p>
+  <p><strong>Quick pay:</strong> <%= @expense.quick_pay %></p>
+  <p><strong>Fuel:</strong> <%= @expense.fuel %></p>
+  <p><strong>Driver pay:</strong> <%= @expense.driver_pay %></p>
+  <p><strong>Misc cost:</strong> <%= @expense.misc_cost %></p>
+  <p><%= link_to 'Edit', edit_expense_path(@expense) %> | <%= link_to 'Back', expenses_path %></p>
+</section>

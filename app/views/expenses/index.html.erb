@@ -1,29 +1,26 @@
-<h1>Listing expenses</h1>
-
-<table>
-  <tr>
-    <th>Quick pay</th>
-    <th>Fuel</th>
-    <th>Driver pay</th>
-    <th>Misc cost</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @expenses.each do |expense| %>
-  <tr>
-    <td><%= expense.quick_pay %></td>
-    <td><%= expense.fuel %></td>
-    <td><%= expense.driver_pay %></td>
-    <td><%= expense.misc_cost %></td>
-    <td><%= link_to 'Show', expense %></td>
-    <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
-    <td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Expense', new_expense_path %>
+<section>
+  <h2>Expenses</h2>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Quick pay</th>
+        <th scope="col">Fuel</th>
+        <th scope="col">Driver pay</th>
+        <th scope="col">Misc cost</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @expenses.each do |expense| %>
+      <tr>
+        <td><%= expense.quick_pay %></td>
+        <td><%= expense.fuel %></td>
+        <td><%= expense.driver_pay %></td>
+        <td><%= expense.misc_cost %></td>
+        <td><%= link_to 'Show', expense %> <%= link_to 'Edit', edit_expense_path(expense) %> <%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure you want do delete this expense?' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <p><%= link_to 'New Expense', new_expense_path %></p>
+</section>
