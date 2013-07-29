@@ -1,7 +1,7 @@
 class Driver < ActiveRecord::Base
   attr_accessible :business_name, :cell_phone, :city, :comments, :first_name, :home_phone, :hst_no, :last_name, :postal_code, :street, :unit
 
-  validates :city, :first_name, :last_name, :postal_code, :street, :presence => true
+  validates :city, :first_name, :last_name, :home_phone, :postal_code, :street, :presence => true
   validates :business_name, :format => company
   validates :cell_phone, :home_phone, :numericality => true
   validates :cell_phone, :home_phone, :length => 10

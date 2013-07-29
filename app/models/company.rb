@@ -9,7 +9,7 @@ class Company < ActiveRecord::Base
   validates :city, :format => city
   validates :contact_name, :format => name
   validates :street, :format => street
-  validates :province, :format => province
+  validates :province, :inclusion => { :in => province }
   validates :postal_code, :format => postal_code
   validates :email, :format => email
   validates :unit, :format => unit
