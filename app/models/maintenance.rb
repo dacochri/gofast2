@@ -1,7 +1,7 @@
 class Maintenance < ActiveRecord::Base
-  attr_accessible :cost, :date, :description, :kilometres, :trip_id, :maintenance_type, :vehicle_id
+  attr_accessible :vehicle_type, :cost, :date, :description, :kilometres, :trip_id, :maintenance_type, :vehicle_id
 
-  validates :cost, :date, :description, :kilometres, :trip_id, :maintenance_type, :vehicle_id, :presence => true
+  validates :cost, :date, :description, :kilometres, :trip_id, :maintenance_type, :vehicle_id, :vehicle_type, :presence => true
   validates :trip_id, :vehicle_id, :numericality => true
   validates :cost, :kilometres, :format => double
   validates :date, :format => date

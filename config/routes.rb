@@ -1,4 +1,7 @@
 Gofast2::Application.routes.draw do
+  resources :expenses
+
+
   get "schedule/index"
 
   get "quotes/index"

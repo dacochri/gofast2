@@ -1,8 +1,6 @@
 class CreateDrivers < ActiveRecord::Migration
   def change
     create_table :drivers do |t|
-      t.integer :truck_id
-      t.integer :trailer_id
       t.string :first_name
       t.string :last_name
       t.string :street

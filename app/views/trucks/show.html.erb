@@ -1,19 +1,16 @@
 <section>
   <h2>Truck #<%= @truck.id %></h2>
   <p id="notice" class="highlight"><%= notice %></p>
-  <p><strong>Last service:</strong> <%= @truck.last_service_id %></p>
-  <p><strong>Last safety:</strong> <%= @truck.last_safety_id %></p>
   <p><strong>Truck no:</strong> <%= @truck.truck_no %></p>
   <p><strong>Truck type:</strong> <%= @truck.truck_type %></p>
   <p><strong>License plate:</strong> <%= @truck.license_plate %></p>
   <p><strong>License expires:</strong> <%= @truck.license_expires %></p>
-  <p><strong>Owned:</strong> <%= @truck.owned %></p>
+  <p><strong>Owner:</strong> <%= @truck.owner %></p>
   <p><strong>Make:</strong> <%= @truck.make %></p>
   <p><strong>Model:</strong> <%= @truck.model %></p>
   <p><strong>Manufactured year:</strong> <%= @truck.manufactured_year %></p>
   <p><strong>Vin number:</strong> <%= @truck.vin_number %></p>
-  <p><strong>Next service kilometres:</strong> <%= @truck.next_service_kilometres %></p>
-  <p><strong>Next safety date:</strong> <%= @truck.next_safety_date %></p>
   <p><strong>Total kilometres:</strong> <%= @truck.total_kilometres %></p>
+  <p><strong>Current location:</strong> <%= @truck.current_location %></p>
   <p><%= link_to 'Edit', edit_truck_path(@truck), :class => 'ym-button ym-edit' %> <%= link_to 'Back', trucks_path, :class => 'ym-button ym-close' %></p>
 </section>
