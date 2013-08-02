@@ -18,5 +18,5 @@ class ValidationValues
 
   province = %w(Alberta British\ Columbia Manitoba New\ Brunswick Newfoundland\ and\ Labrador Nova\ Scotia Ontario Prince\ Edward\ Island Quebec Saskatchewan Northwest\ Territories Nunavut Yukon)
   vehicle_type = %w(truck trailer)
-  vehicle_sub_type = %w(refrigerator straight)
+  vehicle_sub_type = %w(regular straight tractor refrigerator)
 end
