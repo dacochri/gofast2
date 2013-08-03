@@ -2,7 +2,6 @@ class CreateSkids < ActiveRecord::Migration
   def change
     create_table :skids do |t|
       t.integer :shipment_id
-      t.integer :company_id
       t.string :product_desc
       t.decimal :weight
       t.boolean :oversized
