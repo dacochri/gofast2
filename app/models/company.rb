@@ -7,7 +7,7 @@ class Company < ActiveRecord::Base
   validates :name, :format => company
   validates :primary_phone, :secondary_phone, :length => 10..11
   validates :city, :format => city
-  validates :contact_name, :format => name
+  validates :contact_name, :format => last_name
   validates :street, :format => street
   validates :province, :inclusion => { :in => province }
   validates :postal_code, :format => postal_code
