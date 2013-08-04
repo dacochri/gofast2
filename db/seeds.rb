@@ -56,17 +56,17 @@ Maintenance.create(vehicle_id: '4', trip_id: '1', date: '20130418', cost: '1628.
 Maintenance.create(vehicle_id: '5', trip_id: '', date: '20130422', cost: '250.00', maintenance_type: 'oil change', description: 'routine oil change', kilometres: '2059.66', vehicle_type: 'truck')
 
 #shipments
-Shipment.create(broker_id: '1', driver_id: '1', customer_id: '4', trip_id: '1', cartage_id: '', rate: '3300.63', partial: 'false', distance: '2190.88')
-Shipment.create(broker_id: '2', driver_id: '1', customer_id: '4', trip_id: '1', cartage_id: '4', rate: '4900.63', partial: 'false', distance: '1890.88')
-Shipment.create(broker_id: '3', driver_id: '2', customer_id: '4', trip_id: '2', cartage_id: '', rate: '5000.63', partial: 'false', distance: '1690.88')
-Shipment.create(broker_id: '2', driver_id: '2', customer_id: '4', trip_id: '2', cartage_id: '5', rate: '2500.63', partial: 'false', distance: '1590.88')
-Shipment.create(broker_id: '1', driver_id: '2', customer_id: '4', trip_id: '2', cartage_id: '1', rate: '3900.63', partial: 'false', distance: '2690.88')
-Shipment.create(broker_id: '1', driver_id: '3', customer_id: '4', trip_id: '3', cartage_id: '', rate: '4500.63', partial: 'false', distance: '1890.88')
-Shipment.create(broker_id: '1', driver_id: '3', customer_id: '4', trip_id: '3', cartage_id: '', rate: '4500.63', partial: 'false', distance: '1890.88')
-Shipment.create(broker_id: '2', driver_id: '4', customer_id: '4', trip_id: '3', cartage_id: '2', rate: '3500.63', partial: 'false', distance: '1890.88')
-Shipment.create(broker_id: '2', driver_id: '4', customer_id: '4', trip_id: '4', cartage_id: '', rate: '3500.63', partial: 'false', distance: '1890.88')
-Shipment.create(broker_id: '3', driver_id: '5', customer_id: '4', trip_id: '5', cartage_id: '', rate: '5500.63', partial: 'false', distance: '1890.88')
-Shipment.create(broker_id: '3', driver_id: '5', customer_id: '4', trip_id: '5', cartage_id: '3', rate: '5500.63', partial: 'false', distance: '1890.88')
+Shipment.create(broker_id: '1', customer_id: '4', trip_id: '1', rate: '3300.63', partial: 'false', distance: '2190.88')
+Shipment.create(broker_id: '2', customer_id: '4', trip_id: '1', rate: '4900.63', partial: 'false', distance: '1890.88')
+Shipment.create(broker_id: '3', customer_id: '4', trip_id: '2', rate: '5000.63', partial: 'false', distance: '1690.88')
+Shipment.create(broker_id: '2', customer_id: '4', trip_id: '2', rate: '2500.63', partial: 'false', distance: '1590.88')
+Shipment.create(broker_id: '1', customer_id: '4', trip_id: '2', rate: '3900.63', partial: 'false', distance: '2690.88')
+Shipment.create(broker_id: '1', customer_id: '4', trip_id: '3', rate: '4500.63', partial: 'false', distance: '1890.88')
+Shipment.create(broker_id: '1', customer_id: '4', trip_id: '3', rate: '4500.63', partial: 'false', distance: '1890.88')
+Shipment.create(broker_id: '2', customer_id: '4', trip_id: '3', rate: '3500.63', partial: 'false', distance: '1890.88')
+Shipment.create(broker_id: '2', customer_id: '4', trip_id: '4', rate: '3500.63', partial: 'false', distance: '1890.88')
+Shipment.create(broker_id: '3', customer_id: '4', trip_id: '5', rate: '5500.63', partial: 'false', distance: '1890.88')
+Shipment.create(broker_id: '3', customer_id: '4', trip_id: '5', rate: '5500.63', partial: 'false', distance: '1890.88')
 
 #Skids
 Skid.create(shipment_id: '1', product_desc: 'Cool Stuff', weight: '300', oversized: 'false', pickup_location: '123 Karaoke Street', delivery_location: '321 Georgetown', pickup_time: '20130702 202123', delivery_time: '20130708 102000', warehouse_delivery_time: '', warehouse_pickup_time: '', skid_count: '6')
@@ -88,11 +88,11 @@ Trailer.create(trailer_no: '4', trailer_type: 'flat', license_plate: 'TRLR4', ma
 Trailer.create(trailer_no: '5', trailer_type: 'fridge', license_plate: 'TRLR5', make: 'lor', model: 'let', manufactured_year: '2005', vin_number: '123')
 
 #Trips
-Trip.create(truck_id: '1', trailer_id: '1', expense_id: '1', start_date: '20130702', end_date: '20130708', load_bar_count: '6', kilometres_accumulated: '2000') 
-Trip.create(truck_id: '2', trailer_id: '2', expense_id: '2', start_date: '20130703', end_date: '20130709', load_bar_count: '6', kilometres_accumulated: '2000') 
-Trip.create(truck_id: '3', trailer_id: '3', expense_id: '3', start_date: '20130702', end_date: '20130708', load_bar_count: '6', kilometres_accumulated: '2000') 
-Trip.create(truck_id: '4', trailer_id: '4', expense_id: '4', start_date: '20130703', end_date: '20130709', load_bar_count: '6', kilometres_accumulated: '2000') 
-Trip.create(truck_id: '5', trailer_id: '5', expense_id: '5', start_date: '20130702', end_date: '20130708', load_bar_count: '6', kilometres_accumulated: '2000')
+Trip.create(truck_id: '1', trailer_id: '1', expense_id: '1', driver_id: '1', cartage_id: '1', start_date: '20130702', end_date: '20130708', load_bar_count: '6', kilometres_accumulated: '2000') 
+Trip.create(truck_id: '2', trailer_id: '2', expense_id: '2', driver_id: '2', cartage_id: '2', start_date: '20130703', end_date: '20130709', load_bar_count: '6', kilometres_accumulated: '2000') 
+Trip.create(truck_id: '3', trailer_id: '3', expense_id: '3', driver_id: '1', cartage_id: '3', start_date: '20130702', end_date: '20130708', load_bar_count: '6', kilometres_accumulated: '2000') 
+Trip.create(truck_id: '4', trailer_id: '4', expense_id: '4', driver_id: '3', cartage_id: '4', start_date: '20130703', end_date: '20130709', load_bar_count: '6', kilometres_accumulated: '2000') 
+Trip.create(truck_id: '5', trailer_id: '5', expense_id: '5', driver_id: '2', cartage_id: '5', start_date: '20130702', end_date: '20130708', load_bar_count: '6', kilometres_accumulated: '2000')
 
 #Trucks
 Truck.create(truck_no: '1', truck_type: 'Reg', license_plate: 'TRUCK1', license_expires: '20140301', owner: '1', make: 'jig', model: 'lok', manufactured_year: '2005', vin_number: '123', total_kilometres: '500000', current_location: 'Yard')

@@ -1,4 +1,7 @@
 Gofast2::Application.routes.draw do
+  resources :trip_rosters
+
+
   resources :expenses
 
 
