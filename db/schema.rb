@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130727173722) do
+ActiveRecord::Schema.define(:version => 20130804150521) do
 
   create_table "announcements", :force => true do |t|
     t.integer  "posted_by"
@@ -101,10 +101,8 @@ ActiveRecord::Schema.define(:version => 20130727173722) do
 
   create_table "shipments", :force => true do |t|
     t.integer  "broker_id"
-    t.integer  "driver_id"
     t.integer  "customer_id"
     t.integer  "trip_id"
-    t.integer  "cartage_id"
     t.decimal  "rate"
     t.boolean  "partial"
     t.decimal  "distance"
@@ -114,7 +112,6 @@ ActiveRecord::Schema.define(:version => 20130727173722) do
 
   create_table "skids", :force => true do |t|
     t.integer  "shipment_id"
-    t.integer  "company_id"
     t.string   "product_desc"
     t.decimal  "weight"
     t.boolean  "oversized"
@@ -141,10 +138,19 @@ ActiveRecord::Schema.define(:version => 20130727173722) do
     t.datetime "updated_at",        :null => false
   end
 
+  create_table "trip_rosters", :force => true do |t|
+    t.integer  "shipment_id"
+    t.integer  "trip_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "trips", :force => true do |t|
     t.integer  "truck_id"
     t.integer  "trailer_id"
     t.integer  "expense_id"
+    t.integer  "driver_id"
+    t.integer  "cartage_id"
     t.date     "start_date"
     t.date     "end_date"
     t.integer  "load_bar_count"
