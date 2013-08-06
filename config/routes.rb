@@ -1,9 +1,7 @@
 Gofast2::Application.routes.draw do
-  resources :trip_rosters
-
+  # resources :trip_rosters
 
   resources :expenses
-
 
   get "schedule/index"
 
@@ -17,36 +15,25 @@ Gofast2::Application.routes.draw do
 
   resources :drivers
 
-
   resources :trailers
-
 
   resources :trucks
 
-
   resources :job_postings
-
 
   resources :maintenances
 
-
   resources :trips
-
 
   resources :shipments
 
-
   resources :skids
-
 
   resources :announcements
 
-
   resources :cartages
 
-
   resources :companies
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
