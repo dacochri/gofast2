@@ -7,8 +7,8 @@
         <th scope="col">Driver</th>
         <th scope="col">Trip No.</th>
         <th scope="col">Load Bars</th>
-        <th scope="col">Current Mileage (km)</th>
-        <th scope="col">Next Oil Change (km)</th>
+        <th scope="col">Current Mileage</th>
+        <th scope="col">Next Oil Change</th>
         <th scope="col">Current Location</th>
         <th scope="col">Destination(s)</th>
         <th scope="col">Trailer No.</th>
@@ -20,15 +20,15 @@
       <% record = ScheduleController.schedule_record(truck.id) %>
 			<tr>
 				<td><%= link_to "#{record['truck_no']}" ,{:action => "../trucks/#{truck.id}"} %></td>
-				<td><%= link_to "#{record['driver_name']}" ,{:action => "../drivers/#{record['driver_id']}"} %></td>
+				<td><%= link_to "#{record['driver_name']}" ,{:action => "../drivers/show/#{record['driver_id']}"} %></td>
 				<td><%= link_to "#{record['trip_no']}" ,{:action => "../trips/#{record['trip_no']}"} %></td>
 				<td><%= record['load_bar_count'] %></td>
-				<td><%= record['current_mileage'] %></td>
-				<td><%= record['next_oil_change'] %></td>
+				<td><%= record['current_mileage'] %> km</td>
+				<td><%= record['next_oil_change'] %> km</td>
 				<td><%= record['current_location'] %></td>
 				<td><%= raw record['delivery_locations'].join '<br />' %></td>
         			<td><%= link_to "#{record['trailer_no']}" ,{:action => "../trailers/#{record['trailer_no']}"} %></td>
-				<td><%= record['trailer_next_service_date'] %></td>
+				<td><%= record['trailer_next_service_date'] %> km</td>
 			</tr>
 			<% end %>
     </tbody>
