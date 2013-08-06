@@ -23,12 +23,12 @@
 				<td><%= link_to "#{record['driver_name']}" ,{:action => "../drivers/show/#{record['driver_id']}"} %></td>
 				<td><%= link_to "#{record['trip_no']}" ,{:action => "../trips/show/#{record['trip_no']}"} %></td>
 				<td><%= record['load_bar_count'] %></td>
-				<td><%= record['current_mileage'] %> km</td>
-				<td><%= record['next_oil_change'] %> km</td>
+				<td><%= record['current_mileage'] %></td>
+				<td><%= record['next_oil_change'] || "No Records"%></td>
 				<td><%= record['current_location'] %></td>
 				<td><%= raw record['delivery_locations'].join '<br />' %></td>
         			<td><%= link_to "#{record['trailer_no']}" ,{:action => "../trailers/show/#{record['trailer_no']}"} %></td>
-				<td><%= record['trailer_next_service_date'] %></td>
+				<td><%= record['trailer_next_service_date'] || "No Records"%></td>
 			</tr>
 			<% end %>
     </tbody>
