@@ -19,6 +19,8 @@ class ValidationValues
   @vehicle_type = %w(truck trailer)
   @vehicle_sub_type = %w(regular straight tractor refrigerator)
   
+  @message = 'does not match expected format.';
+  
   def self.double
     @double
   end
@@ -85,5 +87,9 @@ class ValidationValues
 
   def self.vehicle_sub_type
     @vehicle_sub_type
+  end
+
+  def self.message
+    @message
   end
 end
