@@ -1,8 +1,9 @@
 class TrailersController < ApplicationController
   # GET /trailers
   # GET /trailers.json
+  helper_method :sort_column, :sort_direction
   def index
-    @trailers = Trailer.all
+    @trailers = Trailer.order(sort_column + " " + sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -79,5 +80,15 @@ class TrailersController < ApplicationController
       format.html { redirect_to trailers_url }
       format.json { head :no_content }
     end
+  end
+  
+  private
+  
+  def sort_column
+    Trailer.column_names.include?(params[:sort]) ? params[:sort] : "trailer_no"
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 end

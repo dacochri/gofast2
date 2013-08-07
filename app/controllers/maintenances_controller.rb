@@ -1,8 +1,9 @@
 class MaintenancesController < ApplicationController
   # GET /maintenances
   # GET /maintenances.json
+  helper_method :sort_column, :sort_direction
   def index
-    @maintenances = Maintenance.all
+    @maintenances = Maintenance.order(sort_column + " " + sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -79,5 +80,15 @@ class MaintenancesController < ApplicationController
       format.html { redirect_to maintenances_url }
       format.json { head :no_content }
     end
+  end
+  
+  private
+  
+  def sort_column
+    Maintenance.column_names.include?(params[:sort]) ? params[:sort] : "vehicle_id"
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 end

@@ -1,8 +1,9 @@
 class JobPostingsController < ApplicationController
   # GET /job_postings
   # GET /job_postings.json
+  helper_method :sort_column, :sort_direction
   def index
-    @job_postings = JobPosting.all
+    @job_postings = JobPosting.order(sort_column + " " + sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -79,5 +80,15 @@ class JobPostingsController < ApplicationController
       format.html { redirect_to job_postings_url }
       format.json { head :no_content }
     end
+  end
+  
+  private
+  
+  def sort_column
+    JobPosting.column_names.include?(params[:sort]) ? params[:sort] : "title"
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 end

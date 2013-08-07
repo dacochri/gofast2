@@ -3,14 +3,12 @@
   <table>
     <thead>
       <tr>
-        <th scope="col">Broker</th>
-        <th scope="col">Driver</th>
-        <th scope="col">Customer</th>
-        <th scope="col">Trip</th>
-        <th scope="col">Shipment no</th>
-        <th scope="col">Rate</th>
-        <th scope="col">Partial</th>
-        <th scope="col">Distance</th>
+        <th scope="col"><%= sortable "broker_id" %></th>
+        <th scope="col"><%= sortable "customer_id" %></th>
+        <th scope="col"><%= sortable "trip_id" %></th>
+        <th scope="col"><%= sortable "rate" %></th>
+        <th scope="col"><%= sortable "partial" %></th>
+        <th scope="col"><%= sortable "distance" %></th>
         <th scope="col"></th>
       </tr>
     </thead>
@@ -18,10 +16,8 @@
     <% @shipments.each do |shipment| %>
       <tr>
         <td><%= shipment.broker_id %></td>
-        <td><%= shipment.driver_id %></td>
         <td><%= shipment.customer_id %></td>
         <td><%= shipment.trip_id %></td>
-        <td><%= shipment.shipment_no %></td>
         <td><%= shipment.rate %></td>
         <td><%= shipment.partial %></td>
         <td><%= shipment.distance %></td>

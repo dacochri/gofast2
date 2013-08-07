@@ -1,8 +1,9 @@
 class ExpensesController < ApplicationController
   # GET /expenses
   # GET /expenses.json
+  helper_method :sort_column, :sort_direction
   def index
-    @expenses = Expense.all
+    @expenses = Expense.order(sort_column + " " + sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -79,5 +80,15 @@ class ExpensesController < ApplicationController
       format.html { redirect_to expenses_url }
       format.json { head :no_content }
     end
+  end
+  
+  private
+  
+  def sort_column
+    Expense.column_names.include?(params[:sort]) ? params[:sort] : "quick_pay"
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 end

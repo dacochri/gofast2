@@ -1,8 +1,9 @@
 class SkidsController < ApplicationController
   # GET /skids
   # GET /skids.json
+  helper_method :sort_column, :sort_direction
   def index
-    @skids = Skid.all
+    @skids = Skid.order(sort_column + " " + sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -79,5 +80,15 @@ class SkidsController < ApplicationController
       format.html { redirect_to skids_url }
       format.json { head :no_content }
     end
+  end
+  
+  private
+  
+  def sort_column
+    Skid.column_names.include?(params[:sort]) ? params[:sort] : "shipment_id"
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 end
