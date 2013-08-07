@@ -3,7 +3,7 @@ class TrucksController < ApplicationController
   # GET /trucks.json
   helper_method :sort_column, :sort_direction
   def index
-    @trucks = Truck.order(sort_column + " " + sort_direction)
+    @trucks = Truck.search(params[:search]).order(sort_column + " " + sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb
