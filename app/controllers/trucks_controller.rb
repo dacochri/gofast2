@@ -1,9 +1,10 @@
 class TrucksController < ApplicationController
   # GET /trucks
   # GET /trucks.json
-  helper_method :sort_column, :sort_direction
+  include ApplicationHelper
+  #helper_method :sort_column, :sort_direction
   def index
-    @trucks = Truck.search(params[:search]).order(sort_column + " " + sort_direction)
+    @trucks = Truck.search(params[:search]).order(sort_column(Truck, "truck_no") + " " + sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,15 +81,5 @@ class TrucksController < ApplicationController
       format.html { redirect_to trucks_url }
       format.json { head :no_content }
     end
-  end
-  
-  private
-  
-  def sort_column
-    Truck.column_names.include?(params[:sort]) ? params[:sort] : "truck_no"
-  end
-  
-  def sort_direction
-    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 end
