@@ -1,7 +1,7 @@
 class ScheduleController < ApplicationController
-  helper_method :sort_column, :sort_direction
+  include ApplicationHelper
   def index
-    @trucks = Truck.order(sort_column + " " + sort_direction)
+    @trucks = Truck.order(sort_column(Truck, "truck_no") + " " + sort_direction)
     #@drivers = Driver.all
   end
   
@@ -31,15 +31,5 @@ class ScheduleController < ApplicationController
     end
 
     return current_schedule_record
-  end
-  
-  private
-  
-  def sort_column
-    Truck.column_names.include?(params[:sort]) ? params[:sort] : "truck_no"
-  end
-  
-  def sort_direction
-    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 end

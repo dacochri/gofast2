@@ -3,18 +3,18 @@
   <table>
     <thead>
       <tr>
-        <th scope="col"><%= sortable "company_type" %></th>
-        <th scope="col"><%= sortable "name" %></th>
-        <th scope="col"><%= sortable "street" %></th>
-        <th scope="col"><%= sortable "unit" %></th>
-        <th scope="col"><%= sortable "city" %></th>
-        <th scope="col"><%= sortable "province" %></th>
-        <th scope="col"><%= sortable "postal_code" %></th>
-        <th scope="col"><%= sortable "email" %></th>
-        <th scope="col"><%= sortable "primary_phone" %></th>
-        <th scope="col"><%= sortable "secondary_phone" %></th>
-        <th scope="col"><%= sortable "fax" %></th>
-        <th scope="col"><%= sortable "contact_name" %></th>
+        <th scope="col"><%= sortable "company_type", nil, @companies, "company_type" %></th>
+        <th scope="col"><%= sortable "name", nil, @companies, "company_type" %></th>
+        <th scope="col"><%= sortable "street", nil, @companies, "company_type" %></th>
+        <th scope="col"><%= sortable "unit", nil, @companies, "company_type" %></th>
+        <th scope="col"><%= sortable "city", nil, @companies, "company_type" %></th>
+        <th scope="col"><%= sortable "province", nil, @companies, "company_type" %></th>
+        <th scope="col"><%= sortable "postal_code", nil, @companies, "company_type" %></th>
+        <th scope="col"><%= sortable "email", nil, @companies, "company_type" %></th>
+        <th scope="col"><%= sortable "primary_phone", nil, @companies, "company_type" %></th>
+        <th scope="col"><%= sortable "secondary_phone", nil, @companies, "company_type" %></th>
+        <th scope="col"><%= sortable "fax", nil, @companies, "company_type" %></th>
+        <th scope="col"><%= sortable "contact_name", nil, @companies, "company_type" %></th>
         <th scope="col"></th>
       </tr>
     </thead>

@@ -3,12 +3,12 @@
   <table>
     <thead>
       <tr>
-        <th scope="col"><%= sortable "broker_id" %></th>
-        <th scope="col"><%= sortable "customer_id" %></th>
-        <th scope="col"><%= sortable "trip_id" %></th>
-        <th scope="col"><%= sortable "rate" %></th>
-        <th scope="col"><%= sortable "partial" %></th>
-        <th scope="col"><%= sortable "distance" %></th>
+        <th scope="col"><%= sortable "broker_id", nil, @shipments, "broker_id" %></th>
+        <th scope="col"><%= sortable "customer_id", nil, @shipments, "broker_id" %></th>
+        <th scope="col"><%= sortable "trip_id", nil, @shipments, "broker_id" %></th>
+        <th scope="col"><%= sortable "rate", nil, @shipments, "broker_id" %></th>
+        <th scope="col"><%= sortable "partial", nil, @shipments, "broker_id" %></th>
+        <th scope="col"><%= sortable "distance", nil, @shipments, "broker_id" %></th>
         <th scope="col"></th>
       </tr>
     </thead>

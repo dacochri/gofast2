@@ -3,13 +3,13 @@
   <table>
     <thead>
       <tr>
-        <th scope="col"><%= sortable "company_id" %></th>
-        <th scope="col"><%= sortable "trailer_id" %></th>
-        <th scope="col"><%= sortable "shipment_id" %></th>
-        <th scope="col"><%= sortable "pickup_time" %></th>
-        <th scope="col"><%= sortable "delivery_time" %></th>
-        <th scope="col"><%= sortable "driver_name" %></th>
-        <th scope="col"><%= sortable "cost" %></th>
+        <th scope="col"><%= sortable "company_id", nil, @cartages, "company_id" %></th>
+        <th scope="col"><%= sortable "trailer_id", nil, @cartages, "company_id" %></th>
+        <th scope="col"><%= sortable "shipment_id", nil, @cartages, "company_id" %></th>
+        <th scope="col"><%= sortable "pickup_time", nil, @cartages, "company_id" %></th>
+        <th scope="col"><%= sortable "delivery_time", nil, @cartages, "company_id" %></th>
+        <th scope="col"><%= sortable "driver_name", nil, @cartages, "company_id" %></th>
+        <th scope="col"><%= sortable "cost", nil, @cartages, "company_id" %></th>
         <th scope="col"></th>
       </tr>
     </thead>

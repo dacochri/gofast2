@@ -3,10 +3,10 @@
   <table>
     <thead>
       <tr>
-        <th scope="col"><%= sortable "quick_pay" %></th>
-        <th scope="col"><%= sortable "fuel" %></th>
-        <th scope="col"><%= sortable "driver_pay" %></th>
-        <th scope="col"><%= sortable "misc_cost" %></th>
+        <th scope="col"><%= sortable "quick_pay", nil, @expenses, "quick_pay" %></th>
+        <th scope="col"><%= sortable "fuel", nil, @expenses, "quick_pay" %></th>
+        <th scope="col"><%= sortable "driver_pay", nil, @expenses, "quick_pay" %></th>
+        <th scope="col"><%= sortable "misc_cost", nil, @expenses, "quick_pay" %></th>
         <th scope="col"></th>
       </tr>
     </thead>

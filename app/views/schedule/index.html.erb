@@ -3,16 +3,16 @@
   <table>
     <thead>
       <tr>
-        <th scope="col"><%= sortable "truck_no" %></th>
-        <th scope="col"><%= sortable "driver_name" %></th>
-        <th scope="col"><%= sortable "trip_start" %></th>
-        <th scope="col"><%= sortable "load_bar_count" %></th>
-        <th scope="col"><%= sortable "current_mileage" %></th>
-        <th scope="col"><%= sortable "next_oil_change" %></th>
-        <th scope="col"><%= sortable "current_location" %></th>
-        <th scope="col"><%= sortable "delivery_locations" %></th>
-        <th scope="col"><%= sortable "trailer_no" %></th>
-        <th scope="col"><%= sortable "trailer_next_service_date" %></th>
+        <th scope="col"><%= sortable "truck_no", nil, @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "driver_name", nil, @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "trip_start", nil, @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "load_bar_count", nil, @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "current_mileage", nil, @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "next_oil_change", nil, @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "current_location", nil, @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "delivery_locations", nil, @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "trailer_no", nil, @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "trailer_next_service_date", nil, @trucks, "truck_no" %></th>
       </tr>
     </thead>
     <tbody>

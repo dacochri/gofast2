@@ -2,7 +2,6 @@ class TrucksController < ApplicationController
   # GET /trucks
   # GET /trucks.json
   include ApplicationHelper
-  #helper_method :sort_column, :sort_direction
   def index
     @trucks = Truck.search(params[:search]).order(sort_column(Truck, "truck_no") + " " + sort_direction)
 

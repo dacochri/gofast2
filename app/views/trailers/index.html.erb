@@ -3,13 +3,13 @@
   <table>
     <thead>
       <tr>
-        <th scope="col"><%= sortable "trailer_no" %></th>
-        <th scope="col"><%= sortable "trailer_type" %></th>
-        <th scope="col"><%= sortable "license_plate" %></th>
-        <th scope="col"><%= sortable "make" %></th>
-        <th scope="col"><%= sortable "model" %></th>
-        <th scope="col"><%= sortable "manufactured_year" %></th>
-        <th scope="col"><%= sortable "vin_number" %></th>
+        <th scope="col"><%= sortable "trailer_no", nil, @trailers, "trailer_no" %></th>
+        <th scope="col"><%= sortable "trailer_type", nil, @trailers, "trailer_no" %></th>
+        <th scope="col"><%= sortable "license_plate", nil, @trailers, "trailer_no" %></th>
+        <th scope="col"><%= sortable "make", nil, @trailers, "trailer_no" %></th>
+        <th scope="col"><%= sortable "model", nil, @trailers, "trailer_no" %></th>
+        <th scope="col"><%= sortable "manufactured_year", nil, @trailers, "trailer_no" %></th>
+        <th scope="col"><%= sortable "vin_number", nil, @trailers, "trailer_no" %></th>
         <th scope="col"></th>
       </tr>
     </thead>

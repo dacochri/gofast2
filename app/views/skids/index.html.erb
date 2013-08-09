@@ -3,17 +3,17 @@
   <table>
     <thead>
       <tr>
-        <th scope="col"><%= sortable "shipment_id" %></th>
-        <th scope="col"><%= sortable "product_desc" %></th>
-        <th scope="col"><%= sortable "weight" %></th>
-        <th scope="col"><%= sortable "oversized" %></th>
-        <th scope="col"><%= sortable "pickup_location" %></th>
-        <th scope="col"><%= sortable "delivery_location" %></th>
-        <th scope="col"><%= sortable "pickup_time" %></th>
-        <th scope="col"><%= sortable "delivery_time" %></th>
-        <th scope="col"><%= sortable "warehouse_delivery_time" %></th>
-        <th scope="col"><%= sortable "warehouse_pickup_time" %></th>
-        <th scope="col"><%= sortable "skid_count" %></th>
+        <th scope="col"><%= sortable "shipment_id", nil, @skids, "shipment_id" %></th>
+        <th scope="col"><%= sortable "product_desc", nil, @skids, "shipment_id" %></th>
+        <th scope="col"><%= sortable "weight", nil, @skids, "shipment_id" %></th>
+        <th scope="col"><%= sortable "oversized", nil, @skids, "shipment_id" %></th>
+        <th scope="col"><%= sortable "pickup_location", nil, @skids, "shipment_id" %></th>
+        <th scope="col"><%= sortable "delivery_location", nil, @skids, "shipment_id" %></th>
+        <th scope="col"><%= sortable "pickup_time", nil, @skids, "shipment_id" %></th>
+        <th scope="col"><%= sortable "delivery_time", nil, @skids, "shipment_id" %></th>
+        <th scope="col"><%= sortable "warehouse_delivery_time", nil, @skids, "shipment_id" %></th>
+        <th scope="col"><%= sortable "warehouse_pickup_time", nil, @skids, "shipment_id" %></th>
+        <th scope="col"><%= sortable "skid_count", nil, @skids, "shipment_id" %></th>
         <th scope="col"></th>
       </tr>
     </thead>

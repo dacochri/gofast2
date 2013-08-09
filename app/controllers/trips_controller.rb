@@ -1,9 +1,9 @@
 class TripsController < ApplicationController
   # GET /trips
   # GET /trips.json
-  helper_method :sort_column, :sort_direction
+  include ApplicationHelper
   def index
-    @trips = Trip.order(sort_column + " " + sort_direction)
+    @trips = Trip.order(sort_column(Trip, "truck_id") + " " + sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,15 +80,5 @@ class TripsController < ApplicationController
       format.html { redirect_to trips_url }
       format.json { head :no_content }
     end
-  end
-  
-  private
-  
-  def sort_column
-    Trip.column_names.include?(params[:sort]) ? params[:sort] : "truck_id"
-  end
-  
-  def sort_direction
-    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 end
