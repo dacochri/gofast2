@@ -1,5 +1,5 @@
 class ValidationValues
-  @double = /\d+\.\d{2}/
+  @double = /\d+\.?\d{0,2}/
   @alpha = /[A-Za-z]+/
   @alpha_numeric = /[A-Za-z0-9]+/
   
@@ -7,7 +7,7 @@ class ValidationValues
   @last_name = /[A-Za-z' ]+/
   @company = /[A-Za-z. ]+/
   @city = /[A-Za-z'. ]+/
-  @street = /\d{1-4} [A-Za-z. ]+/
+  @street = /\d{0,4} ?[A-Za-z. ]+/
   @unit = /[A-Z0-9 ]+/
   @license_plate = /[A-Z0-9 ]{3,8}/
   @hst_no = /[A-Z0-9]+/
