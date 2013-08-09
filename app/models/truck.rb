@@ -10,13 +10,12 @@ class Truck < ActiveRecord::Base
   end
   
   # This method will return the columns NOT IN the `unwanted_columns` array
-  def self.searchable_columns
-    unwanted_column = ['license_expires', 'id']
-    self.column_names.reject{ |column| unwanted_column.include?(column) }
+  def self.searchable_columns(unwanted_columns)
+    self.column_names.reject{ |column| unwanted_columns.include?(column) }
   end
   
-  def self.translated_searchable_columns
-    columns = self.searchable_columns
+  def self.translated_searchable_columns(unwanted_columns)
+    columns = self.searchable_columns(unwanted_columns)
     result = columns.map{ |column| [Truck.human_attribute_name(column.to_sym), column] }
     result
   end
