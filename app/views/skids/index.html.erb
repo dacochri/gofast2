@@ -1,5 +1,16 @@
 <section>
   <h2>Skids</h2>
+	<%= form_tag skids_path, :method => 'get' do %>
+  <%= hidden_field_tag :direction, params[:direction] %>
+  <%= hidden_field_tag :sort, params[:sort] %>
+  <p>
+    Search: 
+    <%= text_field_tag :search %>
+	by 
+	<%= select_tag :search_column, options_for_select(Skid.translated_searchable_columns(['pickup_time', 'delivery_time', 'warehouse_delivery_time', 'warehouse_pickup_time', 'id']), params[:search_column]) %>
+    <%= submit_tag "Search" %>
+  </p>
+<% end %>
   <table>
     <thead>
       <tr>

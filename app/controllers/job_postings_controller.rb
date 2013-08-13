@@ -3,7 +3,7 @@ class JobPostingsController < ApplicationController
   # GET /job_postings.json
   include ApplicationHelper
   def index
-    @job_postings = JobPosting.order(sort_column(JobPosting, "title") + " " + sort_direction)
+    @job_postings = JobPosting.search(params[:search], params[:search_column]).order(sort_column(JobPosting, "title") + " " + sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb

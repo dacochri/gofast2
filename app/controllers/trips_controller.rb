@@ -3,7 +3,7 @@ class TripsController < ApplicationController
   # GET /trips.json
   include ApplicationHelper
   def index
-    @trips = Trip.order(sort_column(Trip, "truck_id") + " " + sort_direction)
+		@trips = Trip.search(params[:search], params[:search_column]).order(sort_column(Trip, "truck_id") + " " + sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb

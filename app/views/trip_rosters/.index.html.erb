@@ -1,5 +1,16 @@
 <h1>Listing trip_rosters</h1>
-
+<h2>Trips Roster</h2>
+  <%= form_tag trips_roster_path, :method => 'get' do %>
+  <%= hidden_field_tag :direction, params[:direction] %>
+  <%= hidden_field_tag :sort, params[:sort] %>
+  <p>
+    Search: 
+    <%= text_field_tag :search %>
+	by 
+	<%= select_tag :search_column, options_for_select(TripRoster.translated_searchable_columns(['id']), params[:search_column]) %>
+    <%= submit_tag "Search" %>
+  </p>
+<% end %>
 <table>
   <tr>
     <th><%= sortable "shipment_id", nil, @trip_rosters, "shipment_id" %></th>
