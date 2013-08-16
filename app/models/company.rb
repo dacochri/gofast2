@@ -11,7 +11,7 @@ class Company < ActiveRecord::Base
   validates :city, :format => { :with => ValidationValues.city, :message => message }
   validates :contact_name, :format => { :with => ValidationValues.last_name, :message => message }
   validates :street, :format => { :with => ValidationValues.street, :message => message }
-  validates :province, :inclusion => { :in => province }
+  validates :province, :inclusion => { :in => ValidationValues.province }
   validates :postal_code, :format => { :with => ValidationValues.postal_code, :message => message }
   validates :email, :format => { :with => ValidationValues.email, :nessage => message }
   validates :unit, :format => { :with => ValidationValues.unit, :message => message }

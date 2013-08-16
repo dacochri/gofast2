@@ -9,7 +9,7 @@ class ValidationValues
   @city = /[A-Za-z'. ]+/
   @street = /\d{0,4} ?[A-Za-z. ]+/
   @unit = /[A-Z0-9 ]+/
-  @license_plate = /[A-Z0-9 ]{3,8}/
+  @license_plate = /[A-Z0-9 ]+/
   @hst_no = /[A-Z0-9]+/
   @date = /\A\d{4}(-\d{2}){2}\Z/
   @date_time = /\A\d{4}(-\d{2}){2} \d{4}(:\d{2}){2}\Z/
