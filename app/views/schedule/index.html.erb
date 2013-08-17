@@ -20,7 +20,7 @@
         <% record = ScheduleController.schedule_record(truck.id) %>
       <tr>
         <td><%= link_to "#{record['truck_no']}", { :action => "../trucks/show/#{truck.id}" } %></td>
-        <td><%= link_to "#{record['driver_name']}", { :action => "../drivers/show/#{record['driver_id']}" } %></td>
+        <td><%= link_to "#{record['first_name']} #{record['last_name']}", { :action => "../drivers/show/#{record['driver_id']}" } %></td>
         <td><%= link_to "#{record['trip_start']}", { :action => "../trips/show/#{record['trip_no']}" } %></td>
         <td><%= record['load_bar_count'] %></td>
         <td><%= record['current_mileage'] %></td>

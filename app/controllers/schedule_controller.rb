@@ -8,7 +8,8 @@ class ScheduleController < ApplicationController
   def ScheduleController.schedule_record(id)
     current_schedule_record = {
       'truck_no' => Truck.where("id = ?", id).select('truck_no').first.truck_no,
-      'driver_name' => Driver.where("id = ?", Trip.where("id = ?", id).select('driver_id').first.driver_id).select('first_name').first.first_name + ' ' + Driver.where("id = ?", Trip.where("id = ?", id).select('driver_id').first.driver_id).select('last_name').first.last_name,
+      'first_name' => Driver.where("id = ?", Trip.where("truck_id = ?", id).order('start_date DESC').select('driver_id').first.driver_id).select('first_name').first.first_name,
+      'last_name' => Driver.where("id = ?", Trip.where("truck_id = ?", id).order('start_date DESC').select('driver_id').first.driver_id).select('last_name').first.last_name,
       'trip_no' => Trip.where("truck_id = ?", id).select('id').order('start_date DESC').first.id,
       'trip_start' => (Trip.where("truck_id = ?", id).select('start_date').order('start_date DESC').first.start_date).strftime('%Y-%m-%d'),
       'load_bar_count' => Trip.where("truck_id = ?", id).select('load_bar_count').order('start_date DESC').first.load_bar_count,
@@ -16,7 +17,7 @@ class ScheduleController < ApplicationController
       'current_location' => Truck.where("id = ?", id).select('current_location').first.current_location,
       'delivery_locations' => Skid.where("shipment_id = ?", 1).map(&:delivery_location),
       'trailer_no' => Trailer.where('id = ?', Trip.where("id = ?", Trip.where("truck_id = ?", id).select('id').order('start_date DESC').first.id).select('trailer_id').first.trailer_id).select('trailer_no').first.trailer_no,
-      'driver_id' => Trip.where("id = ?", Truck.where("id = ?", id)).select('driver_id').order('start_date DESC').first.driver_id
+      'driver_id' => Trip.where("truck_id = ?", id).order('start_date DESC').select('driver_id').first.driver_id
     }
     
     if Maintenance.where("vehicle_id = ? AND maintenance_type = ?", id, 'oil change').count('kilometres') > 0
