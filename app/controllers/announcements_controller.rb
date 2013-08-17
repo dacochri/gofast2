@@ -41,6 +41,7 @@ class AnnouncementsController < ApplicationController
   # POST /announcements.json
   def create
     @announcement = Announcement.new(params[:announcement])
+    @announcement.posted_by = 1 # FIX with user authentication
 
     respond_to do |format|
       if @announcement.save
@@ -57,6 +58,7 @@ class AnnouncementsController < ApplicationController
   # PUT /announcements/1.json
   def update
     @announcement = Announcement.find(params[:id])
+    @announcement.posted_by = 1 # FIX with user authentication
 
     respond_to do |format|
       if @announcement.update_attributes(params[:announcement])

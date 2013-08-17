@@ -4,7 +4,6 @@
     <thead>
       <tr>
         <th scope="col">Broker</th>
-        <th scope="col">Driver</th>
         <th scope="col">Customer</th>
         <th scope="col">Trip</th>
         <th scope="col">Shipment no</th>
@@ -18,7 +17,6 @@
     <% @shipments.each do |shipment| %>
       <tr>
         <td><%= shipment.broker_id %></td>
-        <td><%= shipment.driver_id %></td>
         <td><%= shipment.customer_id %></td>
         <td><%= shipment.trip_id %></td>
         <td><%= shipment.shipment_no %></td>

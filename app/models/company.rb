@@ -5,7 +5,7 @@ class Company < ActiveRecord::Base
   
   validates :city, :company_type, :name, :postal_code, :primary_phone, :province, :street, :presence => true
   validates :fax, :primary_phone, :secondary_phone, :numericality => true
-  validates :fax, :length => 10
+  validates :fax, :length => 10..11
   validates :name, :format => { :with => ValidationValues.company, :message => message }
   validates :primary_phone, :secondary_phone, :length => 10..11
   validates :city, :format => { :with => ValidationValues.city, :message => message }
