@@ -15,7 +15,8 @@ class ScheduleController < ApplicationController
       'current_mileage' => Truck.where("id = ?", id).select('total_kilometres').first.total_kilometres.to_s + ' km',
       'current_location' => Truck.where("id = ?", id).select('current_location').first.current_location,
       'delivery_locations' => Skid.where("shipment_id = ?", 1).map(&:delivery_location),
-      'trailer_no' => Trailer.where('id = ?', Trip.where("id = ?", Trip.where("truck_id = ?", id).select('id').order('start_date DESC').first.id).select('trailer_id').first.trailer_id).select('trailer_no').first.trailer_no
+      'trailer_no' => Trailer.where('id = ?', Trip.where("id = ?", Trip.where("truck_id = ?", id).select('id').order('start_date DESC').first.id).select('trailer_id').first.trailer_id).select('trailer_no').first.trailer_no,
+      'driver_id' => Trip.where("id = ?", Truck.where("id = ?", id)).select('driver_id').order('start_date DESC').first.driver_id
     }
     
     if Maintenance.where("vehicle_id = ? AND maintenance_type = ?", id, 'oil change').count('kilometres') > 0
