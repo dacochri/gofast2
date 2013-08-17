@@ -1,9 +1,10 @@
 class TripRostersController < ApplicationController
+  include ApplicationHelper
+  
   # GET /trip_rosters
   # GET /trip_rosters.json
-  include ApplicationHelper
   def index
-    @trip_rosters = TripRoster.search(params[:search], params[:search_column]).order(sort_column(TripRoster, "shipment_id") + " " + sort_direction)
+    @trip_rosters = TripRoster.search(params[:search], params[:search_column]).order(sort_column(TripRoster, 'shipment_id') + ' ' + sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb

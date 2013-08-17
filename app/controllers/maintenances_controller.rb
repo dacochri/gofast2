@@ -1,9 +1,10 @@
 class MaintenancesController < ApplicationController
+  include ApplicationHelper
+  
   # GET /maintenances
   # GET /maintenances.json
-  include ApplicationHelper
   def index
-    @maintenances = Maintenance.search(params[:search], params[:search_column]).order(sort_column(Maintenance, "vehicle_id") + " " + sort_direction)
+    @maintenances = Maintenance.search(params[:search], params[:search_column]).order(sort_column(Maintenance, 'vehicle_id') + ' ' + sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb

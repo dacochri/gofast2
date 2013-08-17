@@ -1,9 +1,10 @@
 class TrailersController < ApplicationController
+  include ApplicationHelper
+  
   # GET /trailers
   # GET /trailers.json
-  include ApplicationHelper
   def index
-    @trailers = Trailer.search(params[:search], params[:search_column]).order(sort_column(Trailer, "trailer_no") + " " + sort_direction)
+    @trailers = Trailer.search(params[:search], params[:search_column]).order(sort_column(Trailer, 'trailer_no') + ' ' + sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb

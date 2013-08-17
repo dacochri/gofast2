@@ -1,9 +1,10 @@
 class CartagesController < ApplicationController
+  include ApplicationHelper
+  
   # GET /cartages
   # GET /cartages.json
-  include ApplicationHelper
   def index
-    @cartages = Cartage.search(params[:search], params[:search_column]).order(sort_column(Cartage, "company_id") + " " + sort_direction)
+    @cartages = Cartage.search(params[:search], params[:search_column]).order(sort_column(Cartage, 'company_id') + ' ' + sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,8 +1,8 @@
 class ScheduleController < ApplicationController
   include ApplicationHelper
+  
   def index
-    @trucks = Truck.order(sort_column(Truck, "truck_no") + " " + sort_direction)
-    #@drivers = Driver.all
+    @trucks = Truck.order(sort_column(Truck, 'truck_no') + ' ' + sort_direction)
   end
   
   def ScheduleController.schedule_record(id)
@@ -18,13 +18,13 @@ class ScheduleController < ApplicationController
       'trailer_no' => Trailer.where('id = ?', Trip.where("id = ?", Trip.where("truck_id = ?", id).select('id').order('start_date DESC').first.id).select('trailer_id').first.trailer_id).select('trailer_no').first.trailer_no
     }
     
-    if Maintenance.where("vehicle_id = ? AND maintenance_type = ?", id, 'oil change').count("kilometres") > 0
+    if Maintenance.where("vehicle_id = ? AND maintenance_type = ?", id, 'oil change').count('kilometres') > 0
       current_schedule_record['next_oil_change'] = (Maintenance.where("vehicle_id = ? AND maintenance_type = ?", id, 'oil change').select("kilometres").order('kilometres DESC').first.kilometres.to_i + 20000).to_s + ' km'
     else
       current_schedule_record['next_oil_change'] = 'No Records'
     end
     
-    if Maintenance.where("vehicle_id = ? AND maintenance_type = ?", id, 'safety').count("date") > 0
+    if Maintenance.where("vehicle_id = ? AND maintenance_type = ?", id, 'safety').count('date') > 0
       current_schedule_record['trailer_next_service_date'] = (Maintenance.where("vehicle_id = ? AND maintenance_type = ?", id, 'safety').select("date").order('kilometres DESC').first.date.to_time + 1.years).strftime('%Y-%m-%d')
     else
       current_schedule_record['trailer_next_service_date'] = 'No Records'
