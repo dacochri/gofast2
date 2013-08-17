@@ -2,7 +2,8 @@ class ValidationValues
   @double = /\d+\.?\d{0,2}/
   @alpha = /[A-Za-z]+/
   @alpha_numeric = /[A-Za-z0-9]+/
-  
+  @content = /[A-Za-z0-9,.;'!@#\$%^&*()_=+|]+/
+
   @first_name = /[A-Za-z ]+/
   @last_name = /[A-Za-z' ]+/
   @company = /[A-Za-z. ]+/
@@ -31,6 +32,10 @@ class ValidationValues
 
   def self.alpha_numeric
     @alpha_numeric
+  end
+  
+  def self.content
+    @content
   end
 
   def self.first_name
