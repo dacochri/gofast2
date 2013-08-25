@@ -3,16 +3,16 @@ class Company < ActiveRecord::Base
 
   message = ValidationValues.message
   
-  validates :city, :company_type, :name, :postal_code, :primary_phone, :province, :street, :presence => true
-  validates :fax, :primary_phone, :secondary_phone, :numericality => true
-  validates :fax, :length => 10..11
-  validates :name, :format => { :with => ValidationValues.company, :message => message }
-  validates :primary_phone, :secondary_phone, :length => 10..11
-  validates :city, :format => { :with => ValidationValues.city, :message => message }
-  validates :contact_name, :format => { :with => ValidationValues.last_name, :message => message }
-  validates :street, :format => { :with => ValidationValues.street, :message => message }
-  validates :province, :inclusion => { :in => ValidationValues.province }
-  validates :postal_code, :format => { :with => ValidationValues.postal_code, :message => message }
-  validates :email, :format => { :with => ValidationValues.email, :nessage => message }
-  validates :unit, :format => { :with => ValidationValues.unit, :message => message }
+  validates :city, :presence => true, :format => { :with => ValidationValues.city, :message => message }
+  validates :company_type, :presence => true
+  validates :contact_name, :format => { :with => ValidationValues.last_name, :message => message }, :allow_blank => true
+  validates :email, :presence => true, :format => { :with => ValidationValues.email, :nessage => message }
+  validates :fax, :numericality => true, :length => 10..11, :allow_blank => true
+  validates :name, :presence => true, :format => { :with => ValidationValues.company, :message => message }
+  validates :postal_code, :presence => true, :format => { :with => ValidationValues.postal_code, :message => message }
+  validates :primary_phone, :presence => true, :numericality => true, :length => 10..11
+  validates :province, :presence => true, :inclusion => { :in => ValidationValues.province }
+  validates :secondary_phone, :numericality => true, :length => 10..11, :allow_blank => true 
+  validates :street, :presence => true, :format => { :with => ValidationValues.street, :message => message }
+  validates :unit, :format => { :with => ValidationValues.unit, :message => message }, :allow_blank => true
 end

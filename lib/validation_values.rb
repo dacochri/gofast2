@@ -6,7 +6,7 @@ class ValidationValues
 
   @first_name = /[A-Za-z ]+/
   @last_name = /[A-Za-z' ]+/
-  @company = /[A-Za-z. ]+/
+  @company = /[A-Za-z.\- ]+/
   @city = /[A-Za-z'. ]+/
   @street = /\d{0,4} ?[A-Za-z. ]+/
   @unit = /[A-Z0-9 ]+/
@@ -14,7 +14,7 @@ class ValidationValues
   @hst_no = /[A-Z0-9]+/
   @date = /\A\d{4}(-\d{2}){2}\Z/
   @date_time = /\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}\sUTC/
-  @email = /\b[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Z]{2,4}\b/
+  @email = /[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}/
   @postal_code = /[A-Za-z][0-9][A-Za-z]\s[0-9][A-Za-z][0-9]/
 
   @province = %w(Alberta British\ Columbia Manitoba New\ Brunswick Newfoundland\ and\ Labrador Nova\ Scotia Ontario Prince\ Edward\ Island Quebec Saskatchewan Northwest\ Territories Nunavut Yukon)
