@@ -13,6 +13,17 @@
  *= require_tree .
  */
 
+/* html{
+  font-size: 62.5%;
+} */
+
+/* Now, 1.4rem = 14px */
+/* Can do:
+   font-size: 14px;
+   font-size: 24px;
+   for compatibility with older browsers
+*/
+
 body{
   font-family: "Droid Sans", Arial, Helvetica, sans-serif;
   direction: ltr;
