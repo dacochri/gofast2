@@ -20,7 +20,8 @@ class ValidationValues
   @province = %w(Alberta British\ Columbia Manitoba New\ Brunswick Newfoundland\ and\ Labrador Nova\ Scotia Ontario Prince\ Edward\ Island Quebec Saskatchewan Northwest\ Territories Nunavut Yukon)
   @vehicle_type = %w(truck trailer)
   @vehicle_sub_type = %w(regular straight tractor refrigerator)
-  
+  @company_type = %w(broker)
+
   @message = 'does not match expected format.';
   
   def self.double
@@ -97,6 +98,10 @@ class ValidationValues
 
   def self.vehicle_sub_type
     @vehicle_sub_type
+  end
+  
+  def self.company_type
+    @company_type
   end
 
   def self.message

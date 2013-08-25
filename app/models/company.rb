@@ -4,7 +4,7 @@ class Company < ActiveRecord::Base
   message = ValidationValues.message
   
   validates :city, :presence => true, :format => { :with => ValidationValues.city, :message => message }
-  validates :company_type, :presence => true
+  validates :company_type, :presence => true, :inclusion => { :in => ValidationValues.company_type }
   validates :contact_name, :format => { :with => ValidationValues.last_name, :message => message }, :allow_blank => true
   validates :email, :presence => true, :format => { :with => ValidationValues.email, :nessage => message }
   validates :fax, :numericality => true, :length => 10..11, :allow_blank => true
