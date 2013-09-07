@@ -3,10 +3,17 @@
 <head>
   <title>Go Fast Express</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet"/>
+  <link href="http://fonts.googleapis.com/css?family=Jockey+One" rel="stylesheet"/>
+  <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
   <%= javascript_include_tag "application" %>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+  <script>
+    $(function(){
+      $('#datepicker').datepicker();
+    });
+  </script>
   <%= csrf_meta_tags %>
-  <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Jockey+One' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <div>
