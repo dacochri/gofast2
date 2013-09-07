@@ -15,8 +15,14 @@ $ ->
     'end_date',
     'license_expires'
   ]
-  column.on 'change', ->
+  
+  date_assign = ->
     if $.inArray(column.val(), date_list) isnt -1
       $('#search').datepicker()
     else
-      $('#search').datepicker 'destroy'
+      $('#search').datepicker('destroy')
+ 
+  date_assign()
+
+  column.on 'change', ->
+    date_assign()
