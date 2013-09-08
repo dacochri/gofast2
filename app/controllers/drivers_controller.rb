@@ -4,7 +4,7 @@ class DriversController < ApplicationController
   # GET /drivers
   # GET /drivers.json
   def index
-    @drivers = Driver.search(params[:search], params[:search_column]).order(sort_column(Driver, 'first_name') + ' ' + sort_direction)
+    @drivers = Driver.search(params[:search], params[:column]).order(sort_column(Driver, 'first_name') + ' ' + sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb

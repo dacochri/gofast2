@@ -3,13 +3,11 @@
 	<%= form_tag announcements_path, :method => 'get' do %>
     <%= hidden_field_tag :direction, params[:direction] %>
     <%= hidden_field_tag :sort, params[:sort] %>
-    <p>
-      Search: 
-      <%= text_field_tag :search %>
-	    by 
-	    <%= select_tag :search_column, options_for_select(Announcement.translated_searchable_columns(['id']), params[:search_column]) %>
-      <%= submit_tag 'Search' %>
-    </p>
+		<%= label_tag :column %>
+		<%= select_tag :column, options_for_select(Announcement.translated_searchable_columns(['id']), params[:column]) %>
+		<%= label_tag :search %>
+		<%= text_field_tag :search %>
+		<%= submit_tag 'Submit' %>
   <% end %>
   <table>
     <thead>
@@ -18,8 +16,7 @@
         <th scope="col"><%= sortable "title", nil, @announcements, "date_posted" %></th>
         <!--<th scope="col"><%= sortable "content", nil, @announcements, "date_posted" %></th>-->
         <th scope="col"><%= sortable "date_posted", nil, @announcements, "date_posted" %></th>
-        <th scope="col"></th>
-        <th scope="col"></th>
+				<th scope="col">Short Description</th>
         <th scope="col"></th>
       </tr>
     </thead>
@@ -30,9 +27,8 @@
         <td><%= announcement.title %></td>
         <!--<td><%= announcement.content %></td>-->
         <td><%= announcement.date_posted %></td>
-        <td><%= link_to 'Show', announcement, :class => 'ym-button ym-small ym-play ym-success' %></td>
-        <td><%= link_to 'Edit', edit_announcement_path(announcement), :class => 'ym-button ym-small ym-edit ym-warning' %></td>
-        <td><%= link_to 'Destroy', announcement, method: :delete, data: { confirm: 'Are you sure you want to delete s announcement?' }, :class => 'ym-button ym-small ym-delete ym-danger' %></td>
+				<td><%= announcement.content.truncate(40) %>
+        <td><%= link_to 'Show', announcement, :class => 'ym-button ym-small ym-play ym-success' %> <%= link_to 'Edit', edit_announcement_path(announcement), :class => 'ym-button ym-small ym-edit ym-warning' %> <%= link_to 'Destroy', announcement, method: :delete, data: { confirm: 'Are you sure you want to delete s announcement?' }, :class => 'ym-button ym-small ym-delete ym-danger' %></td>
       </tr>
     <% end %>
     </tbody>

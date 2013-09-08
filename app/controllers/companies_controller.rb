@@ -4,7 +4,7 @@ class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.json
   def index
-    @companies = Company.search(params[:search], params[:search_column]).order(sort_column(Company, 'company_type') + ' ' + sort_direction)
+    @companies = Company.search(params[:search], params[:column]).order(sort_column(Company, 'company_type') + ' ' + sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb

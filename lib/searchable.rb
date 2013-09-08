@@ -15,6 +15,8 @@ module Searchable
     end
 
     def translated_searchable_columns(unwanted_columns)
+			unwanted_columns.push('created_at')
+			unwanted_columns.push('updated_at')
       columns = searchable_columns(unwanted_columns)
       columns.map{ |column| [human_attribute_name(column.to_sym), column] }
     end
