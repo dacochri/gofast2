@@ -4,7 +4,7 @@ class ExpensesController < ApplicationController
   # GET /expenses
   # GET /expenses.json
   def index
-    @expenses = Expense.search(params[:search], params[:search_column]).order(sort_column(Expense, 'quick_pay') + ' ' + sort_direction)
+    @expenses = Expense.search(params[:search], params[:column]).order(sort_column(Expense, 'quick_pay') + ' ' + sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb

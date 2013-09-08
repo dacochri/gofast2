@@ -1,5 +1,5 @@
 $ ->
-  column = $('#search_column')
+  column = $('#column')
   date_list = [
     'date_posted',
     'pickup_time',
