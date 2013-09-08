@@ -7,13 +7,14 @@
       Search: 
       <%= text_field_tag :search %>
     	by 
-    	<%= select_tag :search_column, options_for_select(Expense.translated_searchable_columns(['id']), params[:search_column]) %>
+    	<%= select_tag :search_column, options_for_select(Expense.translated_searchable_columns([]), params[:search_column]) %>
       <%= submit_tag 'Search' %>
     </p>
   <% end %>
   <table>
     <thead>
       <tr>
+				<th scope="col"><%= sortable "id", "Expense ID", @expenses, "quick_pay" %></th>
         <th scope="col"><%= sortable "quick_pay", nil, @expenses, "quick_pay" %></th>
         <th scope="col"><%= sortable "fuel", nil, @expenses, "quick_pay" %></th>
         <th scope="col"><%= sortable "driver_pay", nil, @expenses, "quick_pay" %></th>
@@ -24,6 +25,7 @@
     <tbody>
       <% @expenses.each do |expense| %>
       <tr>
+				<td><%= expense.id %></td>
         <td><%= expense.quick_pay %></td>
         <td><%= expense.fuel %></td>
         <td><%= expense.driver_pay %></td>
