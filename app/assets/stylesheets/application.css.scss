@@ -320,3 +320,35 @@ form button:before, .ym-button:before{
   }
 }
 
+/* Styles for tables */
+table{
+  border-bottom: 0.1rem solid #CCC;
+  border-collapse: collapse;
+  border-top: 0.1rem solid #CCC;
+  color: #444;
+  margin: 2.5rem 0;
+  text-align: left;
+  width: 100%;
+
+  thead{
+    border-bottom: 0.2rem solid #000;
+    color: #000;
+  }
+
+  tbody{
+    
+    tr{
+      border-top: 0.1rem solid #CCC;
+
+      &:hover, &:active{
+        background-color: darken(#FFF, 10%);
+      }
+    }
+  }
+
+  th, td{
+    line-height: 1.5rem;
+    padding: 1.5rem 0.8rem;
+    vertical-align: center;
+  }
+}
