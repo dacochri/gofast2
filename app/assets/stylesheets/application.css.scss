@@ -135,10 +135,7 @@ div:nth-child(2){
 }
 
 #content{
-  h2{
-    margin-bottom: 2.1rem;
-    font-size: 3.4rem;
-  }
+  
 }
 
 footer {
@@ -176,6 +173,16 @@ h1, h2, h3, h4, h5, h6{
   font-weight: bold;
   color: #222;
   letter-spacing: -0.2rem;
+}
+
+h2{
+  margin-bottom: 2.1rem;
+  font-size: 3.4rem;
+}
+
+h3{
+  margin: 1.8rem 0;
+  font-size: 2.8rem;
 }
 
 a{
