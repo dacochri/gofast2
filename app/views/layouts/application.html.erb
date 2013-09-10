@@ -11,28 +11,28 @@
 <body>
   <div>
     <header>
-      <div class="ym-wrapper">
-        <h1>
-          <%= link_to '/' do %>
-            <%= image_tag 'logo.png', :size => "250x82", :alt => 'GoFast Express Inc.' %>
-          <% end %>
-        </h1>
-        <h2><em>Your #1 Source for Transportation Services</em></h2>
-      </div>
-      <nav>
-        <div class="ym-wrapper ym-hlist">
-          <%= render '/layouts/out_nav' %>
-        </div>
-      </nav>
+      <h1>
+        <%= link_to '/' do %>
+          <%= image_tag 'logo.png', :size => "250x82", :alt => 'GoFast Express Inc.' %>
+        <% end %>
+      </h1>
+      <h2><em>Your #1 Source for Transportation Services</em></h2>
     </header>
-    <div id="content" class="ym-wrapper ym-wbox">
+  </div>
+  <div>
+    <nav>
+      <%= render '/layouts/out_nav' %>
+    </nav>
+  </div>
+  <div>
+    <div id="content">
       <%= yield %>
     </div>
+  </div>
+  <div>
     <footer>
-      <div class="ym-wrapper ym-wbox">
-        <%= render '/layouts/out_footer' %>
-        <p>&copy; 2013 GoFast Express Inc. All Rights Reserved.</p>
-      </div>
+      <%= render '/layouts/out_footer' %>
+      <p>&copy; 2013 GoFast Express Inc. All Rights Reserved.</p>
     </footer>
   </div>
 </body>

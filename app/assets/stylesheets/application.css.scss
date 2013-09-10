@@ -13,9 +13,18 @@
  *= require_tree .
  */
 
-/* html{
+$header-bg-color: #50B5D3;
+$nav-bg-color: darken($header-bg-color, 35%);
+$footer-bg-color: #222;
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html{
   font-size: 62.5%;
-} */
+}
 
 /* Now, 1.4rem = 14px */
 /* Can do:
@@ -26,37 +35,47 @@
 
 body{
   font-family: "Droid Sans", Arial, Helvetica, sans-serif;
-  direction: ltr;
-  background: rgb(250, 250, 250);
-  
-  a{
-    color: rgb(20, 121, 151);
+  font-size: 1.8rem;
 
-    &:hover{
-      background: none;
-      text-decoration: underline;
-      color: rgb(80, 181, 211);
-    }
+  > div:first-child{
+    background: $header-bg-color; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, rgba(80, 181, 211, 1) 0%, rgba(0, 115, 153, 1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(80, 181, 211, 1)), color-stop(100%, rgba(0, 115, 153, 1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(-45deg, rgba(80, 181, 211, 1) 0%, rgba(0, 115, 153, 1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(-45deg, rgba(80, 181, 211, 1) 0%,rgba(0, 115, 153, 1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(-45deg, rgba(80, 181, 211, 1) 0%, rgba(0, 115, 153, 1) 100%); /* IE10+ */
+    background: linear-gradient(135deg, rgba(80, 181, 211, 1) 0%, rgba(0, 115, 153, 1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#50B5D3', endColorstr='#007399', GradientType=1); /* IE6-9 fallback on horizontal gradient */
+  }
+
+  > div:nth-child(2){
+    background-color: $nav-bg-color;
+    border-bottom: 0.2rem solid #F60;
+  }
+
+  > div:last-child{
+    background-color: $footer-bg-color;
   }
 }
 
+div{
+  header, nav, #content, footer{
+    max-width: 102rem;
+    margin: 0 auto;
+  }
+}
+
+#content, footer{
+  padding: 2.1rem;
+}
+
 header{
-  /* css generated gradient for the header */
-  background: none;
-  background: rgb(80, 181, 211); /* Old browsers */
-  background: -moz-linear-gradient(-45deg, rgba(80, 181, 211, 1) 0%, rgba(0,115,153,1) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(80, 181, 211, 1)), color-stop(100%, rgba(0, 115, 153, 1))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(-45deg, rgba(80, 181, 211, 1) 0%, rgba(0, 115, 153,1) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(-45deg, rgba(80, 181, 211, 1) 0%,rgba(0, 115, 153, 1) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(-45deg, rgba(80, 181, 211, 1) 0%, rgba(0, 115, 153, 1) 100%); /* IE10+ */
-  background: linear-gradient(135deg, rgba(80, 181, 211, 1) 0%, rgba(0, 115, 153, 1) 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#50B5D3', endColorstr='#007399', GradientType=1); /* IE6-9 fallback on horizontal gradient */
   color: #CCC;
   
   img{
     background: transparent;
     color: #FFF;
-    padding: 0.3em;
+    margin: 1.4rem 0;
     border: none;
   }
   
@@ -64,13 +83,10 @@ header{
     text-decoration: none;
   }
   
-  .ym-wbox{
-    padding: 1.5em;
-  }
-  
   h1{
     display: inline;
-    
+    margin: 0;
+
     a:hover{
       background-color: transparent;
     }
@@ -78,22 +94,80 @@ header{
   
   h2{
     display: inline;
-    font-size: 150%;
-    letter-spacing: 0.03em;
+    font-size: 2.4rem;
+    letter-spacing: 0.1rem;
     color: #EEE;
     font-family: "Jockey One", "Droid Sans", Arial, Helvetica, sans-serif;
     font-weight: normal;
-    padding: 0 7.5em;
-    margin-top: 2.5em;
     float: right;
+    position: relative;
+    top: 4rem;
   }
-  
+}
+
+div:nth-child(2){
   nav{
-    background: rgba(0, 0, 0, 0.5);
-    border-bottom: 2px solid #F60;
+    font-family: 'Jockey One', 'Droid Sans', Arial, Helvetica, sans-serif;
+    font-size: 2rem;
     
-    a{
-      font-family: "Jockey One", "Droid Sans", Arial, Helvetica, sans-serif;
+    ul{
+      li{
+        display: inline-block;
+        list-style-type: none;
+        
+        a{
+          color: #CCC;
+          display: block;
+          line-height: 2.2rem;
+          padding: 1.3rem;
+          text-decoration: none;
+          text-transform: uppercase;
+          transition: all 200ms  ease-in-out 0s;
+        }
+        
+        a:hover, a:active{
+          background-color: #EEE;
+          color: #222;
+        }
+      }
+    }
+  }
+}
+
+#content{
+  h2{
+    margin-bottom: 2.1rem;
+    font-size: 3.4rem;
+  }
+}
+
+footer {
+  color: #DDD;
+  background: #222;
+
+  a{
+    color: #F60;
+
+    &:hover, &:active{
+      color: #EEE;
+    }
+  }
+
+  ul{
+    margin-bottom: 0.5rem;
+
+    li{
+      display: inline;
+      margin-left: 0;
+
+      &:after{
+        content: " |";
+        color: #FFF;
+      }
+
+      &:last-child:after{
+        content: "";
+      }
     }
   }
 }
@@ -101,32 +175,21 @@ header{
 h1, h2, h3, h4, h5, h6{
   font-weight: bold;
   color: #222;
-  letter-spacing: -2px;
+  letter-spacing: -0.2rem;
 }
 
-p{
-  font-size: 1.1em;
+a{
+  color: #147997;
+  text-decoration: none;
+
+  &:hover, &:actuve{
+    text-decoration: underline;
+    color: #50B5D3;
+  }
 }
-
-/* In case we need to use a 3 column layout, I've made it here so they go in chronological order. */ 
-.ym-col1{
-  width: 33%;
-  margin: 0;
-} /* left column */
-
-.ym-col2{
-  width: 33%;
-  float: left;
-  margin: 0;
-} /* center column */
-
-.ym-col3{
-  margin-left: 33%;
-  margin-right: 0%;
-} /* right column */
 
 form{
-  border: 1px solid #AAA;
+  border: 0.1rem solid #AAA;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
@@ -301,43 +364,6 @@ form button:before, .ym-button:before{
             text-decoration: none;
           }
         }
-      }
-    }
-  }
-}
-
-footer {
-  color: #DDD;
-  background: #222;
-
-  p{
-    margin: 0;
-  }
-
-  a{
-    color: #F60;
-
-    &:hover{
-      color: #EEE;
-      text-decoration: underline;
-      background: none;
-    }
-  }
-
-  ul{
-    margin-bottom: 5px;
-
-    li{
-      display: inline;
-      margin-left: 0;
-
-      &:after{
-        content: " |";
-        color: #FFF;
-      }
-
-      &:last-child:after{
-        content: "";
       }
     }
   }
