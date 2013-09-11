@@ -201,8 +201,66 @@ a{
 
 form{
   border: 0.1rem solid #AAA;
-  -webkit-box-shadow: none;
-  box-shadow: none;
+  background-color: #F4F4F4;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  width: 100%;
+  display: inline-block;
+
+  *{
+    margin-bottom: 1rem;
+  }
+
+  .footer{
+    background-color: #ECECEC;
+    border-top: 0.1rem solid #E0E0E0;
+    padding: 2.1rem 1.4rem;
+    clear: both;
+  }
+}
+
+label{
+  color: #666;
+  line-height: 1.5;
+  padding-top: 0.3rem;
+  width: 20rem;
+  display: block;
+  float: left;
+  clear: both;
+}
+
+input[type="text"], input[type="number"], input[type="password"], input[type="checkbox"], textarea, select{
+  float: left;
+}
+
+input[type="text"], input[type="number"], input[type="password"], textarea, select{
+  padding: 0.4rem;
+  border: 0.1rem solid #DDD;
+  box-shadow: 0 0 0.4rem #EEE inset;
+
+  &:hover, &:active, &:focus{
+    border: 0.1rem solid #888;
+  }
+}
+
+input[type="submit"], input[type="image"], button{
+  background-color: #ECF0F1;
+  border: 0.1rem solid darken(#FFF, 30%);
+  transition: all 200ms ease-in-out 0s;
+  color: #333;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.5rem 2.1rem;
+  font-size: 1.6rem;
+  margin: 0;
+
+  &:hover, &:active, &:focus{
+    background: 0.1rem solid #BDC3C7;
+  }
+}
+
+select{
+  margin-right: 1rem;
 }
 
 .ym-button, form button, form input[type="button"], form input[type="reset"], form input[type="submit"]{
