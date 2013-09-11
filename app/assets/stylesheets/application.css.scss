@@ -199,6 +199,7 @@ a{
   color: #C30;
 }
 
+/* Styles for forms */
 form{
   border: 0.1rem solid #AAA;
   background-color: #F4F4F4;
@@ -207,23 +208,12 @@ form{
   display: inline-block;
 
   *{
-    margin-bottom: 1rem;
     
-    &:nth-child(even){
-      float: left;
-      clear: both;
-      margin-left: 1.5rem;
-    }
-
-    &:nth-child(odd){
-      float: left;
-    }
-
-    &:nth-child(2), &:nth-child(3){
+    &:nth-child(2){
       margin-top: 1.5rem;
     }
 
-    &:last-child(2), &:last-child(3){
+    &:last-child(2){
       margin-bottom: 1.5rem;
     }
   }
@@ -232,24 +222,20 @@ form{
     background-color: #ECECEC;
     border-top: 0.1rem solid #E0E0E0;
     padding: 2.1rem 1.4rem;
-    clear: both;
+    margin: 1.5rem 0 0 0;
   }
 }
 
 label{
   color: #666;
   line-height: 1.5;
-  margin-top: 0.3rem;
-  margin-right: 1rem;
-  width: 20rem;
+  margin-top: 1rem;
+  margin-left: 1.5rem;
   display: block;
-  float: left;
-  clear: both;
-  text-align: right;
 }
 
-input[type="text"], input[type="number"], input[type="password"], input[type="checkbox"], textarea, select{
-  float: left;
+input[type="text"], input[type="number"], input[type="password"], input[type="radio"], input[type="checkbox"], select, textarea{
+  margin-left: 1.5rem;
 }
 
 input[type="text"], input[type="number"], input[type="password"], textarea, select{
@@ -260,6 +246,10 @@ input[type="text"], input[type="number"], input[type="password"], textarea, sele
   &:hover, &:active, &:focus{
     border: 0.1rem solid #888;
   }
+}
+
+input[type="text"], input[type="number"], input[type="password"]{
+  width: 30rem;
 }
 
 input[type="submit"], input[type="image"], button{
@@ -280,125 +270,6 @@ input[type="submit"], input[type="image"], button{
 
 select{
   margin-right: 1rem;
-}
-
-.ym-button, form button, form input[type="button"], form input[type="reset"], form input[type="submit"]{
-  background: #ECF0F1;
-  border-radius: 0.1em;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  text-shadow: none;
-  transition: all 200ms ease-in-out;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-
-  &:hover{
-    background: #BDC3C7;
-  }
-
-  &:active{
-    -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
-    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
-    background: #BDC3C7;
-    zoom: 1;
-    position: relative;
-    top: 0px;
-  }
-
-  &:focus{
-    outline: 0;
-    background: #FAFAFA;
-  }
-}
-
-form button:before, .ym-button:before{
-  background: none;
-  background: rgba(0, 0, 0, 0.1);
-  border-right: 1px solid rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  border-radius: 0;
-  font-weight: normal;
-}
-
-.ym-button.ym-success, form button.ym-success, form input[type="button"].ym-success, form input[type="reset"].ym-success, form input[type="submit"].ym-success{
-  background: #1ABC9C;
-  border-radius: 0.1em;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  text-shadow: none;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  transition: all 200ms ease-in-out;
-
-  &:hover{
-    background: #16A085;
-    zoom: 1;
-  }
-
-  &:active{
-    -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
-    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
-    background: #16A085;
-    zoom: 1;
-  }
-
-  &:focus{
-    outline: 0;
-    background: #6C6;
-  }
-}
-
-.ym-button.ym-warning, form button.ym-warning, form input[type="button"].ym-warning, form input[type="reset"].ym-warning, form input[type="submit"].ym-warning{
-  background: #E67E22;
-  border-radius: 0.1em;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  text-shadow: none;
-  border: 1px solid rgba(0,0,0,0.3);
-  transition: all 200ms ease-in-out;
-
-  &:hover{
-    background: #D35400;
-    zoom: 1;
-  }
-
-  &:active{
-    -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
-    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
-    background: #D35400;
-    zoom: 1;
-  }
-
-  &:focus{
-    outline: 0;
-    background: #da4;
-  }
-}
-
-.ym-button.ym-danger, form button.ym-danger, form input[type="button"].ym-danger, form input[type="reset"].ym-danger, form input[type="submit"].ym-danger {
-  background: #E74C3C;
-  border-radius: 0.1em;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  text-shadow: none;
-  border: 1px solid rgba(0,0,0,0.3);
-  transition: all 200ms ease-in-out;
-
-  &:hover{
-    background: #C0392B;
-    zoom: 1;
-  }
-
-  &:active{
-    -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
-    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
-    background: #C0392B;
-    zoom: 1;
-  }
-
-  &:focus{
-    outline: 0;
-    background: #C66;
-  }
 }
 
 /* Styles for tables */
