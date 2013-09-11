@@ -13,23 +13,15 @@
     </div>
   <% end %>
 
-  <div class="ym-fbox">
-    <%= f.label :posted_by %><br />
-    <%= f.number_field :posted_by %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :content %><br />
-    <%= f.text_field :content %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :date_posted %><br />
-    <%= f.datetime_select :date_posted %>
-  </div>
-  <div class="actions ym-fbox-footer">
+  <%= f.label :posted_by %>
+  <%= f.number_field :posted_by %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+  <%= f.label :date_posted %>
+  <%= f.datetime_select :date_posted %>
+  <div class="footer">
     <%= f.submit %>
   </div>
 <% end %>

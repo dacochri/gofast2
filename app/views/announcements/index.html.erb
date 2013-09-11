@@ -8,8 +8,6 @@
         <!--<th scope="col">Content</th>-->
         <th scope="col">Date posted</th>
         <th scope="col"></th>
-        <th scope="col"></th>
-        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
@@ -19,12 +17,10 @@
         <td><%= announcement.title %></td>
         <!--<td><%= announcement.content %></td>-->
         <td><%= announcement.date_posted %></td>
-        <td><%= link_to 'Show', announcement, :class => 'ym-button ym-small ym-play ym-success' %></td>
-        <td><%= link_to 'Edit', edit_announcement_path(announcement), :class => 'ym-button ym-small ym-edit ym-warning' %></td>
-        <td><%= link_to 'Destroy', announcement, method: :delete, data: { confirm: 'Are you sure you want to delete s announcement?' }, :class => 'ym-button ym-small ym-delete ym-danger' %></td>
+        <td><%= link_to 'Show', announcement, :class => 'button show' %> <%= link_to 'Edit', edit_announcement_path(announcement), :class => 'button edit' %> <%= link_to 'Destroy', announcement, method: :delete, data: { confirm: 'Are you sure you want to delete s announcement?' }, :class => 'button destroy' %></td>
       </tr>
     <% end %>
     </tbody>
   </table>
-  <p><%= link_to 'New Announcement', new_announcement_path, :class => 'ym-button ym-add' %></p>
+  <p><%= link_to 'New Announcement', new_announcement_path, :class => 'button new' %></p>
 </section>

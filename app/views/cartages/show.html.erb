@@ -1,6 +1,6 @@
 <section>
   <h2>Cartage #<%= @cartage.id %></h2>
-  <p id="notice" class="highlight"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
   <p><strong>Company:</strong> <%= @cartage.company_id %></p>
   <p><strong>Trailer:</strong> <%= @cartage.trailer_id %></p>
   <p><strong>Shipment:</strong> <%= @cartage.shipment_id %></p>
@@ -8,5 +8,5 @@
   <p><strong>Delivery time:</strong> <%= @cartage.delivery_time %></p>
   <p><strong>Driver name:</strong> <%= @cartage.driver_name %></p>
   <p><strong>Cost:</strong> <%= @cartage.cost %></p>
-  <p><%= link_to 'Edit', edit_cartage_path(@cartage), :class => 'ym-button ym-edit' %> <%= link_to 'Back', cartages_path, :class => 'ym-button ym-close' %></p>
+  <p><%= link_to 'Edit', edit_cartage_path(@cartage), :class => 'button edit' %> <%= link_to 'Back', cartages_path, :class => 'button back' %></p>
 </section>

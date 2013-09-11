@@ -1,6 +1,6 @@
 <section>
   <h2><%= @company.name %></h2>
-  <p id="notice" class="highlight"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
   <p><strong>Company type:</strong> <%= @company.company_type %></p>
   <p><strong>Name:</strong> <%= @company.name %></p>
   <p><strong>Street:</strong> <%= @company.street %></p>
@@ -13,5 +13,5 @@
   <p><strong>Secondary phone:</strong> <%= @company.secondary_phone %></p>
   <p><strong>Fax:</strong> <%= @company.fax %></p>
   <p><strong>Contact name:</strong> <%= @company.contact_name %></p>
-  <p><%= link_to 'Edit', edit_company_path(@company), :class => 'ym-button ym-edit' %> <%= link_to 'Back', companies_path, :class => 'ym-button ym-close' %></p>
+  <p><%= link_to 'Edit', edit_company_path(@company), :class => 'button edit' %> <%= link_to 'Back', companies_path, :class => 'button back' %></p>
 </section>
