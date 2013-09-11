@@ -203,12 +203,29 @@ form{
   border: 0.1rem solid #AAA;
   background-color: #F4F4F4;
   margin: 2rem 0;
-  padding: 1.5rem;
   width: 100%;
   display: inline-block;
 
   *{
     margin-bottom: 1rem;
+    
+    &:nth-child(even){
+      float: left;
+      clear: both;
+      margin-left: 1.5rem;
+    }
+
+    &:nth-child(odd){
+      float: left;
+    }
+
+    &:nth-child(2), &:nth-child(3){
+      margin-top: 1.5rem;
+    }
+
+    &:last-child(2), &:last-child(3){
+      margin-bottom: 1.5rem;
+    }
   }
 
   .footer{
@@ -222,11 +239,13 @@ form{
 label{
   color: #666;
   line-height: 1.5;
-  padding-top: 0.3rem;
+  margin-top: 0.3rem;
+  margin-right: 1rem;
   width: 20rem;
   display: block;
   float: left;
   clear: both;
+  text-align: right;
 }
 
 input[type="text"], input[type="number"], input[type="password"], input[type="checkbox"], textarea, select{
