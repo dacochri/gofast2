@@ -13,51 +13,29 @@
     </div>
   <% end %>
 
-  <div class="ym-fbox">
-    <%= f.label :shipment_id %><br />
-    <%= f.number_field :shipment_id %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :product_desc %><br />
-    <%= f.text_field :product_desc %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :weight %><br />
-    <%= f.text_field :weight %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :oversized %><br />
-    <%= f.check_box :oversized %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :pickup_location %><br />
-    <%= f.text_field :pickup_location %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :delivery_location %><br />
-    <%= f.text_field :delivery_location %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :pickup_time %><br />
-    <%= f.datetime_select :pickup_time %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :delivery_time %><br />
-    <%= f.datetime_select :delivery_time %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :warehouse_delivery_time %><br />
-    <%= f.datetime_select :warehouse_delivery_time %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :warehouse_pickup_time %><br />
-    <%= f.datetime_select :warehouse_pickup_time %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :skid_count %><br />
-    <%= f.number_field :skid_count %>
-  </div>
-  <div class="actions ym-fbox-footer">
+  <%= f.label :shipment_id %>
+  <%= f.number_field :shipment_id %>
+  <%= f.label :product_desc %>
+  <%= f.text_field :product_desc %>
+  <%= f.label :weight %>
+  <%= f.text_field :weight %>
+  <%= f.label :oversized %>
+  <%= f.check_box :oversized %>
+  <%= f.label :pickup_location %>
+  <%= f.text_field :pickup_location %>
+  <%= f.label :delivery_location %>
+  <%= f.text_field :delivery_location %>
+  <%= f.label :pickup_time %>
+  <%= f.datetime_select :pickup_time %>
+  <%= f.label :delivery_time %>
+  <%= f.datetime_select :delivery_time %>
+  <%= f.label :warehouse_delivery_time %>
+  <%= f.datetime_select :warehouse_delivery_time %>
+  <%= f.label :warehouse_pickup_time %>
+  <%= f.datetime_select :warehouse_pickup_time %>
+  <%= f.label :skid_count %>
+  <%= f.number_field :skid_count %>
+  <div class="footer">
     <%= f.submit %>
   </div>
 <% end %>

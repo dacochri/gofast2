@@ -1,6 +1,6 @@
 <section>
   <h2>Truck #<%= @truck.id %></h2>
-  <p id="notice" class="highlight"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
   <p><strong>Truck no:</strong> <%= @truck.truck_no %></p>
   <p><strong>Truck type:</strong> <%= @truck.truck_type %></p>
   <p><strong>License plate:</strong> <%= @truck.license_plate %></p>
@@ -12,5 +12,5 @@
   <p><strong>Vin number:</strong> <%= @truck.vin_number %></p>
   <p><strong>Total kilometres:</strong> <%= @truck.total_kilometres %></p>
   <p><strong>Current location:</strong> <%= @truck.current_location %></p>
-  <p><%= link_to 'Edit', edit_truck_path(@truck), :class => 'ym-button ym-edit' %> <%= link_to 'Back', trucks_path, :class => 'ym-button ym-close' %></p>
+  <p><%= link_to 'Edit', edit_truck_path(@truck), :class => 'button edit' %> <%= link_to 'Back', trucks_path, :class => 'button back' %></p>
 </section>

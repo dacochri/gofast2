@@ -13,51 +13,29 @@
     </div>
   <% end %>
 
-  <div class="ym-fbox">
-    <%= f.label :truck_no %><br />
-    <%= f.number_field :truck_no %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :truck_type %><br />
-    <%= f.text_field :truck_type %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :license_plate %><br />
-    <%= f.text_field :license_plate %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :license_expires %><br />
-    <%= f.date_select :license_expires %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :owner %><br />
-    <%= f.number_field :owner %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :make %><br />
-    <%= f.text_field :make %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :model %><br />
-    <%= f.text_field :model %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :manufactured_year %><br />
-    <%= f.number_field :manufactured_year %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :vin_number %><br />
-    <%= f.text_field :vin_number %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :total_kilometres %><br />
-    <%= f.number_field :total_kilometres %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :current_location %><br />
-    <%= f.text_field :current_location %>
-  </div>
-  <div class="actions ym-fbox-footer">
+  <%= f.label :truck_no %>
+  <%= f.number_field :truck_no %>
+  <%= f.label :truck_type %>
+  <%= f.text_field :truck_type %>
+  <%= f.label :license_plate %>
+  <%= f.text_field :license_plate %>
+  <%= f.label :license_expires %>
+  <%= f.date_select :license_expires %>
+  <%= f.label :owner %>
+  <%= f.number_field :owner %>
+  <%= f.label :make %>
+  <%= f.text_field :make %>
+  <%= f.label :model %>
+  <%= f.text_field :model %>
+  <%= f.label :manufactured_year %>
+  <%= f.number_field :manufactured_year %>
+  <%= f.label :vin_number %>
+  <%= f.text_field :vin_number %>
+  <%= f.label :total_kilometres %>
+  <%= f.number_field :total_kilometres %>
+  <%= f.label :current_location %>
+  <%= f.text_field :current_location %>
+  <div class="footer">
     <%= f.submit %>
   </div>
 <% end %>

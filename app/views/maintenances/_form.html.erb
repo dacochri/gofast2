@@ -13,39 +13,23 @@
     </div>
   <% end %>
 
-  <div class="ym-fbox">
-    <%= f.label :vehicle_id %><br />
-    <%= f.number_field :vehicle_id %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :trip_id %><br />
-    <%= f.number_field :trip_id %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :date %><br />
-    <%= f.date_select :date %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :cost %><br />
-    <%= f.text_field :cost %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :maintenance_type %><br />
-    <%= f.text_field :maintenance_type %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :kilometres %><br />
-    <%= f.number_field :kilometres %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :vehicle_type %><br />
-    <%= f.text_field :vehicle_type %>
-  </div>
-  <div class="actions ym-fbox-footer">
+  <%= f.label :vehicle_id %>
+  <%= f.number_field :vehicle_id %>
+  <%= f.label :trip_id %>
+  <%= f.number_field :trip_id %>
+  <%= f.label :date %>
+  <%= f.date_select :date %>
+  <%= f.label :cost %>
+  <%= f.text_field :cost %>
+  <%= f.label :maintenance_type %>
+  <%= f.text_field :maintenance_type %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :kilometres %>
+  <%= f.number_field :kilometres %>
+  <%= f.label :vehicle_type %>
+  <%= f.text_field :vehicle_type %>
+  <div class="footer">
     <%= f.submit %>
   </div>
 <% end %>

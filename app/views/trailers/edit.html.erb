@@ -1,5 +1,5 @@
 <section>
   <h2>Edit Trailer #<%= @trailer.id %></h2>
   <%= render 'form' %>
-  <p><%= link_to 'Show', @trailer, :class => 'ym-button ym-play' %> | <%= link_to 'Back', trailers_path, :class => 'ym-button ym-close' %></p>
+  <p><%= link_to 'Show', @trailer, :class => 'button show' %> <%= link_to 'Back', trailers_path, :class => 'button back' %></p>
 </section>

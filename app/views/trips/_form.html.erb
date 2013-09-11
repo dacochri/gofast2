@@ -13,35 +13,21 @@
     </div>
   <% end %>
 
-  <div class="ym-fbox">
-    <%= f.label :truck_id %><br />
-    <%= f.number_field :truck_id %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :trailer_id %><br />
-    <%= f.number_field :trailer_id %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :expense_id %><br />
-    <%= f.number_field :expense_id %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :start_date %><br />
-    <%= f.date_select :start_date %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :end_date %><br />
-    <%= f.date_select :end_date %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :load_bar_count %><br />
-    <%= f.number_field :load_bar_count %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :kilometres_accumulated %><br />
-    <%= f.text_field :kilometres_accumulated %>
-  </div>
-  <div class="actions ym-fbox-footer">
+  <%= f.label :truck_id %>
+  <%= f.number_field :truck_id %>
+  <%= f.label :trailer_id %>
+  <%= f.number_field :trailer_id %>
+  <%= f.label :expense_id %>
+  <%= f.number_field :expense_id %>
+  <%= f.label :start_date %>
+  <%= f.date_select :start_date %>
+  <%= f.label :end_date %>
+  <%= f.date_select :end_date %>
+  <%= f.label :load_bar_count %>
+  <%= f.number_field :load_bar_count %>
+  <%= f.label :kilometres_accumulated %>
+  <%= f.text_field :kilometres_accumulated %>
+  <div class="footer">
     <%= f.submit %>
   </div>
 <% end %>

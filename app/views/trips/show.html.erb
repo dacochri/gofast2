@@ -1,6 +1,6 @@
 <section>
   <h2>Trip #<%= @trip.id %></h2>
-  <p id="notice" class="highlight"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
   <p><strong>Truck:</strong> <%= @trip.truck_id %></p>
   <p><strong>Trailer:</strong> <%= @trip.trailer_id %></p>
   <p><strong>Expense:</strong> <%= @trip.expense_id %></p>
@@ -8,5 +8,5 @@
   <p><strong>End date:</strong> <%= @trip.end_date %></p>
   <p><strong>Load bar count:</strong> <%= @trip.load_bar_count %></p>
   <p><strong>Kilometres accumulated:</strong> <%= @trip.kilometres_accumulated %></p>
-  <p><%= link_to 'Edit', edit_trip_path(@trip), :class => 'ym-button ym-edit' %> <%= link_to 'Back', trips_path, :class => 'ym-button ym-close' %></p>
+  <p><%= link_to 'Edit', edit_trip_path(@trip), :class => 'button edit' %> <%= link_to 'Back', trips_path, :class => 'button back' %></p>
 </section>

@@ -13,35 +13,21 @@
     </div>
   <% end %>
 
-  <div class="ym-fbox">
-    <%= f.label :trailer_no %><br />
-    <%= f.number_field :trailer_no %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :trailer_type %><br />
-    <%= f.text_field :trailer_type %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :license_plate %><br />
-    <%= f.text_field :license_plate %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :make %><br />
-    <%= f.text_field :make %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :model %><br />
-    <%= f.text_field :model %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :manufactured_year %><br />
-    <%= f.number_field :manufactured_year %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :vin_number %><br />
-    <%= f.text_field :vin_number %>
-  </div>
-  <div class="actions ym-fbox-footer">
+  <%= f.label :trailer_no %>
+  <%= f.number_field :trailer_no %>
+  <%= f.label :trailer_type %>
+  <%= f.text_field :trailer_type %>
+  <%= f.label :license_plate %>
+  <%= f.text_field :license_plate %>
+  <%= f.label :make %>
+  <%= f.text_field :make %>
+  <%= f.label :model %>
+  <%= f.text_field :model %>
+  <%= f.label :manufactured_year %>
+  <%= f.number_field :manufactured_year %>
+  <%= f.label :vin_number %>
+  <%= f.text_field :vin_number %>
+  <div class="footer">
     <%= f.submit %>
   </div>
 <% end %>
