@@ -264,7 +264,8 @@ input[type="submit"], input[type="image"], button{
   margin: 0;
 
   &:hover, &:active, &:focus{
-    background: 0.1rem solid #BDC3C7;
+    background-color: #BDC3C7;
+    border: 0.1rem solid darken(#FFF, 50%);
   }
 }
 
