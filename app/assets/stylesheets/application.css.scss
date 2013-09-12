@@ -308,50 +308,35 @@ table{
 
 /* Button styles */
 .button{
-  background-color: #ECF0F1;
-  border: 0.1rem solid darken(#FFF, 30%);
-  transition: all 200ms ease-in-out 0s;
-  color: #333;
-  cursor: pointer;
-  display: inline-block;
-  padding: 0.5rem 2.1rem;
-  font-size: 1.6rem;
-  margin: 0;
   
   &:before{
-    background-color: darken(#FFF, 10%);
-    box-shadow: 0.1rem 0 0 darken(#FFF, 50%) 0.2rem 0 0 darken(#FFF, 50%);
-    float: left;
-    font-size: 2.0rem;
-    margin: 0 1.2rem 0 -1.2rem;
-    padding: 0 0.3rem;
-    pointer-events: none;
-    text-align: center;
-    width: 1.2rem;
+    
+    &:hover, &:active, &:focus{
+      
+    }
   }
 
   &:hover, &:active, &:focus{
-    background-color: #BDC3C7;
-    border: 0.1rem solid darken(#FFF, 50%);
+
   }
 }
 
-.back{
-
+.back:before{
+  content: '\2715';
 }
 
-.new{
-
+.new:before{
+  content: '\271A';
 }
 
-.show{
-
+.show:before{
+  content: '\25B6';
 }
 
-.edit{
-
+.edit:before{
+  content: '\270E';
 }
 
-.destroy{
-
+.destroy:before{
+  content: '\2718';
 }
