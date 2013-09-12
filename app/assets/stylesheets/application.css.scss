@@ -305,3 +305,41 @@ table{
     vertical-align: center;
   }
 }
+
+/* Button styles */
+.button{
+  background-color: #ECF0F1;
+  border: 0.1rem solid darken(#FFF, 30%);
+  transition: all 200ms ease-in-out 0s;
+  color: #333;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.5rem 2.1rem;
+  font-size: 1.6rem;
+  margin: 0;
+  
+  &:hover, &:active, &:focus{
+    background-color: #BDC3C7;
+    border: 0.1rem solid darken(#FFF, 50%);
+  }
+}
+
+.back{
+
+}
+
+.new{
+
+}
+
+.show{
+
+}
+
+.edit{
+
+}
+
+.destroy{
+
+}
