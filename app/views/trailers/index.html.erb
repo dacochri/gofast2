@@ -1,15 +1,24 @@
 <section>
   <h2>Trailers</h2>
+	<%= form_tag trailers_path, :method => 'get' do %>
+    <%= hidden_field_tag :direction, params[:direction] %>
+    <%= hidden_field_tag :sort, params[:sort] %>
+		<%= label_tag :column %>
+		<%= select_tag :column, options_for_select(Trailer.translated_searchable_columns(['id']), params[:column]) %>
+		<%= label_tag :search %>
+		<%= text_field_tag :search %>
+		<%= submit_tag 'Submit' %>
+  <% end %>
   <table>
     <thead>
       <tr>
-        <th scope="col">Trailer no</th>
-        <th scope="col">Trailer type</th>
-        <th scope="col">License plate</th>
-        <th scope="col">Make</th>
-        <th scope="col">Model</th>
-        <th scope="col">Manufactured year</th>
-        <th scope="col">Vin number</th>
+        <th scope="col"><%= sortable "trailer_no", nil, @trailers, "trailer_no" %></th>
+        <th scope="col"><%= sortable "trailer_type", nil, @trailers, "trailer_no" %></th>
+        <th scope="col"><%= sortable "license_plate", nil, @trailers, "trailer_no" %></th>
+        <th scope="col"><%= sortable "make", nil, @trailers, "trailer_no" %></th>
+        <th scope="col"><%= sortable "model", nil, @trailers, "trailer_no" %></th>
+        <th scope="col"><%= sortable "manufactured_year", nil, @trailers, "trailer_no" %></th>
+        <th scope="col"><%= sortable "vin_number", nil, @trailers, "trailer_no" %></th>
         <th scope="col"></th>
       </tr>
     </thead>

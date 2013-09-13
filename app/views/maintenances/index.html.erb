@@ -1,16 +1,25 @@
 <section>
   <h2>Maintenance Records</h2>
+	<%= form_tag maintenances_path, :method => 'get' do %>
+    <%= hidden_field_tag :direction, params[:direction] %>
+    <%= hidden_field_tag :sort, params[:sort] %>
+		<%= label_tag :column %>
+		<%= select_tag :column, options_for_select(Maintenance.translated_searchable_columns(['id']), params[:column]) %>
+		<%= label_tag :search %>
+		<%= text_field_tag :search %>
+		<%= submit_tag 'Submit' %>
+  <% end %>
   <table>
     <thead>
       <tr>
-        <th scope="col">Vehicle</th>
-        <th scope="col">Trip</th>
-        <th scope="col">Date</th>
-        <th scope="col">Cost</th>
-        <th scope="col">Maintenance type</th>
-        <th scope="col">Description</th>
-        <th scope="col">Kilometres</th>
-        <th scope="col">Vehicle type</th>
+        <th scope="col"><%= sortable "vehicle_id", nil, @maintenances, "vehicle_id" %></th>
+        <th scope="col"><%= sortable "trip_id", nil, @maintenances, "vehicle_id" %></th>
+        <th scope="col"><%= sortable "date", nil, @maintenances, "vehicle_id" %></th>
+        <th scope="col"><%= sortable "cost", nil, @maintenances, "vehicle_id" %></th>
+        <th scope="col"><%= sortable "maintenance_type", nil, @maintenances, "vehicle_id" %></th>
+        <th scope="col"><%= sortable "description", nil, @maintenances, "vehicle_id" %></th>
+        <th scope="col"><%= sortable "kilometres", nil, @maintenances, "vehicle_id" %></th>
+        <th scope="col"><%= sortable "vehicle_type", nil, @maintenances, "vehicle_id" %></th>
         <th scope="col"></th>
       </tr>
     </thead>

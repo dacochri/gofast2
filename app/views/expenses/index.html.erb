@@ -1,18 +1,29 @@
 <section>
   <h2>Expenses</h2>
+	<%= form_tag expenses_path, :method => 'get' do %>
+    <%= hidden_field_tag :direction, params[:direction] %>
+    <%= hidden_field_tag :sort, params[:sort] %>
+		<%= label_tag :column %>
+		<%= select_tag :column, options_for_select(Expense.translated_searchable_columns([]), params[:column]) %>
+		<%= label_tag :search %>
+		<%= text_field_tag :search %>
+		<%= submit_tag 'Submit' %>
+  <% end %>
   <table>
     <thead>
       <tr>
-        <th scope="col">Quick pay</th>
-        <th scope="col">Fuel</th>
-        <th scope="col">Driver pay</th>
-        <th scope="col">Misc cost</th>
+				<th scope="col"><%= sortable "id", "Expense ID", @expenses, "quick_pay" %></th>
+        <th scope="col"><%= sortable "quick_pay", nil, @expenses, "quick_pay" %></th>
+        <th scope="col"><%= sortable "fuel", nil, @expenses, "quick_pay" %></th>
+        <th scope="col"><%= sortable "driver_pay", nil, @expenses, "quick_pay" %></th>
+        <th scope="col"><%= sortable "misc_cost", nil, @expenses, "quick_pay" %></th>
         <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
       <% @expenses.each do |expense| %>
       <tr>
+				<td><%= expense.id %></td>
         <td><%= expense.quick_pay %></td>
         <td><%= expense.fuel %></td>
         <td><%= expense.driver_pay %></td>

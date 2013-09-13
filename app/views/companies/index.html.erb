@@ -1,20 +1,29 @@
 <section>
   <h2>Companies</h2>
+	<%= form_tag companies_path, :method => 'get' do %>
+    <%= hidden_field_tag :direction, params[:direction] %>
+    <%= hidden_field_tag :sort, params[:sort] %>
+		<%= label_tag :column %>
+		<%= select_tag :column, options_for_select(Company.translated_searchable_columns(['id']), params[:column]) %>
+		<%= label_tag :search %>
+		<%= text_field_tag :search %>
+		<%= submit_tag 'Submit' %>
+  <% end %>
   <table>
     <thead>
       <tr>
-        <th scope="col">Company type</th>
-        <th scope="col">Name</th>
-        <th scope="col">Street</th>
-        <th scope="col">Unit</th>
-        <th scope="col">City</th>
-        <th scope="col">Privince</th>
-        <th scope="col">Postal code</th>
-        <th scope="col">Email</th>
-        <th scope="col">Primary phone</th>
-        <th scope="col">Secondary phone</th>
-        <th scope="col">Fax</th>
-        <th scope="col">Contact name</th>
+        <th scope="col"><%= sortable "company_type", nil, @companies, "company_type" %></th>
+        <th scope="col"><%= sortable "name", nil, @companies, "company_type" %></th>
+        <th scope="col"><%= sortable "street", nil, @companies, "company_type" %></th>
+        <th scope="col"><%= sortable "unit", nil, @companies, "company_type" %></th>
+        <th scope="col"><%= sortable "city", nil, @companies, "company_type" %></th>
+        <th scope="col"><%= sortable "province", nil, @companies, "company_type" %></th>
+        <th scope="col"><%= sortable "postal_code", nil, @companies, "company_type" %></th>
+        <th scope="col"><%= sortable "email", nil, @companies, "company_type" %></th>
+        <th scope="col"><%= sortable "primary_phone", nil, @companies, "company_type" %></th>
+        <th scope="col"><%= sortable "secondary_phone", nil, @companies, "company_type" %></th>
+        <th scope="col"><%= sortable "fax", nil, @companies, "company_type" %></th>
+        <th scope="col"><%= sortable "contact_name", nil, @companies, "company_type" %></th>
         <th scope="col"></th>
       </tr>
     </thead>

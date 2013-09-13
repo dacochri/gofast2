@@ -1,15 +1,23 @@
 <section>
   <h2>Shipments</h2>
+	<%= form_tag shipments_path, :method => 'get' do %>
+    <%= hidden_field_tag :direction, params[:direction] %>
+    <%= hidden_field_tag :sort, params[:sort] %>
+		<%= label_tag :column %>
+		<%= select_tag :column, options_for_select(Shipment.translated_searchable_columns(['id']), params[:column]) %>
+		<%= label_tag :search %>
+		<%= text_field_tag :search %>
+		<%= submit_tag 'Submit' %>
+  <% end %>
   <table>
     <thead>
       <tr>
-        <th scope="col">Broker</th>
-        <th scope="col">Driver</th>
-        <th scope="col">Customer</th>
-        <th scope="col">Trip</th>
-        <th scope="col">Rate</th>
-        <th scope="col">Partial</th>
-        <th scope="col">Distance</th>
+        <th scope="col"><%= sortable "broker_id", nil, @shipments, "broker_id" %></th>
+        <th scope="col"><%= sortable "customer_id", nil, @shipments, "broker_id" %></th>
+        <th scope="col"><%= sortable "trip_id", nil, @shipments, "broker_id" %></th>
+        <th scope="col"><%= sortable "rate", nil, @shipments, "broker_id" %></th>
+        <th scope="col"><%= sortable "partial", nil, @shipments, "broker_id" %></th>
+        <th scope="col"><%= sortable "distance", nil, @shipments, "broker_id" %></th>
         <th scope="col"></th>
       </tr>
     </thead>
@@ -17,7 +25,6 @@
     <% @shipments.each do |shipment| %>
       <tr>
         <td><%= shipment.broker_id %></td>
-        <td><%= shipment.driver_id %></td>
         <td><%= shipment.customer_id %></td>
         <td><%= shipment.trip_id %></td>
         <td><%= shipment.rate %></td>

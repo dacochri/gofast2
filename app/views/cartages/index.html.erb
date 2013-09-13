@@ -1,15 +1,24 @@
 <section>
   <h2>Cartages</h2>
+	<%= form_tag cartages_path, :method => 'get' do %>
+    <%= hidden_field_tag :direction, params[:direction] %>
+    <%= hidden_field_tag :sort, params[:sort] %>
+		<%= label_tag :column %>
+		<%= select_tag :column, options_for_select(Cartage.translated_searchable_columns(['id']), params[:column]) %>
+		<%= label_tag :search %>
+		<%= text_field_tag :search %>
+		<%= submit_tag 'Submit' %>
+  <% end %>
   <table>
     <thead>
       <tr>
-        <th scope="col">Company</th>
-        <th scope="col">Trailer</th>
-        <th scope="col">Shipment</th>
-        <th scope="col">Pickup time</th>
-        <th scope="col">Delivery time</th>
-        <th scope="col">Driver name</th>
-        <th scope="col">Cost</th>
+        <th scope="col"><%= sortable "company_id", nil, @cartages, "company_id" %></th>
+        <th scope="col"><%= sortable "trailer_id", nil, @cartages, "company_id" %></th>
+        <th scope="col"><%= sortable "shipment_id", nil, @cartages, "company_id" %></th>
+        <th scope="col"><%= sortable "pickup_time", nil, @cartages, "company_id" %></th>
+        <th scope="col"><%= sortable "delivery_time", nil, @cartages, "company_id" %></th>
+        <th scope="col"><%= sortable "driver_name", nil, @cartages, "company_id" %></th>
+        <th scope="col"><%= sortable "cost", nil, @cartages, "company_id" %></th>
         <th scope="col"></th>
       </tr>
     </thead>

@@ -1,19 +1,28 @@
 <section>
   <h2>Trucks</h2>
+  <%= form_tag trucks_path, :method => 'get' do %>
+    <%= hidden_field_tag :direction, params[:direction] %>
+    <%= hidden_field_tag :sort, params[:sort] %>
+		<%= label_tag :column %>
+		<%= select_tag :column, options_for_select(Truck.translated_searchable_columns(['id']), params[:column]) %>
+		<%= label_tag :search %>
+		<%= text_field_tag :search %>
+		<%= submit_tag 'Submit' %>
+  <% end %>
   <table>
     <thead>
       <tr>
-        <th scope="col">Truck no</th>
-        <th scope="col">Truck type</th>
-        <th scope="col">License plate</th>
-        <th scope="col">License expires</th>
-        <th scope="col">Owner</th>
-        <th scope="col">Make</th>
-        <th scope="col">Model</th>
-        <th scope="col">Manufactured year</th>
-        <th scope="col">Vin number</th>
-        <th scope="col">Total kilometres</th>
-        <th scope="col">Current location</th>
+        <th scope="col"><%= sortable "truck_no", nil, @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "truck_type", nil,  @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "license_plate", nil,  @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "license_expires", nil,  @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "owner", nil,  @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "make", nil,  @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "model", nil,  @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "manufactured_year", nil,  @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "vin_number", nil,  @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "total_kilometres", nil,  @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "current_location", nil,  @trucks, "truck_no" %></th>
         <th scope="col"></th>
       </tr>
     </thead>

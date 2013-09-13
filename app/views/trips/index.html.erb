@@ -1,15 +1,24 @@
 <section>
   <h2>Trips</h2>
+  <%= form_tag trips_path, :method => 'get' do %>
+    <%= hidden_field_tag :direction, params[:direction] %>
+    <%= hidden_field_tag :sort, params[:sort] %>
+		<%= label_tag :column %>
+		<%= select_tag :column, options_for_select(Trip.translated_searchable_columns(['id']), params[:column]) %>
+		<%= label_tag :search %>
+		<%= text_field_tag :search %>
+		<%= submit_tag 'Submit' %>
+  <% end %>
   <table>
     <thead>
       <tr>
-        <th scope="col">Truck</th>
-        <th scope="col">Trailer</th>
-        <th scope="col">Expense</th>
-        <th scope="col">Start date</th>
-        <th scope="col">End date</th>
-        <th scope="col">Load bar count</th>
-        <th scope="col">Kilometres accumulated</th>
+        <th scope="col"><%= sortable "truck_id", nil, @trips, "truck_id" %></th>
+        <th scope="col"><%= sortable "trailer_id", nil, @trips, "truck_id" %></th>
+        <th scope="col"><%= sortable "expense_id", nil, @trips, "truck_id" %></th>
+        <th scope="col"><%= sortable "start_date", nil, @trips, "truck_id" %></th>
+        <th scope="col"><%= sortable "end_date", nil, @trips, "truck_id" %></th>
+        <th scope="col"><%= sortable "load_bar_count", nil, @trips, "truck_id" %></th>
+        <th scope="col"><%= sortable "kilometres_accumulated", nil, @trips, "truck_id" %></th>
         <th scope="col"></th>
       </tr>
     </thead>

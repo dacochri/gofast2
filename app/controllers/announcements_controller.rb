@@ -1,8 +1,10 @@
 class AnnouncementsController < ApplicationController
+  include ApplicationHelper
+  
   # GET /announcements
   # GET /announcements.json
   def index
-    @announcements = Announcement.all
+    @announcements = Announcement.search(params[:search], params[:column]).order(sort_column(Announcement, 'date_posted') + ' ' + sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb

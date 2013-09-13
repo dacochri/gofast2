@@ -1,19 +1,28 @@
 <section>
   <h2>Drivers</h2>
+	<%= form_tag drivers_path, :method => 'get' do %>
+    <%= hidden_field_tag :direction, params[:direction] %>
+    <%= hidden_field_tag :sort, params[:sort] %>
+		<%= label_tag :column %>
+		<%= select_tag :column, options_for_select(Driver.translated_searchable_columns(['id']), params[:column]) %>
+		<%= label_tag :search %>
+		<%= text_field_tag :search %>
+		<%= submit_tag 'Submit' %>
+  <% end %>
   <table>
     <thead>
       <tr>
-        <th scope="col">First name</th>
-        <th scope="col">Last name</th>
-        <th scope="col">Street</th>
-        <th scope="col">Unit</th>
-        <th scope="col">City</th>
-        <th scope="col">Postal code</th>
-        <th scope="col">Home phone</th>
-        <th scope="col">Cell phone</th>
-        <th scope="col">Business name</th>
-        <th scope="col">Hst no</th>
-        <th scope="col">Comments</th>
+        <th scope="col"><%= sortable "first_name", nil, @drivers, "first_name" %></th>
+        <th scope="col"><%= sortable "last_name", nil, @drivers, "first_name" %></th>
+        <th scope="col"><%= sortable "street", nil, @drivers, "first_name" %></th>
+        <th scope="col"><%= sortable "unit", nil, @drivers, "first_name" %></th>
+        <th scope="col"><%= sortable "city", nil, @drivers, "first_name" %></th>
+        <th scope="col"><%= sortable "postal_code", nil, @drivers, "first_name" %></th>
+        <th scope="col"><%= sortable "home_phone", nil, @drivers, "first_name" %></th>
+        <th scope="col"><%= sortable "cell_phone", nil, @drivers, "first_name" %></th>
+        <th scope="col"><%= sortable "business_name", nil, @drivers, "first_name" %></th>
+        <th scope="col"><%= sortable "hst_no", nil, @drivers, "first_name" %></th>
+        <th scope="col"><%= sortable "comments", nil, @drivers, "first_name" %></th>
         <th scope="col"></th>
       </tr>
     </thead>

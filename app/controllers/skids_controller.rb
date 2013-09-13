@@ -1,8 +1,10 @@
 class SkidsController < ApplicationController
+  include ApplicationHelper
+  
   # GET /skids
   # GET /skids.json
   def index
-    @skids = Skid.all
+    @skids = Skid.search(params[:search], params[:column]).order(sort_column(Skid, 'shipment_id') + ' ' + sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb

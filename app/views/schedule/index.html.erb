@@ -3,22 +3,34 @@
   <table>
     <thead>
       <tr>
-        <th scope="col">Truck No.</th>
-	<th scope="col">Leaves</th>
-	<th scope="col">Returns</th>
+        <th scope="col"><%= sortable "truck_no", nil, @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "driver_name", nil, @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "trip_start", nil, @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "load_bar_count", nil, @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "current_mileage", nil, @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "next_oil_change", nil, @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "current_location", nil, @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "delivery_locations", nil, @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "trailer_no", nil, @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "trailer_next_service_date", nil, @trucks, "truck_no" %></th>
       </tr>
     </thead>
     <tbody>
+      <% @trucks.each do |truck| %>
+        <% record = ScheduleController.schedule_record(truck.id) %>
       <tr>
-        <td>1</td>
-	<td>Monday June 9</td>
-	<td>Tuesday June 10</td>
+        <td><%= link_to "#{record['truck_no']}", { :action => "../trucks/show/#{truck.id}" } %></td>
+        <td><%= link_to "#{record['first_name']} #{record['last_name']}", { :action => "../drivers/show/#{record['driver_id']}" } %></td>
+        <td><%= link_to "#{record['trip_start']}", { :action => "../trips/show/#{record['trip_no']}" } %></td>
+        <td><%= record['load_bar_count'] %></td>
+        <td><%= record['current_mileage'] %></td>
+        <td><%= record['next_oil_change'] %></td>
+        <td><%= record['current_location'] %></td>
+        <td><%= raw record['delivery_locations'].join '<br />' %></td>
+        <td><%= link_to "#{record['trailer_no']}", { :action => "../trailers/show/#{record['trailer_no']}" } %></td>
+        <td><%= record['trailer_next_service_date'] %></td>
       </tr>
-      <tr>
-        <td>2</td>
-	<td>Tuesday June 10</td>
-	<td>Wednesday June 11</td>
-      </tr>
+      <% end %>
     </tbody>
   </table>
 </section>
