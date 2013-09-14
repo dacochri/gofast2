@@ -17,7 +17,7 @@
         <td><%= expense.fuel %></td>
         <td><%= expense.driver_pay %></td>
         <td><%= expense.misc_cost %></td>
-        <td><%= link_to 'Show', expense, :class => 'button show' %> <%= link_to 'Edit', edit_expense_path(expense), :class => 'button edit' %> <%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure you want do delete this expense?' }, :class => 'button destroy' %></td>
+        <td><%= link_to '', expense, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_expense_path(expense), :class => 'button edit', :title => 'Edit' %> <%= link_to '', expense, method: :delete, data: { confirm: 'Are you sure you want do delete this expense?' }, :class => 'button destroy', :title => 'Delete' %></td>
       </tr>
       <% end %>
     </tbody>

@@ -33,7 +33,7 @@
         <td><%= company.secondary_phone %></td>
         <td><%= company.fax %></td>
         <td><%= company.contact_name %></td>
-        <td><%= link_to 'Show', company, :class => 'button show' %> <%= link_to 'Edit', edit_company_path(company), :class => 'button edit' %> <%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure you want to delete this company?' }, :class => 'button destroy' %></td>
+        <td><%= link_to '', company, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_company_path(company), :class => 'button edit', :title => 'Edit' %> <%= link_to '', company, method: :delete, data: { confirm: 'Are you sure you want to delete this company?' }, :class => 'button destroy', :title => 'Delete' %></td>
       </tr>
     <% end %>
     </tbody>
