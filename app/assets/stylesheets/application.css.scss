@@ -38,18 +38,11 @@ body{
   font-size: 1.8rem;
 
   > div:first-child{
-    background: $header-bg-color; /* Old browsers */
-    background: -moz-linear-gradient(-45deg, rgba(80, 181, 211, 1) 0%, rgba(0, 115, 153, 1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(80, 181, 211, 1)), color-stop(100%, rgba(0, 115, 153, 1))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(-45deg, rgba(80, 181, 211, 1) 0%, rgba(0, 115, 153, 1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(-45deg, rgba(80, 181, 211, 1) 0%,rgba(0, 115, 153, 1) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(-45deg, rgba(80, 181, 211, 1) 0%, rgba(0, 115, 153, 1) 100%); /* IE10+ */
-    background: linear-gradient(135deg, rgba(80, 181, 211, 1) 0%, rgba(0, 115, 153, 1) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#50B5D3', endColorstr='#007399', GradientType=1); /* IE6-9 fallback on horizontal gradient */
+    background: $header-bg-color url('header_bg.png') repeat bottom left;
   }
 
   > div:nth-child(2){
-    background-color: $nav-bg-color;
+    background: $nav-bg-color url('nav_bg.png') repeat top left;
     border-bottom: 0.2rem solid #F60;
   }
 
