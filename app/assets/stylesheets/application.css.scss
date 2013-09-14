@@ -202,11 +202,11 @@ form{
 
   *{
     
-    &:nth-child(2){
+    > &:nth-child(2){
       margin-top: 1.5rem;
     }
 
-    &:last-child(2){
+    > &:last-child(2){
       margin-bottom: 1.5rem;
     }
   }
@@ -223,11 +223,10 @@ label{
   color: #666;
   line-height: 1.5;
   margin-top: 1rem;
-  margin-left: 1.5rem;
   display: block;
 }
 
-input[type="text"], input[type="number"], input[type="password"], input[type="radio"], input[type="checkbox"], select, textarea{
+label, input[type="text"], input[type="number"], input[type="password"], input[type="radio"], input[type="checkbox"], select, textarea{
   margin-left: 1.5rem;
 }
 
@@ -266,6 +265,16 @@ select{
   margin-right: 1rem;
 }
 
+/* Search form */
+.search{
+  padding: 1rem;
+
+  label, input[type="text"], input[type="number"], select, input[type="submit"]{
+    display: inline;
+    margin: 0 0.5rem;
+  }
+}
+
 /* Styles for tables */
 table{
   border-bottom: 0.1rem solid #CCC;
@@ -294,7 +303,7 @@ table{
 
   th, td{
     line-height: 1.5rem;
-    padding: 1.5rem 0.8rem;
+    padding: 1.5rem 0.5rem;
     vertical-align: center;
   }
 }

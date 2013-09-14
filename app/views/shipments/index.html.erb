@@ -1,6 +1,6 @@
 <section>
   <h2>Shipments</h2>
-	<%= form_tag shipments_path, :method => 'get' do %>
+	<%= form_tag shipments_path, :method => 'get', :class => 'search' do %>
     <%= hidden_field_tag :direction, params[:direction] %>
     <%= hidden_field_tag :sort, params[:sort] %>
 		<%= label_tag :column %>
@@ -9,6 +9,7 @@
 		<%= text_field_tag :search %>
 		<%= submit_tag 'Submit' %>
   <% end %>
+  <p><%= link_to 'New Shipment', new_shipment_path, :class => 'button new' %></p>
   <table>
     <thead>
       <tr>
@@ -35,5 +36,4 @@
     <% end %>
     </tbody>
   </table>
-  <p><%= link_to 'New Shipment', new_shipment_path, :class => 'button new' %></p>
 </section>
