@@ -301,16 +301,32 @@ table{
 
 /* Button styles */
 .button{
-  
-  &:before{
-    
-    &:hover, &:active, &:focus{
-      
-    }
-  }
+  color: #333;
+  cursor: pointer;
+  display: inline-block;
+  font: 1.8rem/3.6rem Arial, Helvetica;
+  margin: 0 1.1rem 0 0;
+  overflow: visible;
+  padding: 0 2.3rem;
+  whitespace: nowrap;
+  border: 0.1rem solid darken(#FFF, 50%);
+  border-radius: 0.2rem;
+  transition: all 200ms ease-in-out 0s;
+  background-color: #ECF0F1;
 
   &:hover, &:active, &:focus{
+    background-color: #BDC3C7;
+  }
 
+  &:before{
+    float: left;
+    margin: 0 2.3rem 0 -2.3rem;
+    border-right: 0.1rem solid darken(#FFF, 50%);
+    background-color: darken(#FFF, 30%);
+    padding: 0 0.6rem;
+    text-align: center;
+    font-size: 2.4rem;
+    width: 2.2rem;
   }
 }
 
