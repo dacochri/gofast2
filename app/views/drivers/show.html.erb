@@ -1,6 +1,6 @@
 <section>
   <h2><%= @driver.first_name %> <%= @driver.last_name %></h2>
-  <p id="notice" class="highlight"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
   <p><strong>First name:</strong> <%= @driver.first_name %></p>
   <p><strong>Last name:</strong> <%= @driver.last_name %></p>
   <p><strong>Street:</strong> <%= @driver.street %></p>
@@ -12,5 +12,5 @@
   <p><strong>Business name:</strong> <%= @driver.business_name %></p>
   <p><strong>Hst no:</strong> <%= @driver.hst_no %></p>
   <p><strong>Comments:</strong> <%= @driver.comments %></p>
-  <p><%= link_to 'Edit', edit_driver_path(@driver), :class => 'ym-button ym-edit' %> <%= link_to 'Back', drivers_path, :class => 'ym-button ym-close' %></p>
+  <p><%= link_to 'Edit', edit_driver_path(@driver), :class => 'button edit' %> <%= link_to 'Back', drivers_path, :class => 'button back' %></p>
 </section>

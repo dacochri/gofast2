@@ -1,6 +1,6 @@
 <section>
   <h2>Maintenance Record #<%= @maintenance.id %></h2>
-  <p id="notice" class="highlight"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
   <p><strong>Vehicle:</strong> <%= @maintenance.vehicle_id %></p>
   <p><strong>Trip:</strong> <%= @maintenance.trip_id %></p>
   <p><strong>Date:</strong> <%= @maintenance.date %></p>
@@ -9,5 +9,5 @@
   <p><strong>Description:</strong> <%= @maintenance.description %></p>
   <p><strong>Kilometres:</strong> <%= @maintenance.kilometres %></p>
   <p><strong>Vehicle type:</strong> <%= @maintenance.vehicle_type %></p>
-  <p><%= link_to 'Edit', edit_maintenance_path(@maintenance), :class => 'ym-button ym-edit' %> <%= link_to 'Back', maintenances_path, :class => 'ym-button ym-close' %></p>
+  <p><%= link_to 'Edit', edit_maintenance_path(@maintenance), :class => 'button edit' %> <%= link_to 'Back', maintenances_path, :class => 'button back' %></p>
 </section>

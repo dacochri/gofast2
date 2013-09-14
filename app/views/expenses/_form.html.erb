@@ -11,23 +11,15 @@
     </div>
   <% end %>
 
-  <div class="ym-fbox">
-    <%= f.label :quick_pay %><br />
-    <%= f.text_field :quick_pay %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :fuel %><br />
-    <%= f.text_field :fuel %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :driver_pay %><br />
-    <%= f.text_field :driver_pay %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :misc_cost %><br />
-    <%= f.text_field :misc_cost %>
-  </div>
-  <div class="actions ym-fbox-footer">
+  <%= f.label :quick_pay %>
+  <%= f.text_field :quick_pay %>
+  <%= f.label :fuel %>
+  <%= f.text_field :fuel %>
+  <%= f.label :driver_pay %>
+  <%= f.text_field :driver_pay %>
+  <%= f.label :misc_cost %>
+  <%= f.text_field :misc_cost %>
+  <div class="footer">
     <%= f.submit %>
   </div>
 <% end %>

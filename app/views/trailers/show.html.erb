@@ -1,6 +1,6 @@
 <section>
   <h2>Trailer #<%= @trailer.id %></h2>
-  <p id="notice" class="highlight"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
   <p><strong>Trailer no:</strong> <%= @trailer.trailer_no %></p>
   <p><strong>Trailer type:</strong> <%= @trailer.trailer_type %></p>
   <p><strong>License plate:</strong> <%= @trailer.license_plate %></p>
@@ -8,5 +8,5 @@
   <p><strong>Model:</strong> <%= @trailer.model %></p>
   <p><strong>Manufactured year:</strong> <%= @trailer.manufactured_year %></p>
   <p><strong>Vin number:</strong> <%= @trailer.vin_number %></p>
-  <p><%= link_to 'Edit', edit_trailer_path(@trailer), :class => 'ym-button ym-edit' %> <%= link_to 'Back', trailers_path, :class => 'ym-button ym-close' %></p>
+  <p><%= link_to 'Edit', edit_trailer_path(@trailer), :class => 'button edit' %> <%= link_to 'Back', trailers_path, :class => 'button back' %></p>
 </section>

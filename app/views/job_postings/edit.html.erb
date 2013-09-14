@@ -1,5 +1,5 @@
 <section>
   <h2>Edit <%= @job_posting.title %></h2>
   <%= render 'form' %>
-  <p><%= link_to 'Show', @job_posting, :class => 'ym-button ym-play' %> | <%= link_to 'Back', job_postings_path, :class => 'ym-button ym-close' %></p>
+  <p><%= link_to 'Show', @job_posting, :class => 'button show' %> <%= link_to 'Back', job_postings_path, :class => 'button back' %></p>
 </section>

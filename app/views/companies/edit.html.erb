@@ -1,5 +1,5 @@
 <section>
   <h2>Edit <%= @company.name %></h2>
   <%= render 'form' %>
-  <p><%= link_to 'Show', @company, :class => 'ym-button ym-play' %> | <%= link_to 'Back', companies_path, :class => 'ym-button ym-close' %></p>
+  <p><%= link_to 'Show', @company, :class => 'button show' %> <%= link_to 'Back', companies_path, :class => 'button back' %></p>
 </section>

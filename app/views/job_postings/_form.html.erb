@@ -13,27 +13,17 @@
     </div>
   <% end %>
 
-  <div class="ym-fbox">
-    <%= f.label :title %><br />
-    <%= f.text_field :title, :size=>"70" %>
-  </div>
-  <div class="ym-fbox ">
-    <%= f.label :post_date %><br />
-    <%= f.date_select :post_date, :class => 'ym-inline' %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :closing_date %><br />
-    <%= f.date_select :closing_date %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :description %><br />
-    <%= f.text_area :description, :size => "100x20" %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :requirements %><br />
-    <%= f.text_field :requirements, :size=>"70" %>
-  </div>
-  <div class="actions ym-fbox-footer ">
+  <%= f.label :title %>
+  <%= f.text_field :title, :size=>"70" %>
+  <%= f.label :post_date %>
+  <%= f.date_select :post_date %>
+  <%= f.label :closing_date %>
+  <%= f.date_select :closing_date %>
+  <%= f.label :description %>
+  <%= f.text_area :description, :size => "100x20" %>
+  <%= f.label :requirements %>
+  <%= f.text_field :requirements, :size=>"70" %>
+  <div class="footer">
     <%= f.submit %>
   </div>
 <% end %>

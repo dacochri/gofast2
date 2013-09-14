@@ -1,5 +1,5 @@
 <section>
   <h2>Edit Shipment #<%= @shipment.id %></h2>
   <%= render 'form' %>
-  <p><%= link_to 'Show', @shipment, :class => 'ym-button ym-play' %> | <%= link_to 'Back', shipments_path, :class => 'ym-button ym-close' %></p>
+  <p><%= link_to 'Show', @shipment, :class => 'button show' %> <%= link_to 'Back', shipments_path, :class => 'button back' %></p>
 </section>

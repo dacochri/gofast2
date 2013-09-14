@@ -13,9 +13,18 @@
  *= require_tree .
  */
 
-/* html{
+$header-bg-color: #50B5D3;
+$nav-bg-color: darken($header-bg-color, 35%);
+$footer-bg-color: #222;
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html{
   font-size: 62.5%;
-} */
+}
 
 /* Now, 1.4rem = 14px */
 /* Can do:
@@ -26,37 +35,40 @@
 
 body{
   font-family: "Droid Sans", Arial, Helvetica, sans-serif;
-  direction: ltr;
-  background: rgb(250, 250, 250);
-  
-  a{
-    color: rgb(20, 121, 151);
+  font-size: 1.8rem;
 
-    &:hover{
-      background: none;
-      text-decoration: underline;
-      color: rgb(80, 181, 211);
-    }
+  > div:first-child{
+    background: $header-bg-color url('header_bg.png') repeat bottom left;
+  }
+
+  > div:nth-child(2){
+    background: $nav-bg-color url('nav_bg.png') repeat top left;
+    border-bottom: 0.2rem solid #F60;
+  }
+
+  > div:last-child{
+    background-color: $footer-bg-color;
   }
 }
 
+div{
+  header, nav, #content, footer{
+    max-width: 102rem;
+    margin: 0 auto;
+  }
+}
+
+#content, footer{
+  padding: 2.1rem;
+}
+
 header{
-  /* css generated gradient for the header */
-  background: none;
-  background: rgb(80, 181, 211); /* Old browsers */
-  background: -moz-linear-gradient(-45deg, rgba(80, 181, 211, 1) 0%, rgba(0,115,153,1) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(80, 181, 211, 1)), color-stop(100%, rgba(0, 115, 153, 1))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(-45deg, rgba(80, 181, 211, 1) 0%, rgba(0, 115, 153,1) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(-45deg, rgba(80, 181, 211, 1) 0%,rgba(0, 115, 153, 1) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(-45deg, rgba(80, 181, 211, 1) 0%, rgba(0, 115, 153, 1) 100%); /* IE10+ */
-  background: linear-gradient(135deg, rgba(80, 181, 211, 1) 0%, rgba(0, 115, 153, 1) 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#50B5D3', endColorstr='#007399', GradientType=1); /* IE6-9 fallback on horizontal gradient */
   color: #CCC;
   
   img{
     background: transparent;
     color: #FFF;
-    padding: 0.3em;
+    margin: 1.4rem 0;
     border: none;
   }
   
@@ -64,13 +76,10 @@ header{
     text-decoration: none;
   }
   
-  .ym-wbox{
-    padding: 1.5em;
-  }
-  
   h1{
     display: inline;
-    
+    margin: 0;
+
     a:hover{
       background-color: transparent;
     }
@@ -78,254 +87,64 @@ header{
   
   h2{
     display: inline;
-    font-size: 150%;
-    letter-spacing: 0.03em;
+    font-size: 2.4rem;
+    letter-spacing: 0.1rem;
     color: #EEE;
     font-family: "Jockey One", "Droid Sans", Arial, Helvetica, sans-serif;
     font-weight: normal;
-    padding: 0 7.5em;
-    margin-top: 2.5em;
     float: right;
-  }
-  
-  nav{
-    background: rgba(0, 0, 0, 0.5);
-    border-bottom: 2px solid #F60;
-    
-    a{
-      font-family: "Jockey One", "Droid Sans", Arial, Helvetica, sans-serif;
-    }
-  }
-}
-
-h1, h2, h3, h4, h5, h6{
-  font-weight: bold;
-  color: #222;
-  letter-spacing: -2px;
-}
-
-p{
-  font-size: 1.1em;
-}
-
-/* In case we need to use a 3 column layout, I've made it here so they go in chronological order. */ 
-.ym-col1{
-  width: 33%;
-  margin: 0;
-} /* left column */
-
-.ym-col2{
-  width: 33%;
-  float: left;
-  margin: 0;
-} /* center column */
-
-.ym-col3{
-  margin-left: 33%;
-  margin-right: 0%;
-} /* right column */
-
-form{
-  border: 1px solid #AAA;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-.ym-button, form button, form input[type="button"], form input[type="reset"], form input[type="submit"]{
-  background: #ECF0F1;
-  border-radius: 0.1em;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  text-shadow: none;
-  transition: all 200ms ease-in-out;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-
-  &:hover{
-    background: #BDC3C7;
-  }
-
-  &:active{
-    -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
-    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
-    background: #BDC3C7;
-    zoom: 1;
     position: relative;
-    top: 0px;
-  }
-
-  &:focus{
-    outline: 0;
-    background: #FAFAFA;
+    top: 4rem;
   }
 }
 
-form button:before, .ym-button:before{
-  background: none;
-  background: rgba(0, 0, 0, 0.1);
-  border-right: 1px solid rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  border-radius: 0;
-  font-weight: normal;
-}
-
-.ym-button.ym-success, form button.ym-success, form input[type="button"].ym-success, form input[type="reset"].ym-success, form input[type="submit"].ym-success{
-  background: #1ABC9C;
-  border-radius: 0.1em;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  text-shadow: none;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  transition: all 200ms ease-in-out;
-
-  &:hover{
-    background: #16A085;
-    zoom: 1;
-  }
-
-  &:active{
-    -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
-    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
-    background: #16A085;
-    zoom: 1;
-  }
-
-  &:focus{
-    outline: 0;
-    background: #6C6;
-  }
-}
-
-.ym-button.ym-warning, form button.ym-warning, form input[type="button"].ym-warning, form input[type="reset"].ym-warning, form input[type="submit"].ym-warning{
-  background: #E67E22;
-  border-radius: 0.1em;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  text-shadow: none;
-  border: 1px solid rgba(0,0,0,0.3);
-  transition: all 200ms ease-in-out;
-
-  &:hover{
-    background: #D35400;
-    zoom: 1;
-  }
-
-  &:active{
-    -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
-    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
-    background: #D35400;
-    zoom: 1;
-  }
-
-  &:focus{
-    outline: 0;
-    background: #da4;
-  }
-}
-
-.ym-button.ym-danger, form button.ym-danger, form input[type="button"].ym-danger, form input[type="reset"].ym-danger, form input[type="submit"].ym-danger {
-  background: #E74C3C;
-  border-radius: 0.1em;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  text-shadow: none;
-  border: 1px solid rgba(0,0,0,0.3);
-  transition: all 200ms ease-in-out;
-
-  &:hover{
-    background: #C0392B;
-    zoom: 1;
-  }
-
-  &:active{
-    -webkit-box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
-    box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
-    background: #C0392B;
-    zoom: 1;
-  }
-
-  &:focus{
-    outline: 0;
-    background: #C66;
-  }
-}
-
-/* yaml horizontal list (the nav bar) */
-.ym-hlist{
-  /* (en) containing floats in IE */
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  background: transparent;
-  
-  ul{
-    margin: 0;
-    padding: 0;
-    display: inline;
-    float: left;
-  
-    li{
-      display: inline;
-      float: left;
-      font-size: 1.0em;
-      list-style-type: none;
-      margin: 0;
-      
-      a, strong{
-        background: transparent;
-        color: #CCC;
-        display: block;
-        font-size: 1em;
-        padding: 0.8em;
-        font-weight: normal;
-        font-size: 120%;
-        text-decoration: none;
-        text-transform: uppercase;
-        transition: all 200ms ease-in-out;
-        text-shadow: none;
-        line-height: 1em;
+div:nth-child(2){
+  nav{
+    font-family: 'Jockey One', 'Droid Sans', Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    
+    ul{
+      li{
+        display: inline-block;
+        list-style-type: none;
         
-        &:focus, &:hover, &:active{
-          color: #222;
-          border-radius: 0;
+        a{
+          color: #CCC;
+          display: block;
+          line-height: 2.2rem;
+          padding: 1.3rem;
           text-decoration: none;
-          outline: 0 none;
-          background-color: #EEE;
+          text-transform: uppercase;
+          transition: all 200ms  ease-in-out 0s;
         }
         
-        &.active{
-          color: #F60;
-
-          &:hover, &:active, &:focus, & strong{
-            background: #FC0;
-            text-decoration: none;
-          }
+        a:hover, a:active{
+          background-color: #EEE;
+          color: #222;
         }
       }
     }
   }
 }
 
+#content{
+  
+}
+
 footer {
   color: #DDD;
   background: #222;
 
-  p{
-    margin: 0;
-  }
-
   a{
     color: #F60;
 
-    &:hover{
+    &:hover, &:active{
       color: #EEE;
-      text-decoration: underline;
-      background: none;
     }
   }
 
   ul{
-    margin-bottom: 5px;
+    margin-bottom: 0.5rem;
 
     li{
       display: inline;
@@ -341,4 +160,230 @@ footer {
       }
     }
   }
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-weight: bold;
+  color: #222;
+  letter-spacing: -0.2rem;
+}
+
+h2{
+  margin-bottom: 2.1rem;
+  font-size: 3.4rem;
+}
+
+h3{
+  margin: 1.8rem 0;
+  font-size: 2.8rem;
+}
+
+a{
+  color: #147997;
+  text-decoration: none;
+
+  &:hover, &:actuve{
+    text-decoration: underline;
+    color: #50B5D3;
+  }
+}
+
+#notice{
+  color: #C30;
+}
+
+/* Styles for forms */
+form{
+  border: 0.1rem solid #AAA;
+  background-color: #F4F4F4;
+  margin: 2rem 0;
+  width: 100%;
+  display: inline-block;
+
+  *{
+    
+    &:nth-child(2){
+      margin-top: 1.5rem;
+    }
+
+    &:last-child(2){
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .footer{
+    background-color: #ECECEC;
+    border-top: 0.1rem solid #E0E0E0;
+    padding: 2.1rem 1.4rem;
+    margin: 1.5rem 0 0 0;
+  }
+}
+
+label{
+  color: #666;
+  line-height: 1.5;
+  margin-top: 1rem;
+  margin-left: 1.5rem;
+  display: block;
+}
+
+input[type="text"], input[type="number"], input[type="password"], input[type="radio"], input[type="checkbox"], select, textarea{
+  margin-left: 1.5rem;
+}
+
+input[type="text"], input[type="number"], input[type="password"], textarea, select{
+  padding: 0.4rem;
+  border: 0.1rem solid #DDD;
+  box-shadow: 0 0 0.4rem #EEE inset;
+
+  &:hover, &:active, &:focus{
+    border: 0.1rem solid #888;
+  }
+}
+
+input[type="text"], input[type="number"], input[type="password"]{
+  width: 30rem;
+}
+
+input[type="submit"], input[type="image"], button{
+  background-color: #ECF0F1;
+  border: 0.1rem solid darken(#FFF, 30%);
+  transition: all 200ms ease-in-out 0s;
+  color: #333;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.5rem 2.1rem;
+  font-size: 1.6rem;
+  margin: 0;
+
+  &:hover, &:active, &:focus{
+    background-color: #BDC3C7;
+    border: 0.1rem solid darken(#FFF, 50%);
+  }
+}
+
+select{
+  margin-right: 1rem;
+}
+
+/* Styles for tables */
+table{
+  border-bottom: 0.1rem solid #CCC;
+  border-collapse: collapse;
+  border-top: 0.1rem solid #CCC;
+  color: #444;
+  margin: 2.5rem 0;
+  text-align: left;
+  width: 100%;
+
+  thead{
+    border-bottom: 0.2rem solid #000;
+    color: #000;
+  }
+
+  tbody{
+    
+    tr{
+      border-top: 0.1rem solid #CCC;
+
+      &:hover, &:active{
+        background-color: darken(#FFF, 10%);
+      }
+    }
+  }
+
+  th, td{
+    line-height: 1.5rem;
+    padding: 1.5rem 0.8rem;
+    vertical-align: center;
+  }
+}
+
+/* Button styles */
+.button{
+  color: #333;
+  cursor: pointer;
+  display: inline-block;
+  font: 1.8rem/3.6rem Arial, Helvetica;
+  margin: 0 1.1rem 0 0;
+  overflow: visible;
+  padding: 0 2.3rem;
+  whitespace: nowrap;
+  border: 0.1rem solid darken(#FFF, 50%);
+  border-radius: 0.2rem;
+  transition: all 200ms ease-in-out 0s;
+  background-color: #ECF0F1;
+
+  &:hover, &:active, &:focus{
+    background-color: #BDC3C7;
+  }
+
+  &:before{
+    float: left;
+    margin: 0 2.3rem 0 -2.3rem;
+    border-right: 0.1rem solid darken(#FFF, 50%);
+    background-color: darken(#FFF, 30%);
+    padding: 0 0.6rem;
+    text-align: center;
+    font-size: 2.4rem;
+    width: 2.2rem;
+  }
+}
+
+table{
+  .button{
+    color: #FFF;
+    border: 0.1rem solid darken(#FFF, 50%);
+    padding: 0;
+
+    &:before{
+      background-color: rgba(0, 0, 0, 0.1);
+      border: none;
+      margin: 0;
+    }
+  }
+
+  .show{
+    background-color: #1ABC9C;
+    
+    &:hover, &:active, &:focus{
+      background-color: darken(#1ABC9C, 10%);
+    }
+  }
+
+  .edit{
+    background-color: #E67E22;
+    
+    &:hover, &:active, &:focus{
+      background-color: darken(#E67E22, 10%);
+    }
+  }
+
+  .destroy{
+    background-color: #E74C3C;
+    
+    &:hover, &:active, &:focus{
+      background-color: darken(#E74C3C, 10%);
+    }
+  }
+}
+
+.back:before{
+  content: '\2715';
+}
+
+.new:before{
+  content: '\271A';
+}
+
+.show:before{
+  content: '\25B6';
+}
+
+.edit:before{
+  content: '\270E';
+}
+
+.destroy:before{
+  content: '\2718';
 }

@@ -13,35 +13,21 @@
     </div>
   <% end %>
 
-  <div class="ym-fbox">
-    <%= f.label :company_id %><br />
-    <%= f.number_field :company_id %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :trailer_id %><br />
-    <%= f.number_field :trailer_id %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :shipment_id %><br />
-    <%= f.number_field :shipment_id %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :pickup_time %><br />
-    <%= f.datetime_select :pickup_time %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :delivery_time %><br />
-    <%= f.datetime_select :delivery_time %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :driver_name %><br />
-    <%= f.text_field :driver_name %>
-  </div>
-  <div class="ym-fbox">
-    <%= f.label :cost %><br />
-    <%= f.text_field :cost %>
-  </div>
-  <div class="actions ym-fbox-footer">
+  <%= f.label :company_id %>
+  <%= f.number_field :company_id %>
+  <%= f.label :trailer_id %>
+  <%= f.number_field :trailer_id %>
+  <%= f.label :shipment_id %>
+  <%= f.number_field :shipment_id %>
+  <%= f.label :pickup_time %>
+  <%= f.datetime_select :pickup_time %>
+  <%= f.label :delivery_time %>
+  <%= f.datetime_select :delivery_time %>
+  <%= f.label :driver_name %>
+  <%= f.text_field :driver_name %>
+  <%= f.label :cost %>
+  <%= f.text_field :cost %>
+  <div class="footer">
     <%= f.submit %>
   </div>
 <% end %>

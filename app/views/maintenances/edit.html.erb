@@ -1,5 +1,5 @@
 <section>
   <h2>Edit Maintenance Record #<%= @maintenance.id %></h2>
   <%= render 'form' %>
-  <p><%= link_to 'Show', @maintenance, :class => 'ym-button ym-play' %> | <%= link_to 'Back', maintenances_path, :class => 'ym-button ym-close' %></p>
+  <p><%= link_to 'Show', @maintenance, :class => 'button show' %> <%= link_to 'Back', maintenances_path, :class => 'button back' %></p>
 </section>
