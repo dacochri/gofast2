@@ -330,6 +330,41 @@ table{
   }
 }
 
+table{
+  .button{
+    color: #FFF;
+    border: 0.1rem solid darken(#FFF, 50%);
+
+    &:before{
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .show{
+    background-color: #1ABC9C;
+    
+    &:hover, &:active, &:focus{
+      background-color: darken(#1ABC9C, 10%);
+    }
+  }
+
+  .edit{
+    background-color: #E67E22;
+    
+    &:hover, &:active, &:focus{
+      background-color: darken(#E67E22, 10%);
+    }
+  }
+
+  .destroy{
+    background-color: #E74C3C;
+    
+    &:hover, &:active, &:focus{
+      background-color: darken(#E74C3C, 10%);
+    }
+  }
+}
+
 .back:before{
   content: '\2715';
 }
