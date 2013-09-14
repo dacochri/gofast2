@@ -396,3 +396,28 @@ table{
 .destroy:before{
   content: '\2718';
 }
+
+#error_explanation{
+  margin: 10px;
+  padding: 10px;
+  background-color: #333;
+  color: #9F9F9F;
+
+  h2{
+    color: #9F9F9F;
+  }
+
+  ul{
+    margin: 0;
+
+    li{
+      list-style-type: none;
+
+      &:before{
+        color: #FF0000;
+        content: "\2718";
+        margin-right: 10px;
+      }
+    }
+  }
+}
