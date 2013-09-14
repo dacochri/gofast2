@@ -22,7 +22,7 @@ class ValidationValues
   @vehicle_sub_type = %w(regular straight tractor refrigerator)
   @company_type = %w(broker)
 
-  @message = 'does not match expected format.';
+  @message = 'does not match expected format';
   
   def self.double
     @double
