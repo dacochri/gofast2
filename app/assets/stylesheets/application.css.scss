@@ -398,13 +398,14 @@ table{
 }
 
 #error_explanation{
-  margin: 10px;
-  padding: 10px;
-  background-color: #333;
-  color: #9F9F9F;
+  margin: 1rem;
+  padding: 2rem;
+  background-color: #ECECEC;
+  border: 0.1rem solid #AAA;
+  color: #333;
 
   h2{
-    color: #9F9F9F;
+    color: #333;
   }
 
   ul{
