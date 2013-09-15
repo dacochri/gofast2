@@ -2,12 +2,12 @@
 <html>
 <head>
   <title>Go Fast Express</title>
-  <%= stylesheet_link_tag    "//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.css" %>
   <%= stylesheet_link_tag    "//fonts.googleapis.com/css?family=Droid+Sans:400,700" %>
   <%= stylesheet_link_tag    "//fonts.googleapis.com/css?family=Jockey+One" %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js" %>
+  <%= stylesheet_link_tag    "//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.css" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -31,7 +31,7 @@
       <%= yield %>
     </div>
   </div>
-  <div>
+  <div id="footer-container">
     <footer>
       <%= render '/layouts/out_footer' %>
       <p>&copy; 2013 GoFast Express Inc. All Rights Reserved.</p>
