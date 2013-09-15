@@ -2,7 +2,7 @@ module ApplicationHelper
 	def sortable(column, title = nil, table, col)
 	  title ||= column.titleize
 	  direction = column == sort_column(table, col) && sort_direction == 'asc' ? 'desc' : 'asc'
-	  link_to title, params.merge(:sort => column, :direction => direction)
+	  link_to title, params.merge(:sort => column, :direction => direction), :'data-sort' => direction
 	end
 
 	def sort_column(table, col)

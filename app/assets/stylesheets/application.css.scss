@@ -319,6 +319,30 @@ table{
   }
 }
 
+/* Arrows for ordering */
+a[data-sort]:before{
+  display: block;
+  content: '';
+  margin: 1rem auto;
+}
+
+@mixin arrow-base{
+  width: 0;
+  height: 0;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+}
+
+a[data-sort="asc"]:before{
+  @include arrow-base;
+  border-bottom: 0.5rem solid #000;
+}
+
+a[data-sort="desc"]:before{
+  @include arrow-base;
+  border-top: 0.5rem solid #000;
+}
+
 /* Button styles */
 .button{
   color: #333;
