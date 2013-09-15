@@ -53,7 +53,7 @@ body{
 
 div{
   header, nav, #content, footer{
-    max-width: 102rem;
+    max-width: 115rem;
     margin: 0 auto;
   }
 }
@@ -262,12 +262,17 @@ input[type="submit"], input[type="image"], button{
 }
 
 select{
+  margin-right: 0.5rem;
+}
+
+option{
   margin-right: 1rem;
 }
 
 /* Search form */
 .search{
   padding: 1rem;
+  width: 98%;
 
   label, input[type="text"], input[type="number"], select, input[type="submit"]{
     display: inline;
