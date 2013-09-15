@@ -1,9 +1,11 @@
 class ValidationValues
+  # General Regexs
   @double = /\d+\.?\d{0,2}/
   @alpha = /[A-Za-z]+/
   @alpha_numeric = /[A-Za-z0-9]+/
   @content = /[A-Za-z0-9,.;'!@#\$%^&*()_=+|]+/
 
+  # Specific Regexs
   @first_name = /[A-Za-z ]+/
   @last_name = /[A-Za-z' ]+/
   @company = /[A-Za-z.\- ]+/
@@ -17,13 +19,18 @@ class ValidationValues
   @email = /[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}/
   @postal_code = /[A-Za-z][0-9][A-Za-z]\s[0-9][A-Za-z][0-9]/
 
+  # List of acceptable words
   @province = %w(Alberta British\ Columbia Manitoba New\ Brunswick Newfoundland\ and\ Labrador Nova\ Scotia Ontario Prince\ Edward\ Island Quebec Saskatchewan Northwest\ Territories Nunavut Yukon)
   @vehicle_type = %w(truck trailer)
   @vehicle_sub_type = %w(regular straight tractor refrigerator)
   @company_type = %w(broker)
 
+  # Messages
   @message = 'does not match expected format';
   
+  # Placeholder values
+  @p_double = '1234.56'
+
   def self.double
     @double
   end
@@ -106,5 +113,9 @@ class ValidationValues
 
   def self.message
     @message
+  end
+
+  def self.p_double
+    @p_double
   end
 end

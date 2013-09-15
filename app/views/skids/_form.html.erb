@@ -18,7 +18,7 @@
   <%= f.label :product_desc %>
   <%= f.text_field :product_desc %>
   <%= f.label :weight %>
-  <%= f.text_field :weight %>
+  <%= f.text_field :weight, :placeholder => ValidationValues.p_double %>
   <%= f.label :oversized %>
   <%= f.check_box :oversized %>
   <%= f.label :pickup_location %>
