@@ -1,5 +1,6 @@
 class ValidationValues
   # General Regexs
+  @integer = /\d+/
   @double = /\d+\.?\d{0,2}/
   @alpha = /[A-Za-z]+/
   @alpha_numeric = /[A-Za-z0-9]+/
@@ -10,7 +11,7 @@ class ValidationValues
   @last_name = /[A-Za-z' ]+/
   @company = /[A-Za-z.\- ]+/
   @city = /[A-Za-z'. ]+/
-  @street = /\d{0,4} ?[A-Za-z. ]+/
+  @street = /\d{0,4} ?[A-Za-z0-9,. ]+/
   @unit = /[A-Z0-9 ]+/
   @license_plate = /[A-Z0-9 ]+/
   @hst_no = /[A-Z0-9]+/
@@ -28,8 +29,21 @@ class ValidationValues
   # Messages
   @message = 'does not match expected format';
   
+  # General Regexs for client side validation
+  @c_integer = '\d+'
+  @c_double = '\d+\.?\d{0,2}'
+  @c_alpha_numeric = '[A-Za-z0-9]+'
+
+  @c_street = '\d{0,4} ?[A-Za-z0-9,. ]+'
+
   # Placeholder values
   @p_double = '1234.56'
+  @p_product_desc = 'Shoes'
+  @p_street = '26 Steeles Ave. W, Brampton, ON, M4V 2K1'
+
+  def self.integer
+    @integer
+  end
 
   def self.double
     @double
@@ -115,7 +129,31 @@ class ValidationValues
     @message
   end
 
+  def self.c_integer
+    @c_integer
+  end
+
+  def self.c_double
+    @c_double
+  end
+  
+  def self.c_alpha_numeric
+    @c_alpha_numeric
+  end
+
+  def self.c_street
+    @c_street
+  end
+  
   def self.p_double
     @p_double
+  end
+
+  def self.p_street
+    @p_street
+  end
+
+  def self.p_product_desc
+    @p_product_desc
   end
 end

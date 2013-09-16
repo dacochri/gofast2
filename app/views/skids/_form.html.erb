@@ -14,17 +14,19 @@
   <% end %>
 
   <%= f.label :shipment_id %>
-  <%= f.number_field :shipment_id %>
+  <%= f.number_field :shipment_id, :required => 'required', :pattern => ValidationValues.c_integer %>
   <%= f.label :product_desc %>
-  <%= f.text_field :product_desc %>
+  <%= f.text_field :product_desc, :required => 'required', :pattern => ValidationValues.c_alpha_numeric, :placeholder => ValidationValues.p_product_desc %>
+  <%= f.label :skid_count %>
+  <%= f.number_field :skid_count, :required => 'required', :pattern => ValidationValues.c_integer %>
   <%= f.label :weight %>
-  <%= f.text_field :weight, :placeholder => ValidationValues.p_double %>
+  <%= f.text_field :weight, :required => 'required', :pattern => ValidationValues.c_double, :placeholder => ValidationValues.p_double %>
   <%= f.label :oversized %>
   <%= f.check_box :oversized %>
   <%= f.label :pickup_location %>
-  <%= f.text_field :pickup_location %>
+  <%= f.text_field :pickup_location, :required => 'required', :pattern => ValidationValues.c_street, :placeholder => ValidationValues.p_street %>
   <%= f.label :delivery_location %>
-  <%= f.text_field :delivery_location %>
+  <%= f.text_field :delivery_location, :required => 'required', :pattern => ValidationValues.c_street, :placeholder => ValidationValues.p_street %>
   <%= f.label :pickup_time %>
   <%= f.datetime_select :pickup_time %>
   <%= f.label :delivery_time %>
@@ -33,8 +35,6 @@
   <%= f.datetime_select :warehouse_delivery_time %>
   <%= f.label :warehouse_pickup_time %>
   <%= f.datetime_select :warehouse_pickup_time %>
-  <%= f.label :skid_count %>
-  <%= f.number_field :skid_count %>
   <div class="footer">
     <%= f.submit %>
   </div>
