@@ -4,6 +4,8 @@ class AnnouncementsController < ApplicationController
   # GET /announcements
   # GET /announcements.json
   def index
+    params[:search] = format_date params[:search]
+    
     @announcements = Announcement.search(params[:search], params[:column]).order(sort_column(Announcement, 'date_posted') + ' ' + sort_direction)
 
     respond_to do |format|

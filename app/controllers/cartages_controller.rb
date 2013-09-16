@@ -4,6 +4,8 @@ class CartagesController < ApplicationController
   # GET /cartages
   # GET /cartages.json
   def index
+    params[:search] = format_date params[:search]
+    
     @cartages = Cartage.search(params[:search], params[:column]).order(sort_column(Cartage, 'company_id') + ' ' + sort_direction)
 
     respond_to do |format|

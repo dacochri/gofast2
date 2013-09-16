@@ -4,6 +4,8 @@ class TrailersController < ApplicationController
   # GET /trailers
   # GET /trailers.json
   def index
+    params[:search] = format_date params[:search]
+    
     @trailers = Trailer.search(params[:search], params[:column]).order(sort_column(Trailer, 'trailer_no') + ' ' + sort_direction)
 
     respond_to do |format|

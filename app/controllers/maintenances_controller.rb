@@ -4,6 +4,8 @@ class MaintenancesController < ApplicationController
   # GET /maintenances
   # GET /maintenances.json
   def index
+    params[:search] = format_date params[:search]
+    
     @maintenances = Maintenance.search(params[:search], params[:column]).order(sort_column(Maintenance, 'vehicle_id') + ' ' + sort_direction)
 
     respond_to do |format|

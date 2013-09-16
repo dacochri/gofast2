@@ -4,7 +4,9 @@ class TripsController < ApplicationController
   # GET /trips
   # GET /trips.json
   def index
-		@trips = Trip.search(params[:search], params[:column]).order(sort_column(Trip, 'truck_id') + ' ' + sort_direction)
+    params[:search] = format_date params[:search]
+		
+    @trips = Trip.search(params[:search], params[:column]).order(sort_column(Trip, 'truck_id') + ' ' + sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb

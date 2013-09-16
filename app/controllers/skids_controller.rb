@@ -4,6 +4,8 @@ class SkidsController < ApplicationController
   # GET /skids
   # GET /skids.json
   def index
+    params[:search] = format_date params[:search]
+
     @skids = Skid.search(params[:search], params[:column]).order(sort_column(Skid, 'shipment_id') + ' ' + sort_direction)
 
     respond_to do |format|

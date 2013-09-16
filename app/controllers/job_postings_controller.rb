@@ -4,6 +4,8 @@ class JobPostingsController < ApplicationController
   # GET /job_postings
   # GET /job_postings.json
   def index
+    params[:search] = format_date params[:search]
+    
     @job_postings = JobPosting.search(params[:search], params[:column]).order(sort_column(JobPosting, 'title') + ' ' + sort_direction)
 
     respond_to do |format|
