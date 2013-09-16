@@ -1,8 +1,9 @@
 module ApplicationHelper
 	def sortable(column, title = nil, table, col)
 	  title ||= column.titleize
-	  direction = column == sort_column(table, col) && sort_direction == 'asc' ? 'desc' : 'asc'
-	  link_to title, params.merge(:sort => column, :direction => direction), :'data-sort' => direction
+	  data_sort = column == sort_column(table, col) ? sort_direction : nil
+    direction = column == sort_column(table, col) && sort_direction == 'asc' ? 'desc' : 'asc'
+	  link_to title, params.merge(:sort => column, :direction => direction), :'data-sort' => data_sort
 	end
 
 	def sort_column(table, col)
