@@ -24,6 +24,8 @@ $footer-bg-color: #222;
 
 html{
   font-size: 62.5%;
+  position: relative;
+  min-height: 100%;
 }
 
 /* Now, 1.4rem = 14px */
@@ -36,6 +38,7 @@ html{
 body{
   font-family: "Droid Sans", Arial, Helvetica, sans-serif;
   font-size: 1.8rem;
+  margin: 0 0 10rem;
 
   > div:first-child{
     background: $header-bg-color url('header_bg.png') repeat bottom left;
@@ -54,6 +57,11 @@ body{
   
   #footer-container{
     background-color: $footer-bg-color;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 10rem;
+    width: 100%;
   }
 }
 
