@@ -13,19 +13,21 @@
   <table>
     <thead>
       <tr>
-        <th scope="col"><%= sortable "shipment_id", nil, @skids, "shipment_id" %></th>
-        <th scope="col"><%= sortable "product_desc", nil, @skids, "shipment_id" %></th>
-        <th scope="col"><%= sortable "skid_count", nil, @skids, "shipment_id" %></th>
-        <th scope="col"><%= sortable "pickup_location", nil, @skids, "shipment_id" %></th>
-        <th scope="col"><%= sortable "delivery_location", nil, @skids, "shipment_id" %></th>
-        <th scope="col"><%= sortable "pickup_time", nil, @skids, "shipment_id" %></th>
-        <th scope="col"><%= sortable "delivery_time", nil, @skids, "shipment_id" %></th>
+        <th scope="col"><%= sortable 'id', 'Skid No.', @skids, 'id' %></th>
+        <th scope="col"><%= sortable 'shipment_id', nil, @skids, 'id' %></th>
+        <th scope="col"><%= sortable 'product_desc', nil, @skids, 'id' %></th>
+        <th scope="col"><%= sortable 'skid_count', nil, @skids, 'id' %></th>
+        <th scope="col"><%= sortable 'pickup_location', nil, @skids, 'id' %></th>
+        <th scope="col"><%= sortable 'delivery_location', nil, @skids, 'id' %></th>
+        <th scope="col"><%= sortable 'pickup_time', nil, @skids, 'id' %></th>
+        <th scope="col"><%= sortable 'delivery_time', nil, @skids, 'id' %></th>
         <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
     <% @skids.each do |skid| %>
       <tr>
+        <td><%= skid.id %></td>
         <td><%= link_to skid.shipment_id, "/shipments/#{skid.shipment_id}" %></td>
         <td><%= skid.product_desc %></td>
         <td><%= skid.skid_count %></td>
