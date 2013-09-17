@@ -26,7 +26,7 @@
     <tbody>
     <% @skids.each do |skid| %>
       <tr>
-        <td><%= skid.shipment_id %></td>
+        <td><%= link_to skid.shipment_id, "/shipments/#{skid.shipment_id}" %></td>
         <td><%= skid.product_desc %></td>
         <td><%= skid.skid_count %></td>
         <td><%= skid.pickup_location %></td>

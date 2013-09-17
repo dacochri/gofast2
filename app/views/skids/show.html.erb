@@ -1,7 +1,7 @@
 <section>
   <h2>Skid #<%= @skid.id %></h2>
   <p id="notice"><%= notice %></p>
-  <p><strong>Shipment:</strong> <%= @skid.shipment_id %></p>
+  <p><strong>Shipment:</strong> <%= link_to @skid.shipment_id, "/shipments/#{@skid.shipment_id}" %></p>
   <p><strong>Product description:</strong> <%= @skid.product_desc %></p>
   <p><strong>Weight:</strong> <%= @skid.weight %> <%= @skid.unit %></p>
   <p><strong>Oversized:</strong> <%= @skid.oversized %></p>
