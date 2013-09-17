@@ -113,15 +113,16 @@ ActiveRecord::Schema.define(:version => 20130804150521) do
   create_table "skids", :force => true do |t|
     t.integer  "shipment_id"
     t.string   "product_desc"
+    t.integer  "skid_count"
     t.decimal  "weight"
+    t.string   "unit"
     t.boolean  "oversized"
     t.string   "pickup_location"
     t.string   "delivery_location"
     t.datetime "pickup_time"
     t.datetime "delivery_time"
-    t.datetime "warehouse_delivery_time"
     t.datetime "warehouse_pickup_time"
-    t.integer  "skid_count"
+    t.datetime "warehouse_delivery_time"
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
   end

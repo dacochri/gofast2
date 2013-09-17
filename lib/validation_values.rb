@@ -23,8 +23,10 @@ class ValidationValues
   # List of acceptable words
   @province = %w(Alberta British\ Columbia Manitoba New\ Brunswick Newfoundland\ and\ Labrador Nova\ Scotia Ontario Prince\ Edward\ Island Quebec Saskatchewan Northwest\ Territories Nunavut Yukon)
   @vehicle_type = %w(truck trailer)
-  @vehicle_sub_type = %w(regular straight tractor refrigerator)
-  @company_type = %w(broker)
+  @truck_type = %w(straight tractor)
+  @trailer_type = %w(53ft\ logistic\ airride\ dryvan 53ft\ reefer)
+  @company_type = %w(customer mechanic broker cartage misc)
+  @unit = %w(lb kg)
 
   # Messages
   @message = 'does not match expected format';
@@ -37,6 +39,7 @@ class ValidationValues
   @c_street = '\d{0,4} ?[A-Za-z0-9,. ]+'
 
   # Placeholder values
+  @p_integer = '4865'
   @p_double = '1234.56'
   @p_product_desc = 'Shoes'
   @p_street = '26 Steeles Ave. W, Brampton, ON, M4V 2K1'
@@ -117,12 +120,20 @@ class ValidationValues
     @vehicle_type
   end
 
-  def self.vehicle_sub_type
-    @vehicle_sub_type
+  def self.truck_type
+    @truck_type
+  end
+
+  def self.trailer_type
+    @trailer_type
   end
   
   def self.company_type
     @company_type
+  end
+
+  def self.unit
+    @unit
   end
 
   def self.message
@@ -145,6 +156,10 @@ class ValidationValues
     @c_street
   end
   
+  def self.p_integer
+    @p_integer
+  end
+
   def self.p_double
     @p_double
   end

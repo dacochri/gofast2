@@ -13,4 +13,5 @@ class Truck < ActiveRecord::Base
   validates :current_location, :format => { :with => ValidationValues.street, :message => message }
   validates :license_plate, :format => { :with => ValidationValues.license_plate, :message => message }
   validates :license_plate, :length => 3..8
+  validates :truck_type, :inclusion => { :in => ValidationValues.truck_type }
 end
