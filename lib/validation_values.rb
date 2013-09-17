@@ -44,6 +44,7 @@ class ValidationValues
   @p_product_desc = 'Shoes'
   @p_street = '26 Steeles Ave. W, Brampton, ON, M4V 2K1'
 
+  # Get methods
   def self.integer
     @integer
   end
