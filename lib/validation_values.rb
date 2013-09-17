@@ -2,8 +2,8 @@ class ValidationValues
   # General Regexs
   @integer = /\d+/
   @double = /\d+\.?\d{0,2}/
-  @alpha = /[A-Za-z]+/
-  @alpha_numeric = /[A-Za-z0-9]+/
+  @alpha = /[A-Za-z ]+/
+  @alpha_numeric = /[A-Za-z0-9 ]+/
   @content = /[A-Za-z0-9,.;'!@#\$%^&*()_=+|]+/
 
   # Specific Regexs
@@ -34,7 +34,7 @@ class ValidationValues
   # General Regexs for client side validation
   @c_integer = '\d+'
   @c_double = '\d+\.?\d{0,2}'
-  @c_alpha_numeric = '[A-Za-z0-9]+'
+  @c_alpha_numeric = '[A-Za-z0-9 ]+'
 
   @c_street = '\d{0,4} ?[A-Za-z0-9,. ]+'
 

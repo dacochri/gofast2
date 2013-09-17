@@ -11,4 +11,5 @@ class Skid < ActiveRecord::Base
   validates :delivery_time, :pickup_time, :warehouse_delivery_time, :warehouse_pickup_time, :format => { :with => ValidationValues.date_time, :message => message }
   validates :weight, :format => { :with => ValidationValues.double, :message => message }
   validates :unit, :inclusion => { :in => ValidationValues.unit }
+  validates :product_desc, :format => { :with => ValidationValues.alpha_numeric, :message => message }
 end
