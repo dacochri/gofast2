@@ -1,17 +1,24 @@
 <section>
   <h2>Skids</h2>
 	<%= form_tag skids_path, :method => 'get', :class => 'search' do %>
+    <!-- Hidden fields use to store values for sort direction and sort column name -->
     <%= hidden_field_tag :direction, params[:direction] %>
     <%= hidden_field_tag :sort, params[:sort] %>
+    <!-- Creates a ruby label tag for column-->
 		<%= label_tag :column %>
+    <!-- Creates a drop down menu and fills it with the searchable columns -->
 		<%= select_tag :column, options_for_select(Skid.translated_searchable_columns([]), params[:column]) %>
+    <!-- Creates a ruby label tag for search-->
 		<%= label_tag :search %>
+    <!-- Creates a ruby text field for search-->
 		<%= text_field_tag :search %>
+    <!-- Creates a submit button -->
 		<%= submit_tag 'Submit' %>
   <% end %>
   <p><%= link_to 'New Skid', new_skid_path, :class => 'button new' %></p>
   <table>
     <thead>
+      <!-- Creates headers for the table using the sortable method defined in helper class -->
       <tr>
         <th scope="col"><%= sortable 'id', 'Skid Id', @skids, 'id' %></th>
         <th scope="col"><%= sortable 'shipment_id', nil, @skids, 'id' %></th>
@@ -25,8 +32,10 @@
       </tr>
     </thead>
     <tbody>
+    <!-- Loops through each record of the skid and prints out values -->
     <% @skids.each do |skid| %>
       <tr>
+        <!-- Values printed here correspond to the headers above -->
         <td><%= skid.id %></td>
         <td><%= link_to skid.shipment_id, "/shipments/#{skid.shipment_id}" %></td>
         <td><%= skid.product_desc %></td>
@@ -35,6 +44,7 @@
         <td><%= skid.delivery_location %></td>
         <td><%= skid.pickup_time %></td>
         <td><%= skid.delivery_time %></td>
+        <!-- Prints out three buttons used to view, modify and delete records -->
         <td><%= link_to '', skid, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_skid_path(skid), :class => 'button edit', :title => 'Edit' %> <%= link_to '', skid, method: :delete, data: { confirm: 'Are you sure you want to delete this skid?' }, :class => 'button destroy', :title => 'Delete' %></td>
       </tr>
     <% end %>
