@@ -14,19 +14,19 @@
   <% end %>
 
   <%= f.label :broker_id %>
-  <%= f.number_field :broker_id %>
+  <%= f.number_field :broker_id, :required => 'required', :placeholder => ValidationValues.p_integer, :format => ValidationValues.c_integer %>
   <%= f.label :customer_id %>
-  <%= f.number_field :customer_id %>
+  <%= f.number_field :customer_id, :required => 'required', :placeholder => ValidationValues.p_integer, :format => ValidationValues.c_integer %>
   <%= f.label :trip_id %>
-  <%= f.number_field :trip_id %>
+  <%= f.number_field :trip_id, :required => 'required', :placeholder => ValidationValues.p_integer, :format => ValidationValues.c_integer %>
   <%= f.label :cartage_id %>
-  <%= f.number_field :cartage_id %>
+  <%= f.number_field :cartage_id, :placeholder => ValidationValues.p_integer, :format => ValidationValues.c_integer %>
   <%= f.label :rate %>
-  <%= f.text_field :rate %>
-  <%= f.label :partial %>
+  <%= f.text_field :rate, :required => 'required', :placeholder => ValidationValues.p_double, :format => ValidationValues.c_double %><br/>
+  <%= f.label :partial, :class => 'inline' %>
   <%= f.check_box :partial %>
   <%= f.label :distance %>
-  <%= f.text_field :distance %>
+  <%= f.text_field :distance, :required => 'required', :placeholder => ValidationValues.p_double, :format => ValidationValues.c_double %>
   <div class="footer">
     <%= f.submit %>
   </div>
