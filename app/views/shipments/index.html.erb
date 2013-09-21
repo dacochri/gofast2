@@ -28,11 +28,11 @@
     <% @shipments.each do |shipment| %>
       <tr>
         <td><%= shipment.shipment_no %></td>
-        <td><%= shipment.broker_id %></td>
-        <td><%= shipment.customer_id %></td>
-        <td><%= shipment.trip_id %></td>
-        <td><%= shipment.cartage_id %></td>
-        <td><%= shipment.rate %></td>
+        <td><%= link_to shipment.broker_id, "/companies/#{shipment.broker_id}" %></td>
+        <td><%= link_to shipment.customer_id, "/companies/#{shipment.customer_id}" %></td>
+        <td><%= link_to shipment.trip_id, "/trips/#{shipment.trip_id}" %></td>
+        <td><%= link_to shipment.cartage_id, "/trips/#{shipment.cartage_id}" %></td>
+        <td>$<%= shipment.rate %></td>
         <td><%= shipment.partial %></td>
         <td><%= shipment.distance %></td>
         <td><%= link_to '', shipment, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_shipment_path(shipment), :class => 'button edit', :title => 'Edit' %> <%= link_to '', shipment, method: :delete, data: { confirm: 'Are you sure you want to delete this shipment?' }, :class => 'button destroy', :title => 'Delete' %></td>

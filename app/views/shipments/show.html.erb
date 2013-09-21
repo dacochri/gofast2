@@ -2,11 +2,11 @@
   <h2>Shipment #<%= @shipment.id %></h2>
   <p id="notice"><%= notice %></p>
   <p><strong>Shipment No.:</strong> <%= @shipment.shipment_no %></p>
-  <p><strong>Broker:</strong> <%= @shipment.broker_id %></p>
-  <p><strong>Customer:</strong> <%= @shipment.customer_id %></p>
-  <p><strong>Trip:</strong> <%= @shipment.trip_id %></p>
-  <p><strong>Cartage:</strong> <%= @shipment.cartage_id %></p>
-  <p><strong>Rate:</strong> <%= @shipment.rate %></p>
+  <p><strong>Broker:</strong> <%= link_to @shipment.broker_id, "/companies/#{@shipment.broker_id}" %></p>
+  <p><strong>Customer:</strong> <%= link_to @shipment.customer_id, "/companies/#{@shipment.customer_id}" %></p>
+  <p><strong>Trip:</strong> <%= link_to @shipment.trip_id, "/trips/#{@shipment.trip_id}" %></p>
+  <p><strong>Cartage:</strong> <%= link_to @shipment.cartage_id, "/cartages/#{@shipment.cartage_id}" %></p>
+  <p><strong>Rate:</strong> $<%= @shipment.rate %></p>
   <p><strong>Partial:</strong> <%= @shipment.partial %></p>
   <p><strong>Distance:</strong> <%= @shipment.distance %></p>
   <p><%= link_to 'Edit', edit_shipment_path(@shipment), :class => 'button edit' %> <%= link_to 'Back', shipments_path, :class => 'button back' %></p>
