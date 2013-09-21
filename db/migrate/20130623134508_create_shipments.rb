@@ -4,6 +4,7 @@ class CreateShipments < ActiveRecord::Migration
       t.integer :broker_id
       t.integer :customer_id
       t.integer :trip_id
+      t.integer :cartage_id
       t.decimal :rate
       t.boolean :partial
       t.decimal :distance

@@ -16,6 +16,7 @@
         <th scope="col"><%= sortable "broker_id", nil, @shipments, "broker_id" %></th>
         <th scope="col"><%= sortable "customer_id", nil, @shipments, "broker_id" %></th>
         <th scope="col"><%= sortable "trip_id", nil, @shipments, "broker_id" %></th>
+        <th scope="col"><%= sortable "cartage_id", nil, @shipments, "broker_id" %></th>
         <th scope="col"><%= sortable "rate", nil, @shipments, "broker_id" %></th>
         <th scope="col"><%= sortable "partial", nil, @shipments, "broker_id" %></th>
         <th scope="col"><%= sortable "distance", nil, @shipments, "broker_id" %></th>
@@ -28,6 +29,7 @@
         <td><%= shipment.broker_id %></td>
         <td><%= shipment.customer_id %></td>
         <td><%= shipment.trip_id %></td>
+        <td><%= shipment.cartage_id %></td>
         <td><%= shipment.rate %></td>
         <td><%= shipment.partial %></td>
         <td><%= shipment.distance %></td>
