@@ -11,5 +11,6 @@
   <p><strong>Delivery time:</strong> <%= @skid.delivery_time %></p>
   <p><strong>Warehouse delivery time:</strong> <%= @skid.warehouse_delivery_time %></p>
   <p><strong>Warehouse pickup time:</strong> <%= @skid.warehouse_pickup_time %></p>
+  <p><strong>Skid count:</strong> <%= @skid.skid_count %></p>
   <p><%= link_to 'Edit', edit_skid_path(@skid), :class => 'button edit' %> <%= link_to 'Back', skids_path, :class => 'button back' %></p>
 </section>

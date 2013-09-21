@@ -3,6 +3,7 @@ class CreateSkids < ActiveRecord::Migration
     create_table :skids do |t|
       t.integer :shipment_id
       t.string :product_desc
+      t.integer :skid_count
       t.decimal :weight
       t.string :unit
       t.boolean :oversized

@@ -23,6 +23,7 @@
         <th scope="col"><%= sortable 'id', 'Skid Id', @skids, 'id' %></th>
         <th scope="col"><%= sortable 'shipment_id', nil, @skids, 'id' %></th>
         <th scope="col"><%= sortable 'product_desc', nil, @skids, 'id' %></th>
+        <th scope="col"><%= sortable 'skid_count', nil, @skids, 'id' %></th>
         <th scope="col"><%= sortable 'pickup_location', nil, @skids, 'id' %></th>
         <th scope="col"><%= sortable 'delivery_location', nil, @skids, 'id' %></th>
         <th scope="col"><%= sortable 'pickup_time', nil, @skids, 'id' %></th>
@@ -38,6 +39,7 @@
         <td><%= skid.id %></td>
         <td><%= link_to skid.shipment_id, "/shipments/#{skid.shipment_id}" %></td>
         <td><%= skid.product_desc %></td>
+        <td><%= skid.skid_count %></td>
         <td><%= skid.pickup_location %></td>
         <td><%= skid.delivery_location %></td>
         <td><%= skid.pickup_time %></td>
