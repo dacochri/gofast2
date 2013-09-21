@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(:version => 20130804150521) do
     t.integer  "broker_id"
     t.integer  "customer_id"
     t.integer  "trip_id"
+    t.integer  "cartage_id"
     t.decimal  "rate"
     t.boolean  "partial"
     t.decimal  "distance"
