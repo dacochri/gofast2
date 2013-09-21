@@ -16,5 +16,5 @@ class Company < ActiveRecord::Base
   validates :province, :presence => true, :inclusion => { :in => ValidationValues.province }
   validates :secondary_phone, :numericality => true, :length => 10..11, :allow_blank => true 
   validates :street, :presence => true, :format => { :with => ValidationValues.street, :message => message }
-  validates :unit, :format => { :with => ValidationValues.unit, :message => message }, :allow_blank => true
+  # validates :unit, :format => { :with => ValidationValues.unit, :message => message }, :allow_blank => true
 end
