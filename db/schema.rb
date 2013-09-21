@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(:version => 20130804150521) do
   end
 
   create_table "shipments", :force => true do |t|
+    t.integer  "shipment_no"
     t.integer  "broker_id"
     t.integer  "customer_id"
     t.integer  "trip_id"

@@ -13,6 +13,8 @@
     </div>
   <% end %>
 
+  <%= f.label :shipment_no %>
+  <%= f.number_field :shipment_no, :required => 'required', :placeholder => ValidationValues.p_integer, :format => ValidationValues.c_integer %>
   <%= f.label :broker_id %>
   <%= f.number_field :broker_id, :required => 'required', :placeholder => ValidationValues.p_integer, :format => ValidationValues.c_integer %>
   <%= f.label :customer_id %>

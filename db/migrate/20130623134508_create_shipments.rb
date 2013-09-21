@@ -1,6 +1,7 @@
 class CreateShipments < ActiveRecord::Migration
   def change
     create_table :shipments do |t|
+      t.integer :shipment_no
       t.integer :broker_id
       t.integer :customer_id
       t.integer :trip_id
