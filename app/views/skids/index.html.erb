@@ -1,5 +1,6 @@
 <section>
   <h2>Skids</h2>
+  <p><%= link_to 'New Skid', new_skid_path, :class => 'button new' %></p>
   <%= form_tag skids_path, :method => 'get', :class => 'search' do %>
     <!-- Hidden fields use to store values for sort direction and sort column name -->
     <%= hidden_field_tag :direction, params[:direction] %>
@@ -15,7 +16,6 @@
     <!-- Creates a submit button -->
 		<%= submit_tag 'Submit' %>
   <% end %>
-  <p><%= link_to 'New Skid', new_skid_path, :class => 'button new' %></p>
   <table>
     <thead>
       <!-- Creates headers for the table using the sortable method defined in helper class -->
