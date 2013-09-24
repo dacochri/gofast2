@@ -14,14 +14,9 @@
     <thead>
       <tr>
         <th scope="col"><%= sortable "truck_no", nil, @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "vin_number", 'VIN',  @trucks, "truck_no" %></th>
         <th scope="col"><%= sortable "truck_type", nil,  @trucks, "truck_no" %></th>
-        <th scope="col"><%= sortable "license_plate", nil,  @trucks, "truck_no" %></th>
-        <th scope="col"><%= sortable "license_expires", nil,  @trucks, "truck_no" %></th>
         <th scope="col"><%= sortable "owner", nil,  @trucks, "truck_no" %></th>
-        <th scope="col"><%= sortable "make", nil,  @trucks, "truck_no" %></th>
-        <th scope="col"><%= sortable "model", nil,  @trucks, "truck_no" %></th>
-        <th scope="col"><%= sortable "manufactured_year", nil,  @trucks, "truck_no" %></th>
-        <th scope="col"><%= sortable "vin_number", nil,  @trucks, "truck_no" %></th>
         <th scope="col"><%= sortable "total_kilometres", nil,  @trucks, "truck_no" %></th>
         <th scope="col"><%= sortable "current_location", nil,  @trucks, "truck_no" %></th>
         <th scope="col"></th>
@@ -31,17 +26,12 @@
     <% @trucks.each do |truck| %>
       <tr>
         <td><%= truck.truck_no %></td>
-        <td><%= truck.truck_type %></td>
-        <td><%= truck.license_plate %></td>
-        <td><%= truck.license_expires %></td>
-        <td><%= truck.owner %></td>
-        <td><%= truck.make %></td>
-        <td><%= truck.model %></td>
-        <td><%= truck.manufactured_year %></td>
         <td><%= truck.vin_number %></td>
+        <td><%= truck.truck_type %></td>
+        <td><%= link_to truck.owner, "/trucks/#{truck.owner}" %></td>
         <td><%= truck.total_kilometres %></td>
         <td><%= truck.current_location %></td>
-    	  <td><%= link_to '', truck, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_truck_path(truck), :class => 'button edit', :title => 'Edit' %> <%= link_to '', truck, method: :delete, data: { confirm: 'Are you sure you want to delete this truck?' }, :class => 'button destroy', :title => 'Delete' %></td>
+        <td><%= link_to '', truck, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_truck_path(truck), :class => 'button edit', :title => 'Edit' %> <%= link_to '', truck, method: :delete, data: { confirm: 'Are you sure you want to delete this truck?' }, :class => 'button destroy', :title => 'Delete' %></td>
       </tr>
     <% end %>
     </tbody>
