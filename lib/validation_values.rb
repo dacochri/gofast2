@@ -19,6 +19,7 @@ class ValidationValues
   @date_time = /\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}\sUTC/
   @email = /[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}/
   @postal_code = /[A-Za-z][0-9][A-Za-z]\s[0-9][A-Za-z][0-9]/
+  @year = /\d{4}/
 
   # List of acceptable words
   @province = %w(Alberta British\ Columbia Manitoba New\ Brunswick Newfoundland\ and\ Labrador Nova\ Scotia Ontario Prince\ Edward\ Island Quebec Saskatchewan Northwest\ Territories Nunavut Yukon)
@@ -35,6 +36,8 @@ class ValidationValues
   @c_integer = '\d+'
   @c_double = '\d+\.?\d{0,2}'
   @c_alpha_numeric = '[A-Za-z0-9 ]+'
+  @c_license_plate = '[A-Za-z0-9]+'
+  @c_year = '\d{4}+'
 
   @c_street = '\d{0,4} ?[A-Za-z0-9,. ]+'
 
@@ -43,6 +46,8 @@ class ValidationValues
   @p_double = '1234.56'
   @p_product_desc = 'Shoes'
   @p_street = '26 Steeles Ave. W, Brampton, ON, M4V 2K1'
+  @p_license_plate = 'ABZM 264'
+  @p_year = '2005'
 
   # Get methods
   def self.integer
@@ -113,6 +118,10 @@ class ValidationValues
     @postal_code
   end
 
+  def self.year
+    @year
+  end
+
   def self.province
     @province
   end
@@ -153,8 +162,16 @@ class ValidationValues
     @c_alpha_numeric
   end
 
+  def self.c_license_plate
+    @c_license_plate
+  end
+
   def self.c_street
     @c_street
+  end
+
+  def self.c_year
+    @c_year
   end
   
   def self.p_integer
@@ -167,6 +184,14 @@ class ValidationValues
 
   def self.p_street
     @p_street
+  end
+
+  def self.p_license_plate
+    @p_license_plate
+  end
+
+  def self.p_year
+    @p_year
   end
 
   def self.p_product_desc

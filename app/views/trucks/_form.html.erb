@@ -14,27 +14,27 @@
   <% end %>
 
   <%= f.label :truck_no %>
-  <%= f.number_field :truck_no %>
+  <%= f.number_field :truck_no, :format => ValidationValues.c_integer, :placeholder => ValidationValues.p_integer %>
   <%= f.label :truck_type %>
   <%= f.text_field :truck_type %>
   <%= f.label :license_plate %>
-  <%= f.text_field :license_plate %>
+  <%= f.text_field :license_plate, :format => ValidationValues.c_license_plate, :placeholder => ValidationValues.p_license_plate %>
   <%= f.label :license_expires %>
   <%= f.date_select :license_expires %>
   <%= f.label :owner %>
   <%= f.number_field :owner %>
   <%= f.label :make %>
-  <%= f.text_field :make %>
+  <%= f.text_field :make, :required => 'required', :format => ValidationValues.c_alpha_numeric %>
   <%= f.label :model %>
-  <%= f.text_field :model %>
+  <%= f.text_field :model, :required => 'required', :format => ValidationValues.c_alpha_numeric %>
   <%= f.label :manufactured_year %>
-  <%= f.number_field :manufactured_year %>
+  <%= f.number_field :manufactured_year, :required => 'required', :format => ValidationValues.c_year, :placeholder => ValidationValues.p_year %>
   <%= f.label :vin_number %>
-  <%= f.text_field :vin_number %>
+  <%= f.text_field :vin_number, :required => 'required', :format => ValidationValues.c_alpha_numeric %>
   <%= f.label :total_kilometres %>
-  <%= f.number_field :total_kilometres %>
+  <%= f.number_field :total_kilometres, :required => 'required', :format => ValidationValues.c_double, :placeholder => ValidationValues.p_double %>
   <%= f.label :current_location %>
-  <%= f.text_field :current_location %>
+  <%= f.text_field :current_location, :required => 'required', :format => ValidationValues.c_street, :placeholder => ValidationValues.p_street %>
   <div class="footer">
     <%= f.submit %>
   </div>
