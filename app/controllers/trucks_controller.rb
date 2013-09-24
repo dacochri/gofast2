@@ -6,7 +6,7 @@ class TrucksController < ApplicationController
   def index
     params[:search] = format_date params[:search]
     
-    @trucks = Truck.search(params[:search], params[:column]).order(sort_column(Truck, 'truck_no') + ' ' + sort_direction)
+    @trucks = Truck.search(params[:search], params[:column]).order(sort_column(Truck, 'truck_no') + ' ' + sort_direction).page(params[:page]).per(25)
 
     respond_to do |format|
       format.html # index.html.erb
