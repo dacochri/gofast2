@@ -6,14 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-#Skids
-Skid.create(shipment_id: '1', product_desc: 'Clothes', skid_count: '6', weight: '592.36', unit: 'kg', oversized: 'false', pickup_location: '123 Karaoke Street, Brampton, ON, G5D 6N5', delivery_location: '321 Pilgrim Dr., Oakville, ON, D5E 8A4', pickup_time: '20130702 202123', delivery_time: '20130708 102000', warehouse_delivery_time: '20130702 200000', warehouse_pickup_time: '20130700 120000')
-# Skid.create(shipment_id: '1', product_desc: 'Cool Stuff', weight: '300', oversized: 'false', pickup_location: '7845 Macao Ave.', delivery_location: '65 Blossom Drive', pickup_time: '20130702 202123', delivery_time: '20130708 102000', warehouse_delivery_time: '', warehouse_pickup_time: '', skid_count: '8')
-# Skid.create(shipment_id: '2', product_desc: 'Cool Stuff', weight: '300', oversized: 'false', pickup_location: '423 Bluefin Drive', delivery_location: '392 Stock Street', pickup_time: '20130703 202123', delivery_time: '20130709 102000', warehouse_delivery_time: '', warehouse_pickup_time: '', skid_count: '5')
-# Skid.create(shipment_id: '2', product_desc: 'Cool Stuff', weight: '300', oversized: 'false', pickup_location: '7434 Cherry Rd.', delivery_location: '45 Glance Crescent', pickup_time: '20130703 202123', delivery_time: '20130709 102000', warehouse_delivery_time: '', warehouse_pickup_time: '', skid_count: '6')
-# Skid.create(shipment_id: '2', product_desc: 'Cool Stuff', weight: '300', oversized: 'false', pickup_location: '5894 Lance Street', delivery_location: '38 Winston Ave', pickup_time: '20130703 202123', delivery_time: '20130709 102000', warehouse_delivery_time: '', warehouse_pickup_time: '', skid_count: '4')
-# Skid.create(shipment_id: '3', product_desc: 'Cool Stuff', weight: '300', oversized: 'false', pickup_location: '1587 Chinatown', delivery_location: '64 Jimly Crescent', pickup_time: '20130702 202123', delivery_time: '20130708 102000', warehouse_delivery_time: '', warehouse_pickup_time: '', skid_count: '8')
-# Skid.create(shipment_id: '3', product_desc: 'Cool Stuff', weight: '300', oversized: 'false', pickup_location: '23 Drinkwater Ave', delivery_location: '564 Tango Street', pickup_time: '20130702 202123', delivery_time: '20130708 102000', warehouse_delivery_time: '', warehouse_pickup_time: '', skid_count: '7')
-# Skid.create(shipment_id: '4', product_desc: 'Cool Stuff', weight: '300', oversized: 'false', pickup_location: '89 Pilgrim Drive', delivery_location: '4823 Plur Street', pickup_time: '20130703 202123', delivery_time: '20130709 102000', warehouse_delivery_time: '', warehouse_pickup_time: '', skid_count: '4')
-# Skid.create(shipment_id: '4', product_desc: 'Cool Stuff', weight: '300', oversized: 'false', pickup_location: '938 Dock Street', delivery_location: '86 Hawaki Drive', pickup_time: '20130703 202123', delivery_time: '20130709 102000', warehouse_delivery_time: '', warehouse_pickup_time: '', skid_count: '12')
-# Skid.create(shipment_id: '5', product_desc: 'Cool Stuff', weight: '300', oversized: 'false', pickup_location: '589 Watermark Ave.', delivery_location: '9 Tisky Drive', pickup_time: '20130702 202123', delivery_time: '20130708 102000', warehouse_delivery_time: '', warehouse_pickup_time: '', skid_count: '18')
+# Driver
+Driver.create(first_name: 'Simon', last_name: 'Smith', street: '22 Lawrence Ave.', unit: '', city: 'Brampton', postal_code: 'S6I 2M1', home_phone: '9058761452', cell_phone: '4168795522', business_name: 'Simon Trucking Enterprises', hst_no: '44f4e4fe5', comments: '')
+
+# Truck
+Truck.create(truck_no: '5448562', vin_no: '45f4e54', truck_type: 'straight', license_plate: '5485 ABC', license_expires: '2013-08-09', owner: '1', make: 'GMC', model: '5441d2', manufactured_year: '2005', total_kilometeres: '52000.00', current_location: '566 Steeles Ave., Brampton, ON, H4F 5E8')
