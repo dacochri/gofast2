@@ -11,8 +11,8 @@ class Driver < ActiveRecord::Base
   validates :cell_phone, :home_phone, :length => 10..11
   validates :first_name, :format => { :with => ValidationValues.first_name, :message => message }
   validates :last_name, :format => { :with => ValidationValues.last_name, :message => message }
-  validates :street, :format => { :with => ValidationValues.street, :message => message }
-  validates :unit, :format => { :with => ValidationValues.unit, :message => message }
-  validates :postal_code, :format => { :with => ValidationValues.postal_code, :message => message }
-  validates :hst_no, :format => { :with => ValidationValues.hst_no, :message => message }
+#  validates :street, :format => { :with => ValidationValues.street, :message => message }
+#  validates :unit, :format => { :with => ValidationValues.unit, :message => message }
+#  validates :postal_code, :format => { :with => ValidationValues.postal_code, :message => message }
+#  validates :hst_no, :format => { :with => ValidationValues.hst_no, :message => message }
 end
