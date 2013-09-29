@@ -1,4 +1,4 @@
-<%= form_for(@truck) do |f| %>
+<%= form_for @truck, :html => { :multipart => true } do |f| %>
   <% if @truck.errors.any? %>
     <div id="error_explanation">
       <section>
@@ -35,6 +35,8 @@
   <%= f.number_field :total_kilometres, :required => 'required', :format => ValidationValues.c_double, :placeholder => ValidationValues.p_double %>
   <%= f.label :current_location %>
   <%= f.text_field :current_location, :required => 'required', :format => ValidationValues.c_street, :placeholder => ValidationValues.p_street %>
+  <%= f.label :photo %>
+  <%= f.file_field :photo %>
   <div class="footer">
     <%= f.submit %>
   </div>

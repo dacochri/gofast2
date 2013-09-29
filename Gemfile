@@ -38,3 +38,5 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'kaminari'
+
+gem 'paperclip', '~> 3.0'

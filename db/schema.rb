@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130804150521) do
+ActiveRecord::Schema.define(:version => 20130929191017) do
 
   create_table "announcements", :force => true do |t|
     t.integer  "posted_by"
@@ -174,8 +174,12 @@ ActiveRecord::Schema.define(:version => 20130804150521) do
     t.string   "vin_number"
     t.integer  "total_kilometres"
     t.string   "current_location"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
 end

@@ -230,6 +230,18 @@ dl{
   display: inline;
 }
 
+.float-left{
+  float: left;
+}
+
+.float-right{
+  float: right;
+}
+
+.clear{
+  clear: both;
+}
+
 /* Styles for forms */
 form{
   border: 0.1rem solid #AAA;
@@ -264,7 +276,7 @@ label{
   display: block;
 }
 
-label, input[type="text"], input[type="number"], input[type="password"], select, textarea{
+label, input[type="text"], input[type="number"], input[type="password"], input[type="file"], select, textarea{
   margin-left: 1.5rem;
 }
 
