@@ -9,6 +9,7 @@ class Truck < ActiveRecord::Base
 
   validates :make, :manufactured_year, :model, :owner, :total_kilometres, :truck_type, :vin_number, :current_location, :presence => true
   validates :manufactured_year, :owner, :numericality => true
+  validates :manufactured_year, :length => 4..4
   validates :truck_no, :numericality => true, :allow_blank => true
   validates :license_expires, :format => { :with => ValidationValues.date, :message => message }, :allow_blank => true
   validates :total_kilometres, :format => { :with => ValidationValues.double, :message => message }
