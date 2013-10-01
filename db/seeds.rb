@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# Driver
-Driver.create(first_name: 'Simon', last_name: 'Smith', street: '22 Lawrence Ave.', unit: '', city: 'Brampton', postal_code: 'S6I 2M1', home_phone: '9058761452', cell_phone: '4168795522', business_name: 'Simon Trucking Enterprises', hst_no: '44f4e4fe5', comments: '')
+# Company
+Company.create(company_type: 'driver', name: 'Su Trucking Inc.', street: '23 Steeles Ave.', unit: '1B', city: 'Brampton', province: 'Ontario', postal_code: 'M6J 2N1', email: 'contact@sutrucking.com', primary_phone: '9054681245', secondary_phone: '', fax: '', contact_name: 'David Su')
 
 # Truck
-Truck.create(truck_no: '5448562', vin_no: '45f4e54', truck_type: 'straight', license_plate: '5485 ABC', license_expires: '2013-08-09', owner: '1', make: 'GMC', model: '5441d2', manufactured_year: '2005', total_kilometeres: '52000.00', current_location: '566 Steeles Ave., Brampton, ON, H4F 5E8')
+Truck.create(truck_no: '4821', truck_type: 'straight', license_plate: 'ABZM 293', license_expires: '2013-09-16', owner: '1', make: 'GM', model: 'X294', manufactured_year: '2005', vin_number: '368TU79MXH4763452', total_kilometres: '50926.25', current_location: '26 Steeles Ave. Brampton, ON, 2M1 6K7')
