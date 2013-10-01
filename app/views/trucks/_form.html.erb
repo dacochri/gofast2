@@ -22,7 +22,7 @@
   <%= f.label :license_expires %>
   <%= f.date_select :license_expires %>
   <%= f.label :owner %>
-  <%= f.collection_select :owner, Company.where(:company_type => 'driver'), :id, :name, {}, { :size => 5  } %>
+  <%= f.collection_select :owner, @driver_companies, :id, :name, { :selected => @driver_companies.first.id }, { :size => 5 } %>
   <%= f.label :make %>
   <%= f.text_field :make, :required => 'required', :format => ValidationValues.c_alpha_numeric %>
   <%= f.label :model %>
