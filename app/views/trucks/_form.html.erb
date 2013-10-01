@@ -30,7 +30,7 @@
   <%= f.label :manufactured_year %>
   <%= f.number_field :manufactured_year, :required => 'required', :format => ValidationValues.c_year, :placeholder => ValidationValues.p_year %>
   <%= f.label :vin_number %>
-  <%= f.text_field :vin_number, :required => 'required', :format => ValidationValues.c_alpha_numeric %>
+  <%= f.text_field :vin_number, :required => 'required', :format => ValidationValues.c_vin %>
   <%= f.label :total_kilometres %>
   <%= f.number_field :total_kilometres, :required => 'required', :format => ValidationValues.c_double, :placeholder => ValidationValues.p_double %>
   <%= f.label :current_location %>

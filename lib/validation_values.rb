@@ -20,6 +20,7 @@ class ValidationValues
   @email = /[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}/
   @postal_code = /[A-Za-z][0-9][A-Za-z]\s[0-9][A-Za-z][0-9]/
   @year = /\d{4}/
+  @vin = /([A-HJ-NPR-Z]|\d){11}\d{6}/
 
   # List of acceptable words
   @province = %w(Alberta British\ Columbia Manitoba New\ Brunswick Newfoundland\ and\ Labrador Nova\ Scotia Ontario Prince\ Edward\ Island Quebec Saskatchewan Northwest\ Territories Nunavut Yukon)
@@ -38,6 +39,7 @@ class ValidationValues
   @c_alpha_numeric = '[A-Za-z0-9 ]+'
   @c_license_plate = '[A-Za-z0-9]+'
   @c_year = '\d{4}+'
+  @c_vin = '([A-HJ-NPR-Z]|\d){11}\d{6}'
 
   @c_street = '\d{0,4} ?[A-Za-z0-9,. ]+'
 
@@ -122,6 +124,10 @@ class ValidationValues
     @year
   end
 
+  def self.vin
+    @vin
+  end
+
   def self.province
     @province
   end
@@ -172,6 +178,10 @@ class ValidationValues
 
   def self.c_year
     @c_year
+  end
+
+  def self.c_vin
+    @c_vin
   end
   
   def self.p_integer
