@@ -18,6 +18,7 @@ class Truck < ActiveRecord::Base
   validates :current_location, :format => { :with => ValidationValues.street, :message => message }
   validates :license_plate, :format => { :with => ValidationValues.license_plate, :message => message }, :length => 3..8, :allow_blank => true
   validates :truck_type, :inclusion => { :in => ValidationValues.truck_type }
+  validates :truck_no, :uniqueness => true
   validates_attachment_size :photo, :less_than => 1.megabytes
   validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png', 'image/gif']
 end
