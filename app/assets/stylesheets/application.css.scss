@@ -365,6 +365,10 @@ table{
     line-height: 1.5rem;
     padding: 1.5rem 0.5rem;
     vertical-align: center;
+
+    &:last-child{
+      width: 14%;
+    }
   }
 }
 
@@ -472,6 +476,7 @@ table{
 .show:before{
   /* content: '\25B6'; */
   content: url('show.png');
+  line-height: 3.5rem;
 }
 
 .edit:before{
