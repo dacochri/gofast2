@@ -22,7 +22,8 @@
   <%= f.label :license_expires %>
   <%= f.date_select :license_expires %>
   <%= f.label :owner %>
-  <%= f.collection_select :owner, @driver_companies, :id, :name, { :selected => @driver_companies.first.id }, { :size => 5 } %>
+  <% driver_companies = Company.where(:company_type => 'driver') %>
+  <%= f.collection_select :owner, driver_companies, :id, :name, { :selected => driver_companies.first.id }, { :size => 5 } %>
   <%= f.label :make %>
   <%= f.text_field :make, :required => 'required', :format => ValidationValues.c_alpha_numeric %>
   <%= f.label :model %>
@@ -30,7 +31,7 @@
   <%= f.label :manufactured_year %>
   <%= f.number_field :manufactured_year, :required => 'required', :format => ValidationValues.c_year, :placeholder => ValidationValues.p_year %>
   <%= f.label :vin_number %>
-  <%= f.text_field :vin_number, :required => 'required', :format => ValidationValues.c_vin %>
+  <%= f.text_field :vin_number, :required => 'required', :format => ValidationValues.c_vin, :placeholder => ValidationValues.p_vin %>
   <%= f.label :total_kilometres %>
   <%= f.number_field :total_kilometres, :required => 'required', :format => ValidationValues.c_double, :placeholder => ValidationValues.p_double %>
   <%= f.label :current_location %>

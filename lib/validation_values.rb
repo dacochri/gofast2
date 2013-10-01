@@ -50,6 +50,7 @@ class ValidationValues
   @p_street = '26 Steeles Ave. W, Brampton, ON, M4V 2K1'
   @p_license_plate = 'ABZM 264'
   @p_year = '2005'
+  @p_vin = '368TU79MXH4763452'
 
   # Get methods
   def self.integer
@@ -202,6 +203,10 @@ class ValidationValues
 
   def self.p_year
     @p_year
+  end
+
+  def self.p_vin
+    @p_vin
   end
 
   def self.p_product_desc
