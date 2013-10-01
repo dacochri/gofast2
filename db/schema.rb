@@ -172,7 +172,7 @@ ActiveRecord::Schema.define(:version => 20130929191017) do
     t.string   "model"
     t.integer  "manufactured_year"
     t.string   "vin_number"
-    t.integer  "total_kilometres"
+    t.decimal  "total_kilometres"
     t.string   "current_location"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
