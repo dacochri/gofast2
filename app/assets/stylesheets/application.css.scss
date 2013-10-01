@@ -294,7 +294,7 @@ input[type="text"], input[type="number"], input[type="password"], textarea, sele
   }
 }
 
-input[type="text"], input[type="number"], input[type="password"]{
+input[type="text"], input[type="number"], input[type="password"], select[size], textarea{
   width: 30rem;
 }
 
