@@ -204,6 +204,10 @@ a{
 
 dl{
   margin-bottom: 1rem;
+  
+  dt, dd{
+    line-height: 2.5rem;
+  }
 
   dt{
     clear: both;
