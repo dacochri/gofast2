@@ -26,7 +26,7 @@ class ValidationValues
   @vehicle_type = %w(truck trailer)
   @truck_type = %w(straight tractor)
   @trailer_type = %w(53ft\ logistic\ airride\ dryvan 53ft\ reefer)
-  @company_type = %w(customer mechanic broker cartage misc)
+  @company_type = %w(customer mechanic broker cartage driver misc)
   @unit = %w(lb kg)
 
   # Messages

@@ -24,12 +24,12 @@
     </thead>
     <tbody>
     <% @trucks.each do |truck| %>
-      <% driver = Driver.find truck.owner %>
+      <% company = Company.find truck.owner %>
       <tr>
         <td><%= truck.truck_no %></td>
         <td><%= truck.vin_number %></td>
         <td><%= truck.truck_type %></td>
-        <td><%= link_to "#{driver.first_name} #{driver.last_name}", "/drivers/#{truck.owner}" %></td>
+        <td><%= link_to company.name, "/companies/#{truck.owner}" %></td>
         <td><%= truck.total_kilometres %></td>
         <td><%= truck.current_location %></td>
         <td><%= link_to '', truck, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_truck_path(truck), :class => 'button edit', :title => 'Edit' %> <%= link_to '', truck, method: :delete, data: { confirm: 'Are you sure you want to delete this truck?' }, :class => 'button destroy', :title => 'Delete' %></td>
