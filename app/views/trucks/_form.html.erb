@@ -20,7 +20,8 @@
   <%= f.label :license_plate %>
   <%= f.text_field :license_plate, :format => ValidationValues.c_license_plate, :placeholder => ValidationValues.p_license_plate %>
   <%= f.label :license_expires %>
-  <%= f.date_select :license_expires %>
+  <!-- <%= f.date_select :license_expires %> -->
+  <%= f.text_field :license_expires, :format => ValidationValues.c_date, :placeholder => ValidationValues.p_date %>
   <%= f.label :owner %>
   <% driver_companies = Company.where(:company_type => 'driver') %>
   <%= f.collection_select :owner, driver_companies, :id, :name, { :selected => driver_companies.first.id }, { :size => 5 } %>

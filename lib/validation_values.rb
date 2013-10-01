@@ -31,11 +31,12 @@ class ValidationValues
   @unit = %w(lb kg)
 
   # Messages
-  @message = 'does not match expected format';
+  @message = 'does not match expected format'
   
   # General Regexs for client side validation
   @c_integer = '\d+'
   @c_double = '\d+\.?\d{0,2}'
+  @c_date = '\A\d{4}-\d{2}-\d{2}\Z'
   @c_alpha_numeric = '[A-Za-z0-9 ]+'
   @c_license_plate = '[A-Za-z0-9]+'
   @c_year = '\d{4}+'
@@ -46,6 +47,7 @@ class ValidationValues
   # Placeholder values
   @p_integer = '4865'
   @p_double = '1234.56'
+  @p_date = 'YYYY-MM-DD'
   @p_product_desc = 'Shoes'
   @p_street = '26 Steeles Ave. W, Brampton, ON, M4V 2K1'
   @p_license_plate = 'ABZM 264'
@@ -164,6 +166,10 @@ class ValidationValues
   def self.c_double
     @c_double
   end
+
+  def self.c_date
+    @c_date
+  end
   
   def self.c_alpha_numeric
     @c_alpha_numeric
@@ -191,6 +197,10 @@ class ValidationValues
 
   def self.p_double
     @p_double
+  end
+
+  def self.p_date
+    @p_date
   end
 
   def self.p_street
