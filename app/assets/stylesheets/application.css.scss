@@ -207,16 +207,12 @@ dl{
   
   dt, dd{
     line-height: 2.5rem;
+    float: left;
   }
 
   dt{
     clear: both;
-    float: left;
     margin-right: 0.5rem;
-  }
-
-  dd{
-    float: left;
   }
 
   &:after{
