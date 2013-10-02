@@ -174,6 +174,7 @@ ActiveRecord::Schema.define(:version => 20130929191017) do
     t.string   "vin_number"
     t.decimal  "total_kilometres"
     t.string   "current_location"
+    t.string   "color"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.string   "photo_file_name"

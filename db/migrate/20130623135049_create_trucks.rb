@@ -12,6 +12,7 @@ class CreateTrucks < ActiveRecord::Migration
       t.string :vin_number
       t.decimal :total_kilometres
       t.string :current_location
+      t.string :color
 
       t.timestamps
     end

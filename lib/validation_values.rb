@@ -37,11 +37,12 @@ class ValidationValues
   @c_integer = '\d+'
   @c_double = '\d+\.?\d{0,2}'
   @c_date = '\A\d{4}-\d{2}-\d{2}\Z'
+  @c_alpha = '[A-Za-z ]+'
   @c_alpha_numeric = '[A-Za-z0-9 ]+'
+  
   @c_license_plate = '[A-Za-z0-9]+'
   @c_year = '\d{4}+'
   @c_vin = '([A-HJ-NPR-Z]|\d){11}\d{6}'
-
   @c_street = '\d{0,4} ?[A-Za-z0-9,. ]+'
 
   # Placeholder values
@@ -53,6 +54,7 @@ class ValidationValues
   @p_license_plate = 'ABZM 264'
   @p_year = '2005'
   @p_vin = '368TU79MXH4763452'
+  @p_color = 'Black'
 
   # Get methods
   def self.integer
@@ -171,6 +173,10 @@ class ValidationValues
     @c_date
   end
   
+  def self.c_alpha
+    @c_alpha
+  end
+
   def self.c_alpha_numeric
     @c_alpha_numeric
   end
@@ -217,6 +223,10 @@ class ValidationValues
 
   def self.p_vin
     @p_vin
+  end
+
+  def self.p_color
+    @p_color
   end
 
   def self.p_product_desc
