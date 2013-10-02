@@ -1,12 +1,14 @@
 class Truck < ActiveRecord::Base
 	include Searchable
-  
+  # get/set method
   attr_accessible :license_expires, :license_plate, :make, :manufactured_year, :model, :owner, :total_kilometres, :truck_no, :truck_type, :vin_number, :current_location, :photo, :color
   
+  # tells database there is a file associated with this field
   has_attached_file :photo, :default_url => 'missing.png'
 
   message = ValidationValues.message
-
+  
+  # validation for all fields
   validates :make, :manufactured_year, :model, :owner, :total_kilometres, :truck_type, :vin_number, :current_location, :color, :presence => true
   validates :manufactured_year, :owner, :numericality => true
   validates :manufactured_year, :length => 4..4

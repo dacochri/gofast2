@@ -1,6 +1,7 @@
 <section>
   <h2>Trucks</h2>
   <p><%= link_to 'New Truck', new_truck_path, :class => 'button new' %></p>
+  <!-- form for search -->
   <%= form_tag trucks_path, :method => 'get', :class => 'search' do %>
     <%= hidden_field_tag :direction, params[:direction] %>
     <%= hidden_field_tag :sort, params[:sort] %>
@@ -13,6 +14,7 @@
   <table>
     <thead>
       <tr>
+        <!-- column headers with sort -->
         <th scope="col"><%= sortable "truck_no", nil, @trucks, "truck_no" %></th>
         <th scope="col"><%= sortable "vin_number", 'VIN',  @trucks, "truck_no" %></th>
         <th scope="col"><%= sortable "truck_type", nil,  @trucks, "truck_no" %></th>
@@ -23,6 +25,7 @@
       </tr>
     </thead>
     <tbody>
+    <!-- insert records into table -->
     <% @trucks.each do |truck| %>
       <% company = Company.find truck.owner %>
       <tr>

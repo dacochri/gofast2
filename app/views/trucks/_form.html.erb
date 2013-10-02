@@ -1,4 +1,5 @@
 <%= form_for @truck, :html => { :multipart => true } do |f| %>
+  <!-- show errors if they exist -->
   <% if @truck.errors.any? %>
     <div id="error_explanation">
       <section>
@@ -13,6 +14,7 @@
     </div>
   <% end %>
 
+  <!-- form elements -->
   <%= f.label :truck_no %>
   <%= f.number_field :truck_no, :format => ValidationValues.c_integer, :placeholder => ValidationValues.p_integer %>
   <%= f.label :truck_type %>

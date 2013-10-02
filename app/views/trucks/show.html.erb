@@ -1,9 +1,11 @@
 <% company = Company.find @truck.owner %>
 <section>
   <h2>Truck #<%= @truck.id %></h2>
+  <!-- show notice when truck is inserted -->
   <p id="notice"><%= notice %></p>
   <div class="float-left">
     <dl>
+      <!-- show truck data -->
       <dt><strong>Truck no:</strong></dt><dd><%= @truck.truck_no %></dd>
       <dt><strong>VIN:</strong></dt><dd><%= @truck.vin_number %></dd>
       <dt><strong>Truck type:</strong></dt><dd><%= @truck.truck_type %></dd>

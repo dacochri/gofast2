@@ -4,10 +4,12 @@ class TrucksController < ApplicationController
   # GET /trucks
   # GET /trucks.json
   def index
+    # format date
     params[:search] = format_date params[:search]
     
+    # get all trucks; order them; paginate
     @trucks = Truck.search(params[:search], params[:column]).order(sort_column(Truck, 'truck_no') + ' ' + sort_direction).page(params[:page]).per(3)
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @trucks }
@@ -17,6 +19,7 @@ class TrucksController < ApplicationController
   # GET /trucks/1
   # GET /trucks/1.json
   def show
+    # find truck by id
     @truck = Truck.find(params[:id])
 
     respond_to do |format|
@@ -28,6 +31,7 @@ class TrucksController < ApplicationController
   # GET /trucks/new
   # GET /trucks/new.json
   def new
+    # new form for truck
     @truck = Truck.new
 
     respond_to do |format|
@@ -38,12 +42,14 @@ class TrucksController < ApplicationController
 
   # GET /trucks/1/edit
   def edit
+    # edit form for truck
     @truck = Truck.find(params[:id])
   end
 
   # POST /trucks
   # POST /trucks.json
   def create
+    # create a new truck in database
     @truck = Truck.new(params[:truck])
 
     respond_to do |format|
@@ -60,6 +66,7 @@ class TrucksController < ApplicationController
   # PUT /trucks/1
   # PUT /trucks/1.json
   def update
+    # update an existing truck in database
     @truck = Truck.find(params[:id])
 
     respond_to do |format|
@@ -76,6 +83,7 @@ class TrucksController < ApplicationController
   # DELETE /trucks/1
   # DELETE /trucks/1.json
   def destroy
+    # remove a truck from the database
     @truck = Truck.find(params[:id])
     @truck.destroy
 
