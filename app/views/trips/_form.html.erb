@@ -17,16 +17,20 @@
   <%= f.number_field :truck_id %>
   <%= f.label :trailer_id %>
   <%= f.number_field :trailer_id %>
-  <%= f.label :expense_id %>
-  <%= f.number_field :expense_id %>
   <%= f.label :start_date %>
   <%= f.date_select :start_date %>
   <%= f.label :end_date %>
   <%= f.date_select :end_date %>
   <%= f.label :load_bar_count %>
   <%= f.number_field :load_bar_count %>
-  <%= f.label :kilometres_accumulated %>
-  <%= f.text_field :kilometres_accumulated %>
+  <%= f.label :accumulated_kilometres %>
+  <%= f.text_field :accumulated_kilometres %>
+  <%= f.label :fuel_cost %>
+  <%= f.number_field :fuel_cost %>
+  <%= f.label :misc_cost %>
+  <%= f.number_field :misc_cost %>
+  <%= f.label :comments %>
+  <%= f.text_field :comments %>
   <div class="footer">
     <%= f.submit %>
   </div>
