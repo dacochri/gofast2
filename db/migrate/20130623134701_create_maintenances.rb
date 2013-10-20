@@ -7,7 +7,7 @@ class CreateMaintenances < ActiveRecord::Migration
       t.decimal :cost
       t.string :maintenance_type
       t.string :description
-      t.decimal :kilometres
+      t.integer :kilometres
       t.string :vehicle_type
 
       t.timestamps
