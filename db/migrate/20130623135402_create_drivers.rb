@@ -9,8 +9,9 @@ class CreateDrivers < ActiveRecord::Migration
       t.string :postal_code
       t.integer :home_phone
       t.integer :cell_phone
+      t.string :drivers_license_number
+      t.date :date_of_birth
       t.string :business_name
-      t.string :hst_no
       t.string :comments
 
       t.timestamps

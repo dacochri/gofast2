@@ -7,10 +7,11 @@
   <p><strong>Unit:</strong> <%= @driver.unit %></p>
   <p><strong>City:</strong> <%= @driver.city %></p>
   <p><strong>Postal code:</strong> <%= @driver.postal_code %></p>
+  <p><strong>Driver's License Number:</strong> <%= @driver.drivers_license_number %></p>
+  <p><strong>Date of Birth:</strong> <%= @driver.date_of_birth %></p>
   <p><strong>Home phone:</strong> <%= @driver.home_phone %></p>
   <p><strong>Cell phone:</strong> <%= @driver.cell_phone %></p>
   <p><strong>Business name:</strong> <%= @driver.business_name %></p>
-  <p><strong>Hst no:</strong> <%= @driver.hst_no %></p>
   <p><strong>Comments:</strong> <%= @driver.comments %></p>
   <p><%= link_to 'Edit', edit_driver_path(@driver), :class => 'button edit' %> <%= link_to 'Back', drivers_path, :class => 'button back' %></p>
 </section>
