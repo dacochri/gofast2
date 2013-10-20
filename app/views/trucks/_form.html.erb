@@ -22,7 +22,6 @@
   <%= f.label :license_plate %>
   <%= f.text_field :license_plate, :format => ValidationValues.c_license_plate, :placeholder => ValidationValues.p_license_plate %>
   <%= f.label :license_expires %>
-  <!-- <%= f.date_select :license_expires %> -->
   <%= f.text_field :license_expires, :format => ValidationValues.c_date, :placeholder => ValidationValues.p_date %>
   <%= f.label :owner %>
   <% driver_companies = Company.where(:company_type => 'driver') %>
@@ -36,7 +35,7 @@
   <%= f.label :vin_number %>
   <%= f.text_field :vin_number, :required => 'required', :format => ValidationValues.c_vin, :placeholder => ValidationValues.p_vin %>
   <%= f.label :total_kilometres %>
-  <%= f.number_field :total_kilometres, :required => 'required', :format => ValidationValues.c_double, :placeholder => ValidationValues.p_double %>
+  <%= f.number_field :total_kilometres, :required => 'required', :format => ValidationValues.c_integer, :placeholder => ValidationValues.p_integer %>
   <%= f.label :current_location %>
   <%= f.text_field :current_location, :required => 'required', :format => ValidationValues.c_street, :placeholder => ValidationValues.p_street %>
   <%= f.label :color %>
