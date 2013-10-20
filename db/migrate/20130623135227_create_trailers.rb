@@ -7,7 +7,9 @@ class CreateTrailers < ActiveRecord::Migration
       t.string :make
       t.string :model
       t.integer :manufactured_year
-      t.string :vin_number
+      t.string :vin
+      t.string :location
+      t.string :color
 
       t.timestamps
     end

@@ -7,6 +7,8 @@
   <p><strong>Make:</strong> <%= @trailer.make %></p>
   <p><strong>Model:</strong> <%= @trailer.model %></p>
   <p><strong>Manufactured year:</strong> <%= @trailer.manufactured_year %></p>
-  <p><strong>Vin number:</strong> <%= @trailer.vin_number %></p>
+  <p><strong>VIN:</strong> <%= @trailer.vin %></p>
+  <p><strong>Location:</strong> <%= @trailer.location %></p>
+  <p><strong>Color:</strong> <%= @trailer.color %></p>
   <p><%= link_to 'Edit', edit_trailer_path(@trailer), :class => 'button edit' %> <%= link_to 'Back', trailers_path, :class => 'button back' %></p>
 </section>

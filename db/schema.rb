@@ -136,7 +136,9 @@ ActiveRecord::Schema.define(:version => 20130929191017) do
     t.string   "make"
     t.string   "model"
     t.integer  "manufactured_year"
-    t.string   "vin_number"
+    t.string   "vin"
+    t.string   "location"
+    t.string   "color"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end
