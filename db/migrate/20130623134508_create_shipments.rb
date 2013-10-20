@@ -8,7 +8,7 @@ class CreateShipments < ActiveRecord::Migration
       t.integer :cartage_id
       t.decimal :rate
       t.boolean :partial
-      t.decimal :distance
+      t.integer :distance
 
       t.timestamps
     end

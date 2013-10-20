@@ -9,7 +9,7 @@ class CreateTrips < ActiveRecord::Migration
       t.date :start_date
       t.date :end_date
       t.integer :load_bar_count
-      t.decimal :kilometres_accumulated
+      t.integer :kilometres_accumulated
 
       t.timestamps
     end

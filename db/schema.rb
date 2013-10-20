@@ -60,11 +60,12 @@ ActiveRecord::Schema.define(:version => 20130929191017) do
     t.string   "postal_code"
     t.integer  "home_phone"
     t.integer  "cell_phone"
+    t.string   "drivers_license_number"
+    t.date     "date_of_birth"
     t.string   "business_name"
-    t.string   "hst_no"
     t.string   "comments"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
   end
 
   create_table "expenses", :force => true do |t|
@@ -93,7 +94,7 @@ ActiveRecord::Schema.define(:version => 20130929191017) do
     t.decimal  "cost"
     t.string   "maintenance_type"
     t.string   "description"
-    t.decimal  "kilometres"
+    t.integer  "kilometres"
     t.string   "vehicle_type"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
@@ -107,7 +108,7 @@ ActiveRecord::Schema.define(:version => 20130929191017) do
     t.integer  "cartage_id"
     t.decimal  "rate"
     t.boolean  "partial"
-    t.decimal  "distance"
+    t.integer  "distance"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -159,7 +160,7 @@ ActiveRecord::Schema.define(:version => 20130929191017) do
     t.date     "start_date"
     t.date     "end_date"
     t.integer  "load_bar_count"
-    t.decimal  "kilometres_accumulated"
+    t.integer  "kilometres_accumulated"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
   end
@@ -174,7 +175,7 @@ ActiveRecord::Schema.define(:version => 20130929191017) do
     t.string   "model"
     t.integer  "manufactured_year"
     t.string   "vin_number"
-    t.decimal  "total_kilometres"
+    t.integer  "total_kilometres"
     t.string   "current_location"
     t.string   "color"
     t.datetime "created_at",         :null => false

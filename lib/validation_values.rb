@@ -12,7 +12,7 @@ class ValidationValues
   @company = /[A-Za-z.\- ]+/
   @city = /[A-Za-z'. ]+/
   @street = /\d{0,4} ?[A-Za-z0-9,. ]+/
-  @unit = /[A-Z0-9 ]+/
+  @address_unit = /[A-Z0-9 ]+/
   @license_plate = /[A-Z0-9 ]+/
   @hst_no = /[A-Z0-9]+/
   @date = /\A\d{4}(-\d{2}){2}\Z/
@@ -97,8 +97,8 @@ class ValidationValues
     @street
   end
 
-  def self.unit
-    @unit
+  def self.address_unit
+    @address_unit
   end
 
   def self.license_plate
