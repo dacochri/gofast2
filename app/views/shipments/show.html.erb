@@ -2,12 +2,26 @@
   <h2>Shipment #<%= @shipment.id %></h2>
   <p id="notice"><%= notice %></p>
   <p><strong>Shipment No.:</strong> <%= @shipment.shipment_no %></p>
-  <p><strong>Broker:</strong> <%= link_to @shipment.broker_id, "/companies/#{@shipment.broker_id}" %></p>
-  <p><strong>Customer:</strong> <%= link_to @shipment.customer_id, "/companies/#{@shipment.customer_id}" %></p>
   <p><strong>Trip:</strong> <%= link_to @shipment.trip_id, "/trips/#{@shipment.trip_id}" %></p>
-  <p><strong>Cartage:</strong> <%= link_to @shipment.cartage_id, "/cartages/#{@shipment.cartage_id}" %></p>
+  <p><strong>Broker date:</strong> <%= @shipment.broker_date %></p>
+  <p><strong>Broker:</strong> <%= link_to @shipment.broker_id, "/companies/#{@shipment.broker_id}" %></p>
+  <p><strong>Shipped date:</strong> {SHIPPER_DATE FROM SKIDS}</p>
+  <p><strong>Shipper address:</strong> <%= @shipment.shipper_address %></p>
+  <p><strong>Unit count:</strong> {UNIT_COUNT FROM SKIDS}</p>
+  <p><strong>Received date:</strong> {RECEIVED_DATE FROM SKIDS}</p>
+  <p><strong>Receiver address:</strong> <%= @shipment.receiver_address %></p>
   <p><strong>Rate:</strong> $<%= @shipment.rate %></p>
-  <p><strong>Partial:</strong> <%= @shipment.partial %></p>
+  <p><strong>Cartage:</strong> <%= link_to @shipment.cartage_id, "/cartages/#{@shipment.cartage_id}" if !@shipment.cartage_id.nil? %></p>
+  <p><strong>Delivered:</strong> <%= @shipment.delivered %></p>
+  <p><strong>Invoice:</strong> <%= @shipment.invoice %></p>
   <p><strong>Distance:</strong> <%= @shipment.distance %></p>
+  <p><strong>Primary driver:</strong> <%= @shipment.primary_driver %></p>
+  <p><strong>Secondary driver:</strong> <%= @shipment.secondary_driver %></p>
+  <p><strong>Primary quick pay:</strong> <%= number_to_currency @shipment.primary_quick_pay %></p>
+  <p><strong>Secondary quick pay:</strong> <%= number_to_currency @shipment.secondary_quick_pay %></p>
+  <p><strong>Primary driver pay:</strong> <%= number_to_currency @shipment.primary_driver_pay %></p>
+  <p><strong>Secondary driver pay:</strong> <%= number_to_currency @shipment.secondary_driver_pay %></p>
+  <p><strong>Misc. cost:</strong> <%= number_to_currency @shipment.misc_cost %></p>
+  <p><strong>Comments:</strong> <%= @shipment.comments %></p>
   <p><%= link_to 'Edit', edit_shipment_path(@shipment), :class => 'button edit' %> <%= link_to 'Back', shipments_path, :class => 'button back' %></p>
 </section>

@@ -39,6 +39,7 @@ class ValidationValues
   @c_date = '\A\d{4}-\d{2}-\d{2}\Z'
   @c_alpha = '[A-Za-z ]+'
   @c_alpha_numeric = '[A-Za-z0-9 ]+'
+  @c_content = '[A-Za-z0-9,.;\'!@#\$%^&*()_=+|]+'
   
   @c_license_plate = '[A-Za-z0-9]+'
   @c_year = '\d{4}+'
@@ -179,6 +180,10 @@ class ValidationValues
 
   def self.c_alpha_numeric
     @c_alpha_numeric
+  end
+
+  def self.c_content
+    @c_content
   end
 
   def self.c_license_plate
