@@ -13,5 +13,5 @@ class Shipment < ActiveRecord::Base
   validates :comments, :format => { :with => ValidationValues.content, :message => message }, :allow_blank => true
   validates :broker_date, :format => { :with => ValidationValues.date, :message => message }
   validates :shipper_address, :receiver_address, :format => { :with => ValidationValues.street, :message => message }
-  validates :delivered, :inclusion => { :in => [true, false], :message => ' must be true or false' }, :allow_blank => true
+  validates :delivered, :inclusion => { :in => [true, false], :message => 'must be true or false' }, :allow_blank => true
 end
