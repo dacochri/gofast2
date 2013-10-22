@@ -31,7 +31,7 @@
         <td><%= trip.start_date %></td>
         <td><%= trip.end_date %></td>
         <td><%= trip.accumulated_kilometres %></td>
-        <td><%= link_to '', trip, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_trip_path(trip), :class => 'button edit', :title => 'Edit' %> <%= link_to '', trip, method: :delete, data: { confirm: 'Are you sure you want to delete this trip?' }, :class => 'button destroy', :title => 'Delete' %></td>
+        <td><%= link_to '', trip, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_trip_path(trip), :class => 'button edit', :title => 'Edit' %> <%= link_to '', trip, method: :delete, data: { confirm: 'Are you sure you want to delete trip ' + trip.id.to_s + '?' }, :class => 'button destroy', :title => 'Delete' %></td>
       </tr>
     <% end %>
     </tbody>

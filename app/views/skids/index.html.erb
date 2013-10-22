@@ -35,7 +35,7 @@
         <td><%= skid.delivery_location %></td>
         <td><%= skid.pickup_time %></td>
         <td><%= skid.delivery_time %></td>
-        <td><%= link_to '', skid, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_skid_path(skid), :class => 'button edit', :title => 'Edit' %> <%= link_to '', skid, method: :delete, data: { confirm: 'Are you sure you want to delete this skid?' }, :class => 'button destroy', :title => 'Delete' %></td>
+        <td><%= link_to '', skid, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_skid_path(skid), :class => 'button edit', :title => 'Edit' %> <%= link_to '', skid, method: :delete, data: { confirm: 'Are you sure you want to delete skid: ' + skid.product_desc + '?' }, :class => 'button destroy', :title => 'Delete' %></td>
       </tr>
     <% end %>
     </tbody>

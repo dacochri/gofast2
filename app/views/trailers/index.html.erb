@@ -33,7 +33,7 @@
         <td><%= trailer.model %></td>
         <td><%= trailer.manufactured_year %></td>
         <td><%= trailer.vin %></td>
-        <td><%= link_to '', trailer, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_trailer_path(trailer), :class => 'button edit', :title => 'Edit' %> <%= link_to '', trailer, method: :delete, data: { confirm: 'Are you sure you want to delete this trailer?' }, :class => 'button destroy', :title => 'Delete' %></td>
+        <td><%= link_to '', trailer, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_trailer_path(trailer), :class => 'button edit', :title => 'Edit' %> <%= link_to '', trailer, method: :delete, data: { confirm: 'Are you sure you want to delete trailer no. ' + trailer.trailer_no.to_s + '?' }, :class => 'button destroy', :title => 'Delete' %></td>
       </tr>
     <% end %>
     </tbody>
