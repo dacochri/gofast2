@@ -1,9 +1,8 @@
 <%= form_for (@quote) do |f| %>
-<% if @quote.errors.any? %>
+  <% if @quote.errors.any? %>
     <div id="error_explanation">
       <section>
-        <h2><%= pluralize(@quote.errors.count, "error") %> prohibited this quote from being sent:</h2>
-        
+        <h2><%= pluralize(@quote.errors.count, 'error') %> prohibited this quote from being sent:</h2>    
         <ul>
         <% @quote.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
@@ -36,7 +35,7 @@
   <%= f.number_field :skid_count, :pattern => ValidationValues.c_integer, :placeholder => ValidationValues.p_integer %>
   <%= f.label :details %>
   <%= f.text_field :details %>
-    <div class="footer">
-    <%= f.submit "Send" %>
-    </div>
+  <div class="footer">
+    <%= f.submit 'Send' %>
+  </div>
 <% end %>
