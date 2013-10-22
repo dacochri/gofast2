@@ -1,0 +1,42 @@
+<%= form_for (@quote) do |f| %>
+<% if @quote.errors.any? %>
+    <div id="error_explanation">
+      <section>
+        <h2><%= pluralize(@quote.errors.count, "error") %> prohibited this quote from being sent:</h2>
+        
+        <ul>
+        <% @quote.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </section>
+    </div>
+  <% end %>
+  <%= f.label :company %>
+  <%= f.text_field :company, :required => 'required' %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :required => 'required' %>
+  <%= f.label :phone %>
+  <%= f.number_field :phone, :required => 'required' %>
+  <%= f.label :email %>
+  <%= f.text_field :email, :required => 'required' %>
+  <%= f.label :pickup_time %>
+  <%= f.text_field :pickup_time %>
+  <%= f.label :pickup_location %>
+  <%= f.text_field :pickup_location, :required => 'required', :placeholder => ValidationValues.p_street %>
+  <%= f.label :delivery_time %>
+  <%= f.text_field :delivery_time %>
+  <%= f.label :delivery_location %>
+  <%= f.text_field :delivery_location, :required => 'required', :pattern => ValidationValues.c_street, :placeholder => ValidationValues.p_street %>
+  <%= f.label :weight %>
+  <%= f.text_field :weight, :placeholder => ValidationValues.p_integer %>
+  <%= f.label :footage %>
+  <%= f.number_field :footage, :pattern => ValidationValues.c_integer, :placeholder => ValidationValues.p_integer %>
+  <%= f.label :skid_count %>
+  <%= f.number_field :skid_count, :pattern => ValidationValues.c_integer, :placeholder => ValidationValues.p_integer %>
+  <%= f.label :details %>
+  <%= f.text_field :details %>
+    <div class="footer">
+    <%= f.submit "Send" %>
+    </div>
+<% end %>
