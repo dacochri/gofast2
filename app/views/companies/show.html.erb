@@ -1,17 +1,19 @@
 <section>
   <h2><%= @company.name %></h2>
   <p id="notice"><%= notice %></p>
-  <p><strong>Company type:</strong> <%= @company.company_type %></p>
-  <p><strong>Name:</strong> <%= @company.name %></p>
-  <p><strong>Street:</strong> <%= @company.street %></p>
-  <p><strong>Unit:</strong> <%= @company.unit %></p>
-  <p><strong>City:</strong> <%= @company.city %></p>
-  <p><strong>Province:</strong> <%= @company.province %></p>
-  <p><strong>Postal code:</strong> <%= @company.postal_code %></p>
-  <p><strong>Email:</strong> <%= @company.email %></p>
-  <p><strong>Primary phone:</strong> <%= @company.primary_phone %></p>
-  <p><strong>Secondary phone:</strong> <%= @company.secondary_phone %></p>
-  <p><strong>Fax:</strong> <%= @company.fax %></p>
-  <p><strong>Contact name:</strong> <%= @company.contact_name %></p>
+  <dl>
+    <dt><strong>Company type:</strong></dt><dd><%= @company.company_type %></dd>
+    <dt><strong>Name:</strong></dt><dd><%= @company.name %></dd>
+    <dt><strong>Street:</strong></dt><dd><%= @company.street %></dd>
+    <dt><strong>Unit:</strong></dt><dd><%= @company.unit %></dd>
+    <dt><strong>City:</strong></dt><dd><%= @company.city %></dd>
+    <dt><strong>Province:</strong></dt><dd><%= @company.province %></dd>
+    <dt><strong>Postal code:</strong></dt><dd><%= @company.postal_code %></dd>
+    <dt><strong>Email:</strong></dt><dd><%= @company.email %></dd>
+    <dt><strong>Primary phone:</strong></dt><dd><%= @company.primary_phone %></dd>
+    <dt><strong>Secondary phone:</strong></dt><dd><%= @company.secondary_phone %></dd>
+    <dt><strong>Fax:</strong></dt><dd><%= @company.fax %></dd>
+    <dt><strong>Contact name:</strong></dt><dd><%= @company.contact_name %></dd>
+  </dl>
   <p><%= link_to 'Edit', edit_company_path(@company), :class => 'button edit' %> <%= link_to 'Back', companies_path, :class => 'button back' %></p>
 </section>

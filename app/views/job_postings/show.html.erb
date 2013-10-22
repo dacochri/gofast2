@@ -1,9 +1,11 @@
 <section>
   <h2><%= @job_posting.title %></h2>
   <p id="notice"><%= notice %></p>
-  <p><strong>Post date:</strong> <%= @job_posting.post_date %></p>
-  <p><strong>Closing date:</strong> <%= @job_posting.closing_date %></p>
-  <p><strong>Description:</strong> <%= @job_posting.description %></p>
-  <p><strong>Requirements:</strong> <%= @job_posting.requirements %></p>
+  <dl>
+    <dt><strong>Post date:</strong></dt><dd><%= @job_posting.post_date %></dd>
+    <dt><strong>Closing date:</strong></dt><dd><%= @job_posting.closing_date %></dd>
+    <dt><strong>Description:</strong></dt><dd><%= @job_posting.description %></dd>
+    <dt><strong>Requirements:</strong></dt><dd><%= @job_posting.requirements %></dd>
+  </dl>
   <p><%= link_to 'Edit', edit_job_posting_path(@job_posting), :class => 'button edit' %> <%= link_to 'Back', job_postings_path, :class => 'button back' %></p>
 </section>

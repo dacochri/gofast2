@@ -1,14 +1,16 @@
 <section>
   <h2>Trailer #<%= @trailer.id %></h2>
   <p id="notice"><%= notice %></p>
-  <p><strong>Trailer no:</strong> <%= @trailer.trailer_no %></p>
-  <p><strong>Trailer type:</strong> <%= @trailer.trailer_type %></p>
-  <p><strong>License plate:</strong> <%= @trailer.license_plate %></p>
-  <p><strong>Make:</strong> <%= @trailer.make %></p>
-  <p><strong>Model:</strong> <%= @trailer.model %></p>
-  <p><strong>Manufactured year:</strong> <%= @trailer.manufactured_year %></p>
-  <p><strong>VIN:</strong> <%= @trailer.vin %></p>
-  <p><strong>Location:</strong> <%= @trailer.location %></p>
-  <p><strong>Color:</strong> <%= @trailer.color %></p>
+  <dl>
+    <dt><strong>Trailer no:</strong></dt><dd><%= @trailer.trailer_no %></dd>
+    <dt><strong>Trailer type:</strong></dt><dd><%= @trailer.trailer_type %></dd>
+    <dt><strong>License plate:</strong></dt><dd><%= @trailer.license_plate %></dd>
+    <dt><strong>Make:</strong></dt><dd><%= @trailer.make %></dd>
+    <dt><strong>Model:</strong></dt><dd><%= @trailer.model %></dd>
+    <dt><strong>Manufactured year:</strong></dt><dd><%= @trailer.manufactured_year %></dd>
+    <dt><strong>VIN:</strong></dt><dd><%= @trailer.vin %></dd>
+    <dt><strong>Location:</strong></dt><dd><%= @trailer.location %></dd>
+    <dt><strong>Color:</strong></dt><dd><%= @trailer.color %></dd>
+  </dl>
   <p><%= link_to 'Edit', edit_trailer_path(@trailer), :class => 'button edit' %> <%= link_to 'Back', trailers_path, :class => 'button back' %></p>
 </section>

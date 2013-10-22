@@ -1,16 +1,18 @@
 <section>
   <h2>Skid #<%= @skid.id %></h2>
   <p id="notice"><%= notice %></p>
-  <p><strong>Shipment:</strong> <%= link_to @skid.shipment_id, "/shipments/#{@skid.shipment_id}" %></p>
-  <p><strong>Product description:</strong> <%= @skid.product_desc %></p>
-  <p><strong>Weight:</strong> <%= @skid.weight %> <%= @skid.unit %></p>
-  <p><strong>Oversized:</strong> <%= @skid.oversized %></p>
-  <p><strong>Pickup location:</strong> <%= @skid.pickup_location %></p>
-  <p><strong>Delivery location:</strong> <%= @skid.delivery_location %></p>
-  <p><strong>Pickup time:</strong> <%= @skid.pickup_time %></p>
-  <p><strong>Delivery time:</strong> <%= @skid.delivery_time %></p>
-  <p><strong>Warehouse delivery time:</strong> <%= @skid.warehouse_delivery_time %></p>
-  <p><strong>Warehouse pickup time:</strong> <%= @skid.warehouse_pickup_time %></p>
-  <p><strong>Skid count:</strong> <%= @skid.skid_count %></p>
+  <dl>
+    <dt><strong>Shipment:</strong></dt><dd><%= link_to @skid.shipment_id, "/shipments/#{@skid.shipment_id}" %></dd>
+    <dt><strong>Product description:</strong></dt><dd><%= @skid.product_desc %></dd>
+    <dt><strong>Weight:</strong></dt><dd><%= @skid.weight %> <%= @skid.unit %></dd>
+    <dt><strong>Oversized:</strong></dt><dd><%= @skid.oversized %></dd>
+    <dt><strong>Pickup location:</strong></dt><dd><%= @skid.pickup_location %></dd>
+    <dt><strong>Delivery location:</strong></dt><dd><%= @skid.delivery_location %></dd>
+    <dt><strong>Pickup time:</strong></dt><dd><%= @skid.pickup_time %></dd>
+    <dt><strong>Delivery time:</strong></dt><dd><%= @skid.delivery_time %></dd>
+    <dt><strong>Warehouse delivery time:</strong></dt><dd><%= @skid.warehouse_delivery_time %></dd>
+    <dt><strong>Warehouse pickup time:</strong></dt><dd><%= @skid.warehouse_pickup_time %></dd>
+    <dt><strong>Skid count:</strong></dt><dd><%= @skid.skid_count %></dd>
+  </dl>
   <p><%= link_to 'Edit', edit_skid_path(@skid), :class => 'button edit' %> <%= link_to 'Back', skids_path, :class => 'button back' %></p>
 </section>

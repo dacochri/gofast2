@@ -1,9 +1,11 @@
 <section>
   <h2>Announcement #<%= @announcement.id %></h2>
   <p id="notice"><%= notice %></p>
-  <p><strong>Posted by:</strong> <%= @announcement.posted_by %></p>
-  <p><strong>Title:</strong> <%= @announcement.title %></p>
-  <p><strong>Date posted:</strong> <%= @announcement.date_posted %></p>
-  <p><strong>Content:</strong> <%= @announcement.content %></p>
+  <dl>
+    <dt><strong>Posted by:</strong></dt><dd><%= @announcement.posted_by %></dd>
+    <dt><strong>Title:</strong></dt><dd><%= @announcement.title %></dd>
+    <dt><strong>Date posted:</strong></dt><dd><%= @announcement.date_posted %></dd>
+    <dt><strong>Content:</strong></dt><dd><%= @announcement.content %></dd>
+  </dl>
   <p><%= link_to 'Edit', edit_announcement_path(@announcement), :class => 'button edit' %> <%= link_to 'Back', announcements_path, :class => 'button back' %></p>
 </section>

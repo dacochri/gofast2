@@ -1,12 +1,14 @@
 <section>
   <h2>Cartage #<%= @cartage.id %></h2>
   <p id="notice"><%= notice %></p>
-  <p><strong>Company:</strong> <%= @cartage.company_id %></p>
-  <p><strong>Trailer:</strong> <%= @cartage.trailer_id %></p>
-  <p><strong>Shipment:</strong> <%= @cartage.shipment_id %></p>
-  <p><strong>Pickup time:</strong> <%= @cartage.pickup_time %></p>
-  <p><strong>Delivery time:</strong> <%= @cartage.delivery_time %></p>
-  <p><strong>Driver name:</strong> <%= @cartage.driver_name %></p>
-  <p><strong>Cost:</strong> <%= @cartage.cost %></p>
+  <dl>
+    <dt><strong>Company:</strong></dt><dd><%= @cartage.company_id %></dd>
+    <dt><strong>Trailer:</strong></dt><dd><%= @cartage.trailer_id %></dd>
+    <dt><strong>Shipment:</strong></dt><dd><%= @cartage.shipment_id %></dd>
+    <dt><strong>Pickup time:</strong></dt><dd><%= @cartage.pickup_time %></dd>
+    <dt><strong>Delivery time:</strong></dt><dd><%= @cartage.delivery_time %></dd>
+    <dt><strong>Driver name:</strong></dt><dd><%= @cartage.driver_name %></dd>
+    <dt><strong>Cost:</strong></dt><dd><%= @cartage.cost %></dd>
+  </dl>
   <p><%= link_to 'Edit', edit_cartage_path(@cartage), :class => 'button edit' %> <%= link_to 'Back', cartages_path, :class => 'button back' %></p>
 </section>

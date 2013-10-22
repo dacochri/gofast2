@@ -1,17 +1,19 @@
 <section>
   <h2><%= @driver.first_name %> <%= @driver.last_name %></h2>
   <p id="notice"><%= notice %></p>
-  <p><strong>First name:</strong> <%= @driver.first_name %></p>
-  <p><strong>Last name:</strong> <%= @driver.last_name %></p>
-  <p><strong>Street:</strong> <%= @driver.street %></p>
-  <p><strong>Unit:</strong> <%= @driver.unit %></p>
-  <p><strong>City:</strong> <%= @driver.city %></p>
-  <p><strong>Postal code:</strong> <%= @driver.postal_code %></p>
-  <p><strong>Driver's License Number:</strong> <%= @driver.drivers_license_number %></p>
-  <p><strong>Date of Birth:</strong> <%= @driver.date_of_birth %></p>
-  <p><strong>Home phone:</strong> <%= @driver.home_phone %></p>
-  <p><strong>Cell phone:</strong> <%= @driver.cell_phone %></p>
-  <p><strong>Business name:</strong> <%= @driver.business_name %></p>
-  <p><strong>Comments:</strong> <%= @driver.comments %></p>
+  <dl>
+    <dt><strong>First name:</strong></dt><dd><%= @driver.first_name %></dd>
+    <dt><strong>Last name:</strong></dt><dd><%= @driver.last_name %></dd>
+    <dt><strong>Street:</strong></dt><dd><%= @driver.street %></dd>
+    <dt><strong>Unit:</strong></dt><dd><%= @driver.unit %></dd>
+    <dt><strong>City:</strong></dt><dd><%= @driver.city %></dd>
+    <dt><strong>Postal code:</strong></dt><dd><%= @driver.postal_code %></dd>
+    <dt><strong>Driver's License Number:</strong></dt><dd><%= @driver.drivers_license_number %></dd>
+    <dt><strong>Date of Birth:</strong></dt><dd><%= @driver.date_of_birth %></dd>
+    <dt><strong>Home phone:</strong></dt><dd><%= @driver.home_phone %></dd>
+    <dt><strong>Cell phone:</strong></dt><dd><%= @driver.cell_phone %></dd>
+    <dt><strong>Business name:</strong></dt><dd><%= @driver.business_name %></dd>
+    <dt><strong>Comments:</strong></dt><dd><%= @driver.comments %></dd>
+  </dl>
   <p><%= link_to 'Edit', edit_driver_path(@driver), :class => 'button edit' %> <%= link_to 'Back', drivers_path, :class => 'button back' %></p>
 </section>
