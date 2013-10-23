@@ -13,22 +13,22 @@
     </div>
   <% end %>
 
+  <%= f.label :vehicle_type %>
+  <%= f.select :vehicle_type, options_for_select(ValidationValues.vehicle_type) %>
   <%= f.label :vehicle_id %>
   <%= f.number_field :vehicle_id %>
   <%= f.label :trip_id %>
-  <%= f.number_field :trip_id %>
+  <%= f.collection_select :trip_id, @trips, :id, :id, { :selected => @trips.first.id }, { :size => 5 } %>
   <%= f.label :date %>
   <%= f.date_select :date %>
   <%= f.label :cost %>
   <%= f.text_field :cost %>
   <%= f.label :maintenance_type %>
-  <%= f.text_field :maintenance_type %>
+  <%= f.select :maintenance_type, options_for_select(ValidationValues.maintenance_type) %>
   <%= f.label :description %>
   <%= f.text_field :description %>
   <%= f.label :kilometres %>
   <%= f.number_field :kilometres %>
-  <%= f.label :vehicle_type %>
-  <%= f.text_field :vehicle_type %>
   <div class="footer">
     <%= f.submit %>
   </div>

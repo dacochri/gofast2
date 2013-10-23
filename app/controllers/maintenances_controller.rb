@@ -29,6 +29,7 @@ class MaintenancesController < ApplicationController
   # GET /maintenances/new.json
   def new
     @maintenance = Maintenance.new
+    @trips = Trip.all
 
     respond_to do |format|
       format.html # new.html.erb
