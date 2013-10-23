@@ -12,7 +12,7 @@
   <% end %>
 
   <%= f.label :company_type %>
-  <%= f.text_field :company_type %>
+  <%= f.select :company_type, options_for_select(ValidationValues.company_type) %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :street %>
@@ -22,7 +22,7 @@
   <%= f.label :city %>
   <%= f.text_field :city %>
   <%= f.label :province %>
-  <%= f.text_field :province %>
+  <%= f.select :province, options_for_select(ValidationValues.province) %>
   <%= f.label :postal_code %>
   <%= f.text_field :postal_code %>
   <%= f.label :email %>
