@@ -28,9 +28,9 @@ class Quote
     Pony.mail({
       :from => %("#{name}" <#{email}>),
       :reply_to => email,
-      :subject => name + ' from ' + company,
-      :body => phone + details + pickup_location + delivery_location + pickup_time + delivery_time + weight + footage + skid_count,
-      :html_body => simple_format(phone + details + pickup_location + delivery_location + pickup_time + delivery_time + weight + footage + skid_count)
+      :subject => name + " from " + company,
+      :body => "Phone: " + phone + "Pickup Location: " + pickup_location + "Delivery Location: " + delivery_location + "Pickup Time: " + pickup_time + "Delivery Time: " + delivery_time + "Weight: " + weight + "Footage: " + footage + "Skid Count: " + skid_count + "Details: " + details,
+      :html_body => simple_format("<h1>" + name + " from " + company + "</h1><br>" + "Phone: " + phone + "<br>Pickup Location: " + pickup_location + "<br>Delivery Location: " + delivery_location + "<br>Pickup Time: " + pickup_time + "<br>Delivery Time: " + delivery_time + "<br>Weight: " + weight + "<br>Footage: " + footage + "<br>Skid Count: " + skid_count + "<br>Details: " + details)
     })
   end
       
