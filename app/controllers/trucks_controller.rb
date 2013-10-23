@@ -33,6 +33,7 @@ class TrucksController < ApplicationController
   def new
     # new form for truck
     @truck = Truck.new
+    @driver_companies = Company.where(:company_type => 'driver')
 
     respond_to do |format|
       format.html # new.html.erb

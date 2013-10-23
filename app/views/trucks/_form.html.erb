@@ -24,8 +24,7 @@
   <%= f.label :license_expires %>
   <%= f.text_field :license_expires, :format => ValidationValues.c_date, :placeholder => ValidationValues.p_date %>
   <%= f.label :owner %>
-  <% driver_companies = Company.where(:company_type => 'driver') %>
-  <%= f.collection_select :owner, driver_companies, :id, :name, { :selected => driver_companies.first.id }, { :size => 5 } %>
+  <%= f.collection_select :owner, @driver_companies, :id, :name, { :selected => @driver_companies.first.id }, { :size => 5 } %>
   <%= f.label :make %>
   <%= f.text_field :make, :required => 'required', :format => ValidationValues.c_alpha_numeric %>
   <%= f.label :model %>
