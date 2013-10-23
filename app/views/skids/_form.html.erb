@@ -21,9 +21,9 @@
   <%= f.number_field :skid_count, :required => 'required', :pattern => ValidationValues.c_integer, :placeholder => ValidationValues.p_integer %>
   <%= f.label :weight %>
   <%= f.text_field :weight, :required => 'required', :pattern => ValidationValues.c_double, :placeholder => ValidationValues.p_double %>
-  <% ValidationValues.unit.each do |u| %>
+  <% ValidationValues.unit.each.with_index do |u, i| %>
   <%= f.label "unit_#{u}", u, :class => 'inline' %>
-  <%= f.radio_button :unit, u %>
+  <%= f.radio_button :unit, u, :checked => (i == 0 ? true : false) %>
   <% end %>
   <br/>
   <%= f.label :oversized, :class => 'inline' %>
