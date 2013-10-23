@@ -29,6 +29,8 @@ class CartagesController < ApplicationController
   # GET /cartages/new.json
   def new
     @cartage = Cartage.new
+    @cartage_companies = Company.where(:company_type => 'cartage')
+    @trailers = Trailer.all
 
     respond_to do |format|
       format.html # new.html.erb

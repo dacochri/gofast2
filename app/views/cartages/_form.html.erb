@@ -14,11 +14,9 @@
   <% end %>
 
   <%= f.label :company_id %>
-  <%= f.number_field :company_id %>
+  <%= f.collection_select :company_id, @cartage_companies, :id, :name, { :selected => @cartage_companies.first.id }, { :size => 5 } %>
   <%= f.label :trailer_id %>
-  <%= f.number_field :trailer_id %>
-  <%= f.label :shipment_id %>
-  <%= f.number_field :shipment_id %>
+  <%= f.collection_select :trailer_id, @trailers, :id, :trailer_no, { :selected => @trailers.first.id }, { :size => 5 } %>
   <%= f.label :pickup_time %>
   <%= f.datetime_select :pickup_time %>
   <%= f.label :delivery_time %>

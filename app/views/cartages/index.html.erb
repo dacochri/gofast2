@@ -15,7 +15,6 @@
       <tr>
         <th scope="col"><%= sortable "company_id", nil, @cartages, "company_id" %></th>
         <th scope="col"><%= sortable "trailer_id", nil, @cartages, "company_id" %></th>
-        <th scope="col"><%= sortable "shipment_id", nil, @cartages, "company_id" %></th>
         <th scope="col"><%= sortable "pickup_time", nil, @cartages, "company_id" %></th>
         <th scope="col"><%= sortable "delivery_time", nil, @cartages, "company_id" %></th>
         <th scope="col"><%= sortable "driver_name", nil, @cartages, "company_id" %></th>
@@ -28,7 +27,6 @@
       <tr>
         <td><%= cartage.company_id %></td>
         <td><%= cartage.trailer_id %></td>
-        <td><%= cartage.shipment_id %></td>
         <td><%= cartage.pickup_time %></td>
         <td><%= cartage.delivery_time %></td>
         <td><%= cartage.driver_name %></td>
