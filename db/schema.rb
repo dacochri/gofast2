@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(:version => 20130929191017) do
   create_table "cartages", :force => true do |t|
     t.integer  "company_id"
     t.integer  "trailer_id"
-    t.integer  "shipment_id"
     t.datetime "pickup_time"
     t.datetime "delivery_time"
     t.string   "driver_name"
@@ -146,13 +145,6 @@ ActiveRecord::Schema.define(:version => 20130929191017) do
     t.string   "color"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
-  end
-
-  create_table "trip_rosters", :force => true do |t|
-    t.integer  "shipment_id"
-    t.integer  "trip_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
   end
 
   create_table "trips", :force => true do |t|
