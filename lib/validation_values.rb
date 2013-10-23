@@ -28,6 +28,7 @@ class ValidationValues
   @truck_type = %w(straight tractor)
   @trailer_type = %w(53ft\ logistic\ airride\ dryvan 53ft\ reefer)
   @company_type = %w(customer mechanic broker cartage driver misc)
+  @maintenance_type = %w(oil\ change brakes)
   @unit = %w(lb kg)
 
   # Messages
@@ -152,6 +153,10 @@ class ValidationValues
   
   def self.company_type
     @company_type
+  end
+
+  def self.maintenance_type
+    @maintenance_type
   end
 
   def self.unit

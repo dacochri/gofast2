@@ -13,10 +13,8 @@
     </div>
   <% end %>
 
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %>
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
   <%= f.label :street %>
   <%= f.text_field :street %>
   <%= f.label :unit %>
@@ -34,7 +32,7 @@
   <%= f.label :cell_phone %>
   <%= f.number_field :cell_phone %>
   <%= f.label :business_name %>
-  <%= f.text_field :business_name %>
+  <%= f.collection_select :business_name, @driver_companies, :id, :name, { }, { :size => 5 } %>
   <%= f.label :comments %>
   <%= f.text_field :comments %>
   <div class="footer">

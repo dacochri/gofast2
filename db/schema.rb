@@ -51,8 +51,7 @@ ActiveRecord::Schema.define(:version => 20130929191017) do
   end
 
   create_table "drivers", :force => true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "name"
     t.string   "street"
     t.string   "unit"
     t.string   "city"
@@ -61,7 +60,7 @@ ActiveRecord::Schema.define(:version => 20130929191017) do
     t.integer  "cell_phone"
     t.string   "drivers_license_number"
     t.date     "date_of_birth"
-    t.string   "business_name"
+    t.integer  "business_name"
     t.string   "comments"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false

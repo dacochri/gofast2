@@ -13,24 +13,22 @@
   <table>
     <thead>
       <tr>
-        <th scope="col"><%= sortable "first_name", nil, @drivers, "first_name" %></th>
-        <th scope="col"><%= sortable "last_name", nil, @drivers, "first_name" %></th>
-        <th scope="col"><%= sortable "street", nil, @drivers, "first_name" %></th>
-        <th scope="col"><%= sortable "unit", nil, @drivers, "first_name" %></th>
-        <th scope="col"><%= sortable "city", nil, @drivers, "first_name" %></th>
-        <th scope="col"><%= sortable "postal_code", nil, @drivers, "first_name" %></th>
-        <th scope="col"><%= sortable "home_phone", nil, @drivers, "first_name" %></th>
-        <th scope="col"><%= sortable "cell_phone", nil, @drivers, "first_name" %></th>
-        <th scope="col"><%= sortable "business_name", nil, @drivers, "first_name" %></th>
-        <th scope="col"><%= sortable "comments", nil, @drivers, "first_name" %></th>
+        <th scope="col"><%= sortable "name", nil, @drivers, "name" %></th>
+        <th scope="col"><%= sortable "street", nil, @drivers, "name" %></th>
+        <th scope="col"><%= sortable "unit", nil, @drivers, "name" %></th>
+        <th scope="col"><%= sortable "city", nil, @drivers, "name" %></th>
+        <th scope="col"><%= sortable "postal_code", nil, @drivers, "name" %></th>
+        <th scope="col"><%= sortable "home_phone", nil, @drivers, "name" %></th>
+        <th scope="col"><%= sortable "cell_phone", nil, @drivers, "name" %></th>
+        <th scope="col"><%= sortable "business_name", nil, @drivers, "name" %></th>
+        <th scope="col"><%= sortable "comments", nil, @drivers, "name" %></th>
         <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
     <% @drivers.each do |driver| %>
       <tr>
-        <td><%= driver.first_name %></td>
-        <td><%= driver.last_name %></td>
+        <td><%= driver.name %></td>
         <td><%= driver.street %></td>
         <td><%= driver.unit %></td>
         <td><%= driver.city %></td>
@@ -39,7 +37,7 @@
         <td><%= driver.cell_phone %></td>
         <td><%= driver.business_name %></td>
         <td><%= driver.comments %></td>
-        <td><%= link_to '', driver, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_driver_path(driver), :class => 'button edit', :title => 'Edit' %> <%= link_to '', driver, method: :delete, data: { confirm: 'Are you sure you want to delete driver: ' + driver.first_name + ' ' + driver.last_name + '?' }, :class => 'button destroy', :title => 'Delete' %></td>
+        <td><%= link_to '', driver, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_driver_path(driver), :class => 'button edit', :title => 'Edit' %> <%= link_to '', driver, method: :delete, data: { confirm: 'Are you sure you want to delete driver: ' + driver.name + '?' }, :class => 'button destroy', :title => 'Delete' %></td>
       </tr>
     <% end %>
     </thead>
