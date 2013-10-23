@@ -27,6 +27,11 @@ class ShipmentsController < ApplicationController
   # GET /shipments/new.json
   def new
     @shipment = Shipment.new
+    @trips = Trip.all
+    @broker_companies = Company.where(:company_type => 'broker')
+    @cartage_companies = Company.where(:company_type => 'cartage')
+    @shipper_receiver = Company.where("company_type = 'customer' OR company_type = 'broker'")
+    @drivers = Driver.all
 
     respond_to do |format|
       format.html # new.html.erb
