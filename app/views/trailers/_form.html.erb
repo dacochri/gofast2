@@ -16,7 +16,7 @@
   <%= f.label :trailer_no %>
   <%= f.number_field :trailer_no %>
   <%= f.label :trailer_type %>
-  <%= f.text_field :trailer_type %>
+  <%= f.select :trailer_type, options_for_select(ValidationValues.trailer_type) %>
   <%= f.label :license_plate %>
   <%= f.text_field :license_plate %>
   <%= f.label :make %>
