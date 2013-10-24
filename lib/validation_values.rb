@@ -47,10 +47,15 @@ class ValidationValues
   @c_street = '\d{0,4} ?[A-Za-z0-9,. ]+'
   @c_name = '[A-Za-z\' ]+'
   @c_company = '[A-Za-z.\- ]+'
+  @c_address_unit = '[A-Z0-9 ]+'
+  @c_phone_number = '\d{10,11}'
+  @c_postal_code = '[A-Za-z][0-9][A-Za-z]\s[0-9][A-Za-z][0-9]'
+  @c_email = '[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}'
 
   # Placeholder values
   @p_integer = '1001'
   @p_double = '1234.56'
+  @p_drivers_license = 'D12345678901234'
   @p_date = 'YYYY-MM-DD'
   @p_product_desc = 'Shoes'
   @p_street = '26 Steeles Ave. W, Brampton, ON, M4V 2K1'
@@ -61,7 +66,14 @@ class ValidationValues
   @p_name = 'John Doe'
   @p_company = 'Star Company Ltd.'
   @p_requirements = 'Quickbooks, Microsoft Office, etc.'
-  
+  @p_address_unit = '1A'
+  @p_phone_number = '9057991213'
+  @p_secondary_phone_number = '18002776564'
+  @p_city = 'Toronto'
+  @p_street_only = '26 Steeles Ave. W'
+  @p_postal_code = 'L3Z 2N8'
+  @p_email = 'example@domain.com'
+
   # Get methods
   def self.integer
     @integer
@@ -214,6 +226,22 @@ class ValidationValues
   def self.c_company
     @c_company
   end
+
+  def self.c_address_unit
+    @c_address_unit
+  end
+
+  def self.c_phone_number
+    @c_phone_number
+  end
+
+  def self.c_postal_code
+    @c_postal_code
+  end
+
+  def self.c_email
+    @c_email
+  end
   
   def self.p_integer
     @p_integer
@@ -221,6 +249,10 @@ class ValidationValues
 
   def self.p_double
     @p_double
+  end
+
+  def self.p_drivers_license
+    @p_drivers_license
   end
 
   def self.p_date
@@ -261,5 +293,33 @@ class ValidationValues
 
   def self.p_requirements
     @p_requirements
+  end
+
+  def self.p_address_unit
+    @p_address_unit
+  end
+
+  def self.p_phone_number
+    @p_phone_number
+  end
+
+  def self.p_secondary_phone_number
+    @p_secondary_phone_number
+  end
+
+  def self.p_city
+    @p_city
+  end
+
+  def self.p_street_only
+    @p_street_only
+  end
+
+  def self.p_postal_code
+    @p_postal_code
+  end
+
+  def self.p_email
+    @p_email
   end
 end
