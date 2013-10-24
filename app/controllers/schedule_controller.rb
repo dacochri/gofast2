@@ -8,8 +8,7 @@ class ScheduleController < ApplicationController
   def ScheduleController.schedule_record(id)
     current_schedule_record = {
       'truck_no' => Truck.where("id = ?", id).select('truck_no').first.truck_no,
-      'first_name' => Driver.where("id = ?", Trip.where("truck_id = ?", id).order('start_date DESC').select('driver_id').first.driver_id).select('first_name').first.first_name,
-      'last_name' => Driver.where("id = ?", Trip.where("truck_id = ?", id).order('start_date DESC').select('driver_id').first.driver_id).select('last_name').first.last_name,
+      'name' => Driver.where("id = ?", Trip.where("truck_id = ?", id).order('start_date DESC').select('driver_id').first.driver_id).select('name').first.name,
       'trip_no' => Trip.where("truck_id = ?", id).select('id').order('start_date DESC').first.id,
       'trip_start' => (Trip.where("truck_id = ?", id).select('start_date').order('start_date DESC').first.start_date).strftime('%Y-%m-%d'),
       'load_bar_count' => Trip.where("truck_id = ?", id).select('load_bar_count').order('start_date DESC').first.load_bar_count,

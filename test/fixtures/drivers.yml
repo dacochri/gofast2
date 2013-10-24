@@ -3,8 +3,7 @@
 one:
   truck_id: 1
   trailer_id: 1
-  first_name: MyString
-  last_name: MyString
+  name: MyString
   street: MyString
   unit: MyString
   city: MyString
@@ -18,8 +17,7 @@ one:
 two:
   truck_id: 1
   trailer_id: 1
-  first_name: MyString
-  last_name: MyString
+  name: MyString
   street: MyString
   unit: MyString
   city: MyString

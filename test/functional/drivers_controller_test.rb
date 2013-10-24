@@ -18,7 +18,7 @@ class DriversControllerTest < ActionController::TestCase
 
   test "should create driver" do
     assert_difference('Driver.count') do
-      post :create, driver: { business_name: @driver.business_name, cell_phone: @driver.cell_phone, city: @driver.city, comments: @driver.comments, first_name: @driver.first_name, home_phone: @driver.home_phone, hst_no: @driver.hst_no, last_name: @driver.last_name, postal_code: @driver.postal_code, street: @driver.street, trailer_id: @driver.trailer_id, truck_id: @driver.truck_id, unit: @driver.unit }
+      post :create, driver: { business_name: @driver.business_name, cell_phone: @driver.cell_phone, city: @driver.city, comments: @driver.comments, name: @driver.name, home_phone: @driver.home_phone, hst_no: @driver.hst_no, postal_code: @driver.postal_code, street: @driver.street, trailer_id: @driver.trailer_id, truck_id: @driver.truck_id, unit: @driver.unit }
     end
 
     assert_redirected_to driver_path(assigns(:driver))
@@ -35,7 +35,7 @@ class DriversControllerTest < ActionController::TestCase
   end
 
   test "should update driver" do
-    put :update, id: @driver, driver: { business_name: @driver.business_name, cell_phone: @driver.cell_phone, city: @driver.city, comments: @driver.comments, first_name: @driver.first_name, home_phone: @driver.home_phone, hst_no: @driver.hst_no, last_name: @driver.last_name, postal_code: @driver.postal_code, street: @driver.street, trailer_id: @driver.trailer_id, truck_id: @driver.truck_id, unit: @driver.unit }
+    put :update, id: @driver, driver: { business_name: @driver.business_name, cell_phone: @driver.cell_phone, city: @driver.city, comments: @driver.comments, name: @driver.name, home_phone: @driver.home_phone, hst_no: @driver.hst_no, postal_code: @driver.postal_code, street: @driver.street, trailer_id: @driver.trailer_id, truck_id: @driver.truck_id, unit: @driver.unit }
     assert_redirected_to driver_path(assigns(:driver))
   end
 

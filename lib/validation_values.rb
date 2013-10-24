@@ -7,8 +7,7 @@ class ValidationValues
   @content = /[A-Za-z0-9,.;'!@#\$%^&*()_=+|]+/
 
   # Specific Regexs
-  @first_name = /[A-Za-z ]+/
-  @last_name = /[A-Za-z' ]+/
+  @name = /[A-Za-z' ]+/
   @company = /[A-Za-z.\- ]+/
   @city = /[A-Za-z'. ]+/
   @street = /\d{0,4} ?[A-Za-z0-9,. ]+/
@@ -57,6 +56,7 @@ class ValidationValues
   @p_year = '2005'
   @p_vin = '368TU79MXH4763452'
   @p_color = 'Black'
+  @p_name = 'John Doe'
 
   # Get methods
   def self.integer
@@ -79,12 +79,8 @@ class ValidationValues
     @content
   end
 
-  def self.first_name
-    @first_name
-  end
-
-  def self.last_name
-    @last_name
+  def self.name
+    @name
   end
 
   def self.company
@@ -237,6 +233,10 @@ class ValidationValues
 
   def self.p_color
     @p_color
+  end
+
+  def self.p_name
+    @p_name
   end
 
   def self.p_product_desc
