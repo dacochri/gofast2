@@ -14,9 +14,9 @@
   <% end %>
 
   <%= f.label :truck_id %>
-  <%= f.number_field :truck_id %>
+  <%= f.collection_select :truck_id, @trucks, :id, :truck_no, { :selected => @trucks.first.id }, { :size => 5 } %>
   <%= f.label :trailer_id %>
-  <%= f.number_field :trailer_id %>
+  <%= f.collection_select :trailer_id, @trailers, :id, :trailer_no, { :selected => @trailers.first.id }, { :size => 5 } %>
   <%= f.label :start_date %>
   <%= f.date_select :start_date %>
   <%= f.label :end_date %>

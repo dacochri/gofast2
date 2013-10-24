@@ -29,6 +29,8 @@ class TripsController < ApplicationController
   # GET /trips/new.json
   def new
     @trip = Trip.new
+    @trucks = Truck.all
+    @trailers = Trailer.all
 
     respond_to do |format|
       format.html # new.html.erb
