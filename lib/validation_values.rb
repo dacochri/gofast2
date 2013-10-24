@@ -56,7 +56,14 @@ class ValidationValues
   @p_year = '2005'
   @p_vin = '368TU79MXH4763452'
   @p_color = 'Black'
-
+  @p_email = 'you@gmail.com'
+  @p_company = '123 Co.'
+  @p_name = 'John Doe'
+  @p_comments = 'This is very fragile'
+  @p_phone = '18004543200'
+  @p_phone_2 = '4167774343'
+  @p_quote_weight = '80lbs'
+  
   # Get methods
   def self.integer
     @integer
@@ -237,4 +244,33 @@ class ValidationValues
   def self.p_product_desc
     @p_product_desc
   end
+  
+  def self.p_email
+    @p_email
+  end
+  
+  def self.p_company
+    @p_company
+  end
+  
+  def self.p_name
+    @p_name
+  end
+  
+  def self.p_comments
+    @p_comments
+  end
+  
+  def self.p_phone
+    @p_phone
+  end
+  
+  def self.p_phone_2
+    @p_phone_2
+  end
+  
+  def self.p_quote_weight
+    @p_quote_weight
+  end
+  
 end
