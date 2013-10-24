@@ -38,7 +38,7 @@
   <%= f.label :current_location %>
   <%= f.text_field :current_location, :required => 'required', :format => ValidationValues.c_street, :placeholder => ValidationValues.p_street %>
   <%= f.label :color %>
-  <%= f.text_field :color, :required => 'required', :format => ValidationValues.c_alpha, :placeholder => ValidationValues.p_color %> 
+  <%= f.text_field :color, :required => 'required', :format => ValidationValues.c_alpha_numeric, :placeholder => ValidationValues.p_color %> 
   <%= f.label :photo %>
   <%= f.file_field :photo %>
   <div class="footer">

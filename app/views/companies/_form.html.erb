@@ -14,9 +14,9 @@
   <%= f.label :company_type %>
   <%= f.select :company_type, options_for_select(ValidationValues.company_type) %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, :required => 'required', :pattern => ValidationValues.c_company, :placeholder => ValidationValues.p_company %>
   <%= f.label :street %>
-  <%= f.text_field :street %>
+  <%= f.text_field :street, :required => 'required', :pattern => ValidationValues.c_street, :placeholder => ValidationValues.p_street %>
   <%= f.label :unit %>
   <%= f.text_field :unit %>
   <%= f.label :city %>

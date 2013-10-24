@@ -14,15 +14,15 @@
   <% end %>
 
   <%= f.label :title %>
-  <%= f.text_field :title, :size=>"70" %>
+  <%= f.text_field :title, :required => 'required', :pattern => ValidationValues.c_content %>
   <%= f.label :post_date %>
   <%= f.date_select :post_date %>
   <%= f.label :closing_date %>
   <%= f.date_select :closing_date %>
   <%= f.label :description %>
-  <%= f.text_area :description, :size => "100x20" %>
+  <%= f.text_area :description, :size => '100x20', :required => 'required', :pattern => ValidationValues.c_content %>
   <%= f.label :requirements %>
-  <%= f.text_field :requirements, :size=>"70" %>
+  <%= f.text_field :requirements, :required => 'required', :pattern => ValidationValues.c_content, :placeholder => ValidationValues.p_requirements %>
   <div class="footer">
     <%= f.submit %>
   </div>

@@ -60,6 +60,7 @@ class ValidationValues
   @p_color = 'Black'
   @p_name = 'John Doe'
   @p_company = 'Star Company Ltd.'
+  @p_requirements = 'Quickbooks, Microsoft Office, etc.'
   
   # Get methods
   def self.integer
@@ -256,5 +257,9 @@ class ValidationValues
 
   def self.p_company
     @p_company
+  end
+
+  def self.p_requirements
+    @p_requirements
   end
 end

@@ -16,19 +16,19 @@
   <%= f.label :vehicle_type %>
   <%= f.select :vehicle_type, options_for_select(ValidationValues.vehicle_type) %>
   <%= f.label :vehicle_id %>
-  <%= f.number_field :vehicle_id %>
+  <%= f.number_field :vehicle_id, :required => 'required', :pattern => ValidationValues.c_integer, :placeholder => ValidationValues.p_integer %>
   <%= f.label :trip_id %>
   <%= f.collection_select :trip_id, @trips, :id, :id, { :selected => @trips.first.id }, { :size => 5 } %>
   <%= f.label :date %>
-  <%= f.date_select :date %>
+  <%= f.date_select :date, :required => 'required', :pattern => ValidationValues.c_date, :placeholder => ValidationValues.p_date %>
   <%= f.label :cost %>
-  <%= f.text_field :cost %>
+  <%= f.text_field :cost, :required => 'required', :pattern => ValidationValues.c_double, :placeholder => ValidationValues.p_double %>
   <%= f.label :maintenance_type %>
   <%= f.select :maintenance_type, options_for_select(ValidationValues.maintenance_type) %>
   <%= f.label :description %>
-  <%= f.text_field :description %>
+  <%= f.text_field :description, :required => 'required', :pattern => ValidationValues.c_content %>
   <%= f.label :kilometres %>
-  <%= f.number_field :kilometres %>
+  <%= f.number_field :kilometres, :required => 'required', :pattern => ValidationValues.c_double, :placeholder => ValidationValues.p_double %>
   <div class="footer">
     <%= f.submit %>
   </div>

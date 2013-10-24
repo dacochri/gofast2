@@ -14,7 +14,7 @@
   <% end %>
 
   <%= f.label :shipment_no %>
-  <%= f.number_field :shipment_no, :required => 'required', :placeholder => ValidationValues.p_integer, :format => ValidationValues.c_integer %>
+  <%= f.number_field :shipment_no, :required => 'required', :placeholder => ValidationValues.p_integer, :pattern => ValidationValues.c_integer %>
   <%= f.label :trip_id %>
   <%= f.collection_select :trip_id, @trips, :id, :id, { :selected => @trips.first.id }, { :size => 5 } %>
   <%= f.label :broker_id %>
@@ -26,35 +26,35 @@
   <%= f.label :cartage_id %>
   <%= f.collection_select :cartage_id, @cartage_companies, :id, :name, { :selected => @cartage_companies.first.id }, { :size => 5 } %>
   <%= f.label :broker_date %>
-  <%= f.text_field :broker_date, :required => 'required', :placeholder => ValidationValues.p_date, :format => ValidationValues.c_date %>
+  <%= f.text_field :broker_date, :required => 'required', :placeholder => ValidationValues.p_date, :pattern => ValidationValues.c_date %>
   <%= f.label :shipper_address %>
-  <%= f.text_field :shipper_address, :required => 'required', :placeholder => ValidationValues.p_street, :format => ValidationValues.c_street %>
+  <%= f.text_field :shipper_address, :required => 'required', :placeholder => ValidationValues.p_street, :pattern => ValidationValues.c_street %>
   <%= f.label :receiver_address %>
-  <%= f.text_field :receiver_address, :required => 'required', :placeholder => ValidationValues.p_street, :format => ValidationValues.c_street %>
+  <%= f.text_field :receiver_address, :required => 'required', :placeholder => ValidationValues.p_street, :pattern => ValidationValues.c_street %>
   <%= f.label :rate %>
-  <%= f.text_field :rate, :required => 'required', :placeholder => ValidationValues.p_double, :format => ValidationValues.c_double %><br/>
+  <%= f.text_field :rate, :required => 'required', :placeholder => ValidationValues.p_double, :pattern => ValidationValues.c_double %><br/>
   <%= f.label :delivered, :class => 'inline' %>
   <%= f.check_box :delivered %>
   <%= f.label :invoice %>
-  <%= f.number_field :invoice, :required => 'required', :placeholder => ValidationValues.p_integer, :format => ValidationValues.c_integer %>
+  <%= f.number_field :invoice, :required => 'required', :placeholder => ValidationValues.p_integer, :pattern => ValidationValues.c_integer %>
   <%= f.label :distance %>
-  <%= f.text_field :distance, :required => 'required', :placeholder => ValidationValues.p_integer, :format => ValidationValues.c_integer %>
+  <%= f.text_field :distance, :required => 'required', :placeholder => ValidationValues.p_integer, :pattern => ValidationValues.c_integer %>
   <%= f.label :primary_driver %>
   <%= f.collection_select :primary_driver, @drivers, :id, :name, { :selected => @drivers.first.id }, { :size => 5 } %>
   <%= f.label :secondary_driver %>
   <%= f.collection_select :secondary_driver, @drivers, :id, :name, { }, { :size => 5 } %>
   <%= f.label :primary_quick_pay %>
-  <%= f.text_field :primary_quick_pay, :placeholder => ValidationValues.p_double, :format => ValidationValues.c_double %>
+  <%= f.text_field :primary_quick_pay, :placeholder => ValidationValues.p_double, :pattern => ValidationValues.c_double %>
   <%= f.label :secondary_quick_pay %>
-  <%= f.text_field :secondary_quick_pay, :placeholder => ValidationValues.p_double, :format => ValidationValues.c_double %>
+  <%= f.text_field :secondary_quick_pay, :placeholder => ValidationValues.p_double, :pattern => ValidationValues.c_double %>
   <%= f.label :primary_driver_pay %>
-  <%= f.text_field :primary_driver_pay, :required => 'required', :placeholder => ValidationValues.p_double, :format => ValidationValues.c_double %>
+  <%= f.text_field :primary_driver_pay, :required => 'required', :placeholder => ValidationValues.p_double, :pattern => ValidationValues.c_double %>
   <%= f.label :secondary_driver_pay %>
-  <%= f.text_field :secondary_driver_pay, :placeholder => ValidationValues.p_double, :format => ValidationValues.c_double %>
+  <%= f.text_field :secondary_driver_pay, :placeholder => ValidationValues.p_double, :pattern => ValidationValues.c_double %>
   <%= f.label :misc_cost %>
-  <%= f.text_field :misc_cost, :placeholder => ValidationValues.p_double, :format => ValidationValues.c_double %>
+  <%= f.text_field :misc_cost, :placeholder => ValidationValues.p_double, :pattern => ValidationValues.c_double %>
   <%= f.label :comments %>
-  <%= f.text_field :comments, :format => ValidationValues.c_content %>
+  <%= f.text_field :comments, :pattern => ValidationValues.c_content %>
   <div class="footer">
     <%= f.submit %>
   </div>

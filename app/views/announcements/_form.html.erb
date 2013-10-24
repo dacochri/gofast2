@@ -16,9 +16,9 @@
   <%= f.label :posted_by %>
   <%= f.number_field :posted_by %>
   <%= f.label :title %>
-  <%= f.text_field :title, :required => 'required', :pattern => ValidationValues.content %>
+  <%= f.text_field :title, :required => 'required', :pattern => ValidationValues.c_content %>
   <%= f.label :content %>
-  <%= f.text_field :content, :required => 'required', :pattern => ValidationValues.content %>
+  <%= f.text_area :content, :size => '100x20', :required => 'required', :pattern => ValidationValues.c_content %>
   <%= f.label :date_posted %>
   <%= f.datetime_select :date_posted %>
   <div class="footer">

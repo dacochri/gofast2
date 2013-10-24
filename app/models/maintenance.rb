@@ -12,4 +12,5 @@ class Maintenance < ActiveRecord::Base
   validates :date, :format => { :with => ValidationValues.date, :message => message }
   validates :maintenance_type, :inclusion => { :in => ValidationValues.maintenance_type }
   validates :vehicle_type, :inclusion => { :in => ValidationValues.vehicle_type }
+  validates :description, :format => { :with => ValidationValues.content, :message => message }
 end

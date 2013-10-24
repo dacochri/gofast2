@@ -13,7 +13,7 @@ class Truck < ActiveRecord::Base
   validates :manufactured_year, :owner, :numericality => true
   validates :manufactured_year, :length => 4..4
   validates :truck_no, :numericality => true, :allow_blank => true
-  validates :color, :format => { :with => ValidationValues.alpha, :message => message  }
+  validates :color, :format => { :with => ValidationValues.alpha_numeric, :message => message  }
   validates :license_expires, :format => { :with => ValidationValues.date, :message => message }, :allow_blank => true
   validates :total_kilometres, :format => { :with => ValidationValues.integer, :message => message }
   validates :make, :model, :format => { :with => ValidationValues.alpha_numeric, :message => message }
