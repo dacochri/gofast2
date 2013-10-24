@@ -22,9 +22,9 @@
   <%= f.label :delivery_time %>
   <%= f.datetime_select :delivery_time %>
   <%= f.label :driver_name %>
-  <%= f.text_field :driver_name %>
+  <%= f.text_field :driver_name, :required => 'required', :pattern => ValidationValues.c_name, :placeholder => ValidationValues.p_name %>
   <%= f.label :cost %>
-  <%= f.text_field :cost %>
+  <%= f.text_field :cost, :required => 'required', :pattern => ValidationValues.c_double, :placeholder => ValidationValues.p_double %>
   <div class="footer">
     <%= f.submit %>
   </div>
