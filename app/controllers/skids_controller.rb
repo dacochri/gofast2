@@ -36,6 +36,7 @@ class SkidsController < ApplicationController
   # New page, create a new record. This loads the form; it does NOT submit to the database
   def new
     @skid = Skid.new
+    @shipments = Shipment.all
 
     respond_to do |format|
       format.html # new.html.erb
