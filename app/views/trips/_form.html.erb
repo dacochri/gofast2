@@ -22,13 +22,13 @@
   <%= f.label :end_date %>
   <%= f.date_select :end_date %>
   <%= f.label :load_bar_count %>
-  <%= f.number_field :load_bar_count %>
+  <%= f.number_field :load_bar_count, :required => 'required', :pattern => ValidationValues.c_integer, :placeholder => ValidationValues.p_integer %>
   <%= f.label :accumulated_kilometres %>
-  <%= f.text_field :accumulated_kilometres %>
+  <%= f.text_field :accumulated_kilometres, :required => 'required', :pattern => ValidationValues.c_integer, :placeholder => ValidationValues.p_integer %>
   <%= f.label :fuel_cost %>
-  <%= f.number_field :fuel_cost %>
+  <%= f.number_field :fuel_cost, :required => 'required', :pattern => ValidationValues.c_double, :placeholder => ValidationValues.p_double %>
   <%= f.label :misc_cost %>
-  <%= f.number_field :misc_cost %>
+  <%= f.number_field :misc_cost, :pattern => ValidationValues.c_double, :placeholder => ValidationValues.p_double %>
   <%= f.label :comments %>
   <%= f.text_field :comments %>
   <div class="footer">
