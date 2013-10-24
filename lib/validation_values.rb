@@ -45,9 +45,11 @@ class ValidationValues
   @c_year = '\d{4}+'
   @c_vin = '([A-HJ-NPR-Z]|\d){11}\d{6}'
   @c_street = '\d{0,4} ?[A-Za-z0-9,. ]+'
+  @c_name = '[A-Za-z\' ]+'
+  @c_company = '[A-Za-z.\- ]+'
 
   # Placeholder values
-  @p_integer = '4865'
+  @p_integer = '1001'
   @p_double = '1234.56'
   @p_date = 'YYYY-MM-DD'
   @p_product_desc = 'Shoes'
@@ -57,7 +59,8 @@ class ValidationValues
   @p_vin = '368TU79MXH4763452'
   @p_color = 'Black'
   @p_name = 'John Doe'
-
+  @p_company = 'Star Company Ltd.'
+  
   # Get methods
   def self.integer
     @integer
@@ -195,12 +198,20 @@ class ValidationValues
     @c_street
   end
 
+  def self.c_name
+    @c_name
+  end
+
   def self.c_year
     @c_year
   end
 
   def self.c_vin
     @c_vin
+  end
+
+  def self.c_company
+    @c_company
   end
   
   def self.p_integer
@@ -241,5 +252,9 @@ class ValidationValues
 
   def self.p_product_desc
     @p_product_desc
+  end
+
+  def self.p_company
+    @p_company
   end
 end
