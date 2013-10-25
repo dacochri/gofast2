@@ -4,7 +4,7 @@ class ValidationValues
   @double = /\d+\.?\d{0,2}/
   @alpha = /[A-Za-z ]+/
   @alpha_numeric = /[A-Za-z0-9 ]+/
-  @content = /[A-Za-z0-9,.;'!@#\$%^&*()_=+|]+/
+  @content = /[A-Za-z0-9 ,.;'!@#\$%^&*()_=+|]+/
 
   # Specific Regexs
   @name = /[A-Za-z' ]+/
@@ -39,7 +39,7 @@ class ValidationValues
   @c_date = '\A\d{4}-\d{2}-\d{2}\Z'
   @c_alpha = '[A-Za-z ]+'
   @c_alpha_numeric = '[A-Za-z0-9 ]+'
-  @c_content = '[A-Za-z0-9,.;\'!@#\$%^&*()_=+|]+'
+  @c_content = '[A-Za-z0-9 ,.;\'!@#\$%^&*()_=+|]+'
   
   @c_license_plate = '[A-Za-z0-9]+'
   @c_year = '\d{4}+'
