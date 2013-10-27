@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130929191017) do
+ActiveRecord::Schema.define(:version => 20131026223844) do
 
   create_table "announcements", :force => true do |t|
     t.integer  "posted_by"
@@ -64,6 +64,14 @@ ActiveRecord::Schema.define(:version => 20130929191017) do
     t.string   "comments"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
+  end
+
+  create_table "identities", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "job_postings", :force => true do |t|
@@ -179,6 +187,14 @@ ActiveRecord::Schema.define(:version => 20130929191017) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

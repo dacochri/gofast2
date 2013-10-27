@@ -40,3 +40,5 @@ gem 'jquery-rails'
 gem 'kaminari'
 
 gem 'paperclip', '~> 3.0'
+
+gem 'devise'
