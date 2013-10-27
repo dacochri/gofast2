@@ -1,14 +1,16 @@
 <section>
   <h2>Job Postings</h2>
-  <p><%= link_to 'New Job posting', new_job_posting_path, :class => 'button new' %></p>
-	<%= form_tag job_postings_path, :method => 'get', :class => 'search' do %>
-    <%= hidden_field_tag :direction, params[:direction] %>
-    <%= hidden_field_tag :sort, params[:sort] %>
-		<%= label_tag :column %>
-		<%= select_tag :column, options_for_select(JobPosting.translated_searchable_columns(['id']), params[:column]) %>
-		<%= label_tag :search %>
-		<%= text_field_tag :search %>
-		<%= submit_tag 'Submit' %>
+  <% if user_signed_in? %>
+    <p><%= link_to 'New Job posting', new_job_posting_path, :class => 'button new' %></p>
+	  <%= form_tag job_postings_path, :method => 'get', :class => 'search' do %>
+      <%= hidden_field_tag :direction, params[:direction] %>
+      <%= hidden_field_tag :sort, params[:sort] %>
+		  <%= label_tag :column %>
+		  <%= select_tag :column, options_for_select(JobPosting.translated_searchable_columns(['id']), params[:column]) %>
+		  <%= label_tag :search %>
+		  <%= text_field_tag :search %>
+		  <%= submit_tag 'Submit' %>
+    <% end %>
   <% end %>
   <table>
     <thead>
@@ -29,7 +31,13 @@
         <td><%= job_posting.closing_date %></td>
         <td><%= job_posting.description %></td>
         <td><%= job_posting.requirements %></td>
-        <td><%= link_to '', job_posting, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_job_posting_path(job_posting), :class => 'button edit', :title => 'Edit' %> <%= link_to '', job_posting, method: :delete, data: { confirm: 'Are you sure you want to delete job posting: ' + job_posting.title + '?' }, :class => 'button destroy', :title => 'Delete' %></td>
+        <td>
+          <%= link_to '', job_posting, :class => 'button show', :title => 'Show' %>
+          <% if user_signed_in? %>
+            <%= link_to '', edit_job_posting_path(job_posting), :class => 'button edit', :title => 'Edit' %>
+            <%= link_to '', job_posting, method: :delete, data: { confirm: 'Are you sure you want to delete job posting: ' + job_posting.title + '?' }, :class => 'button destroy', :title => 'Delete' %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
     </tbody>

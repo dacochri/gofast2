@@ -7,5 +7,10 @@
     <dt><strong>Description:</strong></dt><dd><%= @job_posting.description %></dd>
     <dt><strong>Requirements:</strong></dt><dd><%= @job_posting.requirements %></dd>
   </dl>
-  <p><%= link_to 'Edit', edit_job_posting_path(@job_posting), :class => 'button edit' %> <%= link_to 'Back', job_postings_path, :class => 'button back' %></p>
+  <p>
+    <% if user_signed_in? %>
+      <%= link_to 'Edit', edit_job_posting_path(@job_posting), :class => 'button edit' %>
+    <% end %>
+    <%= link_to 'Back', job_postings_path, :class => 'button back' %>
+  </p>
 </section>
