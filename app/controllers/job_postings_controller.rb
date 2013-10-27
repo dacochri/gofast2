@@ -1,5 +1,5 @@
 class JobPostingsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :show, :apply]
+  before_filter :authenticate_user!, :except => [:index, :show, :apply, :process_application]
   
   include ApplicationHelper
   
