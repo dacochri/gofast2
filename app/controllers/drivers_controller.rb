@@ -1,4 +1,6 @@
 class DriversController < ApplicationController
+  before_filter :authenticate_user!
+  
   include ApplicationHelper
   
   # GET /drivers

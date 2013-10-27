@@ -1,4 +1,6 @@
 class JobPostingsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index, :show, :apply]
+  
   include ApplicationHelper
   
   # GET /job_postings

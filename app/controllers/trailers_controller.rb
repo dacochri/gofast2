@@ -1,4 +1,6 @@
 class TrailersController < ApplicationController
+  before_filter :authenticate_user!
+  
   include ApplicationHelper
   
   # GET /trailers

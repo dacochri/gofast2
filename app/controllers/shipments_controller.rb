@@ -1,4 +1,6 @@
 class ShipmentsController < ApplicationController
+  before_filter :authenticate_user!
+  
   include ApplicationHelper
   
   # GET /shipments
