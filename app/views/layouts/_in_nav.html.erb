@@ -9,5 +9,7 @@
   <li><%= link_to 'Trailers', trailers_path %></li>
   <li><%= link_to 'Trips', trips_path %></li>
   <li><%= link_to 'Trucks', trucks_path %></li>
-  <li><%= link_to 'Users', '/users' %></li>
+  <% if current_user.access == 'admin' %>
+    <li><%= link_to 'Users', '/users' %></li>
+  <% end %>
 </ul>

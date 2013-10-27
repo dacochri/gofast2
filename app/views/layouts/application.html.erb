@@ -19,7 +19,6 @@
         <% end %>
       </h1>
       <h2><em>Your #1 Source for Transportation Services</em></h2>
-      <p><%= 'Welcome ' + current_user.email + '!' if current_user %></p>
     </header>
   </div>
   <div>
@@ -30,6 +29,16 @@
         <%= render '/layouts/out_nav' %>
       <% end %>
     </nav>
+  </div>
+  <div>
+    <% if user_signed_in? %>
+      <div id="user">
+        <p>Welcome <%= current_user.name %>!</p>
+        <ul>
+          <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+          <li><%= link_to 'Reset Password', '/users/password/new' %></li>
+      </div>
+    <% end %>
   </div>
   <div>
     <div id="content">
