@@ -110,6 +110,11 @@ header{
     position: relative;
     top: 4rem;
   }
+
+  p{
+    text-align: right;
+    padding-bottom: 0.5em;
+  }
 }
 
 div:nth-child(2){
@@ -136,6 +141,10 @@ div:nth-child(2){
           background-color: #EEE;
           color: #222;
         }
+      }
+
+      &.small-links{
+        font-size: 1.8rem;
       }
     }
   }
@@ -276,7 +285,7 @@ label{
   display: block;
 }
 
-label, input[type="text"], input[type="number"], input[type="password"], input[type="file"], select, textarea{
+label, input[type="text"], input[type="number"], input[type="password"], input[type="file"], input[type="email"], select, textarea{
   margin-left: 1.5rem;
 }
 
@@ -284,7 +293,7 @@ input[type="checkbox"]{
   margin-top: 2rem;
 }
 
-input[type="text"], input[type="number"], input[type="password"], textarea, select{
+input[type="text"], input[type="number"], input[type="password"], input[type="email"], textarea, select{
   padding: 0.4rem;
   border: 0.1rem solid #DDD;
   box-shadow: 0 0 0.4rem #EEE inset;
@@ -294,7 +303,7 @@ input[type="text"], input[type="number"], input[type="password"], textarea, sele
   }
 }
 
-input[type="text"], input[type="number"], input[type="password"], select[size], textarea{
+input[type="text"], input[type="number"], input[type="password"], input[type="email"], select[size], textarea{
   width: 30rem;
 }
 
