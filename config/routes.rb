@@ -2,6 +2,8 @@ Gofast2::Application.routes.draw do
 
   devise_for :users
 
+  resources :users
+
   get "schedule/index"
 
   get "quotes/index"
