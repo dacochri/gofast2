@@ -1,6 +1,8 @@
 <section>
   <h2>Users</h2>
+  <% if current_user.access == 'admin' %>
   <p><%= link_to 'New User', '/users/new', :class => 'button new' %></p>
+  <% end %>
   <table>
     <thead>
       <tr>
