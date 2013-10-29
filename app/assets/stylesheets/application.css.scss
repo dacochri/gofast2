@@ -248,7 +248,11 @@ dl{
 }
 
 #notice{
-  color: #C30;
+  background-color: darken($header-bg-color, 20%);
+  border: 0.3rem, solid, darken($header-bg-color, 100%);
+  color: #FFF;
+  padding: 1.0rem;
+  margin-bottom: 1.0rem;
 }
 
 .inline{
