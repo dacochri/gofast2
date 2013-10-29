@@ -16,7 +16,7 @@
         <td><%= user.name %></td>
         <td><%= user.email %></td>
 				<td><%= user.access %></td>
-        <td><%= link_to '', "/destroy/#{user.id}", method: :delete, data: { confirm: 'Are you sure you want to delete user: ' + user.name + '?' }, :class => 'button destroy', :title => 'Delete' %></td>
+        <td><%= link_to '', edit_user_path(user), :class => 'button edit', :title => 'Edit' %> <%= link_to '', user, method: :delete, data: { confirm: 'Are you sure you want to delete user: ' + user.name + '?' }, :class => 'button destroy', :title => 'Delete' %></td>
       </tr>
     <% end %>
     </tbody>
