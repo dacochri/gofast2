@@ -1,7 +1,7 @@
 <section>
   <h2><%= @driver.name %></h2>
-  <%= if flash[:notice] %>
-  <p id="notice"><%= notice %></p>
+  <% if flash[:notice] %>
+    <p id="notice"><%= flash[:notice] %></p>
   <% end %>
   <dl>
     <dt><strong>Name:</strong></dt><dd><%= @driver.name %></dd>
