@@ -1,6 +1,8 @@
 <section>
   <h2><%= @driver.name %></h2>
+  <%= if flash[:notice] %>
   <p id="notice"><%= notice %></p>
+  <% end %>
   <dl>
     <dt><strong>Name:</strong></dt><dd><%= @driver.name %></dd>
     <dt><strong>Street:</strong></dt><dd><%= @driver.street %></dd>
