@@ -1,5 +1,6 @@
 class AnnouncementsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:show], :redirect_driver
+  before_filter :authenticate_user!, :except => [:show]
+  before_filter :redirect_driver
 
   include ApplicationHelper
   

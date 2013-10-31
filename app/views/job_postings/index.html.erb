@@ -1,6 +1,6 @@
 <section>
   <h2>Job Postings</h2>
-  <% if user_signed_in? %>
+  <% if user_signed_in? && current_user.access != 'driver' %>
     <p><%= link_to 'New Job posting', new_job_posting_path, :class => 'button new' %></p>
 	  <%= form_tag job_postings_path, :method => 'get', :class => 'search' do %>
       <%= hidden_field_tag :direction, params[:direction] %>
@@ -33,7 +33,7 @@
         <td><%= job_posting.requirements %></td>
         <td>
           <%= link_to '', job_posting, :class => 'button show', :title => 'Show' %>
-          <% if user_signed_in? %>
+          <% if user_signed_in? && current_user.access != 'driver' %>
             <%= link_to '', edit_job_posting_path(job_posting), :class => 'button edit', :title => 'Edit' %>
             <%= link_to '', job_posting, method: :delete, data: { confirm: 'Are you sure you want to delete job posting: ' + job_posting.title + '?' }, :class => 'button destroy', :title => 'Delete' %>
           <% end %>
