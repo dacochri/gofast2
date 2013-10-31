@@ -37,7 +37,7 @@ class ValidationValues
   # General Regexs for client side validation
   @c_integer = '\d+'
   @c_double = '\d+\.?\d{0,2}'
-  @c_date = '\A\d{4}-\d{2}-\d{2}\Z'
+  @c_date = '\d{4}-\d{2}-\d{2}'
   @c_alpha = '[A-Za-z ]+'
   @c_alpha_numeric = '[A-Za-z0-9 ]+'
   @c_content = '[A-Za-z0-9 ,.;\'!@#\$%^&*()_=+|]+'
