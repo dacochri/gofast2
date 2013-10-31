@@ -77,6 +77,7 @@ Trailer.create(trailer_no: '2013', trailer_type: '53ft logistic airride',	licens
 Trailer.create(trailer_no: '2014', trailer_type: '53ft logistic airride',	license_plate: 'J8783Y',	make: 'UTIL',	model: 'VR1', manufactured_year: '2013', vin: '1UYVS253XDP556815',	location: 'Whitechurch', color: 'White')
 Trailer.create(trailer_no: '2015', trailer_type: '53ft logistic airride',	license_plate: 'J8781Y',	make: 'UTIL',	model: 'VR1', manufactured_year: '1961', vin: '1UYVS253XDP556815',	location: 'Whitechurch', color: 'White')
 Trailer.create(trailer_no: '2016', trailer_type: '53ft logistic airride',	license_plate: 'J8780Y',	make: 'UTIL',	model: 'VR1', manufactured_year: '1960', vin: '1UYVS253XDP556815',	location: 'Whitechurch', color: 'White')
+
 # Maintenances
 Maintenance.create(vehicle_id: '3', trip_id: '1', date: '2009-10-20', cost: '21989.84', maintenance_type: 'repair',	description: 'Transmission failure.',	kilometres: '647022', vehicle_type: 'truck')
 Maintenance.create(vehicle_id: '4', trip_id: '2', date: '2011-02-25', cost: '4737.99', maintenance_type: 'brakes',	description: 'Changed Calipers.',	kilometres: '838413', vehicle_type: 'truck')
@@ -193,8 +194,7 @@ Driver.create(name: 'Mohammad Hazara', street: '5587 Eget, St.', unit: '', city:
 Driver.create(name: 'Micheal	Brown', street: '3126 Ornare St.', unit: '92', city: 'Ramillies', postal_code: 'H1P 6X8', home_phone: '2895372189', cell_phone: '7051037848', drivers_license_number: 'B76105445690626', date_of_birth: '1966-08-27', business_name: 'GN Johnson Co.', comments: 'Gets things done on time')
 Driver.create(name: 'Aaron	Clair', street: '3256 Risus Rd.', unit: '', city: 'Goderich', postal_code: 'V8Z 9V3', home_phone: '8072162776', cell_phone: '2263223375', drivers_license_number: 'C50430008740218	', date_of_birth: '1969-03-14', comments: 'Follows directions')
 
-#Trips Shipments Skids and cartages grouped together
-
+# Trips Shipments Skids and cartages grouped together
 Trip.create(truck_id: '1', trailer_id: '1', start_date: '2013-10-29', end_date: '2013-10-29', load_bar_count: '3',accumulated_kilometres:'1208',fuel_cost: '343.99',misc_cost: '34.67',comments: '')
 Shipment.create(shipment_no: '123',trip_id: '1',broker_id: '4',shipper: '9',receiver: '10',cartage_id: '',broker_date: '2013-10-29',shipper_address: '9244 Pede, Avenue', receiver_address: '5516 Nulla Road', rate: '500.00', delivered: 'false', invoice: '12342', distance: '1008', primary_driver: '1', secondary_driver: '', primary_quick_pay: '50.00', secondary_quick_pay: '', misc_cost: '59.00', comments: '')
 Skid.create(shipment_id: '1', product_desc: 'shoes',skid_count: '1', weight: '20', unit: 'lbs', oversized: 'false',pickup_location: '9244 Pede, Avenue',delivery_location: '5516 Nulla Road',pickup_time: '2013-10-29 05:15:00',delivery_time: '2013-10-29 10:10:00',warehouse_pickup_time: '',warehouse_delivery_time: '')
@@ -223,4 +223,4 @@ Trip.create(truck_id: '11', trailer_id: '16', start_date: '2009-08-11', end_date
 Shipment.create(shipment_no: '156',trip_id: '5',broker_id: '15',shipper: '31',receiver: '32',cartage_id: '',broker_date: '2013-10-29',shipper_address: '750 Hendrerit. Av', receiver_address: '6685 Gravida St.', rate: '300.00', delivered: 'true', invoice: '995047', distance: '408', primary_driver: '7', secondary_driver: '', primary_quick_pay: '70.00', secondary_quick_pay: '', misc_cost: '10.00', comments: '')
 Skid.create(shipment_id: '1', product_desc: 'Pop',skid_count: '1', weight: '20', unit: 'lbs', oversized: 'false',pickup_location: '750 Hendrerit. Av',delivery_location: '6685 Gravida St.',pickup_time: '2013-10-29 05:15:00',delivery_time: '2013-10-29 07:10:00',warehouse_pickup_time: '',warehouse_delivery_time: '')
 
-#User.create(name: 'goadmin', email: 'gofastquotes@gmail.com', encrypted_password:'$2a$10$w8PszPL3Rt3R89vE0J0BJ.qhbvF/fX1DZdLobT.97mbX3FfopP7Yq', access: 'admin')
+User.create(name: 'admin', access: 'admin', email: 'admin@admin.com', password: 'rootadmin', password_confirmation: 'rootadmin', remember_me: false)
