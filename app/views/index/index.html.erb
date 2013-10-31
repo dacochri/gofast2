@@ -1,5 +1,8 @@
 <section>
   <h2>Welcome to Go Fast Express!</h2>
+  <% if flash[:notice] %>
+    <p id="notice"><%= flash[:notice] %></p>
+  <% end %>
   <div id="announcements">
   <% @announcements.each do |announcement| %>
     <section>

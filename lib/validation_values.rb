@@ -29,6 +29,7 @@ class ValidationValues
   @company_type = %w(customer mechanic broker cartage driver misc)
   @maintenance_type = %w(oil\ change brakes)
   @unit = %w(lb kg)
+  @access = %w(admin user driver)
 
   # Messages
   @message = 'does not match expected format'
@@ -173,6 +174,10 @@ class ValidationValues
 
   def self.unit
     @unit
+  end
+
+  def self.access
+    @access
   end
 
   def self.message

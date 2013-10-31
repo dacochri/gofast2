@@ -1,4 +1,6 @@
 class CartagesController < ApplicationController
+  before_filter :authenticate_user!
+  
   include ApplicationHelper
   
   # GET /cartages

@@ -1,4 +1,6 @@
 class JobPostingsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index, :show, :apply, :process_application]
+  
   include ApplicationHelper
   
   # GET /job_postings
@@ -28,6 +30,8 @@ class JobPostingsController < ApplicationController
   # GET /job_postings/new
   # GET /job_postings/new.json
   def new
+    redirect_driver
+
     @job_posting = JobPosting.new
 
     respond_to do |format|
@@ -38,12 +42,16 @@ class JobPostingsController < ApplicationController
 
   # GET /job_postings/1/edit
   def edit
+    redirect_driver
+
     @job_posting = JobPosting.find(params[:id])
   end
 
   # POST /job_postings
   # POST /job_postings.json
   def create
+    redirect_driver
+
     @job_posting = JobPosting.new(params[:job_posting])
 
     respond_to do |format|
@@ -60,6 +68,8 @@ class JobPostingsController < ApplicationController
   # PUT /job_postings/1
   # PUT /job_postings/1.json
   def update
+    redirect_driver
+
     @job_posting = JobPosting.find(params[:id])
 
     respond_to do |format|
@@ -76,6 +86,8 @@ class JobPostingsController < ApplicationController
   # DELETE /job_postings/1
   # DELETE /job_postings/1.json
   def destroy
+    redirect_driver
+
     @job_posting = JobPosting.find(params[:id])
     @job_posting.destroy
 

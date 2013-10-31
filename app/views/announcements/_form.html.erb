@@ -14,13 +14,13 @@
   <% end %>
 
   <%= f.label :posted_by %>
-  <%= f.number_field :posted_by %>
+  <%= f.collection_select :posted_by, @user, :id, :name, { :selected => @user.first.id }, { :size => 1, :disabled => 'disabled' } %>
   <%= f.label :title %>
   <%= f.text_field :title, :required => 'required', :pattern => ValidationValues.c_content %>
   <%= f.label :content %>
   <%= f.text_area :content, :size => '100x20', :required => 'required', :pattern => ValidationValues.c_content %>
   <%= f.label :date_posted %>
-  <%= f.datetime_select :date_posted %>
+  <%= f.datetime_select :date_posted, :disabled => 'disabled' %>
   <div class="footer">
     <%= f.submit %>
   </div>

@@ -1,4 +1,6 @@
 class TrucksController < ApplicationController
+  before_filter :authenticate_user!, :redirect_driver
+  
   include ApplicationHelper
   
   # GET /trucks

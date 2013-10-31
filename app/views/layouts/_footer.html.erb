@@ -1,0 +1,12 @@
+<nav>
+  <ul>
+    <li><%= link_to 'Home', '/' %></li> 
+    <li><%= link_to 'About us', '/index/about' %></li> 
+    <li><%= link_to 'Quotes', '/quotes' %></li>
+    <li><%= link_to 'Jobs', '/job_postings' %></li> 
+    <li><%= link_to 'Contact us', '/index/contact' %></li>
+    <% unless user_signed_in? %>
+      <li><%= link_to 'Sign in', new_user_session_path %></li>
+    <% end %>
+  </ul>
+</nav>

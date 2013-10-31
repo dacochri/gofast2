@@ -1,0 +1,26 @@
+<section>
+  <h2>Users</h2>
+  <% if current_user.access == 'admin' %>
+  <p><%= link_to 'New User', '/users/new', :class => 'button new' %></p>
+  <% end %>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+				<th scope="col">Access</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+				<td><%= user.access %></td>
+        <td><%= link_to '', edit_user_path(user), :class => 'button edit', :title => 'Edit' %> <%= link_to '', user, method: :delete, data: { confirm: 'Are you sure you want to delete user: ' + user.name + '?' }, :class => 'button destroy', :title => 'Delete' %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</section>

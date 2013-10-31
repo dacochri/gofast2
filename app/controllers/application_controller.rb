@@ -12,4 +12,18 @@ class ApplicationController < ActionController::Base
     # Either return the value that was passed in (if a date wasn't passed in), or the newly changed format
     date
   end
+
+  def redirect_not_admin
+    unless current_user.access == 'admin'
+      flash[:notice] = 'You cannot access that page.'
+      redirect_to '/' 
+    end
+  end
+
+  def redirect_driver
+    if current_user.access == 'driver'
+      flash[:notice] = 'You cannot access that page.'
+      redirect_to '/' 
+    end
+  end
 end

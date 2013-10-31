@@ -1,4 +1,6 @@
 class AnnouncementsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:show], :redirect_driver
+
   include ApplicationHelper
   
   # GET /announcements
@@ -29,6 +31,7 @@ class AnnouncementsController < ApplicationController
   # GET /announcements/new.json
   def new
     @announcement = Announcement.new
+    @user = User.where(id: current_user.id)
 
     respond_to do |format|
       format.html # new.html.erb

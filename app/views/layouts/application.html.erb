@@ -23,8 +23,21 @@
   </div>
   <div>
     <nav>
-      <%= render '/layouts/out_nav' %>
+      <% if user_signed_in? %>
+        <%= render '/layouts/in_nav' %>
+      <% else %>
+        <%= render '/layouts/out_nav' %>
+      <% end %>
     </nav>
+  </div>
+  <div>
+    <% if user_signed_in? %>
+      <div id="user">
+        <p>Welcome <%= current_user.name %>!</p>
+        <ul>
+          <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+      </div>
+    <% end %>
   </div>
   <div>
     <div id="content">
@@ -33,7 +46,7 @@
   </div>
   <div id="footer-container">
     <footer>
-      <%= render '/layouts/out_footer' %>
+      <%= render '/layouts/footer' %>
       <p>&copy; 2013 GoFast Express Inc. All Rights Reserved.</p>
     </footer>
   </div>
