@@ -5,18 +5,18 @@
   <%= form_tag trucks_path, :method => 'get', :class => 'search' do %>
     <%= hidden_field_tag :direction, params[:direction] %>
     <%= hidden_field_tag :sort, params[:sort] %>
-		<%= label_tag :column %>
-		<%= select_tag :column, options_for_select(Truck.translated_searchable_columns(['id', 'photo_file_name', 'photo_content_type', 'photo_file_size', 'photo_updated_at']), params[:column]) %>
-		<%= label_tag :search %>
-		<%= text_field_tag :search %>
-		<%= submit_tag 'Submit' %>
+    <%= label_tag :column %>
+    <%= select_tag :column, options_for_select(Truck.translated_searchable_columns(['id', 'photo_file_name', 'photo_content_type', 'photo_file_size', 'photo_updated_at']), params[:column]) %>
+    <%= label_tag :search %>
+    <%= text_field_tag :search %>
+    <%= submit_tag 'Submit' %>
   <% end %>
   <table>
     <thead>
       <tr>
         <!-- column headers with sort -->
         <th scope="col"><%= sortable "truck_no", nil, @trucks, "truck_no" %></th>
-        <th scope="col"><%= sortable "vin_number", 'VIN',  @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "vin", 'VIN',  @trucks, "truck_no" %></th>
         <th scope="col"><%= sortable "truck_type", nil,  @trucks, "truck_no" %></th>
         <th scope="col"><%= sortable "owner", nil,  @trucks, "truck_no" %></th>
         <th scope="col"><%= sortable "total_kilometres", nil,  @trucks, "truck_no" %></th>
@@ -30,7 +30,7 @@
       <% company = Company.find truck.owner %>
       <tr>
         <td><%= truck.truck_no %></td>
-        <td><%= truck.vin_number %></td>
+        <td><%= truck.vin %></td>
         <td><%= truck.truck_type %></td>
         <td><%= link_to company.name, "/companies/#{truck.owner}" %></td>
         <td><%= truck.total_kilometres %></td>
