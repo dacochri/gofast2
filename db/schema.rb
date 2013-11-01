@@ -67,15 +67,6 @@ ActiveRecord::Schema.define(:version => 20130804150521) do
     t.datetime "updated_at",    :null => false
   end
 
-  create_table "expenses", :force => true do |t|
-    t.decimal  "quick_pay"
-    t.decimal  "fuel"
-    t.decimal  "driver_pay"
-    t.decimal  "misc_cost"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "job_postings", :force => true do |t|
     t.string   "title"
     t.date     "post_date"
