@@ -11,8 +11,6 @@ class CreateSkids < ActiveRecord::Migration
       t.string :delivery_location
       t.datetime :pickup_time
       t.datetime :delivery_time
-      t.datetime :warehouse_pickup_time
-      t.datetime :warehouse_delivery_time
 
       t.timestamps
     end

@@ -1,6 +1,5 @@
 class AnnouncementsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show]
-  before_filter :redirect_driver
 
   include ApplicationHelper
   
@@ -31,6 +30,8 @@ class AnnouncementsController < ApplicationController
   # GET /announcements/new
   # GET /announcements/new.json
   def new
+    redirect_driver
+
     @announcement = Announcement.new
     @user = User.where(id: current_user.id)
 
@@ -42,14 +43,17 @@ class AnnouncementsController < ApplicationController
 
   # GET /announcements/1/edit
   def edit
+    redirect_driver
+    
     @announcement = Announcement.find(params[:id])
   end
 
   # POST /announcements
   # POST /announcements.json
   def create
+    redirect_driver
+    
     @announcement = Announcement.new(params[:announcement])
-    @announcement.posted_by = 1 # FIX with user authentication
 
     respond_to do |format|
       if @announcement.save
@@ -65,8 +69,9 @@ class AnnouncementsController < ApplicationController
   # PUT /announcements/1
   # PUT /announcements/1.json
   def update
+    redirect_driver
+    
     @announcement = Announcement.find(params[:id])
-    @announcement.posted_by = 1 # FIX with user authentication
 
     respond_to do |format|
       if @announcement.update_attributes(params[:announcement])
@@ -82,6 +87,8 @@ class AnnouncementsController < ApplicationController
   # DELETE /announcements/1
   # DELETE /announcements/1.json
   def destroy
+    redirect_driver
+    
     @announcement = Announcement.find(params[:id])
     @announcement.destroy
 
