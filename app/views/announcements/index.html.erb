@@ -15,16 +15,16 @@
       <tr>
         <th scope="col"><%= sortable "posted_by", nil, @announcements, "date_posted" %></th>
         <th scope="col"><%= sortable "title", nil, @announcements, "date_posted" %></th>
-        <!--<th scope="col"><%= sortable "content", nil, @announcements, "date_posted" %></th>-->
         <th scope="col"><%= sortable "date_posted", nil, @announcements, "date_posted" %></th>
-				<th scope="col">Short Description</th>
+				<th scope="col">Content</th>
         <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
     <% @announcements.each do |announcement| %>
+      <% user = User.find(announcement.posted_by) %>
       <tr>
-        <td><%= announcement.posted_by %></td>
+        <td><%= link_to user.name, "/user/#{announcement.posted_by}" %></td>
         <td><%= announcement.title %></td>
         <td><%= announcement.date_posted %></td>
 				<td><%= announcement.content.truncate(40) %>
