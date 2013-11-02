@@ -16,25 +16,29 @@
   <%= f.label :name %>
   <%= f.text_field :name, :required => 'required', :placeholder => ValidationValues.p_name %>
   <%= f.label :phone %>
-  <%= f.number_field :phone, :required => 'required', :placeholder => ValidationValues.p_phone %>
+  <%= f.number_field :phone, :required => 'required', :placeholder => ValidationValues.p_phone_number %>
   <%= f.label :email %>
   <%= f.text_field :email, :required => 'required', :placeholder => ValidationValues.p_email%>
-  <%= f.label :pickup_time %>
-  <%= f.text_field :pickup_time, :placeholder => ValidationValues.p_date %>
+  <%= f.label :pickup_date %>
+  <%= f.text_field :pickup_date, :placeholder => ValidationValues.p_date %>
   <%= f.label :pickup_location %>
   <%= f.text_field :pickup_location, :required => 'required', :placeholder => ValidationValues.p_street %>
-  <%= f.label :delivery_time %>
-  <%= f.text_field :delivery_time, :placeholder => ValidationValues.p_date %>
+  <%= f.label :delivery_date %>
+  <%= f.text_field :delivery_date, :placeholder => ValidationValues.p_date %>
   <%= f.label :delivery_location %>
   <%= f.text_field :delivery_location, :required => 'required', :pattern => ValidationValues.c_street, :placeholder => ValidationValues.p_street %>
   <%= f.label :weight %>
-  <%= f.text_field :weight, :placeholder => ValidationValues.p_quote_weight %>
+  <%= f.text_field :weight, :placeholder => ValidationValues.p_double %>
+  <% ValidationValues.unit.each do |u| %>
+  <%= f.label "unit_#{u}", u, :class => 'inline' %>
+  <%= f.radio_button :unit, u %>
+  <% end %>
   <%= f.label :footage %>
   <%= f.number_field :footage, :pattern => ValidationValues.c_integer, :placeholder => ValidationValues.p_integer %>
   <%= f.label :skid_count %>
   <%= f.number_field :skid_count, :pattern => ValidationValues.c_integer, :placeholder => ValidationValues.p_integer %>
   <%= f.label :details %>
-  <%= f.text_area :details, :placeholder => ValidationValues.p_comments %>
+  <%= f.text_area :details, :placeholder => ValidationValues.p_color %>
   <div class="footer">
     <%= f.submit 'Send' %>
   </div>
