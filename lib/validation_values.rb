@@ -4,11 +4,10 @@ class ValidationValues
   @double = /\d+\.?\d{0,2}/
   @alpha = /[A-Za-z ]+/
   @alpha_numeric = /[A-Za-z0-9 ]+/
-  @content = /[A-Za-z0-9,.;'!@#\$%^&*()_=+|]+/
+  @content = /[A-Za-z0-9 ,.;'!@#\$%^&*()_=+|]+/
 
   # Specific Regexs
-  @first_name = /[A-Za-z ]+/
-  @last_name = /[A-Za-z' ]+/
+  @name = /[A-Za-z' ]+/
   @company = /[A-Za-z.\- ]+/
   @city = /[A-Za-z'. ]+/
   @street = /\d{0,4} ?[A-Za-z0-9,. ]+/
@@ -28,7 +27,9 @@ class ValidationValues
   @truck_type = %w(straight tractor)
   @trailer_type = %w(53ft\ logistic\ airride\ dryvan 53ft\ reefer)
   @company_type = %w(customer mechanic broker cartage driver misc)
+  @maintenance_type = %w(oil\ change brakes)
   @unit = %w(lb kg)
+  @access = %w(admin user driver)
 
   # Messages
   @message = 'does not match expected format'
@@ -36,19 +37,26 @@ class ValidationValues
   # General Regexs for client side validation
   @c_integer = '\d+'
   @c_double = '\d+\.?\d{0,2}'
-  @c_date = '\A\d{4}-\d{2}-\d{2}\Z'
+  @c_date = '\d{4}-\d{2}-\d{2}'
   @c_alpha = '[A-Za-z ]+'
   @c_alpha_numeric = '[A-Za-z0-9 ]+'
-  @c_content = '[A-Za-z0-9,.;\'!@#\$%^&*()_=+|]+'
+  @c_content = '[A-Za-z0-9 ,.;\'!@#\$%^&*()_=+|]+'
   
   @c_license_plate = '[A-Za-z0-9]+'
   @c_year = '\d{4}+'
   @c_vin = '([A-HJ-NPR-Z]|\d){11}\d{6}'
   @c_street = '\d{0,4} ?[A-Za-z0-9,. ]+'
+  @c_name = '[A-Za-z\' ]+'
+  @c_company = '[A-Za-z.\- ]+'
+  @c_address_unit = '[A-Z0-9 ]+'
+  @c_phone_number = '\d{10,11}'
+  @c_postal_code = '[A-Za-z][0-9][A-Za-z]\s[0-9][A-Za-z][0-9]'
+  @c_email = '[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}'
 
   # Placeholder values
-  @p_integer = '4865'
+  @p_integer = '1001'
   @p_double = '1234.56'
+  @p_drivers_license = 'D12345678901234'
   @p_date = 'YYYY-MM-DD'
   @p_product_desc = 'Shoes'
   @p_street = '26 Steeles Ave. W, Brampton, ON, M4V 2K1'
@@ -56,14 +64,18 @@ class ValidationValues
   @p_year = '2005'
   @p_vin = '368TU79MXH4763452'
   @p_color = 'Black'
-  @p_email = 'you@gmail.com'
-  @p_company = '123 Co.'
   @p_name = 'John Doe'
-  @p_comments = 'This is very fragile'
-  @p_phone = '18004543200'
-  @p_phone_2 = '4167774343'
-  @p_quote_weight = '80lbs'
-  
+  @p_company = 'Star Company Ltd.'
+  @p_requirements = 'Quickbooks, Microsoft Office, etc.'
+  @p_address_unit = '1A'
+  @p_phone_number = '9057991213'
+  @p_secondary_phone_number = '18002776564'
+  @p_city = 'Toronto'
+  @p_province = 'Ontario'
+  @p_street_only = '26 Steeles Ave. W'
+  @p_postal_code = 'L3Z 2N8'
+  @p_email = 'example@domain.com'
+
   # Get methods
   def self.integer
     @integer
@@ -85,12 +97,8 @@ class ValidationValues
     @content
   end
 
-  def self.first_name
-    @first_name
-  end
-
-  def self.last_name
-    @last_name
+  def self.name
+    @name
   end
 
   def self.company
@@ -161,8 +169,16 @@ class ValidationValues
     @company_type
   end
 
+  def self.maintenance_type
+    @maintenance_type
+  end
+
   def self.unit
     @unit
+  end
+
+  def self.access
+    @access
   end
 
   def self.message
@@ -201,12 +217,36 @@ class ValidationValues
     @c_street
   end
 
+  def self.c_name
+    @c_name
+  end
+
   def self.c_year
     @c_year
   end
 
   def self.c_vin
     @c_vin
+  end
+
+  def self.c_company
+    @c_company
+  end
+
+  def self.c_address_unit
+    @c_address_unit
+  end
+
+  def self.c_phone_number
+    @c_phone_number
+  end
+
+  def self.c_postal_code
+    @c_postal_code
+  end
+
+  def self.c_email
+    @c_email
   end
   
   def self.p_integer
@@ -215,6 +255,10 @@ class ValidationValues
 
   def self.p_double
     @p_double
+  end
+
+  def self.p_drivers_license
+    @p_drivers_license
   end
 
   def self.p_date
@@ -241,36 +285,51 @@ class ValidationValues
     @p_color
   end
 
-  def self.p_product_desc
-    @p_product_desc
-  end
-  
-  def self.p_email
-    @p_email
-  end
-  
-  def self.p_company
-    @p_company
-  end
-  
   def self.p_name
     @p_name
   end
-  
-  def self.p_comments
-    @p_comments
+
+  def self.p_product_desc
+    @p_product_desc
+  end
+
+  def self.p_company
+    @p_company
+  end
+
+  def self.p_requirements
+    @p_requirements
+  end
+
+  def self.p_address_unit
+    @p_address_unit
+  end
+
+  def self.p_phone_number
+    @p_phone_number
+  end
+
+  def self.p_secondary_phone_number
+    @p_secondary_phone_number
+  end
+
+  def self.p_city
+    @p_city
   end
   
-  def self.p_phone
-    @p_phone
+  def self.p_province
+    @p_province
   end
-  
-  def self.p_phone_2
-    @p_phone_2
+
+  def self.p_street_only
+    @p_street_only
   end
-  
-  def self.p_quote_weight
-    @p_quote_weight
+
+  def self.p_postal_code
+    @p_postal_code
   end
-  
+
+  def self.p_email
+    @p_email
+  end
 end
