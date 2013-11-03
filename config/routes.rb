@@ -12,6 +12,10 @@ Gofast2::Application.routes.draw do
   resources :quotes, :only => [:new, :create] do
   get 'thank_you', :on => :collection
   end
+  
+  resources :job_applications, :only => [:new, :create] do
+  get 'thank_you', :on => :collection
+  end
   get "index/index"
 
   get 'about' => 'index#about', :as => :about
