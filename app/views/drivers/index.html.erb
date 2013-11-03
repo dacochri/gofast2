@@ -17,7 +17,6 @@
         <th scope="col"><%= sortable "street", nil, @drivers, "name" %></th>
         <th scope="col"><%= sortable "city", nil, @drivers, "name" %></th>
         <th scope="col"><%= sortable "postal_code", nil, @drivers, "name" %></th>
-        <th scope="col"><%= sortable "home_phone", nil, @drivers, "name" %></th>
         <th scope="col"><%= sortable "cell_phone", nil, @drivers, "name" %></th>
         <th scope="col"></th>
       </tr>
@@ -29,7 +28,6 @@
         <td><%= driver.street %></td>
         <td><%= driver.city %></td>
         <td><%= driver.postal_code %></td>
-        <td><%= driver.home_phone %></td>
         <td><%= driver.cell_phone %></td>
         <td><%= link_to '', driver, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_driver_path(driver), :class => 'button edit', :title => 'Edit' %> <%= link_to '', driver, method: :delete, data: { confirm: 'Are you sure you want to delete driver: ' + driver.name + '?' }, :class => 'button destroy', :title => 'Delete' %></td>
       </tr>

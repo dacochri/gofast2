@@ -15,7 +15,7 @@
     <dt><strong>Cartage:</strong></dt><dd><%= link_to @shipment.cartage_id, "/cartages/#{@shipment.cartage_id}" if !@shipment.cartage_id.nil? %></dd>
     <dt><strong>Delivered:</strong></dt><dd><%= @shipment.delivered %></dd>
     <dt><strong>Invoice:</strong></dt><dd><%= @shipment.invoice %></dd>
-    <dt><strong>Distance:</strong></dt><dd><%= @shipment.distance %></dd>
+    <dt><strong>Distance:</strong></dt><dd><%= @shipment.distance %> <abbr title="kilometre">km</abbr></dd>
     <dt><strong>Primary driver:</strong></dt><dd><%= @shipment.primary_driver %></dd>
     <dt><strong>Secondary driver:</strong></dt><dd><%= @shipment.secondary_driver %></dd>
     <dt><strong>Primary quick pay:</strong></dt><dd><%= number_to_currency @shipment.primary_quick_pay %></dd>
