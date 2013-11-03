@@ -19,8 +19,8 @@
         <th scope="col"><%= sortable "vin", 'VIN',  @trucks, "truck_no" %></th>
         <th scope="col"><%= sortable "truck_type", nil,  @trucks, "truck_no" %></th>
         <th scope="col"><%= sortable "owner", nil,  @trucks, "truck_no" %></th>
-        <th scope="col"><%= sortable "total_kilometres", nil,  @trucks, "truck_no" %></th>
-        <th scope="col"><%= sortable "current_location", nil,  @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "total_kilometres", 'Approx. Total km',  @trucks, "truck_no" %></th>
+        <th scope="col"><%= sortable "current_location", 'Est. Current Location',  @trucks, "truck_no" %></th>
         <th scope="col"></th>
       </tr>
     </thead>
