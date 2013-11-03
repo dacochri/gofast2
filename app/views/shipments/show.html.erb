@@ -11,7 +11,7 @@
     <dt><strong>Unit count:</strong></dt><dd>{UNIT_COUNT FROM SKIDS}</dd>
     <dt><strong>Received date:</strong></dt><dd>{RECEIVED_DATE FROM SKIDS}</dd>
     <dt><strong>Receiver address:</strong></dt><dd><%= @shipment.receiver_address %></dd>
-    <dt><strong>Rate:</strong></dt><dd>$<%= @shipment.rate %></dd>
+    <dt><strong>Rate:</strong></dt><dd><%= number_to_currency @shipment.rate %></dd>
     <dt><strong>Cartage:</strong></dt><dd><%= link_to @shipment.cartage_id, "/cartages/#{@shipment.cartage_id}" if !@shipment.cartage_id.nil? %></dd>
     <dt><strong>Delivered:</strong></dt><dd><%= @shipment.delivered %></dd>
     <dt><strong>Invoice:</strong></dt><dd><%= @shipment.invoice %></dd>

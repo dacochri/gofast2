@@ -33,7 +33,7 @@
         <td><%= number_to_currency maintenance.cost %></td>
         <td><%= maintenance.maintenance_type %></td>
         <td><%= maintenance.description %></td>
-        <td><%= maintenance.kilometres %></td>
+        <td><%= maintenance.kilometres %> <abbr title="kilometre">km</abbr></td>
         <td><%= maintenance.vehicle_type %></td>
         <td><%= link_to '', maintenance, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_maintenance_path(maintenance), :class => 'button edit', :title => 'Edit' %> <%= link_to '', maintenance, method: :delete, data: { confirm: 'Are you sure you want to delete maintenance record ' + maintenance.id.to_s + '?' }, :class => 'button destroy', :title => 'Delete' %></td>
       </tr>
