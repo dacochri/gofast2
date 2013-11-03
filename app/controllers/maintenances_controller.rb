@@ -8,7 +8,7 @@ class MaintenancesController < ApplicationController
   def index
     params[:search] = format_date params[:search]
     
-    @maintenances = Maintenance.search(params[:search], params[:column]).order(sort_column(Maintenance, 'vehicle_id') + ' ' + sort_direction)
+    @maintenances = Maintenance.search(params[:search], params[:column]).order(sort_column(Maintenance, 'vehicle_id') + ' ' + sort_direction).page(params[:page]).per(10)
 
     respond_to do |format|
       format.html # index.html.erb

@@ -8,7 +8,7 @@ class TrailersController < ApplicationController
   def index
     params[:search] = format_date params[:search]
     
-    @trailers = Trailer.search(params[:search], params[:column]).order(sort_column(Trailer, 'trailer_no') + ' ' + sort_direction)
+    @trailers = Trailer.search(params[:search], params[:column]).order(sort_column(Trailer, 'trailer_no') + ' ' + sort_direction).page(params[:page]).per(10)
 
     respond_to do |format|
       format.html # index.html.erb

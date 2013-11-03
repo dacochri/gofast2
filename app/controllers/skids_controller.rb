@@ -11,7 +11,7 @@ class SkidsController < ApplicationController
     params[:search] = format_date params[:search]
     
     # Get all the records for skids. Order the values based on what its set to order by
-    @skids = Skid.search(params[:search], params[:column]).order(sort_column(Skid, 'shipment_id') + ' ' + sort_direction).page(params[:page]).per(25)
+    @skids = Skid.search(params[:search], params[:column]).order(sort_column(Skid, 'shipment_id') + ' ' + sort_direction).page(params[:page]).per(10)
     
     # Either load an html page or json if the format is set to that
     respond_to do |format|
