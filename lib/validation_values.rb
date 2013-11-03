@@ -27,7 +27,7 @@ class ValidationValues
   @truck_type = %w(straight tractor)
   @trailer_type = %w(53ft\ logistic\ airride\ dryvan 53ft\ reefer)
   @company_type = %w(customer mechanic broker cartage driver misc)
-  @maintenance_type = %w(oil\ change brakes)
+  @maintenance_type = %w(repair safety inspection oil\ change brakes)
   @unit = %w(lb kg)
   @access = %w(admin user driver)
 
