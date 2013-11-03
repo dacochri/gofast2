@@ -3,6 +3,7 @@ class CreateTrips < ActiveRecord::Migration
     create_table :trips do |t|
       t.integer :truck_id
       t.integer :trailer_id
+      t.integer :trip_no
       t.date :start_date
       t.date :end_date
       t.integer :load_bar_count

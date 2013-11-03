@@ -14,7 +14,7 @@ class ValidationValues
   @address_unit = /[A-Z0-9 ]+/
   @license_plate = /[A-Z0-9 ]+/
   @hst_no = /[A-Z0-9]+/
-  @date = /\A\d{4}(-\d{2}){2}\Z/
+  @date = /\d{4}(-\d{2}){2}/
   @date_time = /\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}\sUTC/
   @email = /[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}/
   @postal_code = /[A-Za-z][0-9][A-Za-z]\s[0-9][A-Za-z][0-9]/

@@ -147,6 +147,7 @@ ActiveRecord::Schema.define(:version => 20131027143857) do
   create_table "trips", :force => true do |t|
     t.integer  "truck_id"
     t.integer  "trailer_id"
+    t.integer  "trip_no"
     t.date     "start_date"
     t.date     "end_date"
     t.integer  "load_bar_count"

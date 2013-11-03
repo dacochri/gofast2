@@ -13,19 +13,19 @@
   <table>
     <thead>
       <tr>
-        <th scope="col"><%= sortable 'id', nil, @trips, 'id' %></th>
-        <th scope="col"><%= sortable 'truck_id', 'Truck', @trips, 'id' %></th>
-        <th scope="col"><%= sortable 'trailer_id', 'Trailer', @trips, 'id' %></th>
-        <th scope="col"><%= sortable 'start_date', nil, @trips, 'id' %></th>
-        <th scope="col"><%= sortable 'end_date', nil, @trips, 'id' %></th>
-        <th scope="col"><%= sortable 'accumulated_kilometres', nil, @trips, 'id' %></th>
+        <th scope="col"><%= sortable 'trip_no', 'Trip No.', @trips, 'trip_no' %></th>
+        <th scope="col"><%= sortable 'truck_id', 'Truck', @trips, 'trip_no' %></th>
+        <th scope="col"><%= sortable 'trailer_id', 'Trailer', @trips, 'trip_no' %></th>
+        <th scope="col"><%= sortable 'start_date', nil, @trips, 'trip_no' %></th>
+        <th scope="col"><%= sortable 'end_date', nil, @trips, 'trip_no' %></th>
+        <th scope="col"><%= sortable 'accumulated_kilometres', nil, @trips, 'trip_no' %></th>
         <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
     <% @trips.each do |trip| %>
       <tr>
-        <td><%= trip.id %></td>
+        <td><%= trip.trip_no %></td>
         <td><%= trip.truck_id %></td>
         <td><%= trip.trailer_id %></td>
         <td><%= trip.start_date %></td>

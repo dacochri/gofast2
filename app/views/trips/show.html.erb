@@ -2,6 +2,7 @@
   <h2>Trip #<%= @trip.id %></h2>
   <p id="notice"><%= notice %></p>
   <dl>
+    <dt><strong>Trip no.:</strong></dt><dd><%= @trip.trip_no %></dd>
     <dt><strong>Truck:</strong></dt><dd><%= @trip.truck_id %></dd>
     <dt><strong>Trailer:</strong></dt><dd><%= @trip.trailer_id %></dd>
     <dt><strong>Start date:</strong></dt><dd><%= @trip.start_date %></dd>
@@ -13,7 +14,7 @@
     <dt><strong>Profit:</strong></dt><dd><%= number_to_currency '23.00' %>{CREATE PROFIT HERE}</dd>
     <dt><strong>Fuel cost:</strong></dt><dd><%= number_to_currency @trip.fuel_cost %></dd>
     <dt><strong>Misc. cost</strong></dt><dd><%= number_to_currency @trip.misc_cost %></dd>
-    <dt><strong>Comments</strong></dt><dd><%= @trip.comments %></dd>
+    <dt><strong>Comments:</strong></dt><dd><%= @trip.comments %></dd>
   </dl>
   <p><%= link_to 'Edit', edit_trip_path(@trip), :class => 'button edit' %> <%= link_to 'Back', trips_path, :class => 'button back' %></p>
 </section>
