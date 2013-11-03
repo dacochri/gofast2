@@ -29,7 +29,6 @@
     <tbody>
     <% @shipments.each do |shipment| %>
       <tr<%= ' class="cartage"' if !shipment.cartage_id.nil? %>>
-        <td><%= shipment.id %></td>
         <td><%= shipment.shipment_no %></td>
         <td><%= link_to shipment.trip_id, "/trips/#{shipment.trip_id}" %></td>
         <td><%= link_to shipment.broker_id, "/companies/#{shipment.broker_id}" %></td>
