@@ -10,7 +10,7 @@
     <dt><strong>Secondary driver:</strong></dt><dd>{FROM SHIPMENT}</dd>
     <dt><strong>Load bar count:</strong></dt><dd><%= @trip.load_bar_count %></dd>
     <dt><strong>Kilometres accumulated:</strong></dt><dd><%= @trip.accumulated_kilometres %></dd>
-    <dt><strong>Profit:</strong></dt><dd>${CREATE PROFIT HERE}</dd>
+    <dt><strong>Profit:</strong></dt><dd><%= number_to_currency '23.00' %>{CREATE PROFIT HERE}</dd>
     <dt><strong>Fuel cost:</strong></dt><dd><%= number_to_currency @trip.fuel_cost %></dd>
     <dt><strong>Misc. cost</strong></dt><dd><%= number_to_currency @trip.misc_cost %></dd>
     <dt><strong>Comments</strong></dt><dd><%= @trip.comments %></dd>

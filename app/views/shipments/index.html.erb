@@ -38,7 +38,7 @@
         <td><%= shipment.shipper_address %></td>
         <td><%= link_to shipment.receiver, "/companies/#{shipment.receiver}" %></td>
         <td><%= shipment.receiver_address %></td>
-        <td>$<%= shipment.rate %></td>
+        <td><%= number_to_currency shipment.rate %></td>
         <td><%= shipment.delivered %></td>
         <td><%= link_to shipment.primary_driver, "/drivers/#{shipment.primary_driver}" %></td>
         <td><%= link_to '', shipment, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_shipment_path(shipment), :class => 'button edit', :title => 'Edit' %> <%= link_to '', shipment, method: :delete, data: { confirm: 'Are you sure you want to delete shipment no. ' + shipment.shipment_no.to_s + '?' }, :class => 'button destroy', :title => 'Delete' %></td>

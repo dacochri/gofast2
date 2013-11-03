@@ -5,7 +5,7 @@
     <dt><strong>Vehicle:</strong></dt><dd><%= @maintenance.vehicle_id %></dd>
     <dt><strong>Trip:</strong></dt><dd><%= @maintenance.trip_id %></dd>
     <dt><strong>Date:</strong></dt><dd><%= @maintenance.date %></dd>
-    <dt><strong>Cost:</strong></dt><dd><%= @maintenance.cost %></dd>
+    <dt><strong>Cost:</strong></dt><dd><%= number_to_currency @maintenance.cost %></dd>
     <dt><strong>Maintenance type:</strong></dt><dd><%= @maintenance.maintenance_type %></dd>
     <dt><strong>Description:</strong></dt><dd><%= @maintenance.description %></dd>
     <dt><strong>Kilometres:</strong></dt><dd><%= @maintenance.kilometres %></dd>
