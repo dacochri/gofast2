@@ -1,4 +1,4 @@
-Pony.options = {
+Pony.options = { #environmental variables for the pony gem
   :to => 'gofastquotes@gmail.com',
   :via => :smtp,
   :via_options => {

@@ -7,6 +7,7 @@ Gofast2::Application.routes.draw do
 
   #get "quotes/index"
   
+  #routes for quote
   resources :quotes, :only => [:new, :create] do
   get 'thank_you', :on => :collection
   end

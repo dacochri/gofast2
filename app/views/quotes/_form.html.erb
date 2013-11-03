@@ -1,4 +1,5 @@
 <%= form_for (@quote) do |f| %>
+<!-- show errors if they exist -->
   <% if @quote.errors.any? %>
     <div id="error_explanation">
       <section>
@@ -11,6 +12,7 @@
       </section>
     </div>
   <% end %>
+    <!-- form elements -->
   <%= f.label :company %>
   <%= f.text_field :company, :required => 'required', :pattern => ValidationValues.c_company, :placeholder => ValidationValues.p_company %>
   <%= f.label :name %>

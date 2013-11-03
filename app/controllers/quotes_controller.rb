@@ -5,7 +5,7 @@ class QuotesController < ApplicationController
 
   def create
     @quote = Quote.new(params[:quote])
-
+    #If the quote goes through, render the thank you page, else render the new quotes page
     if @quote.deliver
       render :thank_you
     else
