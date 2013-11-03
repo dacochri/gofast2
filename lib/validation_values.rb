@@ -71,6 +71,7 @@ class ValidationValues
   @p_phone_number = '9057991213'
   @p_secondary_phone_number = '18002776564'
   @p_city = 'Toronto'
+  @p_province = 'Ontario'
   @p_street_only = '26 Steeles Ave. W'
   @p_postal_code = 'L3Z 2N8'
   @p_email = 'example@domain.com'
@@ -315,6 +316,10 @@ class ValidationValues
   def self.p_city
     @p_city
   end
+  
+  def self.p_province
+    @p_province
+  end
 
   def self.p_street_only
     @p_street_only
@@ -327,4 +332,6 @@ class ValidationValues
   def self.p_email
     @p_email
   end
+
 end
+

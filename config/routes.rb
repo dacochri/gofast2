@@ -6,8 +6,12 @@ Gofast2::Application.routes.draw do
 
   get "schedule/index"
 
-  get "quotes/index"
-
+  #get "quotes/index"
+  
+  #routes for quote
+  resources :quotes, :only => [:new, :create] do
+  get 'thank_you', :on => :collection
+  end
   get "index/index"
 
   get 'about' => 'index#about', :as => :about
