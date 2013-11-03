@@ -26,7 +26,7 @@
       <tr>
         <td><%= link_to user.name, "/user/#{announcement.posted_by}" %></td>
         <td><%= announcement.title %></td>
-        <td><%= announcement.date_posted %></td>
+        <td><%= format_time announcement.date_posted %></td>
 				<td><%= announcement.content.truncate(40) %>
         <td><%= link_to '', announcement, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_announcement_path(announcement), :class => 'button edit', :title => 'Edit' %> <%= link_to '', announcement, method: :delete, data: { confirm: 'Are you sure you want to delete announcement: ' + announcement.title + '?' }, :class => 'button destroy', :title => 'Delete' %></td>
       </tr>

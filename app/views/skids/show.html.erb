@@ -8,8 +8,8 @@
     <dt><strong>Oversized:</strong></dt><dd><%= @skid.oversized %></dd>
     <dt><strong>Pickup location:</strong></dt><dd><%= @skid.pickup_location %></dd>
     <dt><strong>Delivery location:</strong></dt><dd><%= @skid.delivery_location %></dd>
-    <dt><strong>Pickup time:</strong></dt><dd><%= @skid.pickup_time %></dd>
-    <dt><strong>Delivery time:</strong></dt><dd><%= @skid.delivery_time %></dd>
+    <dt><strong>Pickup time:</strong></dt><dd><%= format_time @skid.pickup_time %></dd>
+    <dt><strong>Delivery time:</strong></dt><dd><%= format_time @skid.delivery_time %></dd>
   </dl>
   <p><%= link_to 'Edit', edit_skid_path(@skid), :class => 'button edit' %> <%= link_to 'Back', skids_path, :class => 'button back' %></p>
 </section>

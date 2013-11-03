@@ -27,8 +27,8 @@
       <tr>
         <td><%= cartage.company_id %></td>
         <td><%= cartage.trailer_id %></td>
-        <td><%= cartage.pickup_time %></td>
-        <td><%= cartage.delivery_time %></td>
+        <td><%= format_time cartage.pickup_time %></td>
+        <td><%= format_time cartage.delivery_time %></td>
         <td><%= cartage.driver_name %></td>
         <td><%= number_to_currency cartage.cost %></td>
         <td><%= link_to '', cartage, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_cartage_path(cartage), :class => 'button edit', :title => 'Edit' %> <%= link_to '', cartage, method: :delete, data: { confirm: 'Are you sure you want to delete cartage ' + cartage.id.to_s + '?' }, :class => 'button destroy', :title => 'Delete' %></td>

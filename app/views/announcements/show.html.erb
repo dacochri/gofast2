@@ -3,7 +3,7 @@
   <p id="notice"><%= notice %></p>
   <dl>
     <dt><strong>Title:</strong></dt><dd><%= @announcement.title %></dd>
-    <dt><strong>Date posted:</strong></dt><dd><%= @announcement.date_posted %></dd>
+    <dt><strong>Date posted:</strong></dt><dd><%= format_time @announcement.date_posted %></dd>
     <dt><strong>Content:</strong></dt><dd><%= @announcement.content %></dd>
   </dl>
   <p>

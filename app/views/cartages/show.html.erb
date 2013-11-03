@@ -4,8 +4,8 @@
   <dl>
     <dt><strong>Company:</strong></dt><dd><%= @cartage.company_id %></dd>
     <dt><strong>Trailer:</strong></dt><dd><%= @cartage.trailer_id %></dd>
-    <dt><strong>Pickup time:</strong></dt><dd><%= @cartage.pickup_time %></dd>
-    <dt><strong>Delivery time:</strong></dt><dd><%= @cartage.delivery_time %></dd>
+    <dt><strong>Pickup time:</strong></dt><dd><%= format_time @cartage.pickup_time %></dd>
+    <dt><strong>Delivery time:</strong></dt><dd><%= format_time @cartage.delivery_time %></dd>
     <dt><strong>Driver name:</strong></dt><dd><%= @cartage.driver_name %></dd>
     <dt><strong>Cost:</strong></dt><dd><%= number_to_currency @cartage.cost %></dd>
   </dl>
