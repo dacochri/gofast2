@@ -10,22 +10,22 @@ class Quote
   
   validates :company, :presence => true, :format => { :with => ValidationValues.company, :message => message }
   validates :name, :presence => true, :format => { :with => ValidationValues.name, :message => message }
-  validates :phone, :presence => true, :numericality => true, :length => 10..11
+  validates :phone, :presence => true, :numericality => true, :length => 10..10
   validates :email, :presence => true, :format => { :with => ValidationValues.email, :message => message}
   validates :pickup_date, :format => { :with => ValidationValues.date, :message => message }
-  validates :pickup_street, :presence => true, :length => { :minimum => 3, :maximum => 200 }, :format => { :with => ValidationValues.street, :message => message }
-  validates :pickup_city, :presence => true, :length => { :minimum => 3, :maximum => 100 }, :format => { :with => ValidationValues.city, :message => message }
-  validates :pickup_province, :presence => true, :length => { :minimum => 3, :maximum => 20}, :inclusion => { :in => ValidationValues.province }
-  validates :pickup_postal_code, :presence => true, :length => { :minimum => 6, :maximum => 7 }, :format => { :with => ValidationValues.postal_code, :message => message }
+  validates :pickup_street, :presence => true, :format => { :with => ValidationValues.street, :message => message }
+  validates :pickup_city, :presence => true, :format => { :with => ValidationValues.city, :message => message }
+  validates :pickup_province, :presence => true, :inclusion => { :in => ValidationValues.province }
+  validates :pickup_postal_code, :presence => true, :format => { :with => ValidationValues.postal_code, :message => message }
   validates :delivery_date, :format => { :with => ValidationValues.date, :message => message }
-  validates :delivery_street, :presence => true, :length => { :minimum => 3, :maximum => 200 }, :format => { :with => ValidationValues.street, :message => message }
-  validates :delivery_city, :presence => true, :length => { :minimum => 3, :maximum => 100 }, :format => { :with => ValidationValues.city, :message => message }
-  validates :delivery_province, :presence => true, :length => { :minimum => 3, :maximum => 20}, :inclusion => { :in => ValidationValues.province }
-  validates :delivery_postal_code, :presence => true, :length => { :minimum => 6, :maximum => 7 }, :format => { :with => ValidationValues.postal_code, :message => message }
+  validates :delivery_street, :presence => true, :format => { :with => ValidationValues.street, :message => message }
+  validates :delivery_city, :presence => true, :format => { :with => ValidationValues.city, :message => message }
+  validates :delivery_province, :presence => true, :inclusion => { :in => ValidationValues.province }
+  validates :delivery_postal_code, :presence => true, :format => { :with => ValidationValues.postal_code, :message => message }
   validates :weight, :format => { :with => ValidationValues.double, :message => message }
   validates :unit, :inclusion => { :in => ValidationValues.unit }
-  validates :footage, :numericality => true, :length => 0..10
-  validates :skid_count, :numericality => true, :length => 0..10
+  validates :footage, :numericality => true
+  validates :skid_count, :numericality => true
   validates :details, :format => { :with => ValidationValues.content, :message => message }, :allow_blank => true
   
   def initialize(attributes = {})
