@@ -5,11 +5,12 @@ class JobApplication
   include ActionView::Helpers::TextHelper
   
   # get/set method
-  attr_accessor :job, :name, :phone, :email, :resume
+  attr_accessor :title, :job, :name, :phone, :email, :resume
   
   message = ValidationValues.message
   
   # validation for all fields
+  validates :title, :format => { :with => ValidationValues.content, :message => message }
   validates :job, :format => { :with => ValidationValues.content, :message => message }
   validates :name, :presence => true, :format => { :with => ValidationValues.name, :message => message }
   validates :phone, :presence => true, :numericality => true, :length => 10..10

@@ -1,6 +1,6 @@
 class JobApplicationsController < ApplicationController
   def new
-    @job_application = JobApplication.new
+    @job_application = JobApplication.new(:title => params[:title])
   end
 
   def create

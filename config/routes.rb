@@ -28,8 +28,12 @@ Gofast2::Application.routes.draw do
 
   resources :trucks
 
-  resources :job_postings
-
+  resources :job_postings, shallow: true do
+    resources :job_applications, :only => [:new, :create] do
+    get 'thank_you', :on => :collection
+    end
+  end
+  
   resources :maintenances
 
   resources :trips
