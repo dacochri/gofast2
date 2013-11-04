@@ -5,12 +5,12 @@ class JobApplication
   include ActionView::Helpers::TextHelper
   
   # get/set method
-  attr_accessor :title, :job, :name, :phone, :email, :resume
+  attr_accessor :title, :job, :name, :phone, :email, :resume, :resume_file
   
   message = ValidationValues.message
   
   # validation for all fields
-  validates :title, :format => { :with => ValidationValues.content, :message => message }
+ 
   validates :job, :format => { :with => ValidationValues.content, :message => message }
   validates :name, :presence => true, :format => { :with => ValidationValues.name, :message => message }
   validates :phone, :presence => true, :numericality => true, :length => 10..10
@@ -30,9 +30,11 @@ class JobApplication
     Pony.mail({
       :from => %("#{name}" <#{email}>),
       :reply_to => email,
-      :subject => name + " for " + job,
+      :subject => name + " applying for " + job,
       :body => "Phone: " + phone + "\nE-mail: " + email + "\nResume: " + resume,
-      :html_body => simple_format("<h2>" + name + " for" + job + "</h2><br>" + "<h3>Phone: " + phone + " E-mail: " + email + "</h3>" + "<br>Resume: " + resume)
+      :html_body => simple_format("<h2>" + name + " has applied for " + job + "</h2><br>" + "<h3>Phone: " + phone + " E-mail: " + email + "</h3>" + "<br>Resume: " + resume)
+      #:attachments => { File.basename(resume_file) => File.read(resume_file) },
+      #:headers => { "Content-Type" => "multipart/mixed", "Content-Transfer-Encoding" => "base64", "Content-Disposition" => "attachment" }
     })
   end
   
