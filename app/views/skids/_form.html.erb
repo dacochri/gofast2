@@ -14,7 +14,7 @@
   <% end %>
 
   <%= f.label :shipment_id %>
-  <%= f.collection_select :shipment_id, @shipments, :id, :shipment_no, { :selected => @shipments.first.id }, { :size => 5 } %>
+  <%= f.collection_select :shipment_id, @shipments, :id, :shipment_no_and_receiver, { :selected => @shipments.first.id }, { :size => 5 } %>
   <%= f.label :product_desc %>
   <%= f.text_field :product_desc, :required => 'required', :pattern => ValidationValues.c_alpha_numeric, :placeholder => ValidationValues.p_product_desc %>
   <%= f.label :skid_count %>

@@ -11,4 +11,8 @@ class Trip < ActiveRecord::Base
   validates :misc_cost, :format => { :with => ValidationValues.double, :message => message }, :allow_blank => true
   validates :start_date, :end_date, :format => { :with => ValidationValues.date, :message => message }
   validates :comments, :format => { :with => ValidationValues.content, :message => message }, :allow_blank => true
+
+  def trip_no_and_start_date_and_end_date
+    "#{trip_no} -- #{start_date} to #{end_date}"
+  end
 end

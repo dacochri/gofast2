@@ -16,7 +16,7 @@
   <%= f.label :shipment_no %>
   <%= f.number_field :shipment_no, :required => 'required', :placeholder => ValidationValues.p_integer, :pattern => ValidationValues.c_integer %>
   <%= f.label :trip_id %>
-  <%= f.collection_select :trip_id, @trips, :id, :id, { :selected => @trips.first.id }, { :size => 5 } %>
+  <%= f.collection_select :trip_id, @trips, :id, :trip_no_and_start_date_and_end_date, { :selected => @trips.first.id }, { :size => 5 } %>
   <%= f.label :broker_id %>
   <%= f.collection_select :broker_id, @broker_companies, :id, :name, { :selected => @broker_companies.first.id }, { :size => 5 } %>
   <%= f.label :shipper %>

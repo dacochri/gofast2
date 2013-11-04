@@ -14,4 +14,8 @@ class Shipment < ActiveRecord::Base
   validates :broker_date, :format => { :with => ValidationValues.date, :message => message }
   validates :shipper_address, :receiver_address, :format => { :with => ValidationValues.street, :message => message }
   validates :delivered, :inclusion => { :in => [true, false], :message => 'must be true or false' }, :allow_blank => true
+
+  def shipment_no_and_receiver
+    "#{shipment_no} for " + Company.find(receiver).name
+  end
 end
