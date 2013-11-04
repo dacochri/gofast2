@@ -2,8 +2,8 @@
   <h2>Cartage #<%= @cartage.id %></h2>
   <p id="notice"><%= notice %></p>
   <dl>
-    <dt><strong>Company:</strong></dt><dd><%= @cartage.company_id %></dd>
-    <dt><strong>Trailer:</strong></dt><dd><%= @cartage.trailer_id %></dd>
+    <dt><strong>Company:</strong></dt><dd><%= link_to @company.name, "/companies/#{@cartage.company_id}" %></dd>
+    <dt><strong>Trailer:</strong></dt><dd><%= link_to @trailer.trailer_no, "/trailers/#{@cartage.trailer_id}" %></dd>
     <dt><strong>Pickup time:</strong></dt><dd><%= format_time @cartage.pickup_time %></dd>
     <dt><strong>Delivery time:</strong></dt><dd><%= format_time @cartage.delivery_time %></dd>
     <dt><strong>Driver name:</strong></dt><dd><%= @cartage.driver_name %></dd>

@@ -24,9 +24,11 @@
     </thead>
     <tbody>
     <% @cartages.each do |cartage| %>
+      <% company = Company.find(cartage.company_id) %>
+      <% trailer = Trailer.find(cartage.trailer_id) %>
       <tr>
-        <td><%= cartage.company_id %></td>
-        <td><%= cartage.trailer_id %></td>
+        <td><%= link_to company.name, "/companies/#{cartage.company_id}" %></td>
+        <td><%= link_to trailer.trailer_no, "/trailers/#{cartage.trailer_id}" %></td>
         <td><%= format_time cartage.pickup_time %></td>
         <td><%= format_time cartage.delivery_time %></td>
         <td><%= cartage.driver_name %></td>

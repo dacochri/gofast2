@@ -13,26 +13,36 @@
   <table>
     <thead>
       <tr>
-        <th scope="col"><%= sortable "vehicle_id", nil, @maintenances, "vehicle_id" %></th>
-        <th scope="col"><%= sortable "trip_id", nil, @maintenances, "vehicle_id" %></th>
-        <th scope="col"><%= sortable "date", nil, @maintenances, "vehicle_id" %></th>
-        <th scope="col"><%= sortable "cost", nil, @maintenances, "vehicle_id" %></th>
-        <th scope="col"><%= sortable "maintenance_type", nil, @maintenances, "vehicle_id" %></th>
-        <th scope="col"><%= sortable "kilometres", nil, @maintenances, "vehicle_id" %></th>
-        <th scope="col"><%= sortable "vehicle_type", nil, @maintenances, "vehicle_id" %></th>
+        <th scope="col"><%= sortable "vehicle_type", nil, @maintenances, 'date' %></th>
+        <th scope="col"><%= sortable "vehicle_id", nil, @maintenances, 'date' %></th>
+        <th scope="col"><%= sortable "trip_id", nil, @maintenances, 'date' %></th>
+        <th scope="col"><%= sortable "date", nil, @maintenances, 'date' %></th>
+        <th scope="col"><%= sortable "cost", nil, @maintenances, 'date' %></th>
+        <th scope="col"><%= sortable "maintenance_type", nil, @maintenances, 'date' %></th>
+        <th scope="col"><%= sortable "kilometres", nil, @maintenances, 'date' %></th>
         <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
     <% @maintenances.each do |maintenance| %>
+      <% if maintenance.vehicle_type == 'truck' %>
+        <% truck = Truck.find(maintenance.vehicle_id) %>
+      <% else %>
+        <% trailer = Trailer.find(maintenance.vehicle_id) %>
+      <% end %>
+      <% trip = Trip.find(maintenance.trip_id) %>
       <tr>
-        <td><%= maintenance.vehicle_id %></td>
-        <td><%= maintenance.trip_id %></td>
+        <td><%= maintenance.vehicle_type %></td>
+        <% if maintenance.vehicle_type == 'truck' %>
+        <td><%= link_to truck.truck_no, "/trucks/#{maintenance.vehicle_id}" %></td>
+        <% else %>
+        <td><%= link_to trailer.trailer_no, "/trailers/#{maintenance.vehicle_id}" %></td>
+        <% end %>
+        <td><%= link_to trip.trip_no, "/trips/#{maintenance.trip_id}" %></td>
         <td><%= maintenance.date %></td>
         <td><%= number_to_currency maintenance.cost %></td>
         <td><%= maintenance.maintenance_type %></td>
         <td><%= maintenance.kilometres %> <abbr title="kilometre">km</abbr></td>
-        <td><%= maintenance.vehicle_type %></td>
         <td><%= link_to '', maintenance, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_maintenance_path(maintenance), :class => 'button edit', :title => 'Edit' %> <%= link_to '', maintenance, method: :delete, data: { confirm: 'Are you sure you want to delete maintenance record ' + maintenance.id.to_s + '?' }, :class => 'button destroy', :title => 'Delete' %></td>
       </tr>
     <% end %>

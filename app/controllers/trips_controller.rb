@@ -20,6 +20,8 @@ class TripsController < ApplicationController
   # GET /trips/1.json
   def show
     @trip = Trip.find(params[:id])
+    @truck = Truck.find(@trip.truck_id)
+    @trailer = Trailer.find(@trip.trailer_id)
 
     respond_to do |format|
       format.html # show.html.erb

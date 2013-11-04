@@ -3,8 +3,8 @@
   <p id="notice"><%= notice %></p>
   <dl>
     <dt><strong>Trip no.:</strong></dt><dd><%= @trip.trip_no %></dd>
-    <dt><strong>Truck:</strong></dt><dd><%= @trip.truck_id %></dd>
-    <dt><strong>Trailer:</strong></dt><dd><%= @trip.trailer_id %></dd>
+    <dt><strong>Truck:</strong></dt><dd><%= link_to @truck.truck_no, "/trucks/#{@trip.truck_id}" %></dd>
+    <dt><strong>Trailer:</strong></dt><dd><%= link_to @trailer.trailer_no, "/trailers/#{@trip.trailer_id}" %></dd>
     <dt><strong>Start date:</strong></dt><dd><%= @trip.start_date %></dd>
     <dt><strong>End date:</strong></dt><dd><%= @trip.end_date %></dd>
     <dt><strong>Primary driver:</strong></dt><dd>{FROM SHIPMENT}</dd>

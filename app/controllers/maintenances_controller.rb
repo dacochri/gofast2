@@ -20,7 +20,13 @@ class MaintenancesController < ApplicationController
   # GET /maintenances/1.json
   def show
     @maintenance = Maintenance.find(params[:id])
-
+    if @maintenance.vehicle_type == 'truck'
+     @truck = Truck.find(@maintenance.vehicle_id)
+    else
+     @trailer = Trailer.find(@maintenance.vehicle_id)
+    end
+    @trip = Trip.find(@maintenance.trip_id)
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @maintenance }

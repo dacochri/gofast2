@@ -18,6 +18,12 @@ class ShipmentsController < ApplicationController
   # GET /shipments/1.json
   def show
     @shipment = Shipment.find(params[:id])
+    @trip = Trip.find(@shipment.trip_id)
+    @broker = Company.find(@shipment.broker_id)
+    @shipper = Company.find(@shipment.shipper)
+    @receiver = Company.find(@shipment.receiver)
+    @primary_driver = Driver.find(@shipment.primary_driver)
+    @secondary_driver = Driver.find(@shipment.secondary_driver)
 
     respond_to do |format|
       format.html # show.html.erb

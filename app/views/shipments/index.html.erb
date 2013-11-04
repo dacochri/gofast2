@@ -28,17 +28,22 @@
     </thead>
     <tbody>
     <% @shipments.each do |shipment| %>
+      <% trip = Trip.find(shipment.trip_id) %>
+      <% broker = Company.find(shipment.broker_id) %>
+      <% shipper = Company.find(shipment.shipper) %>
+      <% receiver = Company. find(shipment.receiver) %>
+      <% primary_driver = Driver.find(shipment.primary_driver) %>
       <tr<%= ' class="cartage"' if !shipment.cartage_id.nil? %>>
         <td><%= shipment.shipment_no %></td>
-        <td><%= link_to shipment.trip_id, "/trips/#{shipment.trip_id}" %></td>
-        <td><%= link_to shipment.broker_id, "/companies/#{shipment.broker_id}" %></td>
-        <td><%= link_to shipment.shipper, "/companies/#{shipment.shipper}" %></td>
+        <td><%= link_to trip.trip_no, "/trips/#{shipment.trip_id}" %></td>
+        <td><%= link_to broker.name, "/companies/#{shipment.broker_id}" %></td>
+        <td><%= link_to shipper.name, "/companies/#{shipment.shipper}" %></td>
         <td><%= shipment.shipper_address %></td>
-        <td><%= link_to shipment.receiver, "/companies/#{shipment.receiver}" %></td>
+        <td><%= link_to receiver.name, "/companies/#{shipment.receiver}" %></td>
         <td><%= shipment.receiver_address %></td>
         <td><%= number_to_currency shipment.rate %></td>
         <td><%= shipment.delivered %></td>
-        <td><%= link_to shipment.primary_driver, "/drivers/#{shipment.primary_driver}" %></td>
+        <td><%= link_to primary_driver.name, "/drivers/#{shipment.primary_driver}" %></td>
         <td><%= link_to '', shipment, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_shipment_path(shipment), :class => 'button edit', :title => 'Edit' %> <%= link_to '', shipment, method: :delete, data: { confirm: 'Are you sure you want to delete shipment no. ' + shipment.shipment_no.to_s + '?' }, :class => 'button destroy', :title => 'Delete' %></td>
       </tr>
     <% end %>

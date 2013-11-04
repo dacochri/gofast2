@@ -2,14 +2,17 @@
   <h2>Maintenance Record #<%= @maintenance.id %></h2>
   <p id="notice"><%= notice %></p>
   <dl>
-    <dt><strong>Vehicle:</strong></dt><dd><%= @maintenance.vehicle_id %></dd>
-    <dt><strong>Trip:</strong></dt><dd><%= @maintenance.trip_id %></dd>
+    <% if @maintenance.vehicle_type == 'truck' %>
+    <dt><strong>Truck:</strong></dt><dd><%= link_to @truck.truck_no, "/trucks/#{@maintenance.vehicle_id}" %></dd>
+    <% else %>
+    <dt><strong>Trailer:</strong></dt><dd><%= link_to @trailer.trailer_no, "/trailers/#{@maintenance.vehicle_id}" %></dd>
+    <% end %>
+    <dt><strong>Trip:</strong></dt><dd><%= link_to @trip.trip_no, "/trips/#{@maintenance.trip_id}" %></dd>
     <dt><strong>Date:</strong></dt><dd><%= @maintenance.date %></dd>
     <dt><strong>Cost:</strong></dt><dd><%= number_to_currency @maintenance.cost %></dd>
     <dt><strong>Maintenance type:</strong></dt><dd><%= @maintenance.maintenance_type %></dd>
     <dt><strong>Description:</strong></dt><dd><%= @maintenance.description %></dd>
     <dt><strong>Kilometres:</strong></dt><dd><%= @maintenance.kilometres %> <abbr title="kilometre">km</abbr></dd>
-    <dt><strong>Vehicle type:</strong></dt><dd><%= @maintenance.vehicle_type %></dd>
   </dl>
   <p><%= link_to 'Edit', edit_maintenance_path(@maintenance), :class => 'button edit' %> <%= link_to 'Back', maintenances_path, :class => 'button back' %></p>
 </section>
