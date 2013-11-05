@@ -32,9 +32,8 @@ class JobApplication
       :reply_to => email,
       :subject => name + " applying for " + job,
       :body => "Phone: " + phone + "\nE-mail: " + email + "\nResume: " + resume,
-      :html_body => simple_format("<h2>" + name + " has applied for " + job + "</h2><br>" + "<h3>Phone: " + phone + " E-mail: " + email + "</h3>" + "<br>Resume: " + resume)
-      #:attachments => { File.basename(resume_file) => File.read(resume_file) },
-      #:headers => { "Content-Type" => "multipart/mixed", "Content-Transfer-Encoding" => "base64", "Content-Disposition" => "attachment" }
+      :html_body => simple_format("<h2>" + name + " has applied for " + job + "</h2><br>" + "<h3>Phone: " + phone + " E-mail: " + email + "</h3>" + "<br>Resume: " + resume),
+      :attachments => { resume_file.original_filename => resume_file.read }
     })
   end
   
