@@ -202,8 +202,8 @@ Trip.create(truck_id: '13', trailer_id: '11', trip_no: '2721', start_date: '2013
 Trip.create(truck_id: '11', trailer_id: '13', trip_no: '2722', start_date: '2013-08-26', end_date: '2009-08-28', load_bar_count: '1',accumulated_kilometres:'2130',fuel_cost: '743.89',misc_cost: '34.67',comments: '')#done
 Trip.create(truck_id: '12', trailer_id: '14', trip_no: '2723', start_date: '2013-09-02', end_date: '2013-09-05', load_bar_count: '4', accumulated_kilometres: '2258', fuel_cost: '746.99',misc_cost: '64.67', comments: '')#done
 Trip.create(truck_id: '13', trailer_id: '9', trip_no: '2724', start_date: '2013-09-09', end_date: '2013-09-10', load_bar_count: '6', accumulated_kilometres: '4452', fuel_cost: '1792.99',misc_cost: '20.45', comments: 'Cartaged')#done
-Trip.create(truck_id: '6', trailer_id: '11', trip_no: '2725', start_date: '2013-09-17', end_date: '2013-09-19', load_bar_count: '2', accumulated_kilometres: '2258', fuel_cost: '890.99',misc_cost: '20.45', comments: 'Cartaged')#done
-Trip.create(truck_id: '6', trailer_id: '2', trip_no: '2725', start_date: '2013-10-07', end_date: '2013-10-11', load_bar_count: '2', accumulated_kilometres: '2258', fuel_cost: '890.99',misc_cost: '20.45', comments: '')
+Trip.create(truck_id: '6', trailer_id: '11', trip_no: '2725', start_date: '2013-09-17', end_date: '2013-09-19', load_bar_count: '2', accumulated_kilometres: '258', fuel_cost: '90.99',misc_cost: '20.45', comments: 'Cartaged')#done
+Trip.create(truck_id: '8', trailer_id: '2', trip_no: '2726', start_date: '2013-10-07', end_date: '2013-10-10', load_bar_count: '2', accumulated_kilometres: '2258', fuel_cost: '890.99',misc_cost: '20.45', comments: '')
 
 
 
@@ -243,6 +243,8 @@ Shipment.create(shipment_no: '180',trip_id: '8',broker_id: '4',shipper: '16',rec
 Shipment.create(shipment_no: '181',trip_id: '8',broker_id: '5',shipper: '9',receiver: '10',cartage_id: '4',broker_date: '2013-09-16',shipper_address: '9244 Pede Avenue', receiver_address: '5516 Nulla Road', rate: '150.00', delivered: 'true', invoice: '997510', distance: '120', primary_driver: '8', secondary_driver: '', primary_quick_pay: '50.00', secondary_quick_pay: '', primary_driver_pay: '100.00', secondary_driver_pay: '', misc_cost: '10.00', comments: 'Cartaged.')
 Shipment.create(shipment_no: '182',trip_id: '8',broker_id: '4',shipper: '11',receiver: '12',cartage_id: '5',broker_date: '2013-09-16',shipper_address: '5072 Non Rd.', receiver_address: '3353 Quisque Rd.', rate: '250.00', delivered: 'true', invoice: '486215', distance: '320', primary_driver: '8', secondary_driver: '', primary_quick_pay: '50.00', secondary_quick_pay: '', primary_driver_pay: '100.00', secondary_driver_pay: '', misc_cost: '10.00', comments: 'Cartaged.')
 Shipment.create(shipment_no: '183',trip_id: '8',broker_id: '5',shipper: '18',receiver: '19',cartage_id: '6',broker_date: '2013-09-16',shipper_address: '4811 Eu Road', receiver_address: '7135 Hendrerit St.', rate: '450.00', delivered: 'true', invoice: '203', distance: '709', primary_driver: '8', secondary_driver: '', primary_quick_pay: '50.00', secondary_quick_pay: '', primary_driver_pay: '100.00', secondary_driver_pay: '', misc_cost: '10.00', comments: 'Cartaged.')
+#trip 2726
+Shipment.create(shipment_no: '190',trip_id: '8',broker_id: '5',shipper: '18',receiver: '19',cartage_id: '',broker_date: '2013-10-07',shipper_address: '4811 Eu Road', receiver_address: '7135 Hendrerit St.', rate: '450.00', delivered: 'true', invoice: '203', distance: '709', primary_driver: '8', secondary_driver: '', primary_quick_pay: '50.00', secondary_quick_pay: '', primary_driver_pay: '100.00', secondary_driver_pay: '', misc_cost: '10.00', comments: '')
 
 
 # Skids
