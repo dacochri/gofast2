@@ -6,6 +6,8 @@ Gofast2::Application.routes.draw do
   
   get 'quotes' => 'quotes#new', :as => :quotes
 
+  get 'job_applications' => 'job_applications#new', :as => :job_applications
+  
   get "schedule/index"
 
   #get "quotes/index"
