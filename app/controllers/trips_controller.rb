@@ -23,6 +23,10 @@ class TripsController < ApplicationController
     @truck = Truck.find(@trip.truck_id)
     @trailer = Trailer.find(@trip.trailer_id)
 
+    @shipments = Shipment.where(trip_id: @trip.id)
+    @shipment = Shipment.where(trip_id: @trip.id).first
+    
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @trip }
