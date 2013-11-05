@@ -5,7 +5,6 @@
       <tr>
         <th scope="col">Company Id</th>
         <th scope="col">Trailer Id</th>
-        <th scope="col">Shipment Id</th>
         <th scope="col">Pickup Time</th>
         <th scope="col">Delivery Time</th>
         <th scope="col">Driver Name</th>
@@ -14,14 +13,15 @@
     </thead>
     <tbody>
     <% @cartages.each do |cartage| %>
+      <% company = Company.find(cartage.company_id) %>
+      <% trailer = Trailer.find(cartage.trailer_id) %>
       <tr>
-        <td><%= cartage.company_id %></td>
-        <td><%= cartage.trailer_id %></td>
-        <td><%= cartage.shipment_id %></td>
-        <td><%= cartage.pickup_time %></td>
-        <td><%= cartage.delivery_time %></td>
+        <td><%= company.name %></td>
+        <td><%= trailer.trailer_no %></td>
+        <td><%= format_time cartage.pickup_time %></td>
+        <td><%= format_time cartage.delivery_time %></td>
         <td><%= cartage.driver_name %></td>
-        <td><%= cartage.cost %></td>
+        <td><%= number_to_currency cartage.cost %></td>
       </tr>
     <% end %>
     </tbody>

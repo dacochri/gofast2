@@ -73,6 +73,15 @@ class ReportsController < ApplicationController
     return records
   end
   
+  def schedule
+    @trucks = Truck.order(sort_column(Truck, 'truck_no') + ' ' + sort_direction)
+    
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @trucks }
+    end
+  end
+  
   def trucks
     
     @trucks = Truck.search(params[:search], params[:column]).order(sort_column(Truck, 'truck_no') + ' ' + sort_direction).page(params[:page])

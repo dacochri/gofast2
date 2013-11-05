@@ -6,16 +6,18 @@
         <th scope="col">Posted By</th>
         <th scope="col">Title</th>
         <th scope="col">Date Posted</th>
-				<th scope="col">Short Description</th>
+				<th scope="col">Content</th>
       </tr>
     </thead>
     <tbody>
     <% @announcements.each do |announcement| %>
+      <% user = User.find(announcement.posted_by) %>
       <tr>
-        <td><%= announcement.posted_by %></td>
+        <td><%= user.name %></td>
         <td><%= announcement.title %></td>
-        <td><%= announcement.date_posted %></td>
+        <td><%= format_time announcement.date_posted %></td>
 				<td><%= announcement.content.truncate(40) %>
+      </tr>
     <% end %>
     </tbody>
   </table>

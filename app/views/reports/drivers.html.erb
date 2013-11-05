@@ -3,33 +3,21 @@
   <table>
     <thead>
       <tr>
-        <th scope="col">First Name</th>
-        <th scope="col">Last Name</th>
+        <th scope="col">Name</th>
         <th scope="col">Street</th>
-        <th scope="col">Unit</th>
         <th scope="col">City</th>
         <th scope="col">Postal Code</th>
-        <th scope="col">Home Phone</th>
         <th scope="col">Cell Phone</th>
-        <th scope="col">Business Name</th>
-        <th scope="col">Hst No</th>
-        <th scope="col">Comments</th>
       </tr>
     </thead>
     <tbody>
     <% @drivers.each do |driver| %>
       <tr>
-        <td><%= driver.first_name %></td>
-        <td><%= driver.last_name %></td>
+        <td><%= driver.name %></td>
         <td><%= driver.street %></td>
-        <td><%= driver.unit %></td>
         <td><%= driver.city %></td>
         <td><%= driver.postal_code %></td>
-        <td><%= driver.home_phone %></td>
         <td><%= driver.cell_phone %></td>
-        <td><%= driver.business_name %></td>
-        <td><%= driver.hst_no %></td>
-        <td><%= driver.comments %></td>
       </tr>
     <% end %>
     </thead>

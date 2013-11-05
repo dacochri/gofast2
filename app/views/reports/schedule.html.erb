@@ -1,19 +1,19 @@
 <section>
   <h2>Schedule</h2>
-  <p><%= link_to 'Print', "reports/#{params[:controller]}" + "?column=#{@column}&direction=#{@direction}&search=#{@search}&sort=#{@sort}", :class => 'button print' %></p>
+  <p><%= link_to 'Print', "../reports/#{params[:controller]}", :class => 'button print' %></p>
   <table>
     <thead>
       <tr>
-        <th scope="col"><%= sortable "truck_no", nil, @trucks, "truck_no" %></th>
-        <th scope="col"><%= sortable "driver_name", nil, @trucks, "truck_no" %></th>
-        <th scope="col"><%= sortable "trip_start", nil, @trucks, "truck_no" %></th>
-        <th scope="col"><%= sortable "load_bar_count", nil, @trucks, "truck_no" %></th>
-        <th scope="col"><%= sortable "current_mileage", nil, @trucks, "truck_no" %></th>
-        <th scope="col"><%= sortable "next_oil_change", nil, @trucks, "truck_no" %></th>
-        <th scope="col"><%= sortable "current_location", nil, @trucks, "truck_no" %></th>
-        <th scope="col"><%= sortable "delivery_locations", nil, @trucks, "truck_no" %></th>
-        <th scope="col"><%= sortable "trailer_no", nil, @trucks, "truck_no" %></th>
-        <th scope="col"><%= sortable "trailer_next_service_date", nil, @trucks, "truck_no" %></th>
+        <th scope="col">Truck No</th>
+        <th scope="col">Driver Name</th>
+        <th scope="col">Trip Start</th>
+        <th scope="col">Load Bar Count</th>
+        <th scope="col">Current Mileage</th>
+        <th scope="col">Next Oil Change</th>
+        <th scope="col">Current Location</th>
+        <th scope="col">Delivery Locations</th>
+        <th scope="col">Trailer No</th>
+        <th scope="col">Trailer Next Service Date</th>
       </tr>
     </thead>
     <tbody>
