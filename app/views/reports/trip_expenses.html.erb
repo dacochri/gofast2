@@ -1,18 +1,23 @@
 <section>
   <h2>Trip Expenses Report</h2>
+  <%= form_tag :action => 'trip_expenses' do %>
+    <%= label_tag :date %>
+    <%= select_tag :date, options_for_select(%w(January February March April May June July August September October November December 1st\ Quarter 2nd\ Quarter 3rd\ Quarter 4th\ Quarter Current\ Year Previous\ Year 2\ Years\ Ago)) %>
+    <%= submit_tag 'Submit' %>
+  <% end %>
   <table>
     <thead>
       <tr>
-        <th scope="col"><%= sortable "id", 'Trip No', @trips, "id" %></th>
-        <th scope="col"><%= sortable "shipper", nil, @trips, "id" %></th>
-        <th scope="col"><%= sortable "shipment", 'Shipment(s)', @trips, "id" %></th>
-        <th scope="col"><%= sortable "distance", nil, @trips, "id" %></th>
-        <th scope="col"><%= sortable "rate", nil, @trips, "id" %></th>
-        <th scope="col"><%= sortable "quick_pay", nil, @trips, "id" %></th>
-        <th scope="col"><%= sortable "fuel", nil, @trips, "id" %></th>
-        <th scope="col"><%= sortable "misc_cost", nil, @trips, "id" %></th>
-        <th scope="col"><%= sortable "driver_pay", nil, @trips, "id" %></th>
-        <th scope="col"><%= sortable "profit", nil, @trips, "id" %></th>
+        <th scope="col">Trip No</th>
+        <th scope="col">Shipper</th>
+        <th scope="col">Shipment(s)/th>
+        <th scope="col">Distance</th>
+        <th scope="col">Rate</th>
+        <th scope="col">Quick Pay</th>
+        <th scope="col">Fuel Cost</th>
+        <th scope="col">Misc Cost</th>
+        <th scope="col">Driver Pay</th>
+        <th scope="col">Profit</th>
       </tr>
     </thead>
     <tbody>

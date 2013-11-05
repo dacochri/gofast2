@@ -4,7 +4,38 @@ class ReportsController < ApplicationController
   # GET /reports/trucks
   # GET /reports/trucks.json
   def trip_expenses
-     @trips = Trip.search(params[:search], params[:column]).order(sort_column(Trip, 'truck_id') + ' ' + sort_direction)
+    sql_query = {
+      'January' => { 'start' => Time.now.year.to_s + '-01-01', 'end' => Time.now.year.to_s + '-01-31' },
+      'February' => { 'start' => Time.now.year.to_s + '-02-01', 'end' => Time.now.year.to_s + '-02-29' },
+      'March' => { 'start' => Time.now.year.to_s + '-03-01', 'end' => Time.now.year.to_s + '-03-31' },
+      'April' => { 'start' => Time.now.year.to_s + '-04-01', 'end' => Time.now.year.to_s + '-04-30' },
+      'May' => { 'start' => Time.now.year.to_s + '-05-01', 'end' => Time.now.year.to_s + '-05-31' },
+      'June' => { 'start' => Time.now.year.to_s + '-06-01', 'end' => Time.now.year.to_s + '-06-30' },
+      'July' => { 'start' => Time.now.year.to_s + '-07-01', 'end' => Time.now.year.to_s + '-07-31' },
+      'August' => { 'start' => Time.now.year.to_s + '-08-01', 'end' => Time.now.year.to_s + '-08-31' },
+      'September' => { 'start' => Time.now.year.to_s + '-09-01', 'end' => Time.now.year.to_s + '-09-30' },
+      'October' => { 'start' => Time.now.year.to_s + '-10-01', 'end' => Time.now.year.to_s + '-10-31' },
+      'November' => { 'start' => Time.now.year.to_s + '-11-01', 'end' => Time.now.year.to_s + '-11-30' },
+      'December' => { 'start' => Time.now.year.to_s + '-12-01', 'end' => Time.now.year.to_s + '-12-31' },
+      '1st Quarter' => { 'start' => Time.now.year.to_s + '-01-01', 'end' => Time.now.year.to_s + '-03-31' },
+      '2nd Quarter' => { 'start' => Time.now.year.to_s + '-04-01', 'end' => Time.now.year.to_s + '-06-30' },
+      '3rd Quarter' => { 'start' => Time.now.year.to_s + '-07-01', 'end' => Time.now.year.to_s + '-09-30' },
+      '4th Quarter' => { 'start' => Time.now.year.to_s + '-10-01', 'end' => Time.now.year.to_s + '-12-31' },
+      'Current Year' => { 'start' => Time.now.year.to_s + '-01-01', 'end' => Time.now.year.to_s + '-12-31' },
+      'Previous Year' => { 'start' => (Time.now.year.to_i - 1).to_s + '-01-01', 'end' => Time.now.year.to_s + '-12-31' },
+      '2 Years Ago' => { 'start' => (Time.now.year.to_i - 2).to_s + '-01-01', 'end' => Time.now.year.to_s + '-12-31' }
+    }
+  
+    unless params[:date].nil?
+      @trips = Trip.where('start_date >= ? AND end_date <= ?', sql_query[params[:date]]['start'], sql_query[params[:date]]['end'])
+    else
+      start_date = Time.now.month.to_i
+      start_date = Time.now.year.to_s + '-' + start_date.to_s + '-01'
+      end_date = Time.now.month.to_i + 1
+      end_date = Time.now.year.to_s + '-' + end_date.to_s + '-01'
+      @trips = Trip.all
+      @trips = Trip.where('start_date >= ? AND end_date <= ?', start_date, end_date)
+    end
   end
   
   def ReportsController.trip_records(id)
