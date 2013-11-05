@@ -23,8 +23,10 @@ class TripsController < ApplicationController
     @truck = Truck.find(@trip.truck_id)
     @trailer = Trailer.find(@trip.trailer_id)
     @shipment = Shipment.where(trip_id: @trip.id).first
-    @primary_driver = Driver.find(@shipment.primary_driver)
-    @secondary_driver = Driver.find(@shipment.secondary_driver)
+    unless @shipment.nil?
+      @primary_driver = Driver.find(@shipment.primary_driver)
+      @secondary_driver = Driver.find(@shipment.secondary_driver)
+    end
 
     @profit = 0
     Shipment.where(trip_id: @trip.id).each do |s|
