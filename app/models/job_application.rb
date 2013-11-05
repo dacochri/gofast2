@@ -1,4 +1,4 @@
-class JobApplication
+class JobApplication 
   extend ActiveModel::Naming
   include ActiveModel::Conversion
   include ActiveModel::Validations
@@ -6,11 +6,11 @@ class JobApplication
   
   # get/set method
   attr_accessor :title, :job, :name, :phone, :email, :resume, :resume_file
-  
+  #has_attached_file :resume_file
   message = ValidationValues.message
   
   # validation for all fields
- 
+  #validates_attachment_content_type :resume_file, :content_type => ['application/pdf', 'application/msword']
   validates :job, :format => { :with => ValidationValues.content, :message => message }
   validates :name, :presence => true, :format => { :with => ValidationValues.name, :message => message }
   validates :phone, :presence => true, :numericality => true, :length => 10..10

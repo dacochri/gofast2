@@ -13,7 +13,7 @@
     </div>
   <% end %>
   <%= f.label :job %>
-  <%= f.text_field :job, :pattern => ValidationValues.content, :value => @job_application.title %>
+  <%= f.text_field :job, :required => 'required', :pattern => ValidationValues.content, :value => @job_application.title %>
   <%= f.label :name %>
   <%= f.text_field :name, :required => 'required', :pattern => ValidationValues.c_name, :placeholder => ValidationValues.p_name %>
   <%= f.label :phone %>
@@ -21,7 +21,7 @@
   <%= f.label :email %>
   <%= f.text_field :email, :required => 'required', :pattern => ValidationValues.c_email, :placeholder => ValidationValues.p_email%>
   <%= f.label :resume %>
-  <%= f.text_area :resume, :pattern => ValidationValues.content %>
+  <%= f.text_area :resume, :required => 'required', :pattern => ValidationValues.content %>
   <%= f.label :resume_file %>
   <%= f.file_field :resume_file %>
   <div class="footer">
