@@ -19,7 +19,7 @@ class Truck < ActiveRecord::Base
   validates :make, :model, :format => { :with => ValidationValues.alpha_numeric, :message => message }
   validates :vin, :format => { :with => ValidationValues.vin, :message => message }, :length => 17..17, :uniqueness => true
   validates :current_location, :format => { :with => ValidationValues.street, :message => message }
-  validates :license_plate, :format => { :with => ValidationValues.license_plate, :message => message }, :length => 3..8, :allow_blank => true
+  validates :license_plate, :format => { :with => ValidationValues.license_plate, :message => message }, :length => 3..8, :allow_blank => true, :uniqueness => true
   validates :truck_type, :inclusion => { :in => ValidationValues.truck_type }
   validates :truck_no, :uniqueness => true, :allow_blank => true
   validates_attachment_size :photo, :less_than => 1.megabytes
