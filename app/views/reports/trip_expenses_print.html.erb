@@ -1,11 +1,5 @@
 <section>
   <h2>Trip Expenses Report <%= @print_message %></h2>
-  <p><%= link_to 'Print', "trip_expenses_print" + "?date=#{@date}", :class => 'button print' %></p>
-  <%= form_tag :action => 'trip_expenses' do %>
-    <%= label_tag :date %>
-    <%= select_tag :date, options_for_select(%w(January February March April May June July August September October November December 1st\ Quarter 2nd\ Quarter 3rd\ Quarter 4th\ Quarter Current\ Year Previous\ Year 2\ Years\ Ago)) %>
-    <%= submit_tag 'Submit' %>
-  <% end %>
   <table>
     <thead>
       <tr>
@@ -25,15 +19,15 @@
     <% @trips.each do |trip| %>
       <% record = ReportsController.trip_records(trip.id) %>
       <tr>
-        <td><%= link_to trip.id.to_s, '/trips/' + trip.id.to_s %></td>
+        <td><%= trip.id.to_s %></td>
         <td>
           <% record['shipper_name'].each.with_index do |shipper, i| %>
-            <%= link_to shipper.to_s, '/companies/' + record['shipper_id'][i].to_s %><br/>
+            <%= shipper.to_s %><br/>
           <% end %>
         </td>
         <td>
           <% record['shippment_no'].each.with_index do |shipper, i| %>
-            <%= link_to shipper.to_s, '/shipments/' + record['shippment_id'][i].to_s %><br/>
+            <%= shipper.to_s %><br/>
           <% end %>
         </td>
         <td><%= record['distance'] %></td>

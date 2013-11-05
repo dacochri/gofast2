@@ -3,28 +3,39 @@ class ReportsController < ApplicationController
   
   # GET /reports/trucks
   # GET /reports/trucks.json
+  
+  def trip_expenses_print
+    @trips = trip_expenses
+  end
   def trip_expenses
     sql_query = {
-      'January' => { 'start' => Time.now.year.to_s + '-01-01', 'end' => Time.now.year.to_s + '-01-31' },
-      'February' => { 'start' => Time.now.year.to_s + '-02-01', 'end' => Time.now.year.to_s + '-02-29' },
-      'March' => { 'start' => Time.now.year.to_s + '-03-01', 'end' => Time.now.year.to_s + '-03-31' },
-      'April' => { 'start' => Time.now.year.to_s + '-04-01', 'end' => Time.now.year.to_s + '-04-30' },
-      'May' => { 'start' => Time.now.year.to_s + '-05-01', 'end' => Time.now.year.to_s + '-05-31' },
-      'June' => { 'start' => Time.now.year.to_s + '-06-01', 'end' => Time.now.year.to_s + '-06-30' },
-      'July' => { 'start' => Time.now.year.to_s + '-07-01', 'end' => Time.now.year.to_s + '-07-31' },
-      'August' => { 'start' => Time.now.year.to_s + '-08-01', 'end' => Time.now.year.to_s + '-08-31' },
-      'September' => { 'start' => Time.now.year.to_s + '-09-01', 'end' => Time.now.year.to_s + '-09-30' },
-      'October' => { 'start' => Time.now.year.to_s + '-10-01', 'end' => Time.now.year.to_s + '-10-31' },
-      'November' => { 'start' => Time.now.year.to_s + '-11-01', 'end' => Time.now.year.to_s + '-11-30' },
-      'December' => { 'start' => Time.now.year.to_s + '-12-01', 'end' => Time.now.year.to_s + '-12-31' },
-      '1st Quarter' => { 'start' => Time.now.year.to_s + '-01-01', 'end' => Time.now.year.to_s + '-03-31' },
-      '2nd Quarter' => { 'start' => Time.now.year.to_s + '-04-01', 'end' => Time.now.year.to_s + '-06-30' },
-      '3rd Quarter' => { 'start' => Time.now.year.to_s + '-07-01', 'end' => Time.now.year.to_s + '-09-30' },
-      '4th Quarter' => { 'start' => Time.now.year.to_s + '-10-01', 'end' => Time.now.year.to_s + '-12-31' },
-      'Current Year' => { 'start' => Time.now.year.to_s + '-01-01', 'end' => Time.now.year.to_s + '-12-31' },
-      'Previous Year' => { 'start' => (Time.now.year.to_i - 1).to_s + '-01-01', 'end' => Time.now.year.to_s + '-12-31' },
-      '2 Years Ago' => { 'start' => (Time.now.year.to_i - 2).to_s + '-01-01', 'end' => Time.now.year.to_s + '-12-31' }
+      'January' => { 'start' => Time.now.year.to_s + '-01-01', 'end' => Time.now.year.to_s + '-01-31', 'message' => '- Month of January (' + Time.now.year.to_s + ')' },
+      'February' => { 'start' => Time.now.year.to_s + '-02-01', 'end' => Time.now.year.to_s + '-02-29', 'message' => '- Month of February (' + Time.now.year.to_s + ')' },
+      'March' => { 'start' => Time.now.year.to_s + '-03-01', 'end' => Time.now.year.to_s + '-03-31', 'message' => '- Month of March (' + Time.now.year.to_s + ')' },
+      'April' => { 'start' => Time.now.year.to_s + '-04-01', 'end' => Time.now.year.to_s + '-04-30', 'message' => '- Month of April (' + Time.now.year.to_s + ')' },
+      'May' => { 'start' => Time.now.year.to_s + '-05-01', 'end' => Time.now.year.to_s + '-05-31', 'message' => '- Month of May (' + Time.now.year.to_s + ')' },
+      'June' => { 'start' => Time.now.year.to_s + '-06-01', 'end' => Time.now.year.to_s + '-06-30', 'message' => '- Month of June (' + Time.now.year.to_s + ')' },
+      'July' => { 'start' => Time.now.year.to_s + '-07-01', 'end' => Time.now.year.to_s + '-07-31', 'message' => '- Month of July (' + Time.now.year.to_s + ')' },
+      'August' => { 'start' => Time.now.year.to_s + '-08-01', 'end' => Time.now.year.to_s + '-08-31', 'message' => '- Month of August (' + Time.now.year.to_s + ')' },
+      'September' => { 'start' => Time.now.year.to_s + '-09-01', 'end' => Time.now.year.to_s + '-09-30', 'message' => '- Month of September (' + Time.now.year.to_s + ')' },
+      'October' => { 'start' => Time.now.year.to_s + '-10-01', 'end' => Time.now.year.to_s + '-10-31', 'message' => '- Month of October (' + Time.now.year.to_s + ')' },
+      'November' => { 'start' => Time.now.year.to_s + '-11-01', 'end' => Time.now.year.to_s + '-11-30', 'message' => '- Month of November (' + Time.now.year.to_s + ')' },
+      'December' => { 'start' => Time.now.year.to_s + '-12-01', 'end' => Time.now.year.to_s + '-12-31', 'message' => '- Month of December (' + Time.now.year.to_s + ')' },
+      '1st Quarter' => { 'start' => Time.now.year.to_s + '-01-01', 'end' => Time.now.year.to_s + '-03-31', 'message' => '- First Quarter of ' + Time.now.year.to_s },
+      '2nd Quarter' => { 'start' => Time.now.year.to_s + '-04-01', 'end' => Time.now.year.to_s + '-06-30', 'message' => '- Second Quarter of ' + Time.now.year.to_s },
+      '3rd Quarter' => { 'start' => Time.now.year.to_s + '-07-01', 'end' => Time.now.year.to_s + '-09-30', 'message' => '- Third Quarter of ' + Time.now.year.to_s },
+      '4th Quarter' => { 'start' => Time.now.year.to_s + '-10-01', 'end' => Time.now.year.to_s + '-12-31', 'message' => '- Fourth Quarter of ' + Time.now.year.to_s },
+      'Current Year' => { 'start' => Time.now.year.to_s + '-01-01', 'end' => Time.now.year.to_s + '-12-31', 'message' => '- Year of ' + Time.now.year.to_s },
+      'Previous Year' => { 'start' => (Time.now.year.to_i - 1).to_s + '-01-01', 'end' => (Time.now.year.to_i - 1).to_s + '-12-31', 'message' => '- Year of ' + (Time.now.year.to_i - 1).to_s },
+      '2 Years Ago' => { 'start' => (Time.now.year.to_i - 2).to_s + '-01-01', 'end' => (Time.now.year.to_i - 2).to_s + '-12-31', 'message' => '- Year of ' + (Time.now.year.to_i - 2).to_s }
     }
+    
+    if sql_query.key?(params[:date])
+      @date = params[:date]
+      @print_message =  sql_query[params[:date]]['message']
+    else
+      params[:date] = Date.today.strftime("%B")
+    end
   
     unless params[:date].nil?
       @trips = Trip.where('start_date >= ? AND end_date <= ?', sql_query[params[:date]]['start'], sql_query[params[:date]]['end'])
@@ -71,15 +82,6 @@ class ReportsController < ApplicationController
       i = i + 1
     end
     return records
-  end
-  
-  def schedule
-    @trucks = Truck.order(sort_column(Truck, 'truck_no') + ' ' + sort_direction)
-    
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @trucks }
-    end
   end
   
   def trucks
