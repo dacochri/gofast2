@@ -22,10 +22,21 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     @truck = Truck.find(@trip.truck_id)
     @trailer = Trailer.find(@trip.trailer_id)
-
-    @shipments = Shipment.where(trip_id: @trip.id)
     @shipment = Shipment.where(trip_id: @trip.id).first
-    
+    @primary_driver = Driver.find(@shipment.primary_driver)
+    @secondary_driver = Driver.find(@shipment.secondary_driver)
+
+    @profit = 0
+    Shipment.where(trip_id: @trip.id).each do |s|
+      @profit += s.rate
+      @profit -= s.primary_driver_pay
+      @profit -= s.secondary_driver_pay
+      @profit += s.primary_quick_pay
+      @profit += s.secondary_quick_pay
+      @profit -= s.misc_cost
+    end
+    @profit -= @trip.fuel_cost
+    @profit -= @trip.misc_cost
 
     respond_to do |format|
       format.html # show.html.erb
