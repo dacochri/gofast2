@@ -1,17 +1,14 @@
 <section>
-  <h2>Announcement #<%= @announcement.id %></h2>
+  <h2 class="announcement"><%= @announcement.title %></h2>
+  <p><%= @announcement.date_posted.strftime('%B %e, %Y') %></p>
+  <p><%= @announcement.content %></p>
+  <% unless notice.nil? %>
   <p id="notice"><%= notice %></p>
-  <dl>
-    <dt><strong>Title:</strong></dt><dd><%= @announcement.title %></dd>
-    <dt><strong>Date posted:</strong></dt><dd><%= format_time @announcement.date_posted %></dd>
-    <dt><strong>Content:</strong></dt><dd><%= @announcement.content %></dd>
-  </dl>
+  <% end %>
+  <% if user_signed_in? %>
   <p>
-    <% if user_signed_in? %>
       <%= link_to 'Edit', edit_announcement_path(@announcement), :class => 'button edit' %>
       <%= link_to 'Back', announcements_path, :class => 'button back' %>
-    <% else %>
-      <%= link_to 'Back', '/', :class => 'button back' %>
-    <% end %>
   </p>
+  <% end %>
 </section>
