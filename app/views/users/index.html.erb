@@ -21,6 +21,11 @@
         <td><%= link_to '', edit_user_path(user), :class => 'button edit', :title => 'Edit' %> <%= link_to '', user, method: :delete, data: { confirm: 'Are you sure you want to delete user: ' + user.name + '?' }, :class => 'button destroy', :title => 'Delete' %></td>
       </tr>
     <% end %>
+    <% if @users.empty? %>
+      <tr>
+        <td colspan="4">No results found.</td>
+      </tr>
+    <% end %>
     </tbody>
   </table>
 </section>

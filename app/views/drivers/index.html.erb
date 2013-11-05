@@ -32,7 +32,12 @@
         <td><%= link_to '', driver, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_driver_path(driver), :class => 'button edit', :title => 'Edit' %> <%= link_to '', driver, method: :delete, data: { confirm: 'Are you sure you want to delete driver: ' + driver.name + '?' }, :class => 'button destroy', :title => 'Delete' %></td>
       </tr>
     <% end %>
-    </thead>
+    <% if @drivers.empty? %>
+      <tr>
+        <td colspan="6">No results found.</td>
+      </tr>
+    <% end %>
+    </tbody>
   </table>
   <%= paginate @drivers %>
 </section>

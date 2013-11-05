@@ -40,6 +40,11 @@
         </td>
       </tr>
     <% end %>
+    <% if @job_postings.empty? %>
+      <tr>
+        <td colspan="6">No results found.</td>
+      </tr>
+    <% end %>
     </tbody>
   </table>
   <%= paginate @job_postings %>

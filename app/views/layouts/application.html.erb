@@ -36,6 +36,7 @@
         <p>Welcome <%= current_user.name %>!</p>
         <ul>
           <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+        </ul>
       </div>
     <% end %>
   </div>

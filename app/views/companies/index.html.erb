@@ -46,6 +46,11 @@
         <td><%= link_to '', company, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_company_path(company), :class => 'button edit', :title => 'Edit' %> <%= link_to '', company, method: :delete, data: { confirm: 'Are you sure you want to delete company: ' + company.name + '?' }, :class => 'button destroy', :title => 'Delete' %></td>
       </tr>
     <% end %>
+    <% if @companies.empty? %>
+      <tr>
+        <td colspan="13">No results found.</td>
+      </tr>
+    <% end %>
     </tbody>
   </table>
   <%= paginate @companies %>

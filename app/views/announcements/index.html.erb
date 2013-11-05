@@ -31,6 +31,11 @@
         <td><%= link_to '', announcement, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_announcement_path(announcement), :class => 'button edit', :title => 'Edit' %> <%= link_to '', announcement, method: :delete, data: { confirm: 'Are you sure you want to delete announcement: ' + announcement.title + '?' }, :class => 'button destroy', :title => 'Delete' %></td>
       </tr>
     <% end %>
+    <% if @announcements.empty? %>
+      <tr>
+        <td colspan="5">No results found.</td>
+      </tr>
+    <% end %>
     </tbody>
   </table>
   <%= paginate @announcements %>

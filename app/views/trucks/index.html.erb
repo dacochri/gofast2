@@ -38,6 +38,11 @@
         <td><%= link_to '', truck, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_truck_path(truck), :class => 'button edit', :title => 'Edit' %> <%= link_to '', truck, method: :delete, data: { confirm: 'Are you sure you want to delete truck no. ' + truck.truck_no.to_s + '?' }, :class => 'button destroy', :title => 'Delete' %></td>
       </tr>
     <% end %>
+    <% if @trucks.empty? %>
+      <tr>
+        <td colspan="7">No results found.</td>
+      </tr>
+    <% end %>
     </tbody>
   </table>
   <%= paginate @trucks %>
