@@ -45,6 +45,8 @@ class TripsController < ApplicationController
   # GET /trips/1/edit
   def edit
     @trip = Trip.find(params[:id])
+    @trucks = Truck.all
+    @trailers = Trailer.all
   end
 
   # POST /trips

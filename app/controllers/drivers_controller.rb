@@ -40,6 +40,7 @@ class DriversController < ApplicationController
   # GET /drivers/1/edit
   def edit
     @driver = Driver.find(params[:id])
+    @driver_companies = Company.where(:company_type => 'driver')
   end
 
   # POST /drivers

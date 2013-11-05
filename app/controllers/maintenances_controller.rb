@@ -48,6 +48,7 @@ class MaintenancesController < ApplicationController
   # GET /maintenances/1/edit
   def edit
     @maintenance = Maintenance.find(params[:id])
+    @trips = Trip.all
   end
 
   # POST /maintenances

@@ -50,6 +50,11 @@ class ShipmentsController < ApplicationController
   # GET /shipments/1/edit
   def edit
     @shipment = Shipment.find(params[:id])
+    @trips = Trip.all
+    @broker_companies = Company.where(:company_type => 'broker')
+    @cartage_companies = Company.where(:company_type => 'cartage')
+    @shipper_receiver = Company.where("company_type = 'customer' OR company_type = 'broker'")
+    @drivers = Driver.all
   end
 
   # POST /shipments

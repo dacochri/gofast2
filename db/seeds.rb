@@ -200,6 +200,7 @@ Trip.create(truck_id: '9', trailer_id: '12', trip_no: '2719', start_date: '2008-
 Trip.create(truck_id: '3', trailer_id: '10', trip_no: '2720', start_date: '2012-06-29', end_date: '2012-06-31', load_bar_count: '2', accumulated_kilometres: '1208', fuel_cost: '643.99', misc_cost: '34.67', comments: '')
 Trip.create(truck_id: '6', trailer_id: '10', trip_no: '2721', start_date: '2013-10-29', end_date: '2013-10-29', load_bar_count: '0',accumulated_kilometres:'1208',fuel_cost: '383.99',misc_cost: '34.67',comments: '')
 Trip.create(truck_id: '11', trailer_id: '16', trip_no: '2722', start_date: '2009-08-11', end_date: '2009-08-13', load_bar_count: '4',accumulated_kilometres:'1208',fuel_cost: '743.89',misc_cost: '34.67',comments: '')
+Trip.create(truck_id: '2', trailer_id: '5', trip_no: '2723', start_date: '2009-08-15', end_date: '2009-08-22', load_bar_count: '4', accumulated_kilometres: '2258', fuel_cost: '746.99',misc_cost: '64.67', comments: '')
 
 # Shipments
 Shipment.create(shipment_no: '123',trip_id: '1',broker_id: '4',shipper: '9',receiver: '10',cartage_id: '',broker_date: '2013-10-29',shipper_address: '9244 Pede, Avenue', receiver_address: '5516 Nulla Road', rate: '500.00', delivered: 'false', invoice: '12342', distance: '1008', primary_driver: '1', secondary_driver: '', primary_quick_pay: '50.00', secondary_quick_pay: '', misc_cost: '59.00', comments: '')

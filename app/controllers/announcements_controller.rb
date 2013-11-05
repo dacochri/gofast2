@@ -45,6 +45,9 @@ class AnnouncementsController < ApplicationController
   def edit
     redirect_driver
     
+    @announcement = Announcement.new
+    @user = User.where(id: current_user.id)
+    
     @announcement = Announcement.find(params[:id])
   end
 

@@ -45,6 +45,9 @@ class CartagesController < ApplicationController
   # GET /cartages/1/edit
   def edit
     @cartage = Cartage.find(params[:id])
+    
+    @cartage_companies = Company.where(:company_type => 'cartage')
+    @trailers = Trailer.all
   end
 
   # POST /cartages

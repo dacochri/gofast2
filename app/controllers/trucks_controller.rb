@@ -47,6 +47,7 @@ class TrucksController < ApplicationController
   def edit
     # edit form for truck
     @truck = Truck.find(params[:id])
+    @driver_companies = Company.where(:company_type => 'driver')
   end
 
   # POST /trucks

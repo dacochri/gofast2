@@ -51,6 +51,7 @@ class SkidsController < ApplicationController
   # Edit page, edit a record. This loads the form; it does NOT submit to the database
   def edit
     @skid = Skid.find(params[:id])
+    @shipments = Shipment.all
   end
 
   # POST /skids
