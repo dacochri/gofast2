@@ -542,18 +542,7 @@ table{
   }
 }
 
-/* Desktop */
-@media only screen and (min-width: 100.7rem){
-  
-}
-
-/* Tablet */
-@media only screen and (min-width: 68.6rem) and (max-width: 100.6rem){
-  
-}
-
-/* Phone */
-@media only screen and (min-width: 31.2rem) and (max-width: 68.5rem){
+@mixin mobile-header{
   header{
   
     img{
@@ -579,7 +568,9 @@ table{
       padding-bottom: 0.5em;
     }
   }
+}
 
+@mixin mobile-user{
   #user{
     p{
       display: inline;
@@ -589,7 +580,24 @@ table{
       display: inline;
     }
   }
+}
+
+/* Desktop */
+@media only screen and (min-width: 100.7rem){
   
+}
+
+/* Tablet */
+@media only screen and (min-width: 68.6rem) and (max-width: 100.6rem){
+  
+}
+
+/* Phone */
+@media only screen and (min-width: 31.2rem) and (max-width: 68.5rem){
+  @include mobile-header;
+
+  @include mobile-user;
+
   .search{
     input[type="text"]{
       width: 15rem;
@@ -615,42 +623,10 @@ table{
 
 /* Ipod */
 @media only screen and (min-width: 22.3rem) and (max-width: 31.1rem){
-  header{
-  
-    img{
-      margin: 1.4rem 0;
-    }
-  
-    h1{
-      margin: 0 auto;
-      width: 25rem;
-      display: block;
-    }
-  
-    h2{
-      margin-right: 1rem;
-      float: none;
-      display: block;
-      position: static;
-      margin-bottom: 0;
-      text-align: center;
-    }
+  @include mobile-header;
 
-    p{
-      padding-bottom: 0.5em;
-    }
-  }
+  @include mobile-user;
 
-  #user{
-    p{
-      display: inline;
-    }
-
-    ul{
-      display: inline;
-    }
-  }
-  
   .search{
     input[type="text"]{
       width: 15rem;
@@ -676,41 +652,9 @@ table{
 
 /* Smaller */
 @media only screen and (max-width: 22.2rem){
-  header{
-  
-    img{
-      margin: 1.4rem 0;
-    }
-  
-    h1{
-      margin: 0 auto;
-      width: 25rem;
-      display: block;
-    }
-  
-    h2{
-      margin-right: 1rem;
-      float: none;
-      display: block;
-      position: static;
-      margin-bottom: 0;
-      text-align: center;
-    }
+  @include mobile-header;
 
-    p{
-      padding-bottom: 0.5em;
-    }
-  }
-
-  #user{
-    p{
-      display: inline;
-    }
-
-    ul{
-      display: inline;
-    }
-  }
+  @include mobile-user;
   
   .search{
     input[type="text"]{
