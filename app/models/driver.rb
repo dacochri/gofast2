@@ -12,6 +12,6 @@ class Driver < ActiveRecord::Base
   validates :street, :format => { :with => ValidationValues.street, :message => message }
   validates :unit, :format => { :with => ValidationValues.address_unit, :message => message }, :allow_blank => true
   validates :postal_code, :format => { :with => ValidationValues.postal_code, :message => message }
-  validates :drivers_license_number, :format => { :with => ValidationValues.alpha_numeric, :message => message }
+  validates :drivers_license_number, :format => { :with => ValidationValues.alpha_numeric, :message => message }, :uniqueness => true
   validates :date_of_birth, :format => { :with => ValidationValues.date, :message => message }
 end

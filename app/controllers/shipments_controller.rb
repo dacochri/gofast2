@@ -24,6 +24,7 @@ class ShipmentsController < ApplicationController
     @receiver = Company.find(@shipment.receiver)
     @primary_driver = Driver.find(@shipment.primary_driver)
     @secondary_driver = Driver.find(@shipment.secondary_driver)
+    @skid = Skid.where(shipment_id: @shipment.id).first
 
     respond_to do |format|
       format.html # show.html.erb
