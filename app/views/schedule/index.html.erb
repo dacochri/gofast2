@@ -17,18 +17,31 @@
     </thead>
     <tbody>
       <% @trucks.each do |truck| %>
-        <% record = ScheduleController.schedule_record(truck.id) %>
+      <% record = ScheduleController.schedule_record(truck.id) %>
       <tr>
-        <td><%= link_to "#{record['truck_no']}", { :action => "../trucks/show/#{truck.id}" } %></td>
-        <td><%= link_to record['name'], { :action => "../drivers/show/#{record['driver_id']}" } %></td>
-        <td><%= link_to "#{record['trip_start']}", { :action => "../trips/show/#{record['trip_no']}" } %></td>
-        <td><%= record['load_bar_count'] %></td>
-        <td><%= record['current_mileage'] %></td>
-        <td><%= record['next_oil_change'] %></td>
-        <td><%= record['current_location'] %></td>
-        <td><%= raw record['delivery_locations'].join '<br />' %></td>
-        <td><%= link_to "#{record['trailer_no']}", { :action => "../trailers/show/#{record['trailer_no']}" } %></td>
-        <td><%= record['trailer_next_service_date'] %></td>
+        <% if record['post_all'] == true %>
+          <td><%= link_to "#{record['truck_no']}", { :action => "../trucks/show/#{truck.id}" } %></td>
+          <td><%= link_to "#{record['full_name']}", { :action => "../drivers/show/#{record['driver_id']}" } %></td>
+          <td><%= link_to "#{record['trip_start']}", { :action => "../trips/show/#{record['trip_no']}" } %></td>
+          <td><%= record['load_bar_count'] %></td>
+          <td><%= record['current_mileage'] %></td>
+          <td><%= record['next_oil_change'] %></td>
+          <td><%= record['current_location'] %></td>
+          <td><%= raw record['delivery_locations'].join '<br />' %></td>
+          <td><%= link_to "#{record['trailer_no']}", { :action => "../trailers/show/#{record['trailer_id']}" } %></td>
+          <td><%= record['trailer_next_service_date'] %></td>
+        <% else %>
+          <td><%= link_to "#{record['truck_no']}", { :action => "../trucks/show/#{truck.id}" } %></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><%= record['current_mileage'] %></td>
+          <td><%= record['next_oil_change'] %></td>
+          <td><%= record['current_location'] %></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        <% end %>
       </tr>
       <% end %>
     </tbody>

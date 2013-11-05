@@ -1,0 +1,22 @@
+<section>
+  <h2>Announcements</h2>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Posted By</th>
+        <th scope="col">Title</th>
+        <th scope="col">Date Posted</th>
+				<th scope="col">Short Description</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @announcements.each do |announcement| %>
+      <tr>
+        <td><%= announcement.posted_by %></td>
+        <td><%= announcement.title %></td>
+        <td><%= announcement.date_posted %></td>
+				<td><%= announcement.content.truncate(40) %>
+    <% end %>
+    </tbody>
+  </table>
+</section>

@@ -1,0 +1,39 @@
+<section>
+  <h2>Companies</h2>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Company Type</th>
+        <th scope="col">Name</th>
+        <th scope="col">Street</th>
+        <th scope="col">Unit</th>
+        <th scope="col">City</th>
+        <th scope="col">Province</th>
+        <th scope="col">Postal Code</th>
+        <th scope="col">Email</th>
+        <th scope="col">Primary Phone</th>
+        <th scope="col">Secondary Phone</th>
+        <th scope="col">Fax</th>
+        <th scope="col">Contact Name</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @companies.each do |company| %>
+      <tr>
+        <td><%= company.company_type %></td>
+        <td><%= company.name %></td>
+        <td><%= company.street %></td>
+        <td><%= company.unit %></td>
+        <td><%= company.city %></td>
+        <td><%= company.province %></td>
+        <td><%= company.postal_code %></td>
+        <td><%= company.email %></td>
+        <td><%= company.primary_phone %></td>
+        <td><%= company.secondary_phone %></td>
+        <td><%= company.fax %></td>
+        <td><%= company.contact_name %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</section>

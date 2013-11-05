@@ -1,0 +1,25 @@
+<section>
+  <h2>Job Postings</h2>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Post Date</th>
+        <th scope="col">Closing Date</th>
+        <th scope="col">Description</th>
+        <th scope="col">Requirements</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @job_postings.each do |job_posting| %>
+      <tr>
+        <td><%= job_posting.title %></td>
+        <td><%= job_posting.post_date %></td>
+        <td><%= job_posting.closing_date %></td>
+        <td><%= job_posting.description %></td>
+        <td><%= job_posting.requirements %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</section>

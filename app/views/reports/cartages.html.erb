@@ -1,0 +1,29 @@
+<section>
+  <h2>Cartages</h2>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Company Id</th>
+        <th scope="col">Trailer Id</th>
+        <th scope="col">Shipment Id</th>
+        <th scope="col">Pickup Time</th>
+        <th scope="col">Delivery Time</th>
+        <th scope="col">Driver Name</th>
+        <th scope="col">Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @cartages.each do |cartage| %>
+      <tr>
+        <td><%= cartage.company_id %></td>
+        <td><%= cartage.trailer_id %></td>
+        <td><%= cartage.shipment_id %></td>
+        <td><%= cartage.pickup_time %></td>
+        <td><%= cartage.delivery_time %></td>
+        <td><%= cartage.driver_name %></td>
+        <td><%= cartage.cost %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</section>

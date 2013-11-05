@@ -1,0 +1,44 @@
+<section>
+  <h2>Trip Expenses Report</h2>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col"><%= sortable "id", 'Trip No', @trips, "id" %></th>
+        <th scope="col"><%= sortable "shipper", nil, @trips, "id" %></th>
+        <th scope="col"><%= sortable "shipment", 'Shipment(s)', @trips, "id" %></th>
+        <th scope="col"><%= sortable "distance", nil, @trips, "id" %></th>
+        <th scope="col"><%= sortable "rate", nil, @trips, "id" %></th>
+        <th scope="col"><%= sortable "quick_pay", nil, @trips, "id" %></th>
+        <th scope="col"><%= sortable "fuel", nil, @trips, "id" %></th>
+        <th scope="col"><%= sortable "misc_cost", nil, @trips, "id" %></th>
+        <th scope="col"><%= sortable "driver_pay", nil, @trips, "id" %></th>
+        <th scope="col"><%= sortable "profit", nil, @trips, "id" %></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @trips.each do |trip| %>
+      <% record = ReportsController.trip_records(trip.id) %>
+      <tr>
+        <td><%= link_to trip.id.to_s, '/trips/' + trip.id.to_s %></td>
+        <td>
+          <% record['shipper_name'].each.with_index do |shipper, i| %>
+            <%= link_to shipper.to_s, '/companies/' + record['shipper_id'][i].to_s %><br/>
+          <% end %>
+        </td>
+        <td>
+          <% record['shippment_no'].each.with_index do |shipper, i| %>
+            <%= link_to shipper.to_s, '/shipments/' + record['shippment_id'][i].to_s %><br/>
+          <% end %>
+        </td>
+        <td><%= record['distance'] %></td>
+        <td><%= record['rate'] %></td>
+        <td><%= record['quick_pay'] %></td>
+        <td><%= record['fuel'] %></td>
+        <td><%= record['misc_cost'] %></td>
+        <td><%= record['driver_pay'] %></td>
+        <td><%= record['profit'] %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</section>

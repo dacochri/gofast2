@@ -32,4 +32,11 @@ class ApplicationController < ActionController::Base
       redirect_to '/' 
     end
   end
+  
+  def get_params
+    @search = params[:search]
+    @column = params[:column]
+    @direction = params[:direction]
+    @sort = params[:sort]
+  end
 end

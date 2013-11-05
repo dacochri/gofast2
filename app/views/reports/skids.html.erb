@@ -1,0 +1,31 @@
+<section>
+  <h2>Skids</h2>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Skid Id</th>
+        <th scope="col">Shipment Id</th>
+        <th scope="col">Product Desc</th>
+        <th scope="col">Skid Count</th>
+        <th scope="col">Pickup Location</th>
+        <th scope="col">Delivery Location</th>
+        <th scope="col">Pickup Time</th>
+        <th scope="col">Delivery Time</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @skids.each do |skid| %>
+      <tr>
+        <td><%= skid.id %></td>
+        <td><%= skid.shipment_id %></td>
+        <td><%= skid.product_desc %></td>
+        <td><%= skid.skid_count %></td>
+        <td><%= skid.pickup_location %></td>
+        <td><%= skid.delivery_location %></td>
+        <td><%= skid.pickup_time %></td>
+        <td><%= skid.delivery_time %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</section>

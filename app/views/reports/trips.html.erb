@@ -1,0 +1,29 @@
+<section>
+  <h2>Trips</h2>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Truck Id</th>
+        <th scope="col">Trailer Id</th>
+        <th scope="col">Expense Id</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Load Bar Count</th>
+        <th scope="col">Kilometres Accumulated</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @trips.each do |trip| %>
+      <tr>
+        <td><%= trip.truck_id %></td>
+        <td><%= trip.trailer_id %></td>
+        <td><%= trip.expense_id %></td>
+        <td><%= trip.start_date %></td>
+        <td><%= trip.end_date %></td>
+        <td><%= trip.load_bar_count %></td>
+        <td><%= trip.kilometres_accumulated %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</section>
