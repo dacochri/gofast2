@@ -7,11 +7,10 @@
     <dt><strong>Broker date:</strong></dt><dd><%= @shipment.broker_date %></dd>
     <dt><strong>Broker:</strong></dt><dd><%= link_to @broker.name, "/companies/#{@shipment.broker_id}" %></dd>
     <dt><strong>Shipper:</strong></dt><dd><%= link_to @shipper.name, "/companies/#{@shipment.shipper}" %></dd>
-    <dt><strong>Shipped date:</strong></dt><dd>{SHIPPER_DATE FROM SKIDS}</dd>
+    <dt><strong>Shipped date:</strong></dt><dd><%= format_time @skid.pickup_time %></dd>
     <dt><strong>Shipper address:</strong></dt><dd><%= @shipment.shipper_address %></dd>
-    <dt><strong>Unit count:</strong></dt><dd>{UNIT_COUNT FROM SKIDS}</dd>
     <dt><strong>Receiver:</strong></dt><dd><%= link_to @receiver.name, "/companies/#{@shipment.receiver}" %></dd>
-    <dt><strong>Received date:</strong></dt><dd>{RECEIVED_DATE FROM SKIDS}</dd>
+    <dt><strong>Received date:</strong></dt><dd><%= format_time @skid.delivery_time %></dd>
     <dt><strong>Receiver address:</strong></dt><dd><%= @shipment.receiver_address %></dd>
     <dt><strong>Rate:</strong></dt><dd><%= number_to_currency @shipment.rate %></dd>
     <dt><strong>Cartage:</strong></dt><dd><%= link_to @shipment.cartage_id, "/cartages/#{@shipment.cartage_id}" if !@shipment.cartage_id.nil? %></dd>
