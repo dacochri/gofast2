@@ -2,7 +2,7 @@
   <h2>Skid #<%= @skid.id %></h2>
   <p id="notice"><%= notice %></p>
   <dl>
-    <dt><strong>Shipment:</strong></dt><dd><%= link_to @skid.shipment_id, "/shipments/#{@skid.shipment_id}" %></dd>
+    <dt><strong>Shipment:</strong></dt><dd><%= link_to @shipment.shipment_no, "/shipments/#{@skid.shipment_id}" %></dd>
     <dt><strong>Product description:</strong></dt><dd><%= @skid.product_desc %></dd>
     <dt><strong>Weight:</strong></dt><dd><%= @skid.weight %> <%= @skid.unit %></dd>
     <dt><strong>Oversized:</strong></dt><dd><%= @skid.oversized %></dd>

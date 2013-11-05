@@ -25,9 +25,10 @@
     </thead>
     <tbody>
     <% @skids.each do |skid| %>
+      <% shipment = Shipment.find(skid.shipment_id) %>
       <tr>
         <td><%= skid.id %></td>
-        <td><%= link_to skid.shipment_id, "/shipments/#{skid.shipment_id}" %></td>
+        <td><%= link_to shipment.shipment_no, "/shipments/#{skid.shipment_id}" %></td>
         <td><%= skid.product_desc %></td>
         <td><%= skid.pickup_location %></td>
         <td><%= skid.delivery_location %></td>
