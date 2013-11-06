@@ -204,9 +204,9 @@ Trip.create(truck_id: '11', trailer_id: '13', trip_no: '2722', start_date: '2013
 Trip.create(truck_id: '12', trailer_id: '14', trip_no: '2723', start_date: '2013-09-02', end_date: '2013-09-05', load_bar_count: '4', accumulated_kilometres: '2258', fuel_cost: '846.99',misc_cost: '64.67', comments: '')#done
 Trip.create(truck_id: '10', trailer_id: '9', trip_no: '2724', start_date: '2013-09-09', end_date: '2013-09-10', load_bar_count: '6', accumulated_kilometres: '4452', fuel_cost: '1192.99',misc_cost: '20.45', comments: 'Cartaged')#done
 Trip.create(truck_id: '6', trailer_id: '11', trip_no: '2725', start_date: '2013-09-17', end_date: '2013-09-19', load_bar_count: '2', accumulated_kilometres: '1780', fuel_cost: '740.99',misc_cost: '20.45', comments: 'Cartaged')#done
-Trip.create(truck_id: '8', trailer_id: '3', trip_no: '2726', start_date: '2013-11-06', end_date: '2013-11-07', load_bar_count: '4', accumulated_kilometres: '0', fuel_cost: '0.00',misc_cost: '0.00', comments: 'To be shipped')#done
-Trip.create(truck_id: '10', trailer_id: '4', trip_no: '2727', start_date: '2013-11-10', end_date: '2013-11-11', load_bar_count: '3', accumulated_kilometres: '0', fuel_cost: '0.00',misc_cost: '0.00', comments: 'To be shipped')#done
-Trip.create(truck_id: '1', trailer_id: '5', trip_no: '2728', start_date: '2013-11-13', end_date: '2013-11-15', load_bar_count: '2', accumulated_kilometres: '0', fuel_cost: '0.00',misc_cost: '0.00', comments: 'To be shipped')#done
+Trip.create(truck_id: '8', trailer_id: '3', trip_no: '2726', start_date: '2013-11-06', end_date: '2013-11-07', load_bar_count: '4', accumulated_kilometres: '1540', fuel_cost: '650.00',misc_cost: '0.00', comments: 'To be shipped')#done
+Trip.create(truck_id: '10', trailer_id: '4', trip_no: '2727', start_date: '2013-11-10', end_date: '2013-11-11', load_bar_count: '3', accumulated_kilometres: '1680', fuel_cost: '730.00',misc_cost: '0.00', comments: 'To be shipped')#done
+Trip.create(truck_id: '1', trailer_id: '5', trip_no: '2728', start_date: '2013-11-13', end_date: '2013-11-15', load_bar_count: '2', accumulated_kilometres: '1390', fuel_cost: '620.00',misc_cost: '0.00', comments: 'To be shipped')#done
 
 
 
