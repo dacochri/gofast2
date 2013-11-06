@@ -25,6 +25,7 @@ class TrucksController < ApplicationController
   def show
     # find truck by id
     @truck = Truck.find(params[:id])
+    @company = Company.find(@truck.owner)
 
     respond_to do |format|
       format.html # show.html.erb
