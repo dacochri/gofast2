@@ -1,4 +1,6 @@
+<!-- create form used in companies -->
 <%= form_for(@company) do |f| %>
+  <!-- if server side validation errors occur, display them here -->
   <% if @company.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:</h2>

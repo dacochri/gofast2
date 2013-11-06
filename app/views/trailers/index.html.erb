@@ -1,7 +1,9 @@
+<!-- index page for trailers -->
 <section>
   <h2>Trailers</h2>
   <p><%= link_to 'New Trailer', new_trailer_path, :class => 'button new' %><%= link_to 'Print', "reports/#{params[:controller]}" + "?column=#{@column}&direction=#{@direction}&search=#{@search}&sort=#{@sort}", :class => 'button print' %></p>
-	<%= form_tag trailers_path, :method => 'get', :class => 'search' do %>
+	  <!-- create form for search/ordering -->
+  <%= form_tag trailers_path, :method => 'get', :class => 'search' do %>
     <%= hidden_field_tag :direction, params[:direction] %>
     <%= hidden_field_tag :sort, params[:sort] %>
 		<%= label_tag :column %>
@@ -24,6 +26,7 @@
       </tr>
     </thead>
     <tbody>
+    <!-- go through all trailer records and create rows with data -->
     <% @trailers.each do |trailer| %>
       <tr>
         <td><%= trailer.trailer_no %></td>
@@ -36,6 +39,7 @@
         <td><%= link_to '', trailer, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_trailer_path(trailer), :class => 'button edit', :title => 'Edit' %> <%= link_to '', trailer, method: :delete, data: { confirm: 'Are you sure you want to delete trailer no. ' + trailer.trailer_no.to_s + '?' }, :class => 'button destroy', :title => 'Delete' %></td>
       </tr>
     <% end %>
+    <!-- display no results if trailers contain no records -->
     <% if @trailers.empty? %>
       <tr>
         <td colspan="8">No results found.</td>

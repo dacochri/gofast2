@@ -1,5 +1,7 @@
+<!-- create form used in skids -->
 <%= form_for(@skid) do |f| %>
   <% if @skid.errors.any? %>
+    <!-- if server side validation errors occur, display them here -->
     <div id="error_explanation">
       <section>
         <h2><%= pluralize(@skid.errors.count, "error") %> prohibited this skid from being saved:</h2>

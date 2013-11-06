@@ -1,4 +1,6 @@
+<!-- create form used in trailers -->
 <%= form_for(@trailer) do |f| %>
+  <!-- if server side validation errors occur, display them here -->
   <% if @trailer.errors.any? %>
     <div id="error_explanation">
       <section>

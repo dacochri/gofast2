@@ -1,4 +1,6 @@
+<!-- create form used in shipments -->
 <%= form_for(@shipment) do |f| %>
+  <!-- if server side validation errors occur, display them here -->
   <% if @shipment.errors.any? %>
     <div id="error_explanation">
       <section>

@@ -1,5 +1,6 @@
+<!-- create form used in quotes -->
 <%= form_for (@quote) do |f| %>
-<!-- show errors if they exist -->
+  <!-- if server side validation errors occur, display them here -->
   <% if @quote.errors.any? %>
     <div id="error_explanation">
       <section>

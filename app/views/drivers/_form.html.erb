@@ -1,4 +1,6 @@
+<!-- create form used in drivers -->
 <%= form_for(@driver) do |f| %>
+  <!-- if server side validation errors occur, display them here -->
   <% if @driver.errors.any? %>
     <div id="error_explanation">
       <section>

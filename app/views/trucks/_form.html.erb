@@ -1,5 +1,6 @@
+<!-- create form used in trucks -->
 <%= form_for @truck, :html => { :multipart => true } do |f| %>
-  <!-- show errors if they exist -->
+  <!-- if server side validation errors occur, display them here -->
   <% if @truck.errors.any? %>
     <div id="error_explanation">
       <section>

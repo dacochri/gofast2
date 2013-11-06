@@ -1,7 +1,9 @@
+<!-- index page for maintenance records -->
 <section>
   <h2>Maintenance Records</h2>
   <p><%= link_to 'New Maintenance', new_maintenance_path, :class => 'button new' %><%= link_to 'Print', "reports/#{params[:controller]}" + "?column=#{@column}&direction=#{@direction}&search=#{@search}&sort=#{@sort}", :class => 'button print' %></p>
-	<%= form_tag maintenances_path, :method => 'get', :class => 'search' do %>
+	<!-- create form for search/ordering -->
+  <%= form_tag maintenances_path, :method => 'get', :class => 'search' do %>
     <%= hidden_field_tag :direction, params[:direction] %>
     <%= hidden_field_tag :sort, params[:sort] %>
 		<%= label_tag :column %>
@@ -24,6 +26,7 @@
       </tr>
     </thead>
     <tbody>
+    <!-- go through all maintenance records and create rows with data -->
     <% @maintenances.each do |maintenance| %>
       <% if maintenance.vehicle_type == 'truck' %>
         <% truck = Truck.find(maintenance.vehicle_id) %>
@@ -46,6 +49,7 @@
         <td><%= link_to '', maintenance, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_maintenance_path(maintenance), :class => 'button edit', :title => 'Edit' %> <%= link_to '', maintenance, method: :delete, data: { confirm: 'Are you sure you want to delete maintenance record ' + maintenance.id.to_s + '?' }, :class => 'button destroy', :title => 'Delete' %></td>
       </tr>
     <% end %>
+    <!-- display no results if there are no maintenance records -->
     <% if @maintenances.empty? %>
       <tr>
         <td colspan="8">No results found.</td>

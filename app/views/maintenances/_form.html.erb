@@ -1,4 +1,6 @@
+<!-- create form used in maintenance records -->
 <%= form_for(@maintenance) do |f| %>
+  <!-- if server side validation errors occur, display them here -->
   <% if @maintenance.errors.any? %>
     <div id="error_explanation">
       <section>
