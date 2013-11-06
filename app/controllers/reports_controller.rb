@@ -4,10 +4,15 @@ class ReportsController < ApplicationController
   # GET /reports/trucks
   # GET /reports/trucks.json
   
+  #This method is called when the print page for monthly expenses is called
   def trip_expenses_print
+    #sets the trips variable based on the trip expenses method
     @trips = trip_expenses
   end
+  
+  #Trip_Expenses is called when monthly trip expenses page is loaded
   def trip_expenses
+    #Hash used for storing what dates and messages need to be called based on user input
     sql_query = {
       'January' => { 'start' => Time.now.year.to_s + '-01-01', 'end' => Time.now.year.to_s + '-01-31', 'message' => '- Month of January (' + Time.now.year.to_s + ')' },
       'February' => { 'start' => Time.now.year.to_s + '-02-01', 'end' => Time.now.year.to_s + '-02-29', 'message' => '- Month of February (' + Time.now.year.to_s + ')' },
@@ -30,16 +35,21 @@ class ReportsController < ApplicationController
       '2 Years Ago' => { 'start' => (Time.now.year.to_i - 2).to_s + '-01-01', 'end' => (Time.now.year.to_i - 2).to_s + '-12-31', 'message' => '- Year of ' + (Time.now.year.to_i - 2).to_s }
     }
     
+    #Checks if the user selection is part of the hash
     if sql_query.key?(params[:date])
       @date = params[:date]
       @print_message =  sql_query[params[:date]]['message']
     else
+      #Sets the parameter to current month so it defaults and prevents the page from breaking
       params[:date] = Date.today.strftime("%B")
     end
   
+    #Checks to see if the date param is set to nil
     unless params[:date].nil?
+      #Returns trips based on start and end date of the user input
       @trips = Trip.where('start_date >= ? AND end_date <= ?', sql_query[params[:date]]['start'], sql_query[params[:date]]['end'])
     else
+      #Returns trips based on the current month
       start_date = Time.now.month.to_i
       start_date = Time.now.year.to_s + '-' + start_date.to_s + '-01'
       end_date = Time.now.month.to_i + 1
@@ -84,8 +94,9 @@ class ReportsController < ApplicationController
     return records
   end
   
+  #Called when user prints trucks index page
   def trucks
-    
+    #Returns set of trucks in order based on the parameters
     @trucks = Truck.search(params[:search], params[:column]).order(sort_column(Truck, 'truck_no') + ' ' + sort_direction).page(params[:page])
     
     respond_to do |format|
@@ -96,8 +107,10 @@ class ReportsController < ApplicationController
   
   # GET /reports/announcements
   # GET /reports/announcements.json
+  #Called when user prints announcements index page
   def announcements
   
+    #Returns set of announcements in order based on parameters
     @announcements = Announcement.search(params[:search], params[:column]).order(sort_column(Announcement, 'date_posted') + ' ' + sort_direction)
 
     respond_to do |format|
@@ -110,7 +123,7 @@ class ReportsController < ApplicationController
   # GET /reports/cartages.json
   def cartages
     params[:search] = format_date params[:search]
-    
+    #Returns set of cartages in order based on parameters
     @cartages = Cartage.search(params[:search], params[:column]).order(sort_column(Cartage, 'company_id') + ' ' + sort_direction)
 
     respond_to do |format|
@@ -124,6 +137,7 @@ class ReportsController < ApplicationController
   def companies
     @companies = Company.search(params[:search], params[:column]).order(sort_column(Company, 'company_type') + ' ' + sort_direction)
 
+    #Returns set of companies in order based on parameters
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @companies }
@@ -133,7 +147,8 @@ class ReportsController < ApplicationController
   # GET /reports/drivers
   # GET /reports/drivers.json
   def drivers
-    @drivers = Driver.search(params[:search], params[:column]).order(sort_column(Driver, 'first_name') + ' ' + sort_direction)
+    #Returns set of drivers in order based on parameters
+    @drivers = Driver.search(params[:search], params[:column]).order(sort_column(Driver, 'name') + ' ' + sort_direction)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -144,6 +159,7 @@ class ReportsController < ApplicationController
   # GET /reports/expenses
   # GET /reports/expenses.json
   def expenses
+    #Returns set of expenses in order based on parameters
     @expenses = Expense.search(params[:search], params[:column]).order(sort_column(Expense, 'quick_pay') + ' ' + sort_direction)
 
     respond_to do |format|
@@ -155,6 +171,7 @@ class ReportsController < ApplicationController
   # GET /reports/job_postings
   # GET /reports/job_postings.json
   def job_postings
+    #Returns set of job postings in order based on parameters
     @job_postings = JobPosting.search(params[:search], params[:column]).order(sort_column(JobPosting, 'title') + ' ' + sort_direction)
 
     respond_to do |format|
@@ -166,6 +183,7 @@ class ReportsController < ApplicationController
   # GET /reports/maintenances
   # GET /reports/maintenances.json
   def maintenances
+    #Returns set of maintenances in order based on parameters
     @maintenances = Maintenance.search(params[:search], params[:column]).order(sort_column(Maintenance, 'vehicle_id') + ' ' + sort_direction)
 
     respond_to do |format|
@@ -174,17 +192,10 @@ class ReportsController < ApplicationController
     end
   end
   
-  def quotes
-  
-  end
-  
-  def schedule
-  
-  end
-  
   # GET /reports/shipments
   # GET /reports/shipments.json
   def shipments
+    #Returns set of shipmenets in order based on parameters
     @shipments = Shipment.search(params[:search], params[:column]).order(sort_column(Shipment, 'broker_id') + ' ' + sort_direction)
 
     respond_to do |format|
@@ -209,6 +220,7 @@ class ReportsController < ApplicationController
   # GET /trailers
   # GET /trailers.json
   def trailers
+    #Returns set of trailers in order based on parameters
     @trailers = Trailer.search(params[:search], params[:column]).order(sort_column(Trailer, 'trailer_no') + ' ' + sort_direction)
 
     respond_to do |format|
@@ -220,6 +232,7 @@ class ReportsController < ApplicationController
   # GET /trips
   # GET /trips.json
   def trips
+    #Returns set of trips in order based on parameters
     @trips = Trip.search(params[:search], params[:column]).order(sort_column(Trip, 'truck_id') + ' ' + sort_direction)
 
     respond_to do |format|
@@ -227,20 +240,4 @@ class ReportsController < ApplicationController
       format.json { render json: @trips }
     end
   end
-  
-  #def ReportsController.my_report(report_name)
-    #case report_name
-    #when "truck_count"
-      #return ReportsController.truck_count()
-    #when "Abc"
-      #return "dsasdf"
-    #else
-      #return report_name
-    #end
-  #end
-  
-  #Random report test
-  #def ReportsController.truck_count()
-    #return Truck.count(:distinct => true)
-  #end
 end
