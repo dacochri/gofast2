@@ -1,13 +1,17 @@
 class CartagesController < ApplicationController
+  # Only logged in users can access the page
   before_filter :authenticate_user!
   
+  # Allows helper methods to be used
   include ApplicationHelper
   
   # GET /cartages
   # GET /cartages.json
   def index
+    # Change the format of the date supplied through search
     params[:search] = format_date params[:search]
     
+    # Search for all cartage records, order them, and restrict it to 10 records per page
     @cartages = Cartage.search(params[:search], params[:column]).order(sort_column(Cartage, 'company_id') + ' ' + sort_direction).page(params[:page]).per(10)
 
     get_params()
@@ -21,7 +25,9 @@ class CartagesController < ApplicationController
   # GET /cartages/1
   # GET /cartages/1.json
   def show
+    # Shows a specific record
     @cartage = Cartage.find(params[:id])
+    # Used to turn foreign keys into human readable data (company name, etc)
     @company = Company.find(@cartage.company_id) rescue nil
     @trailer = Trailer.find(@cartage.trailer_id) rescue nil
 
@@ -34,7 +40,9 @@ class CartagesController < ApplicationController
   # GET /cartages/new
   # GET /cartages/new.json
   def new
+    # Form to createa a new record
     @cartage = Cartage.new
+    # Used to populate the drop down lists
     @cartage_companies = Company.where(:company_type => 'cartage')
     @trailers = Trailer.all
 
@@ -46,8 +54,9 @@ class CartagesController < ApplicationController
 
   # GET /cartages/1/edit
   def edit
+    # Form to edit a specific record
     @cartage = Cartage.find(params[:id])
-    
+    # Used to populate the drop down lists
     @cartage_companies = Company.where(:company_type => 'cartage')
     @trailers = Trailer.all
   end
@@ -55,6 +64,7 @@ class CartagesController < ApplicationController
   # POST /cartages
   # POST /cartages.json
   def create
+    # Logic to create a record and submit it to the database
     @cartage = Cartage.new(params[:cartage])
 
     respond_to do |format|
@@ -71,6 +81,7 @@ class CartagesController < ApplicationController
   # PUT /cartages/1
   # PUT /cartages/1.json
   def update
+    # Logic to edit a record and submit it to the database
     @cartage = Cartage.find(params[:id])
 
     respond_to do |format|
@@ -87,6 +98,7 @@ class CartagesController < ApplicationController
   # DELETE /cartages/1
   # DELETE /cartages/1.json
   def destroy
+    # Logic to delete a record based on the id supplied
     @cartage = Cartage.find(params[:id])
     @cartage.destroy
 

@@ -1,11 +1,14 @@
 class UsersController < ApplicationController
+  # Only admin can view these pages
   before_filter :authenticate_user!, :redirect_not_admin
   
   def index
+    # List all users
     @users = User.all
   end
 
   def new
+    # form to create a new user
     @user = User.new
 
     respond_to do |format|
@@ -17,6 +20,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    # Logic to create a new user
     @user = User.new(params[:user])
 
     respond_to do |format|
@@ -30,15 +34,16 @@ class UsersController < ApplicationController
     end
   end
 
-
   # GET /users/1/edit
   def edit
+    # Form to edit a user
     @user = User.find(params[:id])
   end
 
   # PUT /users/1
   # PUT /users/1.json
   def update
+    # Logic to edit a user
     @user = User.find(params[:id])
 
     respond_to do |format|
@@ -55,6 +60,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
+    # Logic to delete a user
     @user = User.find(params[:id])
     @user.destroy
 

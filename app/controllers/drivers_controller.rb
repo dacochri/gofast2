@@ -1,4 +1,5 @@
 class DriversController < ApplicationController
+  # Only valid users can access this page
   before_filter :authenticate_user!, :redirect_driver
   
   include ApplicationHelper
@@ -6,6 +7,7 @@ class DriversController < ApplicationController
   # GET /drivers
   # GET /drivers.json
   def index
+    # Show all records
     @drivers = Driver.search(params[:search], params[:column]).order(sort_column(Driver, 'name') + ' ' + sort_direction).page(params[:page]).per(10)
     
     get_params()
@@ -19,6 +21,7 @@ class DriversController < ApplicationController
   # GET /drivers/1
   # GET /drivers/1.json
   def show
+    # Show one record
     @driver = Driver.find(params[:id])
 
     respond_to do |format|
@@ -30,7 +33,9 @@ class DriversController < ApplicationController
   # GET /drivers/new
   # GET /drivers/new.json
   def new
+    # Form to create a new company
     @driver = Driver.new
+    # Companies the driver might be associated with, populate drop down list
     @driver_companies = Company.where(:company_type => 'driver')
 
     respond_to do |format|
@@ -41,13 +46,16 @@ class DriversController < ApplicationController
 
   # GET /drivers/1/edit
   def edit
+    # Edit specific record
     @driver = Driver.find(params[:id])
+    # Companies the driver might be associated with, populate drop down list
     @driver_companies = Company.where(:company_type => 'driver')
   end
 
   # POST /drivers
   # POST /drivers.json
   def create
+    # Logic to create a driver and submit to DB
     @driver = Driver.new(params[:driver])
 
     respond_to do |format|
@@ -64,6 +72,7 @@ class DriversController < ApplicationController
   # PUT /drivers/1
   # PUT /drivers/1.json
   def update
+    # Logic to edit a driver and submit to DB
     @driver = Driver.find(params[:id])
 
     respond_to do |format|
@@ -80,6 +89,7 @@ class DriversController < ApplicationController
   # DELETE /drivers/1
   # DELETE /drivers/1.json
   def destroy
+    # Logic to delete a record
     @driver = Driver.find(params[:id])
     @driver.destroy
 

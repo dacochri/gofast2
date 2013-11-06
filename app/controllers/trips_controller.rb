@@ -6,6 +6,7 @@ class TripsController < ApplicationController
   # GET /trips
   # GET /trips.json
   def index
+    # Show all records
     params[:search] = format_date params[:search]
 		
     @trips = Trip.search(params[:search], params[:column]).order(sort_column(Trip, 'truck_id') + ' ' + sort_direction).page(params[:page]).per(10)
@@ -21,13 +22,17 @@ class TripsController < ApplicationController
   # GET /trips/1
   # GET /trips/1.json
   def show
+    # Show one record
     @trip = Trip.find(params[:id])
+    # Get data that associates with the foreign key
     @truck = Truck.find(@trip.truck_id) rescue nil
     @trailer = Trailer.find(@trip.trailer_id) rescue nil
     @shipment = Shipment.where(trip_id: @trip.id).first
     @primary_driver = Driver.find(@shipment.primary_driver) rescue nil
     @secondary_driver = Driver.find(@shipment.secondary_driver) rescue nil
-
+    
+    # Calculate profit for the trip based on the rate and costs in shipments, and 
+    # the fuel and misc cost in trip
     @profit = 0
     Shipment.where(trip_id: @trip.id).each do |s|
       @profit += s.rate
@@ -49,6 +54,7 @@ class TripsController < ApplicationController
   # GET /trips/new
   # GET /trips/new.json
   def new
+    # Form for new record
     @trip = Trip.new
     @trucks = Truck.all
     @trailers = Trailer.all
@@ -61,6 +67,7 @@ class TripsController < ApplicationController
 
   # GET /trips/1/edit
   def edit
+    # Form to edit a record
     @trip = Trip.find(params[:id])
     @trucks = Truck.all
     @trailers = Trailer.all
@@ -69,6 +76,7 @@ class TripsController < ApplicationController
   # POST /trips
   # POST /trips.json
   def create
+    # Logic to create a record
     @trip = Trip.new(params[:trip])
 
     @trucks = Truck.all
@@ -87,6 +95,7 @@ class TripsController < ApplicationController
   # PUT /trips/1
   # PUT /trips/1.json
   def update
+    # Logic to update a record
     @trip = Trip.find(params[:id])
 
     respond_to do |format|
@@ -103,6 +112,7 @@ class TripsController < ApplicationController
   # DELETE /trips/1
   # DELETE /trips/1.json
   def destroy
+    # Logic to delete a record
     @trip = Trip.find(params[:id])
     @trip.destroy
 
