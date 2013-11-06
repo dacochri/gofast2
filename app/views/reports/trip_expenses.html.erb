@@ -4,7 +4,7 @@
   <!-- Creates a print button which passes required arguments as parameters for print page to load -->
   <p><%= link_to 'Print', "trip_expenses_print" + "?date=#{@date}", :class => 'button print' %></p>
   <!-- Creates a form which will submit the desired date to be shown -->
-  <%= form_tag :action => 'trip_expenses' do %>
+  <%= form_tag({ :action => 'trip_expenses' }, { :class => 'report-form' }) do %>
     <%= label_tag :date %>
     <%= select_tag :date, options_for_select(%w(January February March April May June July August September October November December 1st\ Quarter 2nd\ Quarter 3rd\ Quarter 4th\ Quarter Current\ Year Previous\ Year 2\ Years\ Ago)) %>
     <%= submit_tag 'Submit' %>
