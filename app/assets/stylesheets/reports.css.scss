@@ -11,9 +11,13 @@ form.report-form{
   }
 }
 
+#profit{
+  text-align: right;
+}
+
 @media print{
   header{
-    h2{
+    h1, h2{
       display: none;
     }
   }

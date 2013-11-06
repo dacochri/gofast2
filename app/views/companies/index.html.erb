@@ -16,14 +16,9 @@
         <th scope="col"><%= sortable "company_type", nil, @companies, "company_type" %></th>
         <th scope="col"><%= sortable "name", nil, @companies, "company_type" %></th>
         <th scope="col"><%= sortable "street", nil, @companies, "company_type" %></th>
-        <th scope="col"><%= sortable "unit", nil, @companies, "company_type" %></th>
         <th scope="col"><%= sortable "city", nil, @companies, "company_type" %></th>
-        <th scope="col"><%= sortable "province", nil, @companies, "company_type" %></th>
-        <th scope="col"><%= sortable "postal_code", nil, @companies, "company_type" %></th>
         <th scope="col"><%= sortable "email", nil, @companies, "company_type" %></th>
         <th scope="col"><%= sortable "primary_phone", nil, @companies, "company_type" %></th>
-        <th scope="col"><%= sortable "secondary_phone", nil, @companies, "company_type" %></th>
-        <th scope="col"><%= sortable "fax", nil, @companies, "company_type" %></th>
         <th scope="col"><%= sortable "contact_name", nil, @companies, "company_type" %></th>
         <th scope="col"></th>
       </tr>
@@ -34,14 +29,9 @@
         <td><%= company.company_type %></td>
         <td><%= company.name %></td>
         <td><%= company.street %></td>
-        <td><%= company.unit %></td>
         <td><%= company.city %></td>
-        <td><%= company.province %></td>
-        <td><%= company.postal_code %></td>
         <td><%= company.email %></td>
         <td><%= company.primary_phone %></td>
-        <td><%= company.secondary_phone %></td>
-        <td><%= company.fax %></td>
         <td><%= company.contact_name %></td>
         <td><%= link_to '', company, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_company_path(company), :class => 'button edit', :title => 'Edit' %> <%= link_to '', company, method: :delete, data: { confirm: 'Are you sure you want to delete company: ' + company.name + '?' }, :class => 'button destroy', :title => 'Delete' %></td>
       </tr>

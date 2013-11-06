@@ -22,13 +22,11 @@ class TripsController < ApplicationController
   # GET /trips/1.json
   def show
     @trip = Trip.find(params[:id])
-    @truck = Truck.find(@trip.truck_id)
-    @trailer = Trailer.find(@trip.trailer_id)
+    @truck = Truck.find(@trip.truck_id) rescue nil
+    @trailer = Trailer.find(@trip.trailer_id) rescue nil
     @shipment = Shipment.where(trip_id: @trip.id).first
-    unless @shipment.nil?
-      @primary_driver = Driver.find(@shipment.primary_driver)
-      @secondary_driver = Driver.find(@shipment.secondary_driver)
-    end
+    @primary_driver = Driver.find(@shipment.primary_driver) rescue nil
+    @secondary_driver = Driver.find(@shipment.secondary_driver) rescue nil
 
     @profit = 0
     Shipment.where(trip_id: @trip.id).each do |s|
@@ -36,7 +34,7 @@ class TripsController < ApplicationController
       @profit -= s.primary_driver_pay
       @profit -= s.secondary_driver_pay
       @profit += s.primary_quick_pay
-      @profit += s.secondary_quick_pay
+      @profit += s.secondary_quick_pay unless s.secondary_quick_pay.nil?
       @profit -= s.misc_cost
     end
     @profit -= @trip.fuel_cost

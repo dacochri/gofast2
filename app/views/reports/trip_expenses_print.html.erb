@@ -17,6 +17,7 @@
       </tr>
     </thead>
     <tbody>
+    <% total_profit = 0 %>
     <!-- Loops through each trip that has returned from the controller and prints out corresponding columns -->
     <% @trips.each do |trip| %>
       <% record = ReportsController.trip_records(trip.id) %>
@@ -39,9 +40,11 @@
         <td><%= number_to_currency record['misc_cost'] %></td>
         <td><%= number_to_currency record['driver_pay'] %></td>
         <td><%= number_to_currency record['profit'] %></td>
+        <% total_profit += record['profit'].to_d %>
       </tr>
     <% end %>
     </tbody>
   </table>
+  <p id="profit"><strong>Total Profit: <%= number_to_currency total_profit %></strong></p>
   <p>Printed on: <%= format_time Time.now %></p>
 </section>

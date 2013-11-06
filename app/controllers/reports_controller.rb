@@ -54,7 +54,6 @@ class ReportsController < ApplicationController
       start_date = Time.now.year.to_s + '-' + start_date.to_s + '-01'
       end_date = Time.now.month.to_i + 1
       end_date = Time.now.year.to_s + '-' + end_date.to_s + '-01'
-      @trips = Trip.all
       @trips = Trip.where('start_date >= ? AND end_date <= ?', start_date, end_date)
     end
   end

@@ -23,11 +23,11 @@ class MaintenancesController < ApplicationController
   def show
     @maintenance = Maintenance.find(params[:id])
     if @maintenance.vehicle_type == 'truck'
-     @truck = Truck.find(@maintenance.vehicle_id)
+     @truck = Truck.find(@maintenance.vehicle_id) rescue nil
     else
-     @trailer = Trailer.find(@maintenance.vehicle_id)
+     @trailer = Trailer.find(@maintenance.vehicle_id) rescue nil
     end
-    @trip = Trip.find(@maintenance.trip_id)
+    @trip = Trip.find(@maintenance.trip_id) rescue nil
     
     respond_to do |format|
       format.html # show.html.erb

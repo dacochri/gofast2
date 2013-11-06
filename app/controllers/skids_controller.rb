@@ -28,7 +28,7 @@ class SkidsController < ApplicationController
   def show
     # Search database and return the record with matching id
     @skid = Skid.find(params[:id])
-    @shipment = Shipment.find(@skid.shipment_id)
+    @shipment = Shipment.find(@skid.shipment_id) rescue nil
 
     respond_to do |format|
       format.html # show.html.erb

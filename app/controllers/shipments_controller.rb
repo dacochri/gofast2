@@ -20,13 +20,13 @@ class ShipmentsController < ApplicationController
   # GET /shipments/1.json
   def show
     @shipment = Shipment.find(params[:id])
-    @trip = Trip.find(@shipment.trip_id)
-    @broker = Company.find(@shipment.broker_id)
-    @shipper = Company.find(@shipment.shipper)
-    @receiver = Company.find(@shipment.receiver)
-    @primary_driver = Driver.find(@shipment.primary_driver)
-    @secondary_driver = Driver.find(@shipment.secondary_driver)
-    @skid = Skid.where(shipment_id: @shipment.id).first
+    @trip = Trip.find(@shipment.trip_id) rescue nil
+    @broker = Company.find(@shipment.broker_id) rescue nil
+    @shipper = Company.find(@shipment.shipper) rescue nil
+    @receiver = Company.find(@shipment.receiver) rescue nil
+    @primary_driver = Driver.find(@shipment.primary_driver) rescue nil
+    @secondary_driver = Driver.find(@shipment.secondary_driver) rescue nil
+    @skid = Skid.where(shipment_id: @shipment.id).first rescue nil
 
     respond_to do |format|
       format.html # show.html.erb

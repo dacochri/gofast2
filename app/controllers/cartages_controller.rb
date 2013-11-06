@@ -22,8 +22,8 @@ class CartagesController < ApplicationController
   # GET /cartages/1.json
   def show
     @cartage = Cartage.find(params[:id])
-    @company = Company.find(@cartage.company_id)
-    @trailer = Trailer.find(@cartage.trailer_id)
+    @company = Company.find(@cartage.company_id) rescue nil
+    @trailer = Trailer.find(@cartage.trailer_id) rescue nil
 
     respond_to do |format|
       format.html # show.html.erb
