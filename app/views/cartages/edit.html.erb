@@ -1,5 +1,6 @@
 <section>
   <h2>Edit Cartage #<%= @cartage.id %></h2>
+  <!-- load the form to edit a record -->
   <%= render 'form' %>
   <p><%= link_to 'Show', @cartage, :class => 'button show' %> <%= link_to 'Back', cartages_path, :class => 'button back' %></p>
 </section>
