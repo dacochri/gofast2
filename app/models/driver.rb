@@ -1,5 +1,9 @@
+# This file allows access to the database through the Driver object.
+# attr_accessible defines the attributes that are allowed to be used by creating accessor and mutator methods.
+# This file also validates the data before it is submitted to the database.
+# The values for validation are stored in /lib/validation_values.rb
 class Driver < ActiveRecord::Base
-	include Searchable
+  include Searchable
   
   attr_accessible :business_name, :cell_phone, :city, :comments, :name, :home_phone, :postal_code, :street, :unit, :drivers_license_number, :date_of_birth
 

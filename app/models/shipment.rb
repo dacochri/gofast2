@@ -1,5 +1,9 @@
+# This file allows access to the database through the Shipment object.
+# attr_accessible defines the attributes that are allowed to be used by creating accessor and mutator methods.
+# This file also validates the data before it is submitted to the database.
+# The values for validation are stored in /lib/validation_values.rb
 class Shipment < ActiveRecord::Base
-	include Searchable
+  include Searchable
   
   attr_accessible :shipment_no, :trip_id, :broker_id, :shipper, :receiver, :cartage_id, :broker_date, :shipper_address, :receiver_address, :rate, :delivered, :invoice, :distance, :primary_driver, :secondary_driver, :primary_quick_pay, :secondary_quick_pay, :primary_driver_pay, :secondary_driver_pay, :misc_cost, :comments
 
