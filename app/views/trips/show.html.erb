@@ -7,8 +7,8 @@
     <dt><strong>Trailer:</strong></dt><dd><%= link_to @trailer.trailer_no, "/trailers/#{@trip.trailer_id}" %></dd>
     <dt><strong>Start date:</strong></dt><dd><%= @trip.start_date %></dd>
     <dt><strong>End date:</strong></dt><dd><%= @trip.end_date %></dd>
-    <dt><strong>Primary driver:</strong></dt><dd><%= link_to @primary_driver.name, "/drivers/#{@shipment.primary_driver}" unless @shipment.primary_driver.nil? %></dd>
-    <dt><strong>Secondary driver:</strong></dt><dd><%= link_to @secondary_driver.name, "/drivers/#{@shipment.secondary_driver}" unless @shipment.secondary_driver.nil? %></dd>
+    <dt><strong>Primary driver:</strong></dt><dd><%= link_to @primary_driver.name, "/drivers/#{@shipment.primary_driver}" rescue 'No Driver' %></dd>
+    <dt><strong>Secondary driver:</strong></dt><dd><%= link_to @secondary_driver.name, "/drivers/#{@shipment.secondary_driver}" rescue 'No Driver' %></dd>
     <dt><strong>Load bar count:</strong></dt><dd><%= @trip.load_bar_count %></dd>
     <dt><strong>Kilometres accumulated:</strong></dt><dd><%= @trip.accumulated_kilometres %> <abbr title="kilometre">km</abbr></dd>
     <dt><strong>Profit:</strong></dt><dd><%= number_to_currency @profit %></dd>
