@@ -10,3 +10,19 @@ form{
     margin: 0 0.5rem;
   }
 }
+
+@media print{
+  header{
+    h2{
+      display: none;
+    }
+  }
+
+  nav{
+    display: none;
+  }
+
+  #user{
+    display: none;
+  }
+}
