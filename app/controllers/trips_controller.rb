@@ -71,6 +71,8 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.new(params[:trip])
 
+    @trucks = Truck.all
+    @trailers = Trailer.all
     respond_to do |format|
       if @trip.save
         format.html { redirect_to @trip, notice: 'Trip was successfully created.' }

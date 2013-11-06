@@ -12,7 +12,9 @@
       </section>
     </div>
   <% end %>
-
+  
+  <%= f.label :trip_no %>
+  <%= f.text_field :trip_no, :required => 'required', :pattern => ValidationValues.integer, :placeholder => ValidationValues.p_integer %>
   <%= f.label :truck_id %>
   <%= f.collection_select :truck_id, @trucks, :id, :truck_no, { :selected => @trucks.first.id }, { :size => 5 } %>
   <%= f.label :trailer_id %>
