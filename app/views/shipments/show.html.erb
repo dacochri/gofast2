@@ -3,22 +3,22 @@
   <p id="notice"><%= notice %></p>
   <dl>
     <dt><strong>Shipment No.:</strong></dt><dd><%= @shipment.shipment_no %></dd>
-    <dt><strong>Trip:</strong></dt><dd><%= link_to @trip.trip_no, "/trips/#{@shipment.trip_id}" %></dd>
+    <dt><strong>Trip:</strong></dt><dd><%= link_to @trip.trip_no, "/trips/#{@shipment.trip_id}" rescue 'No Trip' %></dd>
     <dt><strong>Broker date:</strong></dt><dd><%= @shipment.broker_date %></dd>
-    <dt><strong>Broker:</strong></dt><dd><%= link_to @broker.name, "/companies/#{@shipment.broker_id}" %></dd>
-    <dt><strong>Shipper:</strong></dt><dd><%= link_to @shipper.name, "/companies/#{@shipment.shipper}" %></dd>
-    <dt><strong>Shipped date:</strong></dt><dd><%= format_time @skid.pickup_time %></dd>
+    <dt><strong>Broker:</strong></dt><dd><%= link_to @broker.name, "/companies/#{@shipment.broker_id}" rescue 'No Broker' %></dd>
+    <dt><strong>Shipper:</strong></dt><dd><%= link_to @shipper.name, "/companies/#{@shipment.shipper}" rescue 'No Shipper' %></dd>
+    <dt><strong>Shipped date:</strong></dt><dd><%= format_time @skid.pickup_time rescue 'No Pickup Time' %></dd>
     <dt><strong>Shipper address:</strong></dt><dd><%= @shipment.shipper_address %></dd>
-    <dt><strong>Receiver:</strong></dt><dd><%= link_to @receiver.name, "/companies/#{@shipment.receiver}" %></dd>
-    <dt><strong>Received date:</strong></dt><dd><%= format_time @skid.delivery_time %></dd>
+    <dt><strong>Receiver:</strong></dt><dd><%= link_to @receiver.name, "/companies/#{@shipment.receiver}" rescue 'No Receiver' %></dd>
+    <dt><strong>Received date:</strong></dt><dd><%= format_time @skid.delivery_time rescue 'No Delivery Time' %></dd>
     <dt><strong>Receiver address:</strong></dt><dd><%= @shipment.receiver_address %></dd>
     <dt><strong>Rate:</strong></dt><dd><%= number_to_currency @shipment.rate %></dd>
     <dt><strong>Cartage:</strong></dt><dd><%= link_to @shipment.cartage_id, "/cartages/#{@shipment.cartage_id}" if !@shipment.cartage_id.nil? %></dd>
     <dt><strong>Delivered:</strong></dt><dd><%= @shipment.delivered %></dd>
     <dt><strong>Invoice:</strong></dt><dd><%= @shipment.invoice %></dd>
     <dt><strong>Distance:</strong></dt><dd><%= @shipment.distance %> <abbr title="kilometre">km</abbr></dd>
-    <dt><strong>Primary driver:</strong></dt><dd><%= link_to @primary_driver.name, "/drivers/#{@shipment.primary_driver}" %></dd>
-    <dt><strong>Secondary driver:</strong></dt><dd><%= link_to @secondary_driver.name, "/drivers/#{@shipment.secondary_driver}" %></dd>
+    <dt><strong>Primary driver:</strong></dt><dd><%= link_to @primary_driver.name, "/drivers/#{@shipment.primary_driver}" rescue 'No Primary Driver' %></dd>
+    <dt><strong>Secondary driver:</strong></dt><dd><%= link_to @secondary_driver.name, "/drivers/#{@shipment.secondary_driver}" rescue 'No Secondary Driver' %></dd>
     <dt><strong>Primary quick pay:</strong></dt><dd><%= number_to_currency @shipment.primary_quick_pay %></dd>
     <dt><strong>Secondary quick pay:</strong></dt><dd><%= number_to_currency @shipment.secondary_quick_pay %></dd>
     <dt><strong>Primary driver pay:</strong></dt><dd><%= number_to_currency @shipment.primary_driver_pay %></dd>

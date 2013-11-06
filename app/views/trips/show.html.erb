@@ -3,15 +3,15 @@
   <p id="notice"><%= notice %></p>
   <dl>
     <dt><strong>Trip no.:</strong></dt><dd><%= @trip.trip_no %></dd>
-    <dt><strong>Truck:</strong></dt><dd><%= link_to @truck.truck_no, "/trucks/#{@trip.truck_id}" %></dd>
-    <dt><strong>Trailer:</strong></dt><dd><%= link_to @trailer.trailer_no, "/trailers/#{@trip.trailer_id}" %></dd>
+    <dt><strong>Truck:</strong></dt><dd><%= link_to @truck.truck_no, "/trucks/#{@trip.truck_id}" rescue 'No Truck' %></dd>
+    <dt><strong>Trailer:</strong></dt><dd><%= link_to @trailer.trailer_no, "/trailers/#{@trip.trailer_id}" rescue 'No Trailer' %></dd>
     <dt><strong>Start date:</strong></dt><dd><%= @trip.start_date %></dd>
     <dt><strong>End date:</strong></dt><dd><%= @trip.end_date %></dd>
-    <dt><strong>Primary driver:</strong></dt><dd><%= link_to @primary_driver.name, "/drivers/#{@shipment.primary_driver}" rescue 'No Driver' %></dd>
-    <dt><strong>Secondary driver:</strong></dt><dd><%= link_to @secondary_driver.name, "/drivers/#{@shipment.secondary_driver}" rescue 'No Driver' %></dd>
+    <dt><strong>Primary driver:</strong></dt><dd><%= link_to @primary_driver.name, "/drivers/#{@shipment.primary_driver}" rescue 'No Primary Driver' %></dd>
+    <dt><strong>Secondary driver:</strong></dt><dd><%= link_to @secondary_driver.name, "/drivers/#{@shipment.secondary_driver}" rescue 'No Secondary Driver' %></dd>
     <dt><strong>Load bar count:</strong></dt><dd><%= @trip.load_bar_count %></dd>
     <dt><strong>Kilometres accumulated:</strong></dt><dd><%= @trip.accumulated_kilometres %> <abbr title="kilometre">km</abbr></dd>
-    <dt><strong>Profit:</strong></dt><dd><%= number_to_currency @profit %></dd>
+    <dt><strong>Profit:</strong></dt><dd><%= number_to_currency @profit rescue 'No Profit' %></dd>
     <dt><strong>Fuel cost:</strong></dt><dd><%= number_to_currency @trip.fuel_cost %></dd>
     <dt><strong>Misc. cost</strong></dt><dd><%= number_to_currency @trip.misc_cost %></dd>
     <dt><strong>Comments:</strong></dt><dd><%= @trip.comments %></dd>
