@@ -1,0 +1,30 @@
+<%= form_for (@job_application), :html => { :multipart => true } do |f| %>
+<!-- show errors if they exist -->
+  <% if @job_application.errors.any? %>
+    <div id="error_explanation">
+      <section>
+        <h2><%= pluralize(@job_application.errors.count, 'error') %> prohibited this application from being sent:</h2>    
+        <ul>
+        <% @job_application.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </section>
+    </div>
+  <% end %>
+  <%= f.label :job %>
+  <%= f.text_field :job, :required => 'required', :pattern => ValidationValues.content, :readonly => true, :value => @job_application.title %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :required => 'required', :pattern => ValidationValues.c_name, :placeholder => ValidationValues.p_name %>
+  <%= f.label :phone %>
+  <%= f.number_field :phone, :required => 'required', :pattern => ValidationValues.c_phone_number, :placeholder => ValidationValues.p_phone_number %>
+  <%= f.label :email %>
+  <%= f.text_field :email, :required => 'required', :pattern => ValidationValues.c_email, :placeholder => ValidationValues.p_email%>
+  <%= f.label :resume %>
+  <%= f.text_area :resume, :required => 'required', :pattern => ValidationValues.content %>
+  <%= f.label :resume_file %>
+  <%= f.file_field :resume_file %>
+  <div class="footer">
+    <%= f.submit 'Send' %>
+  </div>
+<% end %>
