@@ -1,0 +1,59 @@
+<%= form_for (@quote) do |f| %>
+<!-- show errors if they exist -->
+  <% if @quote.errors.any? %>
+    <div id="error_explanation">
+      <section>
+        <h2><%= pluralize(@quote.errors.count, 'error') %> prohibited this quote from being sent:</h2>    
+        <ul>
+        <% @quote.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </section>
+    </div>
+  <% end %>
+    <!-- form elements -->
+  <%= f.label :company %>
+  <%= f.text_field :company, :required => 'required', :pattern => ValidationValues.c_company, :placeholder => ValidationValues.p_company %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :required => 'required', :pattern => ValidationValues.c_name, :placeholder => ValidationValues.p_name %>
+  <%= f.label :phone %>
+  <%= f.number_field :phone, :required => 'required', :pattern => ValidationValues.c_phone_number, :placeholder => ValidationValues.p_phone_number %>
+  <%= f.label :email %>
+  <%= f.text_field :email, :required => 'required', :pattern => ValidationValues.c_email, :placeholder => ValidationValues.p_email%>
+  <%= f.label :pickup_date %>
+  <%= f.text_field :pickup_date, :pattern => ValidationValues.c_date, :placeholder => ValidationValues.p_date %>
+  <%= f.label :pickup_street %>
+  <%= f.text_field :pickup_street, :required => 'required', :pattern => ValidationValues.c_street, :placeholder => ValidationValues.p_street_only %>
+  <%= f.label :pickup_city %>
+  <%= f.text_field :pickup_city, :required => 'required', :pattern => ValidationValues.c_alpha, :placeholder => ValidationValues.p_city %>
+  <%= f.label :pickup_province %>
+  <%= f.select :pickup_province, options_for_select(ValidationValues.province) %>
+  <%= f.label :pickup_postal_code %>
+  <%= f.text_field :pickup_postal_code, :required => 'required', :pattern => ValidationValues.c_postal_code, :placeholder => ValidationValues.p_postal_code %>
+  <%= f.label :delivery_date %>
+  <%= f.text_field :delivery_date, :pattern => ValidationValues.c_date, :placeholder => ValidationValues.p_date %>
+  <%= f.label :delivery_street %>
+  <%= f.text_field :delivery_street, :required => 'required', :pattern => ValidationValues.c_street, :placeholder => ValidationValues.p_street_only %>
+  <%= f.label :delivery_city %>
+  <%= f.text_field :delivery_city, :required => 'required', :pattern => ValidationValues.c_alpha, :placeholder => ValidationValues.p_city %>
+  <%= f.label :delivery_province %>
+  <%= f.select :delivery_province, options_for_select(ValidationValues.province) %>
+  <%= f.label :delivery_postal_code %>
+  <%= f.text_field :delivery_postal_code, :required => 'required', :pattern => ValidationValues.c_postal_code, :placeholder => ValidationValues.p_postal_code %>
+  <%= f.label :weight %>
+  <%= f.text_field :weight, :pattern => ValidationValues.c_double, :placeholder => ValidationValues.p_double %>
+  <% ValidationValues.unit.each.with_index do |u, i| %>
+  <%= f.label "unit_#{u}", u, :class => 'inline' %>
+  <%= f.radio_button :unit, u, :checked => (i == 0 ? true : false) %>
+  <% end %>
+  <%= f.label :footage %>
+  <%= f.number_field :footage, :required => 'required', :pattern => ValidationValues.c_integer, :placeholder => ValidationValues.p_integer, :value => '0' %>
+  <%= f.label :skid_count %>
+  <%= f.number_field :skid_count, :required => 'required', :pattern => ValidationValues.c_integer, :placeholder => ValidationValues.p_integer, :value => '0' %>
+  <%= f.label :details %>
+  <%= f.text_area :details, :pattern => ValidationValues.content %>
+  <div class="footer">
+    <%= f.submit 'Send' %>
+  </div>
+<% end %>

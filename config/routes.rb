@@ -3,11 +3,23 @@ Gofast2::Application.routes.draw do
   devise_for :users
 
   resources :users
+  
+  get 'quotes' => 'quotes#new', :as => :quotes
 
+  get 'job_applications' => 'job_applications#new', :as => :job_applications
+  
   get "schedule/index"
 
-  get "quotes/index"
-
+  #get "quotes/index"
+  
+  #routes for quote
+  resources :quotes, :only => [:new, :create] do
+  get 'thank_you', :on => :collection
+  end
+  
+  resources :job_applications, :only => [:new, :create] do
+  get 'thank_you', :on => :collection
+  end
   get "index/index"
 
   get 'about' => 'index#about', :as => :about
@@ -20,8 +32,12 @@ Gofast2::Application.routes.draw do
 
   resources :trucks
 
-  resources :job_postings
-
+  resources :job_postings, shallow: true do
+    resources :job_applications, :only => [:new, :create] do
+    get 'thank_you', :on => :collection
+    end
+  end
+  
   resources :maintenances
 
   resources :trips
