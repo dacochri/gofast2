@@ -9,6 +9,8 @@ class JobPostingsController < ApplicationController
     params[:search] = format_date params[:search]
     
     @job_postings = JobPosting.search(params[:search], params[:column]).order(sort_column(JobPosting, 'title') + ' ' + sort_direction).page(params[:page]).per(10)
+    
+    get_params()
 
     respond_to do |format|
       format.html # index.html.erb

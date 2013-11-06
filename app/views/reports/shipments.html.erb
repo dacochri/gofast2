@@ -1,0 +1,25 @@
+<section>
+  <h2>Shipments</h2>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Shipment No</th>
+        <th scope="col">Broker Id</th>
+        <th scope="col">Customer Id</th>
+        <th scope="col">Trip Id</th>
+        <th scope="col">Cartage Id</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @shipments.each do |shipment| %>
+      <tr>
+        <td><%= shipment.shipment_no %></td>
+        <td><%= shipment.broker_id %></td>
+        <td><%= shipment.customer_id %></td>
+        <td><%= shipment.trip_id %></td>
+        <td><%= shipment.cartage_id %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</section>

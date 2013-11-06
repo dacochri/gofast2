@@ -1,0 +1,30 @@
+<section>
+  <h2>Trucks</h2>
+  <table>
+    <thead>
+      <tr>
+        <!-- column headers with sort -->
+        <th scope="col">Truck No</th>
+        <th scope="col">VIN</th>
+        <th scope="col">Truck Type</th>
+        <th scope="col">Owner</th>
+        <th scope="col">Approx. Total km</th>
+        <th scope="col">Est. Current Location</th>
+      </tr>
+    </thead>
+    <tbody>
+    <!-- insert records into table -->
+    <% @trucks.each do |truck| %>
+      <% company = Company.find truck.owner %>
+      <tr>
+        <td><%= truck.truck_no %></td>
+        <td><%= truck.vin %></td>
+        <td><%= truck.truck_type %></td>
+        <td><%= company.name %></td>
+        <td><%= truck.total_kilometres %> <abbr title="kilometre">km</abbr></td>
+        <td><%= truck.current_location %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</section>

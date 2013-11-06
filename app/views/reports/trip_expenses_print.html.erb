@@ -1,0 +1,44 @@
+<section>
+  <h2>Trip Expenses Report <%= @print_message %></h2>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Trip No</th>
+        <th scope="col">Shipper</th>
+        <th scope="col">Shipment(s)/th>
+        <th scope="col">Distance</th>
+        <th scope="col">Rate</th>
+        <th scope="col">Quick Pay</th>
+        <th scope="col">Fuel Cost</th>
+        <th scope="col">Misc Cost</th>
+        <th scope="col">Driver Pay</th>
+        <th scope="col">Profit</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @trips.each do |trip| %>
+      <% record = ReportsController.trip_records(trip.id) %>
+      <tr>
+        <td><%= trip.id.to_s %></td>
+        <td>
+          <% record['shipper_name'].each.with_index do |shipper, i| %>
+            <%= shipper.to_s %><br/>
+          <% end %>
+        </td>
+        <td>
+          <% record['shippment_no'].each.with_index do |shipper, i| %>
+            <%= shipper.to_s %><br/>
+          <% end %>
+        </td>
+        <td><%= record['distance'] %></td>
+        <td><%= record['rate'] %></td>
+        <td><%= record['quick_pay'] %></td>
+        <td><%= record['fuel'] %></td>
+        <td><%= record['misc_cost'] %></td>
+        <td><%= record['driver_pay'] %></td>
+        <td><%= record['profit'] %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</section>

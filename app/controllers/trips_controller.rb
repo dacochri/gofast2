@@ -9,6 +9,8 @@ class TripsController < ApplicationController
     params[:search] = format_date params[:search]
 		
     @trips = Trip.search(params[:search], params[:column]).order(sort_column(Trip, 'truck_id') + ' ' + sort_direction).page(params[:page]).per(10)
+    
+    get_params()
 
     respond_to do |format|
       format.html # index.html.erb

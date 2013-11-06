@@ -10,6 +10,8 @@ class CartagesController < ApplicationController
     
     @cartages = Cartage.search(params[:search], params[:column]).order(sort_column(Cartage, 'company_id') + ' ' + sort_direction).page(params[:page]).per(10)
 
+    get_params()
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @cartages }

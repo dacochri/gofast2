@@ -7,6 +7,8 @@ class ShipmentsController < ApplicationController
   # GET /shipments.json
   def index
     @shipments = Shipment.search(params[:search], params[:column]).order(sort_column(Shipment, 'broker_id') + ' ' + sort_direction).page(params[:page]).per(10)
+    
+    get_params()
 
     respond_to do |format|
       format.html # index.html.erb
