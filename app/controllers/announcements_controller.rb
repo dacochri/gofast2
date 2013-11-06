@@ -1,4 +1,5 @@
 class AnnouncementsController < ApplicationController
+  # redirect the user if they're not signed in, except on show action
   before_filter :authenticate_user!, :except => [:show]
 
   include ApplicationHelper
@@ -6,11 +7,14 @@ class AnnouncementsController < ApplicationController
   # GET /announcements
   # GET /announcements.json
   def index
+    # format the date to be usable
     params[:search] = format_date params[:search]
     
+    # Get announcements, order it, and configure for pagination
     @announcements = Announcement.search(params[:search], params[:column]).order(sort_column(Announcement, 'date_posted') + ' ' + sort_direction).page(params[:page]).per(10)
     
     get_params()
+    
 
     respond_to do |format|
       format.html # index.html.erb
