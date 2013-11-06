@@ -1,3 +1,4 @@
+<!-- show specific announcement record -->
 <section>
   <h2 class="announcement"><%= @announcement.title %></h2>
   <p><%= @announcement.date_posted.strftime('%B %e, %Y') %></p>
@@ -5,6 +6,7 @@
   <% unless notice.nil? %>
   <p id="notice"><%= notice %></p>
   <% end %>
+  <!-- since this page can be viewed by regular people, remove edit and back buttons -->
   <% if user_signed_in? %>
   <p>
       <%= link_to 'Edit', edit_announcement_path(@announcement), :class => 'button edit' %>
