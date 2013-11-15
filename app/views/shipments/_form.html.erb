@@ -26,7 +26,7 @@
   <%= f.label :receiver %>
   <%= f.collection_select :receiver, @shipper_receiver, :id, :name, { :selected => @shipper_receiver.first.id }, { :size => 5 } %>
   <%= f.label :cartage_id %>
-  <%= f.collection_select :cartage_id, @cartage_companies, :id, :name, { :selected => @cartage_companies.first.id }, { :size => 5 } %>
+  <%= f.collection_select :cartage_id, @cartage_companies, :id, :name, { }, { :size => 5 } %>
   <%= f.label :broker_date %>
   <%= f.text_field :broker_date, :required => 'required', :placeholder => ValidationValues.p_date, :pattern => ValidationValues.c_date %>
   <%= f.label :shipper_address %>
