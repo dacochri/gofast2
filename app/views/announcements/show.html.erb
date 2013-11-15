@@ -1,6 +1,8 @@
 <!-- show specific announcement record -->
 <section>
+  <% if notice %>
   <p id="notice"><%= notice %></p>
+  <% end %>
   <h2 class="announcement"><%= @announcement.title %></h2>
   <p><%= @announcement.date_posted.strftime('%B %e, %Y') %></p>
   <p><%= @announcement.content %></p>
