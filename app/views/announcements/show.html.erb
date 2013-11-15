@@ -1,10 +1,10 @@
 <!-- show specific announcement record -->
 <section>
+  <p id="notice"><%= notice %></p>
   <h2 class="announcement"><%= @announcement.title %></h2>
   <p><%= @announcement.date_posted.strftime('%B %e, %Y') %></p>
   <p><%= @announcement.content %></p>
   <% unless notice.nil? %>
-  <p id="notice"><%= notice %></p>
   <% end %>
   <!-- since this page can be viewed by regular people, remove edit and back buttons -->
   <% if user_signed_in? %>
