@@ -69,6 +69,7 @@ class AnnouncementsController < ApplicationController
     redirect_driver
     
     @announcement = Announcement.new(params[:announcement])
+    @user = User.where(id: current_user.id)
     
     # Redirect to Show page on success, or display error
     respond_to do |format|
