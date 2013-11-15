@@ -70,6 +70,8 @@ class AnnouncementsController < ApplicationController
     
     @announcement = Announcement.new(params[:announcement])
     @user = User.where(id: current_user.id)
+    # params[:announcement][:posted_by] = current_user.id
+    # params[:announcement][:date_posted] = Time.now
     
     # Redirect to Show page on success, or display error
     respond_to do |format|
