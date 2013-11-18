@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131027143857) do
+ActiveRecord::Schema.define(:version => 20131118154449) do
 
   create_table "announcements", :force => true do |t|
     t.integer  "posted_by"
@@ -87,6 +87,14 @@ ActiveRecord::Schema.define(:version => 20131027143857) do
     t.string   "vehicle_type"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+  end
+
+  create_table "permissions", :force => true do |t|
+    t.string   "role"
+    t.string   "controller"
+    t.string   "permission"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "shipments", :force => true do |t|

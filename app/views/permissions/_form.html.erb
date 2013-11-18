@@ -1,0 +1,25 @@
+<%= form_for(@permission) do |f| %>
+  <% if @permission.errors.any? %>
+    <div id="error_explanation">
+      <section>
+        <h3><%= pluralize(@permission.errors.count, "error") %> prohibited this permission from being saved:</h3>
+
+        <ul>
+        <% @permission.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </section>
+    </div>
+  <% end %>
+
+  <%= f.label :role %>
+  <%= f.select :role, options_for_select(ValidationValues.access) %>
+  <%= f.label :controller %>
+  <%= f.select :controller, options_for_select(ValidationValues.controllers) %>
+  <%= f.label :permission %>
+  <%= f.select :permission, options_for_select(ValidationValues.permissions) %>
+  <div class="footer">
+    <%= f.submit %>
+  </div>
+<% end %>
