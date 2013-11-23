@@ -1,4 +1,7 @@
 class PermissionsController < ApplicationController
+  # Only admin can view these pages
+  before_filter :authenticate_user!, :redirect_not_admin
+  
   # GET /permissions
   # GET /permissions.json
   def index
