@@ -227,12 +227,33 @@ a{
   }
 }
 
+.float-left{
+  dl{
+    width: 100%;
+  }
+}
+
 dl{
   margin-bottom: 1rem;
+  width: 50%;
+
+  &.normal{
+    
+    dt, dd{
+      float: left;
+    }
+  }
   
   dt, dd{
     line-height: 2.5rem;
+  }
+  
+  dt{
     float: left;
+  }
+
+  dd{
+    float: right;
   }
 
   dt{
