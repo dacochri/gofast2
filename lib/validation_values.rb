@@ -30,8 +30,8 @@ class ValidationValues
   @maintenance_type = %w(repair safety inspection oil\ change brakes)
   @unit = %w(lb kg)
   @access = %w(admin user driver)
-  @permissions = %w(none all read write delete)
-  @controllers = %w(announcements cartages companies drivers job_postings maintenances shipments skids trailers trips trucks schedule reports users)
+  @permissions = %w(none read read,\ write read,\ write,\ delete)
+  @controllers = %w(announcements cartages companies drivers job_postings maintenances shipments skids trailers trips trucks schedule reports users permissions)
 
   # Messages
   @message = 'does not match expected format'
