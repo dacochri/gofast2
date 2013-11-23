@@ -14,7 +14,7 @@
   <% end %>
 
   <%= f.label :role %>
-  <%= f.select :role, options_for_select(ValidationValues.access) %>
+  <%= f.select :role, options_for_select(%w(user driver)) %>
   <%= f.label :controller %>
   <%= f.select :controller, options_for_select(ValidationValues.controllers) %>
   <%= f.label :permission %>
