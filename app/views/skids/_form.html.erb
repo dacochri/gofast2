@@ -15,29 +15,33 @@
     </div>
   <% end %>
 
-  <%= f.label :shipment_id %>
-  <%= f.collection_select :shipment_id, @shipments, :id, :shipment_no_and_receiver, { :selected => @shipments.first.id }, { :size => 5 } %>
-  <%= f.label :product_desc %>
-  <%= f.text_field :product_desc, :required => 'required', :pattern => ValidationValues.c_alpha_numeric, :placeholder => ValidationValues.p_product_desc %>
-  <%= f.label :skid_count %>
-  <%= f.number_field :skid_count, :required => 'required', :pattern => ValidationValues.c_integer, :placeholder => ValidationValues.p_integer %>
-  <%= f.label :weight %>
-  <%= f.text_field :weight, :required => 'required', :pattern => ValidationValues.c_double, :placeholder => ValidationValues.p_double %>
-  <% ValidationValues.unit.each.with_index do |u, i| %>
-  <%= f.label "unit_#{u}", u, :class => 'inline' %>
-  <%= f.radio_button :unit, u, :checked => (i == 0 ? true : false) %>
-  <% end %>
-  <br/>
-  <%= f.label :oversized, :class => 'inline' %>
-  <%= f.check_box :oversized %>
-  <%= f.label :pickup_location %>
-  <%= f.text_field :pickup_location, :required => 'required', :pattern => ValidationValues.c_street, :placeholder => ValidationValues.p_street %>
-  <%= f.label :delivery_location %>
-  <%= f.text_field :delivery_location, :required => 'required', :pattern => ValidationValues.c_street, :placeholder => ValidationValues.p_street %>
-  <%= f.label :pickup_time %>
-  <%= f.datetime_select :pickup_time %>
-  <%= f.label :delivery_time %>
-  <%= f.datetime_select :delivery_time %>
+  <div class="float-left">
+    <%= f.label :shipment_id %>
+    <%= f.collection_select :shipment_id, @shipments, :id, :shipment_no_and_receiver, { :selected => @shipments.first.id }, { :size => 5 } %>
+    <%= f.label :product_desc %>
+    <%= f.text_field :product_desc, :required => 'required', :pattern => ValidationValues.c_alpha_numeric, :placeholder => ValidationValues.p_product_desc %>
+    <%= f.label :skid_count %>
+    <%= f.number_field :skid_count, :required => 'required', :pattern => ValidationValues.c_integer, :placeholder => ValidationValues.p_integer %>
+    <%= f.label :weight %>
+    <%= f.text_field :weight, :required => 'required', :pattern => ValidationValues.c_double, :placeholder => ValidationValues.p_double %>
+    <% ValidationValues.unit.each.with_index do |u, i| %>
+      <%= f.label "unit_#{u}", u, :class => 'inline' %>
+      <%= f.radio_button :unit, u, :checked => (i == 0 ? true : false) %>
+    <% end %>
+  </div>
+  <div class="float-left">
+    <%= f.label :oversized, :class => 'inline' %>
+    <%= f.check_box :oversized %>
+    <%= f.label :pickup_location %>
+    <%= f.text_field :pickup_location, :required => 'required', :pattern => ValidationValues.c_street, :placeholder => ValidationValues.p_street %>
+    <%= f.label :delivery_location %>
+    <%= f.text_field :delivery_location, :required => 'required', :pattern => ValidationValues.c_street, :placeholder => ValidationValues.p_street %>
+    <%= f.label :pickup_time %>
+    <%= f.datetime_select :pickup_time %>
+    <%= f.label :delivery_time %>
+    <%= f.datetime_select :delivery_time %>
+  </div>
+  <div class="clear"></div>
   <div class="footer">
     <%= f.submit %>
   </div>

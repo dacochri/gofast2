@@ -15,26 +15,31 @@
     </div>
   <% end %>
   
-  <%= f.label :trip_no %>
-  <%= f.text_field :trip_no, :required => 'required', :pattern => ValidationValues.integer, :placeholder => ValidationValues.p_integer %>
-  <%= f.label :truck_id %>
-  <%= f.collection_select :truck_id, @trucks, :id, :truck_no, { :selected => @trucks.first.id }, { :size => 5 } %>
-  <%= f.label :trailer_id %>
-  <%= f.collection_select :trailer_id, @trailers, :id, :trailer_no, { :selected => @trailers.first.id }, { :size => 5 } %>
-  <%= f.label :start_date %>
-  <%= f.date_select :start_date %>
-  <%= f.label :end_date %>
-  <%= f.date_select :end_date %>
-  <%= f.label :load_bar_count %>
-  <%= f.number_field :load_bar_count, :required => 'required', :pattern => ValidationValues.c_integer, :placeholder => ValidationValues.p_integer %>
-  <%= f.label :accumulated_kilometres %>
-  <%= f.text_field :accumulated_kilometres, :required => 'required', :pattern => ValidationValues.c_integer, :placeholder => ValidationValues.p_integer %>
-  <%= f.label :fuel_cost %>
-  <%= f.number_field :fuel_cost, :required => 'required', :pattern => ValidationValues.c_double, :placeholder => ValidationValues.p_double %>
-  <%= f.label :misc_cost %>
-  <%= f.number_field :misc_cost, :pattern => ValidationValues.c_double, :placeholder => ValidationValues.p_double %>
-  <%= f.label :comments %>
-  <%= f.text_field :comments %>
+  <div class="float-left">
+    <%= f.label :trip_no %>
+    <%= f.text_field :trip_no, :required => 'required', :pattern => ValidationValues.integer, :placeholder => ValidationValues.p_integer %>
+    <%= f.label :truck_id %>
+    <%= f.collection_select :truck_id, @trucks, :id, :truck_no, { :selected => @trucks.first.id }, { :size => 5 } %>
+    <%= f.label :trailer_id %>
+    <%= f.collection_select :trailer_id, @trailers, :id, :trailer_no, { :selected => @trailers.first.id }, { :size => 5 } %>
+    <%= f.label :load_bar_count %>
+    <%= f.number_field :load_bar_count, :required => 'required', :pattern => ValidationValues.c_integer, :placeholder => ValidationValues.p_integer %>
+  </div>
+  <div class="float-left">
+    <%= f.label :start_date %>
+    <%= f.date_select :start_date %>
+    <%= f.label :end_date %>
+    <%= f.date_select :end_date %>
+    <%= f.label :accumulated_kilometres %>
+    <%= f.text_field :accumulated_kilometres, :required => 'required', :pattern => ValidationValues.c_integer, :placeholder => ValidationValues.p_integer %>
+    <%= f.label :fuel_cost %>
+    <%= f.number_field :fuel_cost, :required => 'required', :pattern => ValidationValues.c_double, :placeholder => ValidationValues.p_double %>
+    <%= f.label :misc_cost %>
+    <%= f.number_field :misc_cost, :pattern => ValidationValues.c_double, :placeholder => ValidationValues.p_double %>
+    <%= f.label :comments %>
+    <%= f.text_field :comments %>
+  </div>
+  <div class="clear"></div>
   <div class="footer">
     <%= f.submit %>
   </div>
