@@ -4,7 +4,7 @@
   <% if flash[:notice] %>
     <p id="notice"><%= flash[:notice] %></p>
   <% end %>
-  <dl>
+  <dl class="normal">
     <dt><strong>Post date:</strong></dt><dd><%= @job_posting.post_date %></dd>
     <dt><strong>Closing date:</strong></dt><dd><%= @job_posting.closing_date %></dd>
     <dt><strong>Description:</strong></dt><dd><%= @job_posting.description %></dd>
