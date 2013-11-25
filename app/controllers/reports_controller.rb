@@ -80,11 +80,15 @@ class ReportsController < ApplicationController
       current_company = Company.find s
       records['distance'] = records['distance'] + current_shippment.distance
       records['rate'] = records['rate'] + current_shippment.rate
-      records['quick_pay'] = records['quick_pay'] + current_shippment.primary_quick_pay
+      if current_shippment.primary_quick_pay == nil
+        records['quick_pay'] = 0
+      else
+        records['quick_pay'] = records['quick_pay'] + current_shippment.primary_quick_pay
+      end
       records['misc_cost'] = records['misc_cost'] + current_shippment.misc_cost
-      #records['quick_pay'] = records['quick_pay'] + current_shippment.primary_quick_pay + current_shippment.secondary_quick_pay
+        #records['quick_pay'] = records['quick_pay'] + current_shippment.primary_quick_pay + current_shippment.secondary_quick_pay
       records['driver_pay'] = records['driver_pay'] + current_shippment.primary_driver_pay
-      #records['driver_pay'] = records['driver_pay'] + current_shippment.primary_driver_pay + current_shippment.secondary_driver_pay
+        #records['driver_pay'] = records['driver_pay'] + current_shippment.primary_driver_pay + current_shippment.secondary_driver_pay
       records['profit'] = records['profit'].to_f + current_shippment.primary_quick_pay.to_f + current_shippment.rate.to_f - current_shippment.misc_cost.to_f - current_shippment.primary_driver_pay - total
       records['profit'] = records['profit'].to_f.round(2)
       records['shipper_name'].push current_company.name

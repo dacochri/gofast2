@@ -36,15 +36,19 @@ class ScheduleController < ApplicationController
       current_schedule_record['trip_no'] = Trip.where("truck_id = ?", id).select('id').order('start_date DESC').first.id
       current_schedule_record['load_bar_count'] = Trip.where("truck_id = ?", id).select('load_bar_count').order('start_date DESC').first.load_bar_count
       current_schedule_record['delivery_locations'] = Shipment.where("trip_id = ?", current_schedule_record['trip_no']).map(&:receiver_address)
+      current_schedule_record['shipment_ids'] = Shipment.where("trip_id = ?", current_schedule_record['trip_no']).map(&:id)
       current_schedule_record['trailer_id'] = Trip.where("truck_id = ?", id).select('trailer_id').order('start_date DESC').first.trailer_id
       current_schedule_record['trailer_no'] = Trailer.where("id = ?", Trip.where("truck_id = ?", id).select('trailer_id').order('start_date DESC').first.trailer_id).select('trailer_no').first.trailer_no
       current_schedule_record['post_all'] = true
       shipments = Shipment.where("shipment_no = ", current_schedule_record['trip_no'])
-      if Maintenance.where("vehicle_id = ? AND maintenance_type = ?", id, 'safety').count('date') > 0
-        current_schedule_record['trailer_next_service_date'] = (Maintenance.where("vehicle_id = ? AND maintenance_type = ?", id, 'safety').select("date").order('kilometres DESC').first.date.to_time + 1.years).strftime('%Y-%m-%d')
+      
+      if Maintenance.where("vehicle_id = ? AND vehicle_type = ? AND maintenance_type = ?", current_schedule_record['trailer_id'].to_i, 'trailer', 'safety').count('date') > 0
+        current_schedule_record['trailer_next_service_date'] = (Maintenance.where("vehicle_id = ? AND vehicle_type = ? AND maintenance_type = ?", current_schedule_record['trailer_id'].to_i, 'trailer', 'safety').select("date").order('date DESC').first.date.to_time + 1.years).strftime('%Y-%m-%d')
       else
         current_schedule_record['trailer_next_service_date'] = 'No Records'
-      end      
+      end
+
+      
     end
     #Retrieves Maintenance records of the current truck
     if Maintenance.where("vehicle_id = ? AND maintenance_type = ?", id, 'oil change').count('kilometres') > 0
