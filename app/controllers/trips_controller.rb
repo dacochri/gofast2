@@ -38,7 +38,7 @@ class TripsController < ApplicationController
       @profit += s.rate
       @profit -= s.primary_driver_pay
       @profit -= s.secondary_driver_pay unless s.secondary_driver_pay.nil?
-      @profit += s.primary_quick_pay
+      @profit += s.primary_quick_pay unless s.primary_quick_pay.nil?
       @profit += s.secondary_quick_pay unless s.secondary_quick_pay.nil?
       @profit -= s.misc_cost
     end
