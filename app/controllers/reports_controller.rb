@@ -1,4 +1,5 @@
 class ReportsController < ApplicationController
+  before_filter :authenticate_user!, :redirect_not_admin
   include ApplicationHelper
   
   # GET /reports/trucks
