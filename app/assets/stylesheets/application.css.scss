@@ -228,7 +228,7 @@ a{
 
 dl{
   margin-bottom: 1rem;
-  width: 50%;
+  width: 70%;
 
   &.normal{
     
@@ -241,15 +241,13 @@ dl{
     line-height: 2.5rem;
   }
   
-  dt{
-    float: left;
-  }
-
   dd{
     float: right;
+    width: 50rem;
   }
 
   dt{
+    float: left;
     clear: both;
     margin-right: 0.5rem;
   }
