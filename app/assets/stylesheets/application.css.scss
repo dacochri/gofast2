@@ -36,6 +36,7 @@ html{
 body{
   font-family: "Droid Sans", Arial, Helvetica, sans-serif;
   font-size: 1.8rem;
+  background-color: $footer-bg-color;
 
   > div:first-child{
     background: $header-bg-color url('header_bg.png') repeat bottom left;
@@ -44,6 +45,10 @@ body{
   > div:nth-child(2){
     background: $nav-bg-color url('nav_bg.png') repeat top left;
     border-bottom: 0.2rem solid #F60;
+  }
+  
+  > div:nth-child(3), > div:nth-child(4){
+    background-color: #FFF;
   }
 
   /*
@@ -165,7 +170,6 @@ div:nth-child(2){
 
 footer {
   color: #DDD;
-  background: #222;
 
   a{
     color: #F60;
