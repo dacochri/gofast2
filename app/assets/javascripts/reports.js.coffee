@@ -1,3 +1,4 @@
-$(".button.print").on "click", ->
-  window.print();
-  return false;
+$ ->
+  $('.button.print').on 'click', ->
+    window.print()
+    false

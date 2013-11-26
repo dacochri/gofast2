@@ -2,7 +2,7 @@
   <!-- This will print the header as well as the date which is calculated in the controller -->
   <h2>Trip Expenses Report <%= @print_message %></h2>
   <!-- Creates a print button which passes required arguments as parameters for print page to load -->
-  <p><%= link_to 'Print', "trip_expenses_print" + "?date=#{@date}", :class => 'button print' %> <a href="#profit" class="button">Profit</a></p>
+  <p><%= link_to 'Print', "trip_expenses_print" + "?date=#{@date}", :class => 'button' %> <a href="#profit" class="button">Profit</a></p>
   <!-- Creates a form which will submit the desired date to be shown -->
   <%= form_tag({ :action => 'trip_expenses' }, { :class => 'report-form' }) do %>
     <%= label_tag :date %>
