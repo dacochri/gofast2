@@ -43,6 +43,8 @@ class ReportsController < ApplicationController
     else
       #Sets the parameter to current month so it defaults and prevents the page from breaking
       params[:date] = Date.today.strftime("%B")
+      @date = params[:date]
+      @print_message = sql_query[params[:date]]['message']
     end
   
     #Checks to see if the date param is set to nil
