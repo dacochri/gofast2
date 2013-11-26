@@ -1,7 +1,7 @@
 <!-- index page for shipments -->
 <section>
   <h2>Shipments</h2>
-  <p><%= link_to 'New Shipment', new_shipment_path, :class => 'button new' %><%= link_to 'Print', "reports/#{params[:controller]}" + "?column=#{@column}&direction=#{@direction}&search=#{@search}&sort=#{@sort}", :class => 'button print' %></p>
+  <p><%= link_to 'New Shipment', new_shipment_path, :class => 'button new' %><%= link_to 'Print', "reports/#{params[:controller]}" + "?column=#{@column}&direction=#{@direction}&search=#{@search}&sort=#{@sort}", :class => 'button' %></p>
 	<!-- create form for search/ordering -->
   <%= form_tag shipments_path, :method => 'get', :class => 'search' do %>
     <%= hidden_field_tag :direction, params[:direction] %>

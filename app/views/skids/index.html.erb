@@ -1,7 +1,7 @@
 <!-- index page for skids -->
 <section>
   <h2>Skids</h2>
-  <p><%= link_to 'New Skid', new_skid_path, :class => 'button new' %><%= link_to 'Print', "reports/#{params[:controller]}" + "?column=#{@column}&direction=#{@direction}&search=#{@search}&sort=#{@sort}", :class => 'button print' %></p>
+  <p><%= link_to 'New Skid', new_skid_path, :class => 'button new' %><%= link_to 'Print', "reports/#{params[:controller]}" + "?column=#{@column}&direction=#{@direction}&search=#{@search}&sort=#{@sort}", :class => 'button' %></p>
   <!-- create form for search/ordering -->
   <%= form_tag skids_path, :method => 'get', :class => 'search' do %>
     <%= hidden_field_tag :direction, params[:direction] %>

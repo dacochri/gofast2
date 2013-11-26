@@ -1,7 +1,7 @@
 <!-- index page for companies -->
 <section>
   <h2>Companies</h2>
-  <p><%= link_to 'New Company', new_company_path, :class => 'button new' %><%= link_to 'Print', "reports/#{params[:controller]}" + "?column=#{@column}&direction=#{@direction}&search=#{@search}&sort=#{@sort}", :class => 'button print' %></p>
+  <p><%= link_to 'New Company', new_company_path, :class => 'button new' %><%= link_to 'Print', "reports/#{params[:controller]}" + "?column=#{@column}&direction=#{@direction}&search=#{@search}&sort=#{@sort}", :class => 'button' %></p>
 	 <!-- create form for search/ordering -->
   <%= form_tag companies_path, :method => 'get', :class => 'search' do %>
     <%= hidden_field_tag :direction, params[:direction] %>
