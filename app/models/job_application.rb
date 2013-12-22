@@ -1,3 +1,6 @@
+# This file validates the user submitted data before it is submitted.
+# attr_accessible defines the attributes that are allowed to be used by creating accessor and mutator methods.
+# Also contains the logic to send the email
 class JobApplication 
   extend ActiveModel::Naming
   include ActiveModel::Conversion

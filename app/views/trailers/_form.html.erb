@@ -1,4 +1,6 @@
+<!-- create form used in trailers -->
 <%= form_for(@trailer) do |f| %>
+  <!-- if server side validation errors occur, display them here -->
   <% if @trailer.errors.any? %>
     <div id="error_explanation">
       <section>
@@ -13,24 +15,29 @@
     </div>
   <% end %>
 
-  <%= f.label :trailer_no %>
-  <%= f.number_field :trailer_no, :required => 'required', :pattern => ValidationValues.c_integer, :placeholder => ValidationValues.p_integer %>
-  <%= f.label :trailer_type %>
-  <%= f.select :trailer_type, options_for_select(ValidationValues.trailer_type) %>
-  <%= f.label :license_plate %>
-  <%= f.text_field :license_plate, :required => 'required', :pattern => ValidationValues.c_license_plate, :placeholder => ValidationValues.p_license_plate %>
-  <%= f.label :make %>
-  <%= f.text_field :make, :required => 'required', :pattern => ValidationValues.c_alpha_numeric %>
-  <%= f.label :model %>
-  <%= f.text_field :model, :required => 'required', :pattern => ValidationValues.c_alpha_numeric %>
-  <%= f.label :manufactured_year %>
-  <%= f.number_field :manufactured_year, :required => 'required', :pattern => ValidationValues.c_year, :placeholder => ValidationValues.p_year %>
-  <%= f.label :vin %>
-  <%= f.text_field :vin, :required => 'required', :pattern => ValidationValues.c_vin, :placeholder => ValidationValues.p_vin %>
-  <%= f.label :location %>
-  <%= f.text_field :location, :required => 'required', :pattern => ValidationValues.c_street, :placeholder => ValidationValues.p_street %>
-  <%= f.label :color %>
-  <%= f.text_field :color, :required => 'required', :pattern => ValidationValues.c_alpha_numeric, :placeholder => ValidationValues.p_color %>
+  <div class="float-left">
+    <%= f.label :trailer_no %>
+    <%= f.number_field :trailer_no, :required => 'required', :pattern => ValidationValues.c_integer, :placeholder => ValidationValues.p_integer %>
+    <%= f.label :trailer_type %>
+    <%= f.select :trailer_type, options_for_select(ValidationValues.trailer_type) %>
+    <%= f.label :license_plate %>
+    <%= f.text_field :license_plate, :required => 'required', :pattern => ValidationValues.c_license_plate, :placeholder => ValidationValues.p_license_plate %>
+    <%= f.label :make %>
+    <%= f.text_field :make, :required => 'required', :pattern => ValidationValues.c_alpha_numeric %>
+    <%= f.label :model %>
+    <%= f.text_field :model, :required => 'required', :pattern => ValidationValues.c_alpha_numeric %>
+  </div>
+  <div class="float-left">
+    <%= f.label :manufactured_year %>
+    <%= f.number_field :manufactured_year, :required => 'required', :pattern => ValidationValues.c_year, :placeholder => ValidationValues.p_year %>
+    <%= f.label :vin %>
+    <%= f.text_field :vin, :required => 'required', :pattern => ValidationValues.c_vin, :placeholder => ValidationValues.p_vin %>
+    <%= f.label :location %>
+    <%= f.text_field :location, :required => 'required', :pattern => ValidationValues.c_street, :placeholder => ValidationValues.p_street %>
+    <%= f.label :color %>
+    <%= f.text_field :color, :required => 'required', :pattern => ValidationValues.c_alpha_numeric, :placeholder => ValidationValues.p_color %>
+  </div>
+  <div class="clear"></div>
   <div class="footer">
     <%= f.submit %>
   </div>

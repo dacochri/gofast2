@@ -1,4 +1,6 @@
+<!-- create form used in announcements -->
 <%= form_for(@announcement) do |f| %>
+  <!-- if server side validation errors occur, display them here -->
   <% if @announcement.errors.any? %>
     <div id="error_explanation">
       <section>

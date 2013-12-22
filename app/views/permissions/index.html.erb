@@ -1,0 +1,23 @@
+<section>
+  <h2>Permissions</h2>
+  <%= link_to 'New Permission', new_permission_path, :class => 'button new' %>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Role</th>
+        <th scope="col">Controller</th>
+        <th scope="col">Permission</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @permissions.each do |permission| %>
+      <tr>
+        <td><%= permission.role %></td>
+        <td><%= permission.controller %></td>
+        <td><%= permission.permission %></td>
+        <td><%= link_to '', permission, method: :delete, data: { confirm: 'Are you sure you want to delete the permission for ' + permission.controller + '/' + permission.permission + '?' }, :class => 'button destroy', :title => 'Delete' %></td>
+      </tr>
+    <% end %>
+  </table>
+</section>

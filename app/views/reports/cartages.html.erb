@@ -1,0 +1,32 @@
+<!-- cartage report page -->
+<section>
+  <h2>Cartages</h2>
+  <p><%= link_to 'Print', '/', :class => 'button print' %>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Company Id</th>
+        <th scope="col">Trailer Id</th>
+        <th scope="col">Pickup Time</th>
+        <th scope="col">Delivery Time</th>
+        <th scope="col">Driver Name</th>
+        <th scope="col">Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @cartages.each do |cartage| %>
+      <% company = Company.find(cartage.company_id) %>
+      <% trailer = Trailer.find(cartage.trailer_id) %>
+      <tr>
+        <td><%= company.name %></td>
+        <td><%= trailer.trailer_no %></td>
+        <td><%= format_time cartage.pickup_time %></td>
+        <td><%= format_time cartage.delivery_time %></td>
+        <td><%= cartage.driver_name %></td>
+        <td><%= number_to_currency cartage.cost %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <p>Printed on: <%= format_time Time.now %></p>
+</section>

@@ -1,7 +1,8 @@
+<!-- index page for trucks -->
 <section>
   <h2>Trucks</h2>
-  <p><%= link_to 'New Truck', new_truck_path, :class => 'button new' %></p>
-  <!-- form for search -->
+  <p><%= link_to 'New Truck', new_truck_path, :class => 'button new' %><%= link_to 'Print', "reports/#{params[:controller]}" + "?column=#{@column}&direction=#{@direction}&search=#{@search}&sort=#{@sort}", :class => 'button' %></p>
+  <!-- create form for search/ordering -->
   <%= form_tag trucks_path, :method => 'get', :class => 'search' do %>
     <%= hidden_field_tag :direction, params[:direction] %>
     <%= hidden_field_tag :sort, params[:sort] %>
@@ -25,7 +26,7 @@
       </tr>
     </thead>
     <tbody>
-    <!-- insert records into table -->
+    <!-- go through all truck records and create rows with data -->
     <% @trucks.each do |truck| %>
       <% company = Company.find truck.owner %>
       <tr>
@@ -38,6 +39,7 @@
         <td><%= link_to '', truck, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_truck_path(truck), :class => 'button edit', :title => 'Edit' %> <%= link_to '', truck, method: :delete, data: { confirm: 'Are you sure you want to delete truck no. ' + truck.truck_no.to_s + '?' }, :class => 'button destroy', :title => 'Delete' %></td>
       </tr>
     <% end %>
+        <!-- display no results if trucks contains no records -->
     <% if @trucks.empty? %>
       <tr>
         <td colspan="7">No results found.</td>

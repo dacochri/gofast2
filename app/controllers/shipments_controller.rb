@@ -1,4 +1,5 @@
 class ShipmentsController < ApplicationController
+  # If user is not logged in, redirect to login screen
   before_filter :authenticate_user!
   
   include ApplicationHelper
@@ -6,7 +7,11 @@ class ShipmentsController < ApplicationController
   # GET /shipments
   # GET /shipments.json
   def index
+    # Page to show all records
+    # Get shipments, order results, and paginate
     @shipments = Shipment.search(params[:search], params[:column]).order(sort_column(Shipment, 'broker_id') + ' ' + sort_direction).page(params[:page]).per(10)
+    
+    get_params()
 
     respond_to do |format|
       format.html # index.html.erb
@@ -17,14 +22,16 @@ class ShipmentsController < ApplicationController
   # GET /shipments/1
   # GET /shipments/1.json
   def show
+    # Page to show one record
     @shipment = Shipment.find(params[:id])
-    @trip = Trip.find(@shipment.trip_id)
-    @broker = Company.find(@shipment.broker_id)
-    @shipper = Company.find(@shipment.shipper)
-    @receiver = Company.find(@shipment.receiver)
-    @primary_driver = Driver.find(@shipment.primary_driver)
-    @secondary_driver = Driver.find(@shipment.secondary_driver)
-    @skid = Skid.where(shipment_id: @shipment.id).first
+    # Since this table has many foreign keys, get the corresponding data from table
+    @trip = Trip.find(@shipment.trip_id) rescue nil
+    @broker = Company.find(@shipment.broker_id) rescue nil
+    @shipper = Company.find(@shipment.shipper) rescue nil
+    @receiver = Company.find(@shipment.receiver) rescue nil
+    @primary_driver = Driver.find(@shipment.primary_driver) rescue nil
+    @secondary_driver = Driver.find(@shipment.secondary_driver) rescue nil
+    @skid = Skid.where(shipment_id: @shipment.id).first rescue nil
 
     respond_to do |format|
       format.html # show.html.erb
@@ -35,7 +42,9 @@ class ShipmentsController < ApplicationController
   # GET /shipments/new
   # GET /shipments/new.json
   def new
+    # Form to create a new record
     @shipment = Shipment.new
+    # Populate dropdown with data
     @trips = Trip.all
     @broker_companies = Company.where(:company_type => 'broker')
     @cartage_companies = Company.where(:company_type => 'cartage')
@@ -50,7 +59,9 @@ class ShipmentsController < ApplicationController
 
   # GET /shipments/1/edit
   def edit
+    # Form to edit a record
     @shipment = Shipment.find(params[:id])
+    # Get data that will be populated in the dropdown lists
     @trips = Trip.all
     @broker_companies = Company.where(:company_type => 'broker')
     @cartage_companies = Company.where(:company_type => 'cartage')
@@ -61,6 +72,7 @@ class ShipmentsController < ApplicationController
   # POST /shipments
   # POST /shipments.json
   def create
+    # Logic to create a new record
     @shipment = Shipment.new(params[:shipment])
 
     respond_to do |format|
@@ -77,6 +89,7 @@ class ShipmentsController < ApplicationController
   # PUT /shipments/1
   # PUT /shipments/1.json
   def update
+    # Logic to update a record
     @shipment = Shipment.find(params[:id])
 
     respond_to do |format|
@@ -93,6 +106,7 @@ class ShipmentsController < ApplicationController
   # DELETE /shipments/1
   # DELETE /shipments/1.json
   def destroy
+    # Logic to delete a record
     @shipment = Shipment.find(params[:id])
     @shipment.destroy
 

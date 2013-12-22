@@ -1,4 +1,6 @@
+<!-- create form used in job postings -->
 <%= form_for@job_posting do |f| %>
+  <!-- if server side validation errors occur, display them here -->
   <% if @job_posting.errors.any? %>
     <div id="error_explanation">
       <section>

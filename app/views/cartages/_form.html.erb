@@ -1,4 +1,6 @@
+<!-- create form used in cartage -->
 <%= form_for(@cartage) do |f| %>
+  <!-- if server side validation errors occur, display them here -->
   <% if @cartage.errors.any? %>
     <div id="error_explanation">
       <section>
@@ -12,19 +14,24 @@
       </section>
     </div>
   <% end %>
-
-  <%= f.label :company_id %>
-  <%= f.collection_select :company_id, @cartage_companies, :id, :name, { :selected => @cartage_companies.first.id }, { :size => 5 } %>
-  <%= f.label :trailer_id %>
-  <%= f.collection_select :trailer_id, @trailers, :id, :trailer_no, { :selected => @trailers.first.id }, { :size => 5 } %>
-  <%= f.label :pickup_time %>
-  <%= f.datetime_select :pickup_time %>
-  <%= f.label :delivery_time %>
-  <%= f.datetime_select :delivery_time %>
-  <%= f.label :driver_name %>
-  <%= f.text_field :driver_name, :required => 'required', :pattern => ValidationValues.c_name, :placeholder => ValidationValues.p_name %>
-  <%= f.label :cost %>
-  <%= f.text_field :cost, :required => 'required', :pattern => ValidationValues.c_double, :placeholder => ValidationValues.p_double %>
+  
+  <div class="float-left">
+    <%= f.label :company_id %>
+    <%= f.collection_select :company_id, @cartage_companies, :id, :name, { :selected => @cartage_companies.first.id }, { :size => 5 } %>
+    <%= f.label :trailer_id %>
+    <%= f.collection_select :trailer_id, @trailers, :id, :trailer_no, { :selected => @trailers.first.id }, { :size => 5 } %>
+  </div>
+  <div class="float-left">
+    <%= f.label :pickup_time %>
+    <%= f.datetime_select :pickup_time %>
+    <%= f.label :delivery_time %>
+    <%= f.datetime_select :delivery_time %>
+    <%= f.label :driver_name %>
+    <%= f.text_field :driver_name, :required => 'required', :pattern => ValidationValues.c_name, :placeholder => ValidationValues.p_name %>
+    <%= f.label :cost %>
+    <%= f.text_field :cost, :required => 'required', :pattern => ValidationValues.c_double, :placeholder => ValidationValues.p_double %>
+  </div>
+  <div class="clear"></div>
   <div class="footer">
     <%= f.submit %>
   </div>

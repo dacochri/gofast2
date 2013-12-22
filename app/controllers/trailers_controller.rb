@@ -1,4 +1,5 @@
 class TrailersController < ApplicationController
+  # If not logged in, redirect user. Also restrict access from drivers
   before_filter :authenticate_user!, :redirect_driver
   
   include ApplicationHelper
@@ -6,9 +7,12 @@ class TrailersController < ApplicationController
   # GET /trailers
   # GET /trailers.json
   def index
+    # Show all records
     params[:search] = format_date params[:search]
     
     @trailers = Trailer.search(params[:search], params[:column]).order(sort_column(Trailer, 'trailer_no') + ' ' + sort_direction).page(params[:page]).per(10)
+    
+    get_params()
 
     respond_to do |format|
       format.html # index.html.erb
@@ -19,6 +23,7 @@ class TrailersController < ApplicationController
   # GET /trailers/1
   # GET /trailers/1.json
   def show
+    # Show one record
     @trailer = Trailer.find(params[:id])
 
     respond_to do |format|
@@ -30,6 +35,7 @@ class TrailersController < ApplicationController
   # GET /trailers/new
   # GET /trailers/new.json
   def new
+    # Form to create a new record
     @trailer = Trailer.new
 
     respond_to do |format|
@@ -40,12 +46,14 @@ class TrailersController < ApplicationController
 
   # GET /trailers/1/edit
   def edit
+    # Form to edit a record
     @trailer = Trailer.find(params[:id])
   end
 
   # POST /trailers
   # POST /trailers.json
   def create
+    # Logic to create a new record
     @trailer = Trailer.new(params[:trailer])
 
     respond_to do |format|
@@ -62,6 +70,7 @@ class TrailersController < ApplicationController
   # PUT /trailers/1
   # PUT /trailers/1.json
   def update
+    # Logic to update a record
     @trailer = Trailer.find(params[:id])
 
     respond_to do |format|
@@ -78,6 +87,7 @@ class TrailersController < ApplicationController
   # DELETE /trailers/1
   # DELETE /trailers/1.json
   def destroy
+    # Logic to delete a record
     @trailer = Trailer.find(params[:id])
     @trailer.destroy
 

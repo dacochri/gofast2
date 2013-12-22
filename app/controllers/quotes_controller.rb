@@ -1,5 +1,6 @@
 class QuotesController < ApplicationController
   def new
+    # Form to create a quote
     @quote = Quote.new
   end
 

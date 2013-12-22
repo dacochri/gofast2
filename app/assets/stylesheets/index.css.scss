@@ -4,13 +4,16 @@
 
 #announcements{
   padding: 2.5rem;
+  margin-left: 2.5rem;
   background: #EEE;
   display: inline-block;
+  width: 66%;
+  float: right;
 
   section{
-    width: 31%;
     margin: 1rem;
     float: left;
+    width: 47%;
 
     h3{
       letter-spacing: 0;

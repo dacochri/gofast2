@@ -1,4 +1,9 @@
 Gofast2::Application.routes.draw do
+  
+  resources :permissions
+
+
+  # This file defines the which urls the application should expect to accept, and defines variables to access that url
 
   devise_for :users
 

@@ -1,0 +1,28 @@
+<!-- drivers report page -->
+<section>
+  <h2>Drivers</h2>
+  <p><%= link_to 'Print', '/', :class => 'button print' %>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Street</th>
+        <th scope="col">City</th>
+        <th scope="col">Postal Code</th>
+        <th scope="col">Cell Phone</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @drivers.each do |driver| %>
+      <tr>
+        <td><%= driver.name %></td>
+        <td><%= driver.street %></td>
+        <td><%= driver.city %></td>
+        <td><%= driver.postal_code %></td>
+        <td><%= driver.cell_phone %></td>
+      </tr>
+    <% end %>
+    </thead>
+  </table>
+  <p>Printed on: <%= format_time Time.now %></p>
+</section>

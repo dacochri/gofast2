@@ -1,5 +1,6 @@
+<!-- create form used in trucks -->
 <%= form_for @truck, :html => { :multipart => true } do |f| %>
-  <!-- show errors if they exist -->
+  <!-- if server side validation errors occur, display them here -->
   <% if @truck.errors.any? %>
     <div id="error_explanation">
       <section>
@@ -15,32 +16,37 @@
   <% end %>
 
   <!-- form elements -->
-  <%= f.label :truck_no %>
-  <%= f.number_field :truck_no, :format => ValidationValues.c_integer, :placeholder => ValidationValues.p_integer %>
-  <%= f.label :truck_type %>
-  <%= f.select :truck_type, options_for_select([['Straight', 'straight'], ['Tractor', 'tractor']]) %>
-  <%= f.label :license_plate %>
-  <%= f.text_field :license_plate, :format => ValidationValues.c_license_plate, :placeholder => ValidationValues.p_license_plate %>
-  <%= f.label :license_expires %>
-  <%= f.text_field :license_expires, :format => ValidationValues.c_date, :placeholder => ValidationValues.p_date %>
-  <%= f.label :owner %>
-  <%= f.collection_select :owner, @driver_companies, :id, :name, { :selected => @driver_companies.first.id }, { :size => 5 } %>
-  <%= f.label :make %>
-  <%= f.text_field :make, :required => 'required', :format => ValidationValues.c_alpha_numeric %>
-  <%= f.label :model %>
-  <%= f.text_field :model, :required => 'required', :format => ValidationValues.c_alpha_numeric %>
-  <%= f.label :manufactured_year %>
-  <%= f.number_field :manufactured_year, :required => 'required', :format => ValidationValues.c_year, :placeholder => ValidationValues.p_year %>
-  <%= f.label :vin %>
-  <%= f.text_field :vin, :required => 'required', :format => ValidationValues.c_vin, :placeholder => ValidationValues.p_vin %>
-  <%= f.label :total_kilometres %>
-  <%= f.number_field :total_kilometres, :required => 'required', :format => ValidationValues.c_integer, :placeholder => ValidationValues.p_integer %>
-  <%= f.label :current_location %>
-  <%= f.text_field :current_location, :required => 'required', :format => ValidationValues.c_street, :placeholder => ValidationValues.p_street %>
-  <%= f.label :color %>
-  <%= f.text_field :color, :required => 'required', :format => ValidationValues.c_alpha_numeric, :placeholder => ValidationValues.p_color %> 
-  <%= f.label :photo %>
-  <%= f.file_field :photo %>
+  <div class="float-left">
+    <%= f.label :truck_no %>
+    <%= f.number_field :truck_no, :format => ValidationValues.c_integer, :placeholder => ValidationValues.p_integer %>
+    <%= f.label :truck_type %>
+    <%= f.select :truck_type, options_for_select([['Straight', 'straight'], ['Tractor', 'tractor']]) %>
+    <%= f.label :license_plate %>
+    <%= f.text_field :license_plate, :format => ValidationValues.c_license_plate, :placeholder => ValidationValues.p_license_plate %>
+    <%= f.label :license_expires %>
+    <%= f.text_field :license_expires, :format => ValidationValues.c_date, :placeholder => ValidationValues.p_date %>
+    <%= f.label :owner %>
+    <%= f.collection_select :owner, @driver_companies, :id, :name, { :selected => @driver_companies.first.id }, { :size => 5 } %>
+    <%= f.label :make %>
+    <%= f.text_field :make, :required => 'required', :format => ValidationValues.c_alpha_numeric %>
+  </div>
+  <div class="float-left">
+    <%= f.label :model %>
+    <%= f.text_field :model, :required => 'required', :format => ValidationValues.c_alpha_numeric %>
+    <%= f.label :manufactured_year %>
+    <%= f.number_field :manufactured_year, :required => 'required', :format => ValidationValues.c_year, :placeholder => ValidationValues.p_year %>
+    <%= f.label :vin %>
+    <%= f.text_field :vin, :required => 'required', :format => ValidationValues.c_vin, :placeholder => ValidationValues.p_vin %>
+    <%= f.label :total_kilometres %>
+    <%= f.number_field :total_kilometres, :required => 'required', :format => ValidationValues.c_integer, :placeholder => ValidationValues.p_integer %>
+    <%= f.label :current_location %>
+    <%= f.text_field :current_location, :required => 'required', :format => ValidationValues.c_street, :placeholder => ValidationValues.p_street %>
+    <%= f.label :color %>
+    <%= f.text_field :color, :required => 'required', :format => ValidationValues.c_alpha_numeric, :placeholder => ValidationValues.p_color %> 
+    <%= f.label :photo %>
+    <%= f.file_field :photo %>
+  </div>
+  <div class="clear"></div>
   <div class="footer">
     <%= f.submit %>
   </div>

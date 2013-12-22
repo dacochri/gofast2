@@ -1,5 +1,9 @@
+# This file allows access to the database through the Maintenance object.
+# attr_accessible defines the attributes that are allowed to be used by creating accessor and mutator methods.
+# This file also validates the data before it is submitted to the database.
+# The values for validation are stored in /lib/validation_values.rb
 class Maintenance < ActiveRecord::Base
-	include Searchable
+  include Searchable
   
   attr_accessible :vehicle_type, :cost, :date, :description, :kilometres, :trip_id, :maintenance_type, :vehicle_id
 

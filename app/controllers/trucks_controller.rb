@@ -12,6 +12,8 @@ class TrucksController < ApplicationController
     # get all trucks; order them; paginate
     @trucks = Truck.search(params[:search], params[:column]).order(sort_column(Truck, 'truck_no') + ' ' + sort_direction).page(params[:page]).per(10)
     
+    get_params()
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @trucks }
@@ -23,6 +25,7 @@ class TrucksController < ApplicationController
   def show
     # find truck by id
     @truck = Truck.find(params[:id])
+    @company = Company.find(@truck.owner) rescue nil
 
     respond_to do |format|
       format.html # show.html.erb

@@ -1,14 +1,16 @@
+<!-- index page for announcements -->
 <section>
   <h2>Announcements</h2>
-  <p><%= link_to 'New Announcement', new_announcement_path, :class => 'button new' %></p>
-	<%= form_tag announcements_path, :method => 'get', :class => 'search'  do %>
+  <p><%= link_to 'New Announcement', new_announcement_path, :class => 'button new' %><%= link_to 'Print', "reports/#{params[:controller]}" + "?column=#{@column}&direction=#{@direction}&search=#{@search}&sort=#{@sort}", :class => 'button' %></p>
+  <!-- create form for search/ordering -->
+  <%= form_tag announcements_path, :method => 'get', :class => 'search'  do %>
     <%= hidden_field_tag :direction, params[:direction] %>
     <%= hidden_field_tag :sort, params[:sort] %>
-		<%= label_tag :column %>
-		<%= select_tag :column, options_for_select(Announcement.translated_searchable_columns(['id']), params[:column]) %>
-		<%= label_tag :search %>
-		<%= text_field_tag :search %>
-		<%= submit_tag 'Submit' %>
+    <%= label_tag :column %>
+    <%= select_tag :column, options_for_select(Announcement.translated_searchable_columns(['id']), params[:column]) %>
+    <%= label_tag :search %>
+    <%= text_field_tag :search %>
+    <%= submit_tag 'Submit' %>
   <% end %>
   <table>
     <thead>
@@ -16,21 +18,23 @@
         <th scope="col"><%= sortable "posted_by", nil, @announcements, "date_posted" %></th>
         <th scope="col"><%= sortable "title", nil, @announcements, "date_posted" %></th>
         <th scope="col"><%= sortable "date_posted", nil, @announcements, "date_posted" %></th>
-				<th scope="col">Content</th>
+        <th scope="col">Content</th>
         <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
+    <!-- go through all announcement records and create rows with data -->
     <% @announcements.each do |announcement| %>
       <% user = User.find(announcement.posted_by) %>
       <tr>
         <td><%= link_to user.name, "/user/#{announcement.posted_by}" %></td>
         <td><%= announcement.title %></td>
         <td><%= format_time announcement.date_posted %></td>
-				<td><%= announcement.content.truncate(40) %>
+	<td><%= announcement.content.truncate(40) %>
         <td><%= link_to '', announcement, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_announcement_path(announcement), :class => 'button edit', :title => 'Edit' %> <%= link_to '', announcement, method: :delete, data: { confirm: 'Are you sure you want to delete announcement: ' + announcement.title + '?' }, :class => 'button destroy', :title => 'Delete' %></td>
       </tr>
     <% end %>
+    <!-- display no results if announcements contains none -->
     <% if @announcements.empty? %>
       <tr>
         <td colspan="5">No results found.</td>

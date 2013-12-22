@@ -1,0 +1,42 @@
+<!-- maintenance records report page -->
+<section>
+  <h2>Maintenance Records</h2>
+  <p><%= link_to 'Print', '/', :class => 'button print' %>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Vehicle Type</th>
+        <th scope="col">Vehicle Id</th>
+        <th scope="col">Trip Id</th>
+        <th scope="col">Date</th>
+        <th scope="col">Cost</th>
+        <th scope="col">Maintenance Type</th>
+        <th scope="col">Kilometres</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @maintenances.each do |maintenance| %>
+      <% if maintenance.vehicle_type == 'truck' %>
+        <% truck = Truck.find(maintenance.vehicle_id) %>
+      <% else %>
+        <% trailer = Trailer.find(maintenance.vehicle_id) %>
+      <% end %>
+      <% trip = Trip.find(maintenance.trip_id) %>
+      <tr>
+        <td><%= maintenance.vehicle_type %></td>
+        <% if maintenance.vehicle_type == 'truck' %>
+        <td><%= truck.truck_no %></td>
+        <% else %>
+        <td><%= trailer.trailer_no %></td>
+        <% end %>
+        <td><%= trip.trip_no %></td>
+        <td><%= maintenance.date %></td>
+        <td><%= number_to_currency maintenance.cost %></td>
+        <td><%= maintenance.maintenance_type %></td>
+        <td><%= maintenance.kilometres %> <abbr title="kilometre">km</abbr></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <p>Printed on: <%= format_time Time.now %></p>
+</section>

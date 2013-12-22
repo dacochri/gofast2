@@ -8,5 +8,8 @@
     <% unless user_signed_in? %>
       <li><%= link_to 'Sign in', new_user_session_path %></li>
     <% end %>
+    <% if user_signed_in? && current_user.access == 'admin' %>
+      <li><%= link_to 'Users', '/users' %>
+    <% end %>
   </ul>
 </nav>

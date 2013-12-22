@@ -1,0 +1,40 @@
+<!-- shipments report page -->
+<section>
+  <h2>Shipments</h2>
+  <p><%= link_to 'Print', '/', :class => 'button print' %>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Shipment No</th>
+        <th scope="col">Trip</th>
+        <th scope="col">Shipper</th>
+        <th scope="col">Receiver</th>
+        <th scope="col">Receiver Address</th>
+        <th scope="col">Rate</th>
+        <th scope="col">Delivered</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @shipments.each do |shipment| %>
+      <% trip = Trip.find(shipment.trip_id) %>
+      <% shipper = Company.find(shipment.shipper) %>
+      <% receiver = Company. find(shipment.receiver) %>
+      <tr>
+        <td><%= shipment.shipment_no %></td>
+        <td><%= trip.trip_no %></td>
+        <td><%= shipper.name %></td>
+        <td><%= receiver.name %></td>
+        <td><%= shipment.receiver_address %></td>
+        <td><%= number_to_currency shipment.rate %></td>
+        <td><%= shipment.delivered %></td>
+      </tr>
+    <% end %>
+    <% if @shipments.empty? %>
+      <tr>
+        <td colspan="8">No results found.</td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <p>Printed on: <%= format_time Time.now %></p>
+</section>

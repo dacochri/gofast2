@@ -1,0 +1,51 @@
+<section>
+  <h2>Trip Expenses Report <%= @print_message %></h2>
+  <p><%= link_to 'Print', '/', :class => 'button print' %></p>
+  <table>
+    <thead>
+      <!-- Creates all the headers of the table -->
+      <tr>
+        <th scope="col">Trip No</th>
+        <th scope="col">Shipper</th>
+        <th scope="col">Shipment(s)</th>
+        <th scope="col">Distance</th>
+        <th scope="col">Rate</th>
+        <th scope="col">Quick Pay</th>
+        <th scope="col">Fuel Cost</th>
+        <th scope="col">Misc Cost</th>
+        <th scope="col">Driver Pay</th>
+        <th scope="col">Profit</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% total_profit = 0 %>
+    <!-- Loops through each trip that has returned from the controller and prints out corresponding columns -->
+    <% @trips.each do |trip| %>
+      <% record = ReportsController.trip_records(trip.id) %>
+      <tr>
+        <td><%= trip.trip_no.to_s %></td>
+        <td>
+          <% record['shipper_name'].each.with_index do |shipper, i| %>
+            <%= shipper.to_s %><br/>
+          <% end %>
+        </td>
+        <td>
+          <% record['shippment_no'].each.with_index do |shipper, i| %>
+            <%= shipper.to_s %><br/>
+          <% end %>
+        </td>
+        <td><%= record['distance'] %> <abbr title="kilometre">km</abbr></td>
+        <td><%= number_to_currency record['rate'] %></td>
+        <td><%= number_to_currency record['quick_pay'] %></td>
+        <td><%= number_to_currency record['fuel'] %></td>
+        <td><%= number_to_currency record['misc_cost'] %></td>
+        <td><%= number_to_currency record['driver_pay'] %></td>
+        <td><%= number_to_currency record['profit'] %></td>
+        <% total_profit += record['profit'].to_d %>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <p id="profit"><strong>Total Profit: <%= number_to_currency total_profit %></strong></p>
+  <p>Printed on: <%= format_time Time.now %></p>
+</section>

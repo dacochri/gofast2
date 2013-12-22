@@ -1,5 +1,8 @@
+<!-- edit page with form -->
 <section>
   <h2>Edit Announcement #<%= @announcement.id %></h2>
+  <!-- load _form.html.erb into this page -->
   <%= render 'form' %>
+  <!-- create links -->
   <p><%= link_to 'Show', @announcement, :class => 'button show' %><%= link_to 'Back', announcements_path, :class => 'button back' %></p>
 </section>

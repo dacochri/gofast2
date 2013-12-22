@@ -1,9 +1,9 @@
-<% company = Company.find @truck.owner %>
+<!-- show specific truck record -->
 <section>
   <h2>Truck #<%= @truck.id %></h2>
   <!-- show notice when truck is inserted -->
   <p id="notice"><%= notice %></p>
-  <div class="float-left">
+  <div class="float-left truck">
     <dl>
       <!-- show truck data -->
       <dt><strong>Truck no:</strong></dt><dd><%= @truck.truck_no %></dd>
@@ -11,7 +11,7 @@
       <dt><strong>Truck type:</strong></dt><dd><%= @truck.truck_type %></dd>
       <dt><strong>License plate:</strong></dt><dd><%= @truck.license_plate %></dd>
       <dt><strong>License expires:</strong></dt><dd><%= @truck.license_expires %></dd>
-      <dt><strong>Owner:</strong></dt><dd><%= link_to company.name, "/companies/#{@truck.owner}" %></dd>
+      <dt><strong>Owner:</strong></dt><dd><%= link_to @company.name, "/companies/#{@truck.owner}" rescue 'No Company' %></dd>
       <dt><strong>Make:</strong></dt><dd><%= @truck.make %></dd>
       <dt><strong>Model:</strong></dt><dd><%= @truck.model %></dd>
       <dt><strong>Manufactured year:</strong></dt><dd><%= @truck.manufactured_year %></dd>
@@ -22,4 +22,5 @@
     <p><%= link_to 'Edit', edit_truck_path(@truck), :class => 'button edit' %> <%= link_to 'Back', trucks_path, :class => 'button back' %></p>
   </div>
   <%= image_tag @truck.photo.url, :class => 'photo' %>
+  <div class="clear"></div>
 </section>

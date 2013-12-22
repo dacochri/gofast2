@@ -1,4 +1,6 @@
+<!-- create form used in maintenance records -->
 <%= form_for(@maintenance) do |f| %>
+  <!-- if server side validation errors occur, display them here -->
   <% if @maintenance.errors.any? %>
     <div id="error_explanation">
       <section>
@@ -12,23 +14,28 @@
       </section>
     </div>
   <% end %>
-
-  <%= f.label :vehicle_type %>
-  <%= f.select :vehicle_type, options_for_select(ValidationValues.vehicle_type) %>
-  <%= f.label :vehicle_id %>
-  <%= f.number_field :vehicle_id, :required => 'required', :pattern => ValidationValues.c_integer, :placeholder => ValidationValues.p_integer %>
-  <%= f.label :trip_id %>
-  <%= f.collection_select :trip_id, @trips, :id, :trip_no_and_start_date_and_end_date, { :selected => @trips.first.id }, { :size => 5 } %>
-  <%= f.label :date %>
-  <%= f.date_select :date, :required => 'required', :pattern => ValidationValues.c_date, :placeholder => ValidationValues.p_date %>
-  <%= f.label :cost %>
-  <%= f.text_field :cost, :required => 'required', :pattern => ValidationValues.c_double, :placeholder => ValidationValues.p_double %>
-  <%= f.label :maintenance_type %>
-  <%= f.select :maintenance_type, options_for_select(ValidationValues.maintenance_type) %>
-  <%= f.label :description %>
-  <%= f.text_field :description, :required => 'required', :pattern => ValidationValues.c_content %>
-  <%= f.label :kilometres %>
-  <%= f.number_field :kilometres, :required => 'required', :pattern => ValidationValues.c_double, :placeholder => ValidationValues.p_double %>
+  
+  <div class="float-left">
+    <%= f.label :vehicle_type %>
+    <%= f.select :vehicle_type, options_for_select(ValidationValues.vehicle_type) %>
+    <%= f.label :vehicle_id %>
+    <%= f.number_field :vehicle_id, :required => 'required', :pattern => ValidationValues.c_integer, :placeholder => ValidationValues.p_integer %>
+    <%= f.label :trip_id %>
+    <%= f.collection_select :trip_id, @trips, :id, :trip_no_and_start_date_and_end_date, { :selected => @trips.first.id }, { :size => 5 } %>
+    <%= f.label :date %>
+    <%= f.date_select :date, :required => 'required', :pattern => ValidationValues.c_date, :placeholder => ValidationValues.p_date %>
+  </div>
+  <div class="float-left">
+    <%= f.label :cost %>
+    <%= f.text_field :cost, :required => 'required', :pattern => ValidationValues.c_double, :placeholder => ValidationValues.p_double %>
+    <%= f.label :maintenance_type %>
+    <%= f.select :maintenance_type, options_for_select(ValidationValues.maintenance_type) %>
+    <%= f.label :description %>
+    <%= f.text_field :description, :required => 'required', :pattern => ValidationValues.c_content %>
+    <%= f.label :kilometres %>
+    <%= f.number_field :kilometres, :required => 'required', :pattern => ValidationValues.c_double, :placeholder => ValidationValues.p_double %>
+  </div>
+  <div class="clear"></div>
   <div class="footer">
     <%= f.submit %>
   </div>

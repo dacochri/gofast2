@@ -1,4 +1,5 @@
 class JobPostingsController < ApplicationController
+  # Restricts access to certain pages
   before_filter :authenticate_user!, :except => [:index, :show, :apply, :process_application]
   
   include ApplicationHelper
@@ -6,9 +7,12 @@ class JobPostingsController < ApplicationController
   # GET /job_postings
   # GET /job_postings.json
   def index
+    # Show all job applications
     params[:search] = format_date params[:search]
     
     @job_postings = JobPosting.search(params[:search], params[:column]).order(sort_column(JobPosting, 'title') + ' ' + sort_direction).page(params[:page]).per(10)
+    
+    get_params()
 
     respond_to do |format|
       format.html # index.html.erb
@@ -19,6 +23,7 @@ class JobPostingsController < ApplicationController
   # GET /job_postings/1
   # GET /job_postings/1.json
   def show
+    # Display one record
     @job_posting = JobPosting.find(params[:id])
 
     respond_to do |format|
@@ -30,6 +35,7 @@ class JobPostingsController < ApplicationController
   # GET /job_postings/new
   # GET /job_postings/new.json
   def new
+    # form to create a new record
     redirect_driver
 
     @job_posting = JobPosting.new
@@ -42,6 +48,7 @@ class JobPostingsController < ApplicationController
 
   # GET /job_postings/1/edit
   def edit
+    # Form to edit a record
     redirect_driver
 
     @job_posting = JobPosting.find(params[:id])
@@ -50,6 +57,7 @@ class JobPostingsController < ApplicationController
   # POST /job_postings
   # POST /job_postings.json
   def create
+    # Logic to create a record
     redirect_driver
 
     @job_posting = JobPosting.new(params[:job_posting])
@@ -68,6 +76,7 @@ class JobPostingsController < ApplicationController
   # PUT /job_postings/1
   # PUT /job_postings/1.json
   def update
+    # Logic to update a record
     redirect_driver
 
     @job_posting = JobPosting.find(params[:id])
@@ -86,6 +95,7 @@ class JobPostingsController < ApplicationController
   # DELETE /job_postings/1
   # DELETE /job_postings/1.json
   def destroy
+    # Logic to delete a record
     redirect_driver
 
     @job_posting = JobPosting.find(params[:id])

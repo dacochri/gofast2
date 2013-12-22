@@ -24,8 +24,6 @@ $footer-bg-color: #222;
 
 html{
   font-size: 62.5%;
-  position: relative;
-  min-height: 100%;
 }
 
 /* Now, 1.4rem = 14px */
@@ -38,7 +36,7 @@ html{
 body{
   font-family: "Droid Sans", Arial, Helvetica, sans-serif;
   font-size: 1.8rem;
-  margin: 0 0 10rem;
+  background-color: $footer-bg-color;
 
   > div:first-child{
     background: $header-bg-color url('header_bg.png') repeat bottom left;
@@ -47,6 +45,10 @@ body{
   > div:nth-child(2){
     background: $nav-bg-color url('nav_bg.png') repeat top left;
     border-bottom: 0.2rem solid #F60;
+  }
+  
+  > div:nth-child(3), > div:nth-child(4){
+    background-color: #FFF;
   }
 
   /*
@@ -57,10 +59,6 @@ body{
   
   #footer-container{
     background-color: $footer-bg-color;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 10rem;
     width: 100%;
   }
 }
@@ -144,7 +142,7 @@ div:nth-child(2){
       }
 
       &.small-links{
-        font-size: 1.8rem;
+        font-size: 1.5rem;
       }
     }
   }
@@ -172,7 +170,6 @@ div:nth-child(2){
 
 footer {
   color: #DDD;
-  background: #222;
 
   a{
     color: #F60;
@@ -227,15 +224,34 @@ a{
   }
 }
 
+.float-left{
+  dl{
+    width: 100%;
+  }
+}
+
 dl{
   margin-bottom: 1rem;
+  width: 70%;
+
+  &.normal{
+    
+    dt, dd{
+      float: left;
+    }
+  }
   
   dt, dd{
     line-height: 2.5rem;
-    float: left;
+  }
+  
+  dd{
+    float: right;
+    width: 50rem;
   }
 
   dt{
+    float: left;
     clear: both;
     margin-right: 0.5rem;
   }
@@ -288,6 +304,10 @@ form{
     > &:last-child(2){
       margin-bottom: 1.5rem;
     }
+  }
+  
+  div.float-left{
+    margin-right: 4rem;
   }
 
   .footer{
@@ -349,7 +369,8 @@ select{
 }
 
 option{
-  margin-right: 1rem;
+  margin: 0.4rem;
+  padding: 0.1rem;
 }
 
 /* Search form */
@@ -540,6 +561,10 @@ table{
       }
     }
   }
+}
+
+.justify{
+  text-align: justify;
 }
 
 @mixin mobile-header{

@@ -4,8 +4,9 @@
   <% end %>
   <li><%= link_to 'Cartage', cartages_path %></li>
   <% unless current_user.access == 'driver' %>
+  <li><%= link_to 'Companies', companies_path %></li>
   <li><%= link_to 'Drivers', drivers_path %></li>
-  <li><%= link_to 'Job Postings', job_postings_path %></li>
+  <li><%= link_to 'Jobs', job_postings_path %></li>
   <li><%= link_to 'Maintenance', maintenances_path %></li>
   <% end %>
   <li><%= link_to 'Shipments', shipments_path  %></li>
@@ -17,7 +18,8 @@
   <% unless current_user.access == 'driver' %>
   <li><%= link_to 'Trucks', trucks_path %></li>
   <% end %>
+  <li><%= link_to 'Schedule', '/schedule' %></li>
   <% if current_user.access == 'admin' %>
-  <li><%= link_to 'Users', '/users' %></li>
+  <li><%= link_to 'Expense Report', '/reports/trip_expenses' %></li>
   <% end %>
 </ul>

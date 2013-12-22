@@ -1,7 +1,9 @@
+<!-- index page for drivers -->
 <section>
   <h2>Drivers</h2>
-  <p><%= link_to 'New Driver', new_driver_path, :class => 'button new' %></p>
-	<%= form_tag drivers_path, :method => 'get', :class => 'search' do %>
+  <p><%= link_to 'New Driver', new_driver_path, :class => 'button new' %><%= link_to 'Print', "reports/#{params[:controller]}" + "?column=#{@column}&direction=#{@direction}&search=#{@search}&sort=#{@sort}", :class => 'button' %></p>
+	<!-- create form for search/ordering -->
+  <%= form_tag drivers_path, :method => 'get', :class => 'search' do %>
     <%= hidden_field_tag :direction, params[:direction] %>
     <%= hidden_field_tag :sort, params[:sort] %>
 		<%= label_tag :column %>
@@ -21,6 +23,7 @@
         <th scope="col"></th>
       </tr>
     </thead>
+    <!-- go through all driver records and create rows with data -->
     <tbody>
     <% @drivers.each do |driver| %>
       <tr>
@@ -32,6 +35,7 @@
         <td><%= link_to '', driver, :class => 'button show', :title => 'Show' %> <%= link_to '', edit_driver_path(driver), :class => 'button edit', :title => 'Edit' %> <%= link_to '', driver, method: :delete, data: { confirm: 'Are you sure you want to delete driver: ' + driver.name + '?' }, :class => 'button destroy', :title => 'Delete' %></td>
       </tr>
     <% end %>
+    <!-- display no results if drivers contains no records -->
     <% if @drivers.empty? %>
       <tr>
         <td colspan="6">No results found.</td>

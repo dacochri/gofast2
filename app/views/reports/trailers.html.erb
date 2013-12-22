@@ -1,0 +1,32 @@
+<!-- trailers report page -->
+<section>
+  <h2>Trailers</h2>
+  <p><%= link_to 'Print', '/', :class => 'button print' %>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Trailer No</th>
+        <th scope="col">Trailer Type</th>
+        <th scope="col">License Plate</th>
+        <th scope="col">Make</th>
+        <th scope="col">Model</th>
+        <th scope="col">Manufactured Year</th>
+        <th scope="col">Vin</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @trailers.each do |trailer| %>
+      <tr>
+        <td><%= trailer.trailer_no %></td>
+        <td><%= trailer.trailer_type %></td>
+        <td><%= trailer.license_plate %></td>
+        <td><%= trailer.make %></td>
+        <td><%= trailer.model %></td>
+        <td><%= trailer.manufactured_year %></td>
+        <td><%= trailer.vin %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+  <p>Printed on: <%= format_time Time.now %></p>
+</section>

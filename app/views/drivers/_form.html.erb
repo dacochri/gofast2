@@ -1,4 +1,6 @@
+<!-- create form used in drivers -->
 <%= form_for(@driver) do |f| %>
+  <!-- if server side validation errors occur, display them here -->
   <% if @driver.errors.any? %>
     <div id="error_explanation">
       <section>
@@ -12,29 +14,34 @@
       </section>
     </div>
   <% end %>
-
-  <%= f.label :name %>
-  <%= f.text_field :name, :required => 'required', :pattern => ValidationValues.c_name, :placeholder => ValidationValues.p_name %>
-  <%= f.label :street %>
-  <%= f.text_field :street, :required => 'required', :pattern => ValidationValues.c_street, :placeholder => ValidationValues.p_street_only %>
-  <%= f.label :unit %>
-  <%= f.text_field :unit, :pattern => ValidationValues.c_address_unit, :placeholder => ValidationValues.p_address_unit %>
-  <%= f.label :city %>
-  <%= f.text_field :city, :required => 'required', :pattern => ValidationValues.c_alpha, :placeholder => ValidationValues.p_city %>
-  <%= f.label :postal_code %>
-  <%= f.text_field :postal_code, :required => 'required', :pattern => ValidationValues.c_postal_code, :placeholder => ValidationValues.p_postal_code %>
-  <%= f.label :drivers_license_number %>
-  <%= f.text_field :drivers_license_number, :required => 'required', :pattern => ValidationValues.c_alpha_numeric, :placeholder => ValidationValues.p_drivers_license %>
-  <%= f.label :date_of_birth %>
-  <%= f.text_field :date_of_birth, :required => 'required', :pattern => ValidationValues.c_date, :placeholder => ValidationValues.p_date %>
-  <%= f.label :home_phone %>
-  <%= f.number_field :home_phone, :required => 'required', :pattern => ValidationValues.c_phone_number, :placeholder => ValidationValues.p_phone_number %>
-  <%= f.label :cell_phone %>
-  <%= f.number_field :cell_phone, :required => 'required', :pattern => ValidationValues.c_phone_number, :placeholder => ValidationValues.p_phone_number %>
-  <%= f.label :business_name %>
-  <%= f.collection_select :business_name, @driver_companies, :id, :name, { }, { :size => 5 } %>
-  <%= f.label :comments %>
-  <%= f.text_field :comments, :pattern => ValidationValues.c_content %>
+  
+  <div class="float-left">
+    <%= f.label :name %>
+    <%= f.text_field :name, :required => 'required', :pattern => ValidationValues.c_name, :placeholder => ValidationValues.p_name %>
+    <%= f.label :street %>
+    <%= f.text_field :street, :required => 'required', :pattern => ValidationValues.c_street, :placeholder => ValidationValues.p_street_only %>
+    <%= f.label :unit %>
+    <%= f.text_field :unit, :pattern => ValidationValues.c_address_unit, :placeholder => ValidationValues.p_address_unit %>
+    <%= f.label :city %>
+    <%= f.text_field :city, :required => 'required', :pattern => ValidationValues.c_alpha, :placeholder => ValidationValues.p_city %>
+    <%= f.label :postal_code %>
+    <%= f.text_field :postal_code, :required => 'required', :pattern => ValidationValues.c_postal_code, :placeholder => ValidationValues.p_postal_code %>
+    <%= f.label :drivers_license_number %>
+    <%= f.text_field :drivers_license_number, :required => 'required', :pattern => ValidationValues.c_alpha_numeric, :placeholder => ValidationValues.p_drivers_license %>
+  </div>
+  <div class="float-left">
+    <%= f.label :date_of_birth %>
+    <%= f.text_field :date_of_birth, :required => 'required', :pattern => ValidationValues.c_date, :placeholder => ValidationValues.p_date %>
+    <%= f.label :home_phone %>
+    <%= f.number_field :home_phone, :required => 'required', :pattern => ValidationValues.c_phone_number, :placeholder => ValidationValues.p_phone_number %>
+    <%= f.label :cell_phone %>
+    <%= f.number_field :cell_phone, :required => 'required', :pattern => ValidationValues.c_phone_number, :placeholder => ValidationValues.p_phone_number %>
+    <%= f.label :business_name %>
+    <%= f.collection_select :business_name, @driver_companies, :id, :name, { }, { :size => 5 } %>
+    <%= f.label :comments %>
+    <%= f.text_field :comments, :pattern => ValidationValues.c_content %>
+  </div>
+  <div class="clear"></div>
   <div class="footer">
     <%= f.submit %>
   </div>

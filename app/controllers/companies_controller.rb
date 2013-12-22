@@ -1,4 +1,5 @@
 class CompaniesController < ApplicationController
+  # Authenticate users, driver's can't access this page
   before_filter :authenticate_user!, :redirect_driver
   
   include ApplicationHelper
@@ -6,7 +7,10 @@ class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.json
   def index
+    # Show all companies, order the results and paginate it
     @companies = Company.search(params[:search], params[:column]).order(sort_column(Company, 'company_type') + ' ' + sort_direction).page(params[:page]).per(10)
+    
+    get_params()
 
     respond_to do |format|
       format.html # index.html.erb
@@ -17,6 +21,7 @@ class CompaniesController < ApplicationController
   # GET /companies/1
   # GET /companies/1.json
   def show
+    # Show a specific record
     @company = Company.find(params[:id])
 
     respond_to do |format|
@@ -28,6 +33,7 @@ class CompaniesController < ApplicationController
   # GET /companies/new
   # GET /companies/new.json
   def new
+    # Form to create a new record
     @company = Company.new
 
     respond_to do |format|
@@ -38,12 +44,14 @@ class CompaniesController < ApplicationController
 
   # GET /companies/1/edit
   def edit
+    # Create a form to edit a record
     @company = Company.find(params[:id])
   end
 
   # POST /companies
   # POST /companies.json
   def create
+    # Logic to submit a new company into the DB
     @company = Company.new(params[:company])
 
     respond_to do |format|
@@ -60,6 +68,7 @@ class CompaniesController < ApplicationController
   # PUT /companies/1
   # PUT /companies/1.json
   def update
+    # Logic to edit a record and submit to the DB
     @company = Company.find(params[:id])
 
     respond_to do |format|
@@ -76,6 +85,7 @@ class CompaniesController < ApplicationController
   # DELETE /companies/1
   # DELETE /companies/1.json
   def destroy
+    # Logic to delete a record based on the id
     @company = Company.find(params[:id])
     @company.destroy
 
